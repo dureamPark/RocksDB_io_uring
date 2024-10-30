@@ -1,10 +1,11 @@
-// Copyright (c) 2011-present, Facebook, Inc.  All rights reserved.
+//Copyright (c) 2011-present, Facebook, Inc.  All rights reserved.
 //  This source code is licensed under both the GPLv2 (found in the
 //  COPYING file in the root directory) and Apache 2.0 License
 //  (found in the LICENSE.Apache file in the root directory).
 
 #include <cstdio>
 #include <string>
+#include <stdio.h>
 
 #include "rocksdb/db.h"
 #include "rocksdb/options.h"
@@ -25,7 +26,8 @@ std::string kDBPath = "/tmp/rocksdb_simple_example";
 #endif
 
 int main() {
-  DB* db;
+  printf("test start\n");
+	DB* db;
   Options options;
   // Optimize RocksDB. This is the easiest way to get RocksDB to perform well
   options.IncreaseParallelism();

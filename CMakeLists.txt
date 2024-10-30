@@ -43,6 +43,21 @@ project(rocksdb
   DESCRIPTION "An embeddable persistent key-value store for fast storage"
   HOMEPAGE_URL https://rocksdb.org/
   LANGUAGES CXX C ASM)
+#project(rocksdb1)
+#find_package(uring REQUIRED)
+
+#add_executable(rocksdb1 io_uring_pread.cc io_uring_pread.h)
+
+#target_link_libraries(rocksdb1 PRIVATE uring::uring)
+
+#find_package(uring REQUIRED)
+#if (uring_FOUND)
+#	target_link_libraries(rocksdb PRIVATE uring::uring)
+#	add_definitions(-DROCKSDB_IOURING_PRESENT)
+#endif()
+
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/modules")
+find_package(uring REQUIRED)
 
 if(APPLE)
   # On macOS Cmake, when cross-compiling, sometimes CMAKE_SYSTEM_PROCESSOR wrongfully stays
@@ -1556,11 +1571,20 @@ if(WITH_TESTS)
     set(ROCKSDB_LIB_FOR_C ${ROCKSDB_LIB})
   endif()
 
+	if(uring_FOUND)
+		add_definitions(-DROCKSDB_IOURING_PRESENT)
+	else()
+		message(FATAL_ERROR "liburing not found")
+	endif()
+
   if(ROCKSDB_LIB_FOR_C)
     set(C_TESTS db/c_test.c)
     add_executable(c_test db/c_test.c)
-    target_link_libraries(c_test ${ROCKSDB_LIB_FOR_C} testharness)
-    add_test(NAME c_test COMMAND c_test${ARTIFACT_SUFFIX})
+    target_link_libraries(c_test PRIVATE ${ROCKSDB_LIB_FOR_C} testharness)
+    if(uring_FOUND)
+		target_link_libraries(c_test PRIVATE uring::uring)
+	endif()
+	add_test(NAME c_test COMMAND c_test${ARTIFACT_SUFFIX})
     add_dependencies(rocksdb_check c_test)
   endif()
 endif()
@@ -1570,53 +1594,82 @@ if(WITH_BENCHMARK_TOOLS)
     tools/simulated_hybrid_file_system.cc
     tools/db_bench.cc
     tools/db_bench_tool.cc)
-  target_link_libraries(db_bench${ARTIFACT_SUFFIX}
+  target_link_libraries(db_bench${ARTIFACT_SUFFIX} PRIVATE
     ${ROCKSDB_LIB} ${THIRDPARTY_LIBS})
+	if(uring_FOUND)
+		target_link_libraries(db_bench${ARTIFACT_SUFFIX} PRIVATE uring::uring)
+	endif()
 
   add_executable(cache_bench${ARTIFACT_SUFFIX}
     cache/cache_bench.cc
     cache/cache_bench_tool.cc)
-  target_link_libraries(cache_bench${ARTIFACT_SUFFIX}
+  target_link_libraries(cache_bench${ARTIFACT_SUFFIX} PRIVATE
     ${ROCKSDB_LIB} ${GFLAGS_LIB} ${FOLLY_LIBS})
+	if(uring_FOUND)
+		target_link_libraries(cache_bench${ARTIFACT_SUFFIX} PRIVATE uring::uring)
+	endif()
 
   add_executable(memtablerep_bench${ARTIFACT_SUFFIX}
     memtable/memtablerep_bench.cc)
-  target_link_libraries(memtablerep_bench${ARTIFACT_SUFFIX}
+  target_link_libraries(memtablerep_bench${ARTIFACT_SUFFIX} PRIVATE
     ${ROCKSDB_LIB} ${GFLAGS_LIB} ${FOLLY_LIBS})
+	if(uring_FOUND)
+		target_link_libraries(memtablerep_bench${ARTIFACT_SUFFIX} PRIVATE uring::uring)
+	endif()
 
   add_executable(range_del_aggregator_bench${ARTIFACT_SUFFIX}
     db/range_del_aggregator_bench.cc)
-  target_link_libraries(range_del_aggregator_bench${ARTIFACT_SUFFIX}
+  target_link_libraries(range_del_aggregator_bench${ARTIFACT_SUFFIX} PRIVATE
     ${ROCKSDB_LIB} ${GFLAGS_LIB} ${FOLLY_LIBS})
+	if(uring_FOUND)
+		target_link_libraries(range_del_aggregator_bench${ARTIFACT_SUFFIX}
+				PRIVATE uring::uring)
+	endif()
 
   add_executable(table_reader_bench${ARTIFACT_SUFFIX}
     table/table_reader_bench.cc)
-  target_link_libraries(table_reader_bench${ARTIFACT_SUFFIX}
+  target_link_libraries(table_reader_bench${ARTIFACT_SUFFIX} PRIVATE
     ${ROCKSDB_LIB} testharness ${GFLAGS_LIB} ${FOLLY_LIBS})
+	if(uring_FOUND)
+		target_link_libraries(table_reader_bench${ARTIFACT_SUFFIX} PRIVATE
+				uring::uring)
+	endif()
 
   add_executable(filter_bench${ARTIFACT_SUFFIX}
     util/filter_bench.cc)
-  target_link_libraries(filter_bench${ARTIFACT_SUFFIX}
+  target_link_libraries(filter_bench${ARTIFACT_SUFFIX} PRIVATE
     ${ROCKSDB_LIB} ${GFLAGS_LIB} ${FOLLY_LIBS})
+	if(uring_FOUND)
+		target_link_libraries(filter_bench${ARTIFACT_SUFFIX} PRIVATE uring::uring)
+	endif()
 
   add_executable(hash_table_bench${ARTIFACT_SUFFIX}
     utilities/persistent_cache/hash_table_bench.cc)
-  target_link_libraries(hash_table_bench${ARTIFACT_SUFFIX}
-    ${ROCKSDB_LIB} ${GFLAGS_LIB} ${FOLLY_LIBS})
+  target_link_libraries(hash_table_bench${ARTIFACT_SUFFIX} PRIVATE ${ROCKSDB_LIB} ${GFLAGS_LIB} ${FOLLY_LIBS})
+	if(uring_FOUND)
+		target_link_libraries(hash_table_bench${ARTIFACT_SUFFIX} PRIVATE uring::uring)
+	endif()
 endif()
 
 option(WITH_TRACE_TOOLS "build with trace tools" ON)
 if(WITH_TRACE_TOOLS)
   add_executable(block_cache_trace_analyzer${ARTIFACT_SUFFIX}
     tools/block_cache_analyzer/block_cache_trace_analyzer_tool.cc)
-  target_link_libraries(block_cache_trace_analyzer${ARTIFACT_SUFFIX}
+  target_link_libraries(block_cache_trace_analyzer${ARTIFACT_SUFFIX} PRIVATE
     ${ROCKSDB_LIB} ${GFLAGS_LIB} ${FOLLY_LIBS})
+	if(uring_FOUND)
+		target_link_libraries(block_cache_trace_analyzer${ARTIFACT_SUFFIX}
+				PRIVATE uring::uring)
+	endif()
 
   add_executable(trace_analyzer${ARTIFACT_SUFFIX}
     tools/trace_analyzer.cc)
-  target_link_libraries(trace_analyzer${ARTIFACT_SUFFIX}
+  target_link_libraries(trace_analyzer${ARTIFACT_SUFFIX} PRIVATE
     ${ROCKSDB_LIB} ${GFLAGS_LIB} ${FOLLY_LIBS})
-
+	if(uring_FOUND)
+		target_link_libraries(trace_analyzer${ARTIFACT_SUFFIX} PRIVATE
+				uring::uring)
+	endif()
 endif()
 
 if(WITH_CORE_TOOLS OR WITH_TOOLS)

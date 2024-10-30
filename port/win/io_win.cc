@@ -17,6 +17,13 @@
 #include "util/aligned_buffer.h"
 #include "util/coding.h"
 
+#include <liburing.h>//io_uring 관련 라이브러리
+#include <unistd.h>
+#include <fcntl.h>
+#include <stdio.h>
+#include <cstring> //여기까지
+
+
 namespace ROCKSDB_NAMESPACE {
 namespace port {
 
@@ -65,11 +72,12 @@ std::string GetWindowsErrSz(DWORD err) {
 // Because all the reads/writes happen by the specified offset, the caller in
 // theory should not
 // rely on the current file offset.
-IOStatus pwrite(const WinFileData* file_data, const Slice& data,
-                uint64_t offset, size_t& bytes_written) {
-  IOStatus s;
-  bytes_written = 0;
+IOStatus pwrite(const WinFileData* file_data, const Slice& data, uint64_t offset, size_t& bytes_written) {
+	IOStatus s;
+	bytes_written = 0;
 
+	//struct io_uring ring;
+	//io_uring_queue_init(32, &ring, 0);
   size_t num_bytes = data.size();
   if (num_bytes > std::numeric_limits<DWORD>::max()) {
     // May happen in 64-bit builds where size_t is 64-bits but

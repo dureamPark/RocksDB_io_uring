@@ -154,7 +154,8 @@ namespace {
 // of being able to prefetch up to readahead_size bytes and then serve them
 // from memory, avoiding the entire round-trip if, for example, the data for the
 // file is actually remote.
-class ReadaheadSequentialFile : public FSSequentialFile {
+class ReadaheadSequentialFile : public FSSequentialFile {//left child, right
+														 //parent
  public:
   ReadaheadSequentialFile(std::unique_ptr<FSSequentialFile>&& file,
                           size_t readahead_size)

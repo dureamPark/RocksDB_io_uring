@@ -1,6 +1,6 @@
 # These are the sources from which librocksdb.a is built:
-LIB_SOURCES =                                                   \
-  cache/cache.cc                                                \
+LIB_SOURCES =													\
+	cache/cache.cc                                                \
   cache/cache_entry_roles.cc                                    \
   cache/cache_key.cc                                            \
   cache/cache_helpers.cc                                        \

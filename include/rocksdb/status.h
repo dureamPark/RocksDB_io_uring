@@ -319,7 +319,7 @@ class Status {
   // Returns true iff the status indicates success.
   bool ok() const {
     MarkChecked();
-    return code() == kOk;
+   	return code() == kOk;
   }
 
   // Returns true iff the status indicates success *with* something

@@ -8,15 +8,33 @@
 
 BASH_EXISTS := $(shell which bash)
 SHELL := $(shell which bash)
+CXX	:=	g++
+CXXFLAGS	:=	-O2	-g	-Wall	-Wextra	-std=c++17	-fPIC	
 include common.mk
 
 CLEAN_FILES = # deliberately empty, so we can append below.
-CFLAGS += ${EXTRA_CFLAGS}
-CXXFLAGS += ${EXTRA_CXXFLAGS}
-LDFLAGS += $(EXTRA_LDFLAGS)
+CFLAGS += $(shell pkg-config --cflags liburing)
+CXXFLAGS += $(shell pkg-config --cflags liburing) -DROCKSDB_USE_IO_URING=1
+CXXFLAGS += -DROCKSDB_DLL -DROCKSDB_USE_RTTI -DHAVE_ALIGNED_NEW
+CXXFLAGS += -DROCKSDB_PLATFORM_POSIX -DROCKSDB_LIB_IO_POSIX -DOS_LINUX
+CXXFLAGS += -DROCKSDB_FALLOCATE_PRESENT -DSNAPPY -DGFLAGS=1 -DZLIB -DBZIP2 -DLZ4 -DZSTD
+CXXFLAGS += -DROCKSDB_MALLOC_USABLE_SIZE -DROCKSDB_PTHREAD_ADAPTIVE_MUTEX
+CXXFLAGS += -DROCKSDB_BACKTRACE -DROCKSDB_RANGESYNC_PRESENT -DROCKSDB_SCHED_GETCPU_PRESENT
+CXXFLAGS += -DROCKSDB_AUXV_GETAUXVAL_PRESENT -DROCKSDB_IOURING_PRESENT
+CXXFLAGS += -march=native -DHAVE_UINT128_EXTENSION
+#LDFLAGS += -luring
+LDFLAGS += $(shell pkg-config --libs liburing)
 MACHINE ?= $(shell uname -m)
 ARFLAGS = ${EXTRA_ARFLAGS} rs
 STRIPFLAGS = -S -x
+
+rocksdb:	$(SOURCES)
+	$(CXX)	$(CXXFLAGS)	$(SOURCES) -o rocksdb $(LDFLAGS)
+
+ifneq	($(shell pkg-config --exists liburing && echo yes),)
+	CFLAGS += $(shell pkg-config --cflags liburing) -DLIBURING_ENABLED
+	LDFLAGS += $(shell pkg-config --libs liburing)
+endif
 
 # Transform parallel LOG output into something more readable.
 perl_command = perl -n \

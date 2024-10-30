@@ -11,6 +11,8 @@
 #include "env/io_posix.h"
 
 #include <fcntl.h>
+#include <cstring>
+#include <stdio.h>
 
 #include <algorithm>
 #include <cerrno>
@@ -40,11 +42,87 @@
 #include "util/autovector.h"
 #include "util/coding.h"
 #include "util/string_util.h"
+#include "../rocksdb/io_uring_pread.h"
+#include <liburing.h>
+#include <stdexcept>
 
 #if defined(OS_LINUX) && !defined(F_SET_RW_HINT)
 #define F_LINUX_SPECIFIC_BASE 1024
 #define F_SET_RW_HINT (F_LINUX_SPECIFIC_BASE + 12)
 #endif
+
+ssize_t io_uring_pread(int __fd, char *__buf, size_t __nbytes, off_t __offset){
+	io_uring ring;
+	io_uring_queue_init(4096, &ring, 0);
+
+	if(__fd<0 || __buf==NULL || __nbytes==0){
+		errno=EINVAL;
+		return -1;
+	}
+
+	struct io_uring_sqe *sqe=io_uring_get_sqe(&ring);
+	if(!sqe){
+		io_uring_queue_exit(&ring);
+		return -1;
+	}
+
+	struct io_uring_cqe *cqe;
+	if(io_uring_wait_cqe(&ring, &cqe)<0){
+		io_uring_queue_exit(&ring);
+		return -1;
+	}
+
+	if(cqe->res<0){
+		io_uring_queue_exit(&ring);
+		return -1;
+	}
+
+	ssize_t bytes_read=cqe->res;
+
+	io_uring_prep_read(sqe, __fd, __buf, __nbytes, __offset);
+
+	io_uring_submit(&ring);
+
+	return bytes_read;
+}
+
+ssize_t io_uring_pwrite(int fd, const void* buf, size_t count,off_t pos){
+	struct io_uring ring;
+	if(io_uring_queue_init(4096, &ring, 0)<0){
+		perror("io_uring_queue_init_error");
+		return -1;
+	}
+
+	struct io_uring_sqe *sqe=io_uring_get_sqe(&ring);
+	if(!sqe){
+		io_uring_queue_exit(&ring);
+	}
+
+	io_uring_prep_write(sqe, fd, buf, count, pos);
+
+	if(io_uring_submit(&ring)<0){
+		io_uring_queue_exit(&ring);
+	}
+
+	struct io_uring_cqe *cqe;
+	int result=io_uring_wait_cqe(&ring, &cqe);
+
+	if(result<0){
+		io_uring_queue_exit(&ring);
+	}
+
+	result = cqe->res;
+
+	io_uring_cqe_seen(&ring, cqe);
+
+	io_uring_queue_exit(&ring);
+	
+	if(result<0){
+		errno=-result;
+		return -1;
+	}
+	return result;
+}
 
 namespace ROCKSDB_NAMESPACE {
 
@@ -141,8 +219,8 @@ bool PosixPositionedWrite(int fd, const char* buf, size_t nbyte, off_t offset) {
 
   while (left != 0) {
     size_t bytes_to_write = std::min(left, kLimit1Gb);
-
-    ssize_t done = pwrite(fd, src, bytes_to_write, offset);
+	ssize_t done=io_uring_pwrite(fd, src, bytes_to_write, offset); 
+    //ssize_t done = pwrite(fd, src, bytes_to_write, offset);
     if (done < 0) {
       if (errno == EINTR) {
         continue;
@@ -262,10 +340,11 @@ IOStatus PosixSequentialFile::PositionedRead(uint64_t offset, size_t n,
 
   IOStatus s;
   ssize_t r = -1;
-  size_t left = n;
+  size_t left = n;//남은 바이트 수?
   char* ptr = scratch;
   while (left > 0) {
-    r = pread(fd_, ptr, left, static_cast<off_t>(offset));
+	  r = io_uring_pread(fd_, ptr, left, static_cast<off_t>(offset));
+	//r = pread(fd_, ptr, left, static_cast<off_t>(offset));
     if (r <= 0) {
       if (r == -1 && errno == EINTR) {
         continue;
