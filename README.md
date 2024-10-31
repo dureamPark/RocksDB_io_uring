@@ -22,7 +22,17 @@ env/io_posix.cc파일에서 pread, pwrite 함수 구현 후 호출하는 부분�
 
 쓰기는 19-21초 사이.
 
+컴파일 및 빌드는 다음 명령어로 진행함.(해당 build 디렉토리에서 실행)
 
+cmake .. -DWITH_SNAPPY=ON
+
+make -j$(nproc)
+
+테스트 명령어는 다음과 같음.(해당 build 디렉토리에서 실행)
+
+./db_bench --benchmarks=fillrandom --num=1000000 --value_size=1024
+
+./db_bench --benchmarks=readrandom --num=1000000 --value_size=1024
 
 
 
