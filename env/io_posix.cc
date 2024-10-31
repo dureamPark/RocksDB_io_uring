@@ -42,7 +42,7 @@
 #include "util/autovector.h"
 #include "util/coding.h"
 #include "util/string_util.h"
-#include "../rocksdb/io_uring_pread.h"
+#include "../RocksDB_io_uring/io_uring_pread.h"
 #include <liburing.h>
 #include <stdexcept>
 
@@ -52,27 +52,28 @@
 #endif
 
 ssize_t io_uring_pread(int __fd, char *__buf, size_t __nbytes, off_t __offset){
-	io_uring ring;
+	struct io_uring ring;
 	io_uring_queue_init(4096, &ring, 0);
 
-	if(__fd<0 || __buf==NULL || __nbytes==0){
+	if(__fd<0 || __buf==NULL || __nbytes==0){//읽을 바이트나 버퍼가 없다면
+											 //에러발생.
 		errno=EINVAL;
 		return -1;
 	}
 
 	struct io_uring_sqe *sqe=io_uring_get_sqe(&ring);
-	if(!sqe){
+	if(!sqe){//진행할 io작업이 없으면 종료.
 		io_uring_queue_exit(&ring);
 		return -1;
 	}
 
 	struct io_uring_cqe *cqe;
-	if(io_uring_wait_cqe(&ring, &cqe)<0){
+	if(io_uring_wait_cqe(&ring, &cqe)<0){//기다릴 작업이 없으면 종료.
 		io_uring_queue_exit(&ring);
 		return -1;
 	}
 
-	if(cqe->res<0){
+	if(cqe->res<0){//작업 성공 시 cqe->res 양수 반환 실패 시 음수 반환.
 		io_uring_queue_exit(&ring);
 		return -1;
 	}
@@ -88,40 +89,55 @@ ssize_t io_uring_pread(int __fd, char *__buf, size_t __nbytes, off_t __offset){
 
 ssize_t io_uring_pwrite(int fd, const void* buf, size_t count,off_t pos){
 	struct io_uring ring;
-	if(io_uring_queue_init(4096, &ring, 0)<0){
-		perror("io_uring_queue_init_error");
+	io_uring_queue_init(4096, &ring, 0);
+
+	if( fd < 0 || buf == NULL || count == 0 ){
+		errno=EINVAL;
 		return -1;
 	}
+
+
+	//if(io_uring_queue_init(4096, &ring, 0)<0){
+	//	perror("io_uring_queue_init_error");
+	//	return -1;
+	//}
 
 	struct io_uring_sqe *sqe=io_uring_get_sqe(&ring);
 	if(!sqe){
 		io_uring_queue_exit(&ring);
+		return -1;
 	}
 
 	io_uring_prep_write(sqe, fd, buf, count, pos);
 
 	if(io_uring_submit(&ring)<0){
 		io_uring_queue_exit(&ring);
+		return -1;
 	}
 
 	struct io_uring_cqe *cqe;
-	int result=io_uring_wait_cqe(&ring, &cqe);
+	int result_test = io_uring_wait_cqe(&ring, &cqe);
 
-	if(result<0){
+	if(result_test < 0){
 		io_uring_queue_exit(&ring);
+		return -1;
 	}
 
-	result = cqe->res;
+	ssize_t write_bytes = cqe->res;
+	if(write_bytes < 0){
+		errno=write_bytes;
+		return -1;
+	}
 
 	io_uring_cqe_seen(&ring, cqe);
 
 	io_uring_queue_exit(&ring);
 	
-	if(result<0){
-		errno=-result;
-		return -1;
-	}
-	return result;
+	//if(write_bytes < 0){
+	//	errno=-write_bytes;
+	//	return -1;
+	//}
+	return write_bytes;
 }
 
 namespace ROCKSDB_NAMESPACE {
