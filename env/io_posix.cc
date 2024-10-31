@@ -67,6 +67,8 @@ ssize_t io_uring_pread(int __fd, char *__buf, size_t __nbytes, off_t __offset){
 		return -1;
 	}
 
+	io_uring_prep_read(sqe, __fd, __buf, __nbytes, __offset);
+
 	struct io_uring_cqe *cqe;
 	if(io_uring_wait_cqe(&ring, &cqe)<0){//기다릴 작업이 없으면 종료.
 		io_uring_queue_exit(&ring);
@@ -80,7 +82,7 @@ ssize_t io_uring_pread(int __fd, char *__buf, size_t __nbytes, off_t __offset){
 
 	ssize_t bytes_read=cqe->res;
 
-	io_uring_prep_read(sqe, __fd, __buf, __nbytes, __offset);
+	//io_uring_prep_read(sqe, __fd, __buf, __nbytes, __offset);
 
 	io_uring_submit(&ring);
 
