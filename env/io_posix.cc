@@ -51,14 +51,14 @@
 #define F_SET_RW_HINT (F_LINUX_SPECIFIC_BASE + 12)
 #endif
 
-bool isStart;
-int io_uring_pread_cnt;
-int io_uring_pwrite_cnt;
+bool isStart=false;
+struct io_uring ring;
+int io_uring_pread_cnt=1;
+int io_uring_pwrite_cnt=1;
 
 ssize_t io_uring_pread(int __fd, char *__buf, size_t __nbytes, off_t __offset){
-	struct io_uring ring;
 	io_uring_pread_cnt++;
-	if(isStart){
+	if(!isStart){
 		io_uring_queue_init(4096, &ring, 0);
 		isStart=true;
 	}
@@ -92,23 +92,28 @@ ssize_t io_uring_pread(int __fd, char *__buf, size_t __nbytes, off_t __offset){
 
 	//io_uring_prep_read(sqe, __fd, __buf, __nbytes, __offset);
 
-	if(io_uring_pread_cnt>100000){
+	if(io_uring_pread_cnt==1000000){
+		io_uring_cqe_seen(&ring, cqe);
 		io_uring_submit(&ring);
+		io_uring_queue_exit(&ring);
 	}
+	
+	io_uring_cqe_seen(&ring, cqe);
+	io_uring_submit(&ring);
 
 	return bytes_read;
 }
 
 ssize_t io_uring_pwrite(int fd, const void* buf, size_t count,off_t pos){
-	struct io_uring ring;
 	io_uring_pwrite_cnt++;
-	if(isStart){
+	if(!isStart){
 		io_uring_queue_init(4096, &ring, 0);
+		isStart=true;
 	}
-	if( fd < 0 || buf == NULL || count == 0 ){
-		errno=EINVAL;
-		return -1;
-	}
+	//if( fd < 0 || buf == NULL || count == 0 ){
+	//	errno=EINVAL;
+	//	return -1;
+	//}
 
 
 	//if(io_uring_queue_init(4096, &ring, 0)<0){
@@ -143,15 +148,22 @@ ssize_t io_uring_pwrite(int fd, const void* buf, size_t count,off_t pos){
 		return -1;
 	}
 
-	io_uring_cqe_seen(&ring, cqe);
+	//io_uring_cqe_seen(&ring, cqe);
 	
-	if(io_uring_pwrite_cnt>1000000){
+	if(io_uring_pwrite_cnt==1000000){
+		io_uring_cqe_seen(&ring, cqe);
 		io_uring_queue_exit(&ring);
+		io_uring_submit(&ring);
+		isStart=false;
 	}
 	//if(write_bytes < 0){
 	//	errno=-write_bytes;
 	//	return -1;
 	//}
+
+	io_uring_cqe_seen(&ring, cqe);
+	io_uring_submit(&ring);
+
 	return write_bytes;
 }
 
@@ -250,8 +262,8 @@ bool PosixPositionedWrite(int fd, const char* buf, size_t nbyte, off_t offset) {
 
   while (left != 0) {
     size_t bytes_to_write = std::min(left, kLimit1Gb);
-	ssize_t done=io_uring_pwrite(fd, src, bytes_to_write, offset); 
-    //ssize_t done = pwrite(fd, src, bytes_to_write, offset);
+	//ssize_t done=io_uring_pwrite(fd, src, bytes_to_write, offset); 
+    ssize_t done = pwrite(fd, src, bytes_to_write, offset);
     if (done < 0) {
       if (errno == EINTR) {
         continue;
@@ -374,8 +386,12 @@ IOStatus PosixSequentialFile::PositionedRead(uint64_t offset, size_t n,
   size_t left = n;//남은 바이트 수?
   char* ptr = scratch;
   while (left > 0) {
-	  r = io_uring_pread(fd_, ptr, left, static_cast<off_t>(offset));
-	//r = pread(fd_, ptr, left, static_cast<off_t>(offset));
+	  //if(isStart){
+		//	io_uring_queue_init(4096, &ring, 0);
+		//	isStart=true;
+	  //}
+	  //r = io_uring_pread(fd_, ptr, left, static_cast<off_t>(offset));
+	r = pread(fd_, ptr, left, static_cast<off_t>(offset));
     if (r <= 0) {
       if (r == -1 && errno == EINTR) {
         continue;

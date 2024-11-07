@@ -346,7 +346,7 @@ int main() {
 endif()
 
 if (WITH_LIBURING)
-  find_package(uring)
+  find_package(uring REQUIRED)
   if (uring_FOUND)
     add_definitions(-DROCKSDB_IOURING_PRESENT)
     list(APPEND THIRDPARTY_LIBS uring::uring)
