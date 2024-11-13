@@ -347,9 +347,11 @@ endif()
 
 if (WITH_LIBURING)
   find_package(uring REQUIRED)
+  add_definitions(-DROCKSDB_IOURING_PRESENT)
   if (uring_FOUND)
     add_definitions(-DROCKSDB_IOURING_PRESENT)
     list(APPEND THIRDPARTY_LIBS uring::uring)
+	include_directories(${LIBURING_INCLUDE_DIRS})
   endif()
 endif()
 
@@ -1594,9 +1596,10 @@ if(WITH_BENCHMARK_TOOLS)
     tools/simulated_hybrid_file_system.cc
     tools/db_bench.cc
     tools/db_bench_tool.cc)
-  target_link_libraries(db_bench${ARTIFACT_SUFFIX} PRIVATE
-    ${ROCKSDB_LIB} ${THIRDPARTY_LIBS})
-	if(uring_FOUND)
+  target_link_libraries(db_bench${ARTIFACT_SUFFIX} PRIVATE ${ROCKSDB_LIB} ${THIRDPARTY_LIBS})
+
+	if(WITH_LIBURING AND uring_FOUND)
+		add_definitions(-DROCKSDB_IOURING_PRESENT)
 		target_link_libraries(db_bench${ARTIFACT_SUFFIX} PRIVATE uring::uring)
 	endif()
 

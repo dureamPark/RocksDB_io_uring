@@ -20,6 +20,8 @@
 
 #if defined(ROCKSDB_IOURING_PRESENT)
 #include <liburing.h>
+ssize_t io_uring_pread(int __fd, char*__buf, size_t __nbytes, off_t __offset);
+ssize_t io_uring_pwrite(int fd, const void* buf, size_t count, off_t pos);
 #endif
 #include <pthread.h>
 #include <sys/mman.h>
