@@ -85,7 +85,7 @@ ssize_t io_uring_pread(int __fd, char *__buf, size_t __nbytes, off_t __offset){
 	//outfile.close();
 	io_uring_pread_cnt++;
 	printf("isStart->false\n");
-	io_uring_queue_init(4096, &ring, 0);
+	io_uring_queue_init(64, &ring, 0);
 	//if(!isStart){
 	//	io_uring_queue_init(32, &ring, 0);
 	//	isStart=true;
@@ -99,6 +99,8 @@ ssize_t io_uring_pread(int __fd, char *__buf, size_t __nbytes, off_t __offset){
 		return -1;
 	}
 	printf("io_uring_sqe ready\n");
+
+	io_uring_prep_read(sqe, __fd, __buf, __nbytes, __offset);
 
 	if(io_uring_submit(&ring)<0){
 		printf("io_uring_submit_failed\n");
@@ -122,8 +124,9 @@ ssize_t io_uring_pread(int __fd, char *__buf, size_t __nbytes, off_t __offset){
 	}
 
 	ssize_t bytes_read=cqe->res;
+	io_uring_cqe_seen(&ring, cqe);
 
-	io_uring_prep_read(sqe, __fd, __buf, __nbytes, __offset);
+	//io_uring_prep_read(sqe, __fd, __buf, __nbytes, __offset);
 	printf("io_uring_pread_cnt before\n");
 	//if(io_uring_pread_cnt==1000000){
 	//	io_uring_cqe_seen(&ring, cqe);
@@ -131,7 +134,7 @@ ssize_t io_uring_pread(int __fd, char *__buf, size_t __nbytes, off_t __offset){
 	//	io_uring_queue_exit(&ring);
 	//}
 	
-	io_uring_cqe_seen(&ring, cqe);
+	//io_uring_cqe_seen(&ring, cqe);
 	//io_uring_submit(&ring);
 	//printf("submit ring\n");
 	io_uring_queue_exit(&ring);
@@ -141,7 +144,7 @@ ssize_t io_uring_pread(int __fd, char *__buf, size_t __nbytes, off_t __offset){
 
 ssize_t io_uring_pwrite(int fd, const void* buf, size_t count,off_t pos){
 	printf("io uring pwrite using\n");
-	io_uring_queue_init(4096, &ring, 0);
+	io_uring_queue_init(64, &ring, 0);
 	io_uring_pwrite_cnt++;
 	//if(!isStart){
 	//	io_uring_queue_init(4096, &ring, 0);
