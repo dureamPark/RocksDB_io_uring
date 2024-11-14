@@ -85,11 +85,12 @@ ssize_t io_uring_pread(int __fd, char *__buf, size_t __nbytes, off_t __offset){
 	//outfile.close();
 	io_uring_pread_cnt++;
 	printf("isStart->false\n");
-	if(!isStart){
-		io_uring_queue_init(4096, &ring, 0);
-		isStart=true;
-		printf("isStart->true\n");
-	}
+	io_uring_queue_init(4096, &ring, 0);
+	//if(!isStart){
+	//	io_uring_queue_init(32, &ring, 0);
+	//	isStart=true;
+	//	printf("isStart->true\n");
+	//}
 
 
 	struct io_uring_sqe *sqe=io_uring_get_sqe(&ring);
@@ -124,25 +125,28 @@ ssize_t io_uring_pread(int __fd, char *__buf, size_t __nbytes, off_t __offset){
 
 	io_uring_prep_read(sqe, __fd, __buf, __nbytes, __offset);
 	printf("io_uring_pread_cnt before\n");
-	if(io_uring_pread_cnt==1000000){
-		io_uring_cqe_seen(&ring, cqe);
-		io_uring_submit(&ring);
-		io_uring_queue_exit(&ring);
-	}
+	//if(io_uring_pread_cnt==1000000){
+	//	io_uring_cqe_seen(&ring, cqe);
+	//	io_uring_submit(&ring);
+	//	io_uring_queue_exit(&ring);
+	//}
 	
 	io_uring_cqe_seen(&ring, cqe);
-	io_uring_submit(&ring);
-	printf("submit ring\n");
+	//io_uring_submit(&ring);
+	//printf("submit ring\n");
+	io_uring_queue_exit(&ring);
+	printf("io_uring_queue_exit\n");
 	return bytes_read;
 }
 
 ssize_t io_uring_pwrite(int fd, const void* buf, size_t count,off_t pos){
 	printf("io uring pwrite using\n");
+	io_uring_queue_init(4096, &ring, 0);
 	io_uring_pwrite_cnt++;
-	if(!isStart){
-		io_uring_queue_init(4096, &ring, 0);
-		isStart=true;
-	}
+	//if(!isStart){
+	//	io_uring_queue_init(4096, &ring, 0);
+	//	isStart=true;
+	//}
 	//if( fd < 0 || buf == NULL || count == 0 ){
 	//	errno=EINVAL;
 	//	return -1;
@@ -164,6 +168,7 @@ ssize_t io_uring_pwrite(int fd, const void* buf, size_t count,off_t pos){
 
 	if(io_uring_submit(&ring)<0){
 		//io_uring_queue_exit(&ring);
+		printf("submit_pwrite\n");
 		return -1;
 	}
 
@@ -177,26 +182,26 @@ ssize_t io_uring_pwrite(int fd, const void* buf, size_t count,off_t pos){
 
 	ssize_t write_bytes = cqe->res;
 	if(write_bytes < 0){
-		errno=write_bytes;
+		errno=-write_bytes;
 		return -1;
 	}
 
 	//io_uring_cqe_seen(&ring, cqe);
 	
-	if(io_uring_pwrite_cnt==1000000){
-		io_uring_cqe_seen(&ring, cqe);
-		io_uring_queue_exit(&ring);
-		io_uring_submit(&ring);
-		isStart=false;
-	}
+	//if(io_uring_pwrite_cnt==1000000){
+	//	io_uring_cqe_seen(&ring, cqe);
+	//	io_uring_queue_exit(&ring);
+	//	io_uring_submit(&ring);
+	//	isStart=false;
+	//}
 	//if(write_bytes < 0){
 	//	errno=-write_bytes;
 	//	return -1;
 	//}
 
 	io_uring_cqe_seen(&ring, cqe);
-	io_uring_submit(&ring);
-
+	//io_uring_submit(&ring);
+	io_uring_queue_exit(&ring);
 	return write_bytes;
 }
 #endif

@@ -57,23 +57,13 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/durim/d_test/rocksdb
+CMAKE_SOURCE_DIR = /home/durim/d_test/RocksDB_io_uring
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/durim/d_test/rocksdb/build_2048
+CMAKE_BINARY_DIR = /home/durim/d_test/RocksDB_io_uring/uringbuild
 
 #=============================================================================
 # Targets provided globally by CMake.
-
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-.PHONY : test/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -142,14 +132,14 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/durim/d_test/rocksdb/build_2048 && $(CMAKE_COMMAND) -E cmake_progress_start /home/durim/d_test/rocksdb/build_2048/CMakeFiles /home/durim/d_test/rocksdb/build_2048/third-party/gtest-1.8.1/fused-src/gtest//CMakeFiles/progress.marks
-	cd /home/durim/d_test/rocksdb/build_2048 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 third-party/gtest-1.8.1/fused-src/gtest/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/durim/d_test/rocksdb/build_2048/CMakeFiles 0
+	cd /home/durim/d_test/RocksDB_io_uring/uringbuild && $(CMAKE_COMMAND) -E cmake_progress_start /home/durim/d_test/RocksDB_io_uring/uringbuild/CMakeFiles /home/durim/d_test/RocksDB_io_uring/uringbuild/third-party/gtest-1.8.1/fused-src/gtest//CMakeFiles/progress.marks
+	cd /home/durim/d_test/RocksDB_io_uring/uringbuild && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 third-party/gtest-1.8.1/fused-src/gtest/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/durim/d_test/RocksDB_io_uring/uringbuild/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/durim/d_test/rocksdb/build_2048 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 third-party/gtest-1.8.1/fused-src/gtest/clean
+	cd /home/durim/d_test/RocksDB_io_uring/uringbuild && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 third-party/gtest-1.8.1/fused-src/gtest/clean
 .PHONY : clean
 
 # The main clean target
@@ -158,22 +148,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/durim/d_test/rocksdb/build_2048 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 third-party/gtest-1.8.1/fused-src/gtest/preinstall
+	cd /home/durim/d_test/RocksDB_io_uring/uringbuild && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 third-party/gtest-1.8.1/fused-src/gtest/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/durim/d_test/rocksdb/build_2048 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 third-party/gtest-1.8.1/fused-src/gtest/preinstall
+	cd /home/durim/d_test/RocksDB_io_uring/uringbuild && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 third-party/gtest-1.8.1/fused-src/gtest/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/durim/d_test/rocksdb/build_2048 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/durim/d_test/RocksDB_io_uring/uringbuild && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 third-party/gtest-1.8.1/fused-src/gtest/CMakeFiles/gtest.dir/rule:
-	cd /home/durim/d_test/rocksdb/build_2048 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 third-party/gtest-1.8.1/fused-src/gtest/CMakeFiles/gtest.dir/rule
+	cd /home/durim/d_test/RocksDB_io_uring/uringbuild && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 third-party/gtest-1.8.1/fused-src/gtest/CMakeFiles/gtest.dir/rule
 .PHONY : third-party/gtest-1.8.1/fused-src/gtest/CMakeFiles/gtest.dir/rule
 
 # Convenience name for target.
@@ -182,7 +172,7 @@ gtest: third-party/gtest-1.8.1/fused-src/gtest/CMakeFiles/gtest.dir/rule
 
 # fast build rule for target.
 gtest/fast:
-	cd /home/durim/d_test/rocksdb/build_2048 && $(MAKE) $(MAKESILENT) -f third-party/gtest-1.8.1/fused-src/gtest/CMakeFiles/gtest.dir/build.make third-party/gtest-1.8.1/fused-src/gtest/CMakeFiles/gtest.dir/build
+	cd /home/durim/d_test/RocksDB_io_uring/uringbuild && $(MAKE) $(MAKESILENT) -f third-party/gtest-1.8.1/fused-src/gtest/CMakeFiles/gtest.dir/build.make third-party/gtest-1.8.1/fused-src/gtest/CMakeFiles/gtest.dir/build
 .PHONY : gtest/fast
 
 gtest-all.o: gtest-all.cc.o
@@ -190,7 +180,7 @@ gtest-all.o: gtest-all.cc.o
 
 # target to build an object file
 gtest-all.cc.o:
-	cd /home/durim/d_test/rocksdb/build_2048 && $(MAKE) $(MAKESILENT) -f third-party/gtest-1.8.1/fused-src/gtest/CMakeFiles/gtest.dir/build.make third-party/gtest-1.8.1/fused-src/gtest/CMakeFiles/gtest.dir/gtest-all.cc.o
+	cd /home/durim/d_test/RocksDB_io_uring/uringbuild && $(MAKE) $(MAKESILENT) -f third-party/gtest-1.8.1/fused-src/gtest/CMakeFiles/gtest.dir/build.make third-party/gtest-1.8.1/fused-src/gtest/CMakeFiles/gtest.dir/gtest-all.cc.o
 .PHONY : gtest-all.cc.o
 
 gtest-all.i: gtest-all.cc.i
@@ -198,7 +188,7 @@ gtest-all.i: gtest-all.cc.i
 
 # target to preprocess a source file
 gtest-all.cc.i:
-	cd /home/durim/d_test/rocksdb/build_2048 && $(MAKE) $(MAKESILENT) -f third-party/gtest-1.8.1/fused-src/gtest/CMakeFiles/gtest.dir/build.make third-party/gtest-1.8.1/fused-src/gtest/CMakeFiles/gtest.dir/gtest-all.cc.i
+	cd /home/durim/d_test/RocksDB_io_uring/uringbuild && $(MAKE) $(MAKESILENT) -f third-party/gtest-1.8.1/fused-src/gtest/CMakeFiles/gtest.dir/build.make third-party/gtest-1.8.1/fused-src/gtest/CMakeFiles/gtest.dir/gtest-all.cc.i
 .PHONY : gtest-all.cc.i
 
 gtest-all.s: gtest-all.cc.s
@@ -206,7 +196,7 @@ gtest-all.s: gtest-all.cc.s
 
 # target to generate assembly for a file
 gtest-all.cc.s:
-	cd /home/durim/d_test/rocksdb/build_2048 && $(MAKE) $(MAKESILENT) -f third-party/gtest-1.8.1/fused-src/gtest/CMakeFiles/gtest.dir/build.make third-party/gtest-1.8.1/fused-src/gtest/CMakeFiles/gtest.dir/gtest-all.cc.s
+	cd /home/durim/d_test/RocksDB_io_uring/uringbuild && $(MAKE) $(MAKESILENT) -f third-party/gtest-1.8.1/fused-src/gtest/CMakeFiles/gtest.dir/build.make third-party/gtest-1.8.1/fused-src/gtest/CMakeFiles/gtest.dir/gtest-all.cc.s
 .PHONY : gtest-all.cc.s
 
 # Help Target
@@ -221,7 +211,6 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... test"
 	@echo "... gtest"
 	@echo "... gtest-all.o"
 	@echo "... gtest-all.i"
@@ -237,6 +226,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/durim/d_test/rocksdb/build_2048 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/durim/d_test/RocksDB_io_uring/uringbuild && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

@@ -60,20 +60,10 @@ EQUALS = =
 CMAKE_SOURCE_DIR = /home/durim/d_test/RocksDB_io_uring
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/durim/d_test/RocksDB_io_uring/build_vector
+CMAKE_BINARY_DIR = /home/durim/d_test/RocksDB_io_uring/uringbuild
 
 #=============================================================================
 # Targets provided globally by CMake.
-
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-.PHONY : test/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -142,9 +132,9 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/durim/d_test/RocksDB_io_uring/build_vector/CMakeFiles /home/durim/d_test/RocksDB_io_uring/build_vector//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/durim/d_test/RocksDB_io_uring/uringbuild/CMakeFiles /home/durim/d_test/RocksDB_io_uring/uringbuild//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/durim/d_test/RocksDB_io_uring/build_vector/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/durim/d_test/RocksDB_io_uring/uringbuild/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -209,2723 +199,6 @@ testharness: cmake_check_build_system
 testharness/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/testharness.dir/build.make CMakeFiles/testharness.dir/build
 .PHONY : testharness/fast
-
-#=============================================================================
-# Target rules for targets named rocksdb_check
-
-# Build rule for target.
-rocksdb_check: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 rocksdb_check
-.PHONY : rocksdb_check
-
-# fast build rule for target.
-rocksdb_check/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb_check.dir/build.make CMakeFiles/rocksdb_check.dir/build
-.PHONY : rocksdb_check/fast
-
-#=============================================================================
-# Target rules for targets named testutillib
-
-# Build rule for target.
-testutillib: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 testutillib
-.PHONY : testutillib
-
-# fast build rule for target.
-testutillib/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testutillib.dir/build.make CMakeFiles/testutillib.dir/build
-.PHONY : testutillib/fast
-
-#=============================================================================
-# Target rules for targets named db_basic_test
-
-# Build rule for target.
-db_basic_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 db_basic_test
-.PHONY : db_basic_test
-
-# fast build rule for target.
-db_basic_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_basic_test.dir/build.make CMakeFiles/db_basic_test.dir/build
-.PHONY : db_basic_test/fast
-
-#=============================================================================
-# Target rules for targets named env_basic_test
-
-# Build rule for target.
-env_basic_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 env_basic_test
-.PHONY : env_basic_test
-
-# fast build rule for target.
-env_basic_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/env_basic_test.dir/build.make CMakeFiles/env_basic_test.dir/build
-.PHONY : env_basic_test/fast
-
-#=============================================================================
-# Target rules for targets named cache_reservation_manager_test
-
-# Build rule for target.
-cache_reservation_manager_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cache_reservation_manager_test
-.PHONY : cache_reservation_manager_test
-
-# fast build rule for target.
-cache_reservation_manager_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cache_reservation_manager_test.dir/build.make CMakeFiles/cache_reservation_manager_test.dir/build
-.PHONY : cache_reservation_manager_test/fast
-
-#=============================================================================
-# Target rules for targets named cache_test
-
-# Build rule for target.
-cache_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cache_test
-.PHONY : cache_test
-
-# fast build rule for target.
-cache_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cache_test.dir/build.make CMakeFiles/cache_test.dir/build
-.PHONY : cache_test/fast
-
-#=============================================================================
-# Target rules for targets named compressed_secondary_cache_test
-
-# Build rule for target.
-compressed_secondary_cache_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 compressed_secondary_cache_test
-.PHONY : compressed_secondary_cache_test
-
-# fast build rule for target.
-compressed_secondary_cache_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/compressed_secondary_cache_test.dir/build.make CMakeFiles/compressed_secondary_cache_test.dir/build
-.PHONY : compressed_secondary_cache_test/fast
-
-#=============================================================================
-# Target rules for targets named lru_cache_test
-
-# Build rule for target.
-lru_cache_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lru_cache_test
-.PHONY : lru_cache_test
-
-# fast build rule for target.
-lru_cache_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lru_cache_test.dir/build.make CMakeFiles/lru_cache_test.dir/build
-.PHONY : lru_cache_test/fast
-
-#=============================================================================
-# Target rules for targets named tiered_secondary_cache_test
-
-# Build rule for target.
-tiered_secondary_cache_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tiered_secondary_cache_test
-.PHONY : tiered_secondary_cache_test
-
-# fast build rule for target.
-tiered_secondary_cache_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tiered_secondary_cache_test.dir/build.make CMakeFiles/tiered_secondary_cache_test.dir/build
-.PHONY : tiered_secondary_cache_test/fast
-
-#=============================================================================
-# Target rules for targets named blob_counting_iterator_test
-
-# Build rule for target.
-blob_counting_iterator_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 blob_counting_iterator_test
-.PHONY : blob_counting_iterator_test
-
-# fast build rule for target.
-blob_counting_iterator_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/blob_counting_iterator_test.dir/build.make CMakeFiles/blob_counting_iterator_test.dir/build
-.PHONY : blob_counting_iterator_test/fast
-
-#=============================================================================
-# Target rules for targets named blob_file_addition_test
-
-# Build rule for target.
-blob_file_addition_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 blob_file_addition_test
-.PHONY : blob_file_addition_test
-
-# fast build rule for target.
-blob_file_addition_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/blob_file_addition_test.dir/build.make CMakeFiles/blob_file_addition_test.dir/build
-.PHONY : blob_file_addition_test/fast
-
-#=============================================================================
-# Target rules for targets named blob_file_builder_test
-
-# Build rule for target.
-blob_file_builder_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 blob_file_builder_test
-.PHONY : blob_file_builder_test
-
-# fast build rule for target.
-blob_file_builder_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/blob_file_builder_test.dir/build.make CMakeFiles/blob_file_builder_test.dir/build
-.PHONY : blob_file_builder_test/fast
-
-#=============================================================================
-# Target rules for targets named blob_file_cache_test
-
-# Build rule for target.
-blob_file_cache_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 blob_file_cache_test
-.PHONY : blob_file_cache_test
-
-# fast build rule for target.
-blob_file_cache_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/blob_file_cache_test.dir/build.make CMakeFiles/blob_file_cache_test.dir/build
-.PHONY : blob_file_cache_test/fast
-
-#=============================================================================
-# Target rules for targets named blob_file_garbage_test
-
-# Build rule for target.
-blob_file_garbage_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 blob_file_garbage_test
-.PHONY : blob_file_garbage_test
-
-# fast build rule for target.
-blob_file_garbage_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/blob_file_garbage_test.dir/build.make CMakeFiles/blob_file_garbage_test.dir/build
-.PHONY : blob_file_garbage_test/fast
-
-#=============================================================================
-# Target rules for targets named blob_file_reader_test
-
-# Build rule for target.
-blob_file_reader_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 blob_file_reader_test
-.PHONY : blob_file_reader_test
-
-# fast build rule for target.
-blob_file_reader_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/blob_file_reader_test.dir/build.make CMakeFiles/blob_file_reader_test.dir/build
-.PHONY : blob_file_reader_test/fast
-
-#=============================================================================
-# Target rules for targets named blob_garbage_meter_test
-
-# Build rule for target.
-blob_garbage_meter_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 blob_garbage_meter_test
-.PHONY : blob_garbage_meter_test
-
-# fast build rule for target.
-blob_garbage_meter_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/blob_garbage_meter_test.dir/build.make CMakeFiles/blob_garbage_meter_test.dir/build
-.PHONY : blob_garbage_meter_test/fast
-
-#=============================================================================
-# Target rules for targets named blob_source_test
-
-# Build rule for target.
-blob_source_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 blob_source_test
-.PHONY : blob_source_test
-
-# fast build rule for target.
-blob_source_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/blob_source_test.dir/build.make CMakeFiles/blob_source_test.dir/build
-.PHONY : blob_source_test/fast
-
-#=============================================================================
-# Target rules for targets named db_blob_basic_test
-
-# Build rule for target.
-db_blob_basic_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 db_blob_basic_test
-.PHONY : db_blob_basic_test
-
-# fast build rule for target.
-db_blob_basic_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_blob_basic_test.dir/build.make CMakeFiles/db_blob_basic_test.dir/build
-.PHONY : db_blob_basic_test/fast
-
-#=============================================================================
-# Target rules for targets named db_blob_compaction_test
-
-# Build rule for target.
-db_blob_compaction_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 db_blob_compaction_test
-.PHONY : db_blob_compaction_test
-
-# fast build rule for target.
-db_blob_compaction_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_blob_compaction_test.dir/build.make CMakeFiles/db_blob_compaction_test.dir/build
-.PHONY : db_blob_compaction_test/fast
-
-#=============================================================================
-# Target rules for targets named db_blob_corruption_test
-
-# Build rule for target.
-db_blob_corruption_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 db_blob_corruption_test
-.PHONY : db_blob_corruption_test
-
-# fast build rule for target.
-db_blob_corruption_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_blob_corruption_test.dir/build.make CMakeFiles/db_blob_corruption_test.dir/build
-.PHONY : db_blob_corruption_test/fast
-
-#=============================================================================
-# Target rules for targets named db_blob_index_test
-
-# Build rule for target.
-db_blob_index_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 db_blob_index_test
-.PHONY : db_blob_index_test
-
-# fast build rule for target.
-db_blob_index_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_blob_index_test.dir/build.make CMakeFiles/db_blob_index_test.dir/build
-.PHONY : db_blob_index_test/fast
-
-#=============================================================================
-# Target rules for targets named column_family_test
-
-# Build rule for target.
-column_family_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 column_family_test
-.PHONY : column_family_test
-
-# fast build rule for target.
-column_family_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/column_family_test.dir/build.make CMakeFiles/column_family_test.dir/build
-.PHONY : column_family_test/fast
-
-#=============================================================================
-# Target rules for targets named compact_files_test
-
-# Build rule for target.
-compact_files_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 compact_files_test
-.PHONY : compact_files_test
-
-# fast build rule for target.
-compact_files_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/compact_files_test.dir/build.make CMakeFiles/compact_files_test.dir/build
-.PHONY : compact_files_test/fast
-
-#=============================================================================
-# Target rules for targets named clipping_iterator_test
-
-# Build rule for target.
-clipping_iterator_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 clipping_iterator_test
-.PHONY : clipping_iterator_test
-
-# fast build rule for target.
-clipping_iterator_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/clipping_iterator_test.dir/build.make CMakeFiles/clipping_iterator_test.dir/build
-.PHONY : clipping_iterator_test/fast
-
-#=============================================================================
-# Target rules for targets named compaction_job_stats_test
-
-# Build rule for target.
-compaction_job_stats_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 compaction_job_stats_test
-.PHONY : compaction_job_stats_test
-
-# fast build rule for target.
-compaction_job_stats_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/compaction_job_stats_test.dir/build.make CMakeFiles/compaction_job_stats_test.dir/build
-.PHONY : compaction_job_stats_test/fast
-
-#=============================================================================
-# Target rules for targets named compaction_job_test
-
-# Build rule for target.
-compaction_job_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 compaction_job_test
-.PHONY : compaction_job_test
-
-# fast build rule for target.
-compaction_job_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/compaction_job_test.dir/build.make CMakeFiles/compaction_job_test.dir/build
-.PHONY : compaction_job_test/fast
-
-#=============================================================================
-# Target rules for targets named compaction_iterator_test
-
-# Build rule for target.
-compaction_iterator_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 compaction_iterator_test
-.PHONY : compaction_iterator_test
-
-# fast build rule for target.
-compaction_iterator_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/compaction_iterator_test.dir/build.make CMakeFiles/compaction_iterator_test.dir/build
-.PHONY : compaction_iterator_test/fast
-
-#=============================================================================
-# Target rules for targets named compaction_picker_test
-
-# Build rule for target.
-compaction_picker_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 compaction_picker_test
-.PHONY : compaction_picker_test
-
-# fast build rule for target.
-compaction_picker_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/compaction_picker_test.dir/build.make CMakeFiles/compaction_picker_test.dir/build
-.PHONY : compaction_picker_test/fast
-
-#=============================================================================
-# Target rules for targets named compaction_service_test
-
-# Build rule for target.
-compaction_service_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 compaction_service_test
-.PHONY : compaction_service_test
-
-# fast build rule for target.
-compaction_service_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/compaction_service_test.dir/build.make CMakeFiles/compaction_service_test.dir/build
-.PHONY : compaction_service_test/fast
-
-#=============================================================================
-# Target rules for targets named tiered_compaction_test
-
-# Build rule for target.
-tiered_compaction_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tiered_compaction_test
-.PHONY : tiered_compaction_test
-
-# fast build rule for target.
-tiered_compaction_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tiered_compaction_test.dir/build.make CMakeFiles/tiered_compaction_test.dir/build
-.PHONY : tiered_compaction_test/fast
-
-#=============================================================================
-# Target rules for targets named comparator_db_test
-
-# Build rule for target.
-comparator_db_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 comparator_db_test
-.PHONY : comparator_db_test
-
-# fast build rule for target.
-comparator_db_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/comparator_db_test.dir/build.make CMakeFiles/comparator_db_test.dir/build
-.PHONY : comparator_db_test/fast
-
-#=============================================================================
-# Target rules for targets named corruption_test
-
-# Build rule for target.
-corruption_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 corruption_test
-.PHONY : corruption_test
-
-# fast build rule for target.
-corruption_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/corruption_test.dir/build.make CMakeFiles/corruption_test.dir/build
-.PHONY : corruption_test/fast
-
-#=============================================================================
-# Target rules for targets named cuckoo_table_db_test
-
-# Build rule for target.
-cuckoo_table_db_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cuckoo_table_db_test
-.PHONY : cuckoo_table_db_test
-
-# fast build rule for target.
-cuckoo_table_db_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cuckoo_table_db_test.dir/build.make CMakeFiles/cuckoo_table_db_test.dir/build
-.PHONY : cuckoo_table_db_test/fast
-
-#=============================================================================
-# Target rules for targets named db_readonly_with_timestamp_test
-
-# Build rule for target.
-db_readonly_with_timestamp_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 db_readonly_with_timestamp_test
-.PHONY : db_readonly_with_timestamp_test
-
-# fast build rule for target.
-db_readonly_with_timestamp_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_readonly_with_timestamp_test.dir/build.make CMakeFiles/db_readonly_with_timestamp_test.dir/build
-.PHONY : db_readonly_with_timestamp_test/fast
-
-#=============================================================================
-# Target rules for targets named db_with_timestamp_basic_test
-
-# Build rule for target.
-db_with_timestamp_basic_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 db_with_timestamp_basic_test
-.PHONY : db_with_timestamp_basic_test
-
-# fast build rule for target.
-db_with_timestamp_basic_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_with_timestamp_basic_test.dir/build.make CMakeFiles/db_with_timestamp_basic_test.dir/build
-.PHONY : db_with_timestamp_basic_test/fast
-
-#=============================================================================
-# Target rules for targets named db_block_cache_test
-
-# Build rule for target.
-db_block_cache_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 db_block_cache_test
-.PHONY : db_block_cache_test
-
-# fast build rule for target.
-db_block_cache_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_block_cache_test.dir/build.make CMakeFiles/db_block_cache_test.dir/build
-.PHONY : db_block_cache_test/fast
-
-#=============================================================================
-# Target rules for targets named db_bloom_filter_test
-
-# Build rule for target.
-db_bloom_filter_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 db_bloom_filter_test
-.PHONY : db_bloom_filter_test
-
-# fast build rule for target.
-db_bloom_filter_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_bloom_filter_test.dir/build.make CMakeFiles/db_bloom_filter_test.dir/build
-.PHONY : db_bloom_filter_test/fast
-
-#=============================================================================
-# Target rules for targets named db_compaction_filter_test
-
-# Build rule for target.
-db_compaction_filter_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 db_compaction_filter_test
-.PHONY : db_compaction_filter_test
-
-# fast build rule for target.
-db_compaction_filter_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_compaction_filter_test.dir/build.make CMakeFiles/db_compaction_filter_test.dir/build
-.PHONY : db_compaction_filter_test/fast
-
-#=============================================================================
-# Target rules for targets named db_compaction_test
-
-# Build rule for target.
-db_compaction_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 db_compaction_test
-.PHONY : db_compaction_test
-
-# fast build rule for target.
-db_compaction_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_compaction_test.dir/build.make CMakeFiles/db_compaction_test.dir/build
-.PHONY : db_compaction_test/fast
-
-#=============================================================================
-# Target rules for targets named db_clip_test
-
-# Build rule for target.
-db_clip_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 db_clip_test
-.PHONY : db_clip_test
-
-# fast build rule for target.
-db_clip_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_clip_test.dir/build.make CMakeFiles/db_clip_test.dir/build
-.PHONY : db_clip_test/fast
-
-#=============================================================================
-# Target rules for targets named db_dynamic_level_test
-
-# Build rule for target.
-db_dynamic_level_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 db_dynamic_level_test
-.PHONY : db_dynamic_level_test
-
-# fast build rule for target.
-db_dynamic_level_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_dynamic_level_test.dir/build.make CMakeFiles/db_dynamic_level_test.dir/build
-.PHONY : db_dynamic_level_test/fast
-
-#=============================================================================
-# Target rules for targets named db_encryption_test
-
-# Build rule for target.
-db_encryption_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 db_encryption_test
-.PHONY : db_encryption_test
-
-# fast build rule for target.
-db_encryption_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_encryption_test.dir/build.make CMakeFiles/db_encryption_test.dir/build
-.PHONY : db_encryption_test/fast
-
-#=============================================================================
-# Target rules for targets named db_flush_test
-
-# Build rule for target.
-db_flush_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 db_flush_test
-.PHONY : db_flush_test
-
-# fast build rule for target.
-db_flush_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_flush_test.dir/build.make CMakeFiles/db_flush_test.dir/build
-.PHONY : db_flush_test/fast
-
-#=============================================================================
-# Target rules for targets named db_inplace_update_test
-
-# Build rule for target.
-db_inplace_update_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 db_inplace_update_test
-.PHONY : db_inplace_update_test
-
-# fast build rule for target.
-db_inplace_update_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_inplace_update_test.dir/build.make CMakeFiles/db_inplace_update_test.dir/build
-.PHONY : db_inplace_update_test/fast
-
-#=============================================================================
-# Target rules for targets named db_io_failure_test
-
-# Build rule for target.
-db_io_failure_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 db_io_failure_test
-.PHONY : db_io_failure_test
-
-# fast build rule for target.
-db_io_failure_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_io_failure_test.dir/build.make CMakeFiles/db_io_failure_test.dir/build
-.PHONY : db_io_failure_test/fast
-
-#=============================================================================
-# Target rules for targets named db_iter_test
-
-# Build rule for target.
-db_iter_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 db_iter_test
-.PHONY : db_iter_test
-
-# fast build rule for target.
-db_iter_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_iter_test.dir/build.make CMakeFiles/db_iter_test.dir/build
-.PHONY : db_iter_test/fast
-
-#=============================================================================
-# Target rules for targets named db_iter_stress_test
-
-# Build rule for target.
-db_iter_stress_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 db_iter_stress_test
-.PHONY : db_iter_stress_test
-
-# fast build rule for target.
-db_iter_stress_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_iter_stress_test.dir/build.make CMakeFiles/db_iter_stress_test.dir/build
-.PHONY : db_iter_stress_test/fast
-
-#=============================================================================
-# Target rules for targets named db_iterator_test
-
-# Build rule for target.
-db_iterator_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 db_iterator_test
-.PHONY : db_iterator_test
-
-# fast build rule for target.
-db_iterator_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_iterator_test.dir/build.make CMakeFiles/db_iterator_test.dir/build
-.PHONY : db_iterator_test/fast
-
-#=============================================================================
-# Target rules for targets named db_kv_checksum_test
-
-# Build rule for target.
-db_kv_checksum_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 db_kv_checksum_test
-.PHONY : db_kv_checksum_test
-
-# fast build rule for target.
-db_kv_checksum_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_kv_checksum_test.dir/build.make CMakeFiles/db_kv_checksum_test.dir/build
-.PHONY : db_kv_checksum_test/fast
-
-#=============================================================================
-# Target rules for targets named db_log_iter_test
-
-# Build rule for target.
-db_log_iter_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 db_log_iter_test
-.PHONY : db_log_iter_test
-
-# fast build rule for target.
-db_log_iter_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_log_iter_test.dir/build.make CMakeFiles/db_log_iter_test.dir/build
-.PHONY : db_log_iter_test/fast
-
-#=============================================================================
-# Target rules for targets named db_memtable_test
-
-# Build rule for target.
-db_memtable_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 db_memtable_test
-.PHONY : db_memtable_test
-
-# fast build rule for target.
-db_memtable_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_memtable_test.dir/build.make CMakeFiles/db_memtable_test.dir/build
-.PHONY : db_memtable_test/fast
-
-#=============================================================================
-# Target rules for targets named db_merge_operator_test
-
-# Build rule for target.
-db_merge_operator_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 db_merge_operator_test
-.PHONY : db_merge_operator_test
-
-# fast build rule for target.
-db_merge_operator_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_merge_operator_test.dir/build.make CMakeFiles/db_merge_operator_test.dir/build
-.PHONY : db_merge_operator_test/fast
-
-#=============================================================================
-# Target rules for targets named db_merge_operand_test
-
-# Build rule for target.
-db_merge_operand_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 db_merge_operand_test
-.PHONY : db_merge_operand_test
-
-# fast build rule for target.
-db_merge_operand_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_merge_operand_test.dir/build.make CMakeFiles/db_merge_operand_test.dir/build
-.PHONY : db_merge_operand_test/fast
-
-#=============================================================================
-# Target rules for targets named db_options_test
-
-# Build rule for target.
-db_options_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 db_options_test
-.PHONY : db_options_test
-
-# fast build rule for target.
-db_options_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_options_test.dir/build.make CMakeFiles/db_options_test.dir/build
-.PHONY : db_options_test/fast
-
-#=============================================================================
-# Target rules for targets named db_properties_test
-
-# Build rule for target.
-db_properties_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 db_properties_test
-.PHONY : db_properties_test
-
-# fast build rule for target.
-db_properties_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_properties_test.dir/build.make CMakeFiles/db_properties_test.dir/build
-.PHONY : db_properties_test/fast
-
-#=============================================================================
-# Target rules for targets named db_range_del_test
-
-# Build rule for target.
-db_range_del_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 db_range_del_test
-.PHONY : db_range_del_test
-
-# fast build rule for target.
-db_range_del_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_range_del_test.dir/build.make CMakeFiles/db_range_del_test.dir/build
-.PHONY : db_range_del_test/fast
-
-#=============================================================================
-# Target rules for targets named db_rate_limiter_test
-
-# Build rule for target.
-db_rate_limiter_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 db_rate_limiter_test
-.PHONY : db_rate_limiter_test
-
-# fast build rule for target.
-db_rate_limiter_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_rate_limiter_test.dir/build.make CMakeFiles/db_rate_limiter_test.dir/build
-.PHONY : db_rate_limiter_test/fast
-
-#=============================================================================
-# Target rules for targets named db_secondary_test
-
-# Build rule for target.
-db_secondary_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 db_secondary_test
-.PHONY : db_secondary_test
-
-# fast build rule for target.
-db_secondary_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_secondary_test.dir/build.make CMakeFiles/db_secondary_test.dir/build
-.PHONY : db_secondary_test/fast
-
-#=============================================================================
-# Target rules for targets named db_sst_test
-
-# Build rule for target.
-db_sst_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 db_sst_test
-.PHONY : db_sst_test
-
-# fast build rule for target.
-db_sst_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_sst_test.dir/build.make CMakeFiles/db_sst_test.dir/build
-.PHONY : db_sst_test/fast
-
-#=============================================================================
-# Target rules for targets named db_statistics_test
-
-# Build rule for target.
-db_statistics_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 db_statistics_test
-.PHONY : db_statistics_test
-
-# fast build rule for target.
-db_statistics_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_statistics_test.dir/build.make CMakeFiles/db_statistics_test.dir/build
-.PHONY : db_statistics_test/fast
-
-#=============================================================================
-# Target rules for targets named db_table_properties_test
-
-# Build rule for target.
-db_table_properties_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 db_table_properties_test
-.PHONY : db_table_properties_test
-
-# fast build rule for target.
-db_table_properties_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_table_properties_test.dir/build.make CMakeFiles/db_table_properties_test.dir/build
-.PHONY : db_table_properties_test/fast
-
-#=============================================================================
-# Target rules for targets named db_tailing_iter_test
-
-# Build rule for target.
-db_tailing_iter_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 db_tailing_iter_test
-.PHONY : db_tailing_iter_test
-
-# fast build rule for target.
-db_tailing_iter_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_tailing_iter_test.dir/build.make CMakeFiles/db_tailing_iter_test.dir/build
-.PHONY : db_tailing_iter_test/fast
-
-#=============================================================================
-# Target rules for targets named db_test
-
-# Build rule for target.
-db_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 db_test
-.PHONY : db_test
-
-# fast build rule for target.
-db_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_test.dir/build.make CMakeFiles/db_test.dir/build
-.PHONY : db_test/fast
-
-#=============================================================================
-# Target rules for targets named db_test2
-
-# Build rule for target.
-db_test2: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 db_test2
-.PHONY : db_test2
-
-# fast build rule for target.
-db_test2/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_test2.dir/build.make CMakeFiles/db_test2.dir/build
-.PHONY : db_test2/fast
-
-#=============================================================================
-# Target rules for targets named db_logical_block_size_cache_test
-
-# Build rule for target.
-db_logical_block_size_cache_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 db_logical_block_size_cache_test
-.PHONY : db_logical_block_size_cache_test
-
-# fast build rule for target.
-db_logical_block_size_cache_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_logical_block_size_cache_test.dir/build.make CMakeFiles/db_logical_block_size_cache_test.dir/build
-.PHONY : db_logical_block_size_cache_test/fast
-
-#=============================================================================
-# Target rules for targets named db_universal_compaction_test
-
-# Build rule for target.
-db_universal_compaction_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 db_universal_compaction_test
-.PHONY : db_universal_compaction_test
-
-# fast build rule for target.
-db_universal_compaction_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_universal_compaction_test.dir/build.make CMakeFiles/db_universal_compaction_test.dir/build
-.PHONY : db_universal_compaction_test/fast
-
-#=============================================================================
-# Target rules for targets named db_wal_test
-
-# Build rule for target.
-db_wal_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 db_wal_test
-.PHONY : db_wal_test
-
-# fast build rule for target.
-db_wal_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_wal_test.dir/build.make CMakeFiles/db_wal_test.dir/build
-.PHONY : db_wal_test/fast
-
-#=============================================================================
-# Target rules for targets named db_with_timestamp_compaction_test
-
-# Build rule for target.
-db_with_timestamp_compaction_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 db_with_timestamp_compaction_test
-.PHONY : db_with_timestamp_compaction_test
-
-# fast build rule for target.
-db_with_timestamp_compaction_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_with_timestamp_compaction_test.dir/build.make CMakeFiles/db_with_timestamp_compaction_test.dir/build
-.PHONY : db_with_timestamp_compaction_test/fast
-
-#=============================================================================
-# Target rules for targets named db_write_buffer_manager_test
-
-# Build rule for target.
-db_write_buffer_manager_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 db_write_buffer_manager_test
-.PHONY : db_write_buffer_manager_test
-
-# fast build rule for target.
-db_write_buffer_manager_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_write_buffer_manager_test.dir/build.make CMakeFiles/db_write_buffer_manager_test.dir/build
-.PHONY : db_write_buffer_manager_test/fast
-
-#=============================================================================
-# Target rules for targets named db_write_test
-
-# Build rule for target.
-db_write_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 db_write_test
-.PHONY : db_write_test
-
-# fast build rule for target.
-db_write_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_write_test.dir/build.make CMakeFiles/db_write_test.dir/build
-.PHONY : db_write_test/fast
-
-#=============================================================================
-# Target rules for targets named dbformat_test
-
-# Build rule for target.
-dbformat_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dbformat_test
-.PHONY : dbformat_test
-
-# fast build rule for target.
-dbformat_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/dbformat_test.dir/build.make CMakeFiles/dbformat_test.dir/build
-.PHONY : dbformat_test/fast
-
-#=============================================================================
-# Target rules for targets named deletefile_test
-
-# Build rule for target.
-deletefile_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 deletefile_test
-.PHONY : deletefile_test
-
-# fast build rule for target.
-deletefile_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/deletefile_test.dir/build.make CMakeFiles/deletefile_test.dir/build
-.PHONY : deletefile_test/fast
-
-#=============================================================================
-# Target rules for targets named error_handler_fs_test
-
-# Build rule for target.
-error_handler_fs_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 error_handler_fs_test
-.PHONY : error_handler_fs_test
-
-# fast build rule for target.
-error_handler_fs_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/error_handler_fs_test.dir/build.make CMakeFiles/error_handler_fs_test.dir/build
-.PHONY : error_handler_fs_test/fast
-
-#=============================================================================
-# Target rules for targets named obsolete_files_test
-
-# Build rule for target.
-obsolete_files_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 obsolete_files_test
-.PHONY : obsolete_files_test
-
-# fast build rule for target.
-obsolete_files_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/obsolete_files_test.dir/build.make CMakeFiles/obsolete_files_test.dir/build
-.PHONY : obsolete_files_test/fast
-
-#=============================================================================
-# Target rules for targets named external_sst_file_basic_test
-
-# Build rule for target.
-external_sst_file_basic_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external_sst_file_basic_test
-.PHONY : external_sst_file_basic_test
-
-# fast build rule for target.
-external_sst_file_basic_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/external_sst_file_basic_test.dir/build.make CMakeFiles/external_sst_file_basic_test.dir/build
-.PHONY : external_sst_file_basic_test/fast
-
-#=============================================================================
-# Target rules for targets named external_sst_file_test
-
-# Build rule for target.
-external_sst_file_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external_sst_file_test
-.PHONY : external_sst_file_test
-
-# fast build rule for target.
-external_sst_file_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/external_sst_file_test.dir/build.make CMakeFiles/external_sst_file_test.dir/build
-.PHONY : external_sst_file_test/fast
-
-#=============================================================================
-# Target rules for targets named fault_injection_test
-
-# Build rule for target.
-fault_injection_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 fault_injection_test
-.PHONY : fault_injection_test
-
-# fast build rule for target.
-fault_injection_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fault_injection_test.dir/build.make CMakeFiles/fault_injection_test.dir/build
-.PHONY : fault_injection_test/fast
-
-#=============================================================================
-# Target rules for targets named file_indexer_test
-
-# Build rule for target.
-file_indexer_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 file_indexer_test
-.PHONY : file_indexer_test
-
-# fast build rule for target.
-file_indexer_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/file_indexer_test.dir/build.make CMakeFiles/file_indexer_test.dir/build
-.PHONY : file_indexer_test/fast
-
-#=============================================================================
-# Target rules for targets named filename_test
-
-# Build rule for target.
-filename_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 filename_test
-.PHONY : filename_test
-
-# fast build rule for target.
-filename_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/filename_test.dir/build.make CMakeFiles/filename_test.dir/build
-.PHONY : filename_test/fast
-
-#=============================================================================
-# Target rules for targets named flush_job_test
-
-# Build rule for target.
-flush_job_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 flush_job_test
-.PHONY : flush_job_test
-
-# fast build rule for target.
-flush_job_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/flush_job_test.dir/build.make CMakeFiles/flush_job_test.dir/build
-.PHONY : flush_job_test/fast
-
-#=============================================================================
-# Target rules for targets named db_follower_test
-
-# Build rule for target.
-db_follower_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 db_follower_test
-.PHONY : db_follower_test
-
-# fast build rule for target.
-db_follower_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_follower_test.dir/build.make CMakeFiles/db_follower_test.dir/build
-.PHONY : db_follower_test/fast
-
-#=============================================================================
-# Target rules for targets named import_column_family_test
-
-# Build rule for target.
-import_column_family_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 import_column_family_test
-.PHONY : import_column_family_test
-
-# fast build rule for target.
-import_column_family_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/import_column_family_test.dir/build.make CMakeFiles/import_column_family_test.dir/build
-.PHONY : import_column_family_test/fast
-
-#=============================================================================
-# Target rules for targets named listener_test
-
-# Build rule for target.
-listener_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 listener_test
-.PHONY : listener_test
-
-# fast build rule for target.
-listener_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/listener_test.dir/build.make CMakeFiles/listener_test.dir/build
-.PHONY : listener_test/fast
-
-#=============================================================================
-# Target rules for targets named log_test
-
-# Build rule for target.
-log_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 log_test
-.PHONY : log_test
-
-# fast build rule for target.
-log_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/log_test.dir/build.make CMakeFiles/log_test.dir/build
-.PHONY : log_test/fast
-
-#=============================================================================
-# Target rules for targets named manual_compaction_test
-
-# Build rule for target.
-manual_compaction_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 manual_compaction_test
-.PHONY : manual_compaction_test
-
-# fast build rule for target.
-manual_compaction_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/manual_compaction_test.dir/build.make CMakeFiles/manual_compaction_test.dir/build
-.PHONY : manual_compaction_test/fast
-
-#=============================================================================
-# Target rules for targets named memtable_list_test
-
-# Build rule for target.
-memtable_list_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 memtable_list_test
-.PHONY : memtable_list_test
-
-# fast build rule for target.
-memtable_list_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/memtable_list_test.dir/build.make CMakeFiles/memtable_list_test.dir/build
-.PHONY : memtable_list_test/fast
-
-#=============================================================================
-# Target rules for targets named merge_helper_test
-
-# Build rule for target.
-merge_helper_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 merge_helper_test
-.PHONY : merge_helper_test
-
-# fast build rule for target.
-merge_helper_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/merge_helper_test.dir/build.make CMakeFiles/merge_helper_test.dir/build
-.PHONY : merge_helper_test/fast
-
-#=============================================================================
-# Target rules for targets named merge_test
-
-# Build rule for target.
-merge_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 merge_test
-.PHONY : merge_test
-
-# fast build rule for target.
-merge_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/merge_test.dir/build.make CMakeFiles/merge_test.dir/build
-.PHONY : merge_test/fast
-
-#=============================================================================
-# Target rules for targets named multi_cf_iterator_test
-
-# Build rule for target.
-multi_cf_iterator_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 multi_cf_iterator_test
-.PHONY : multi_cf_iterator_test
-
-# fast build rule for target.
-multi_cf_iterator_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/multi_cf_iterator_test.dir/build.make CMakeFiles/multi_cf_iterator_test.dir/build
-.PHONY : multi_cf_iterator_test/fast
-
-#=============================================================================
-# Target rules for targets named options_file_test
-
-# Build rule for target.
-options_file_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 options_file_test
-.PHONY : options_file_test
-
-# fast build rule for target.
-options_file_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/options_file_test.dir/build.make CMakeFiles/options_file_test.dir/build
-.PHONY : options_file_test/fast
-
-#=============================================================================
-# Target rules for targets named perf_context_test
-
-# Build rule for target.
-perf_context_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 perf_context_test
-.PHONY : perf_context_test
-
-# fast build rule for target.
-perf_context_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/perf_context_test.dir/build.make CMakeFiles/perf_context_test.dir/build
-.PHONY : perf_context_test/fast
-
-#=============================================================================
-# Target rules for targets named periodic_task_scheduler_test
-
-# Build rule for target.
-periodic_task_scheduler_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 periodic_task_scheduler_test
-.PHONY : periodic_task_scheduler_test
-
-# fast build rule for target.
-periodic_task_scheduler_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/periodic_task_scheduler_test.dir/build.make CMakeFiles/periodic_task_scheduler_test.dir/build
-.PHONY : periodic_task_scheduler_test/fast
-
-#=============================================================================
-# Target rules for targets named plain_table_db_test
-
-# Build rule for target.
-plain_table_db_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 plain_table_db_test
-.PHONY : plain_table_db_test
-
-# fast build rule for target.
-plain_table_db_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/plain_table_db_test.dir/build.make CMakeFiles/plain_table_db_test.dir/build
-.PHONY : plain_table_db_test/fast
-
-#=============================================================================
-# Target rules for targets named seqno_time_test
-
-# Build rule for target.
-seqno_time_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 seqno_time_test
-.PHONY : seqno_time_test
-
-# fast build rule for target.
-seqno_time_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/seqno_time_test.dir/build.make CMakeFiles/seqno_time_test.dir/build
-.PHONY : seqno_time_test/fast
-
-#=============================================================================
-# Target rules for targets named prefix_test
-
-# Build rule for target.
-prefix_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 prefix_test
-.PHONY : prefix_test
-
-# fast build rule for target.
-prefix_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/prefix_test.dir/build.make CMakeFiles/prefix_test.dir/build
-.PHONY : prefix_test/fast
-
-#=============================================================================
-# Target rules for targets named range_del_aggregator_test
-
-# Build rule for target.
-range_del_aggregator_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 range_del_aggregator_test
-.PHONY : range_del_aggregator_test
-
-# fast build rule for target.
-range_del_aggregator_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/range_del_aggregator_test.dir/build.make CMakeFiles/range_del_aggregator_test.dir/build
-.PHONY : range_del_aggregator_test/fast
-
-#=============================================================================
-# Target rules for targets named range_tombstone_fragmenter_test
-
-# Build rule for target.
-range_tombstone_fragmenter_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 range_tombstone_fragmenter_test
-.PHONY : range_tombstone_fragmenter_test
-
-# fast build rule for target.
-range_tombstone_fragmenter_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/range_tombstone_fragmenter_test.dir/build.make CMakeFiles/range_tombstone_fragmenter_test.dir/build
-.PHONY : range_tombstone_fragmenter_test/fast
-
-#=============================================================================
-# Target rules for targets named repair_test
-
-# Build rule for target.
-repair_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 repair_test
-.PHONY : repair_test
-
-# fast build rule for target.
-repair_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/repair_test.dir/build.make CMakeFiles/repair_test.dir/build
-.PHONY : repair_test/fast
-
-#=============================================================================
-# Target rules for targets named table_properties_collector_test
-
-# Build rule for target.
-table_properties_collector_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 table_properties_collector_test
-.PHONY : table_properties_collector_test
-
-# fast build rule for target.
-table_properties_collector_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/table_properties_collector_test.dir/build.make CMakeFiles/table_properties_collector_test.dir/build
-.PHONY : table_properties_collector_test/fast
-
-#=============================================================================
-# Target rules for targets named version_builder_test
-
-# Build rule for target.
-version_builder_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 version_builder_test
-.PHONY : version_builder_test
-
-# fast build rule for target.
-version_builder_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/version_builder_test.dir/build.make CMakeFiles/version_builder_test.dir/build
-.PHONY : version_builder_test/fast
-
-#=============================================================================
-# Target rules for targets named version_edit_test
-
-# Build rule for target.
-version_edit_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 version_edit_test
-.PHONY : version_edit_test
-
-# fast build rule for target.
-version_edit_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/version_edit_test.dir/build.make CMakeFiles/version_edit_test.dir/build
-.PHONY : version_edit_test/fast
-
-#=============================================================================
-# Target rules for targets named version_set_test
-
-# Build rule for target.
-version_set_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 version_set_test
-.PHONY : version_set_test
-
-# fast build rule for target.
-version_set_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/version_set_test.dir/build.make CMakeFiles/version_set_test.dir/build
-.PHONY : version_set_test/fast
-
-#=============================================================================
-# Target rules for targets named wal_manager_test
-
-# Build rule for target.
-wal_manager_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 wal_manager_test
-.PHONY : wal_manager_test
-
-# fast build rule for target.
-wal_manager_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/wal_manager_test.dir/build.make CMakeFiles/wal_manager_test.dir/build
-.PHONY : wal_manager_test/fast
-
-#=============================================================================
-# Target rules for targets named wal_edit_test
-
-# Build rule for target.
-wal_edit_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 wal_edit_test
-.PHONY : wal_edit_test
-
-# fast build rule for target.
-wal_edit_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/wal_edit_test.dir/build.make CMakeFiles/wal_edit_test.dir/build
-.PHONY : wal_edit_test/fast
-
-#=============================================================================
-# Target rules for targets named db_wide_basic_test
-
-# Build rule for target.
-db_wide_basic_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 db_wide_basic_test
-.PHONY : db_wide_basic_test
-
-# fast build rule for target.
-db_wide_basic_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_wide_basic_test.dir/build.make CMakeFiles/db_wide_basic_test.dir/build
-.PHONY : db_wide_basic_test/fast
-
-#=============================================================================
-# Target rules for targets named wide_column_serialization_test
-
-# Build rule for target.
-wide_column_serialization_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 wide_column_serialization_test
-.PHONY : wide_column_serialization_test
-
-# fast build rule for target.
-wide_column_serialization_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/wide_column_serialization_test.dir/build.make CMakeFiles/wide_column_serialization_test.dir/build
-.PHONY : wide_column_serialization_test/fast
-
-#=============================================================================
-# Target rules for targets named wide_columns_helper_test
-
-# Build rule for target.
-wide_columns_helper_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 wide_columns_helper_test
-.PHONY : wide_columns_helper_test
-
-# fast build rule for target.
-wide_columns_helper_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/wide_columns_helper_test.dir/build.make CMakeFiles/wide_columns_helper_test.dir/build
-.PHONY : wide_columns_helper_test/fast
-
-#=============================================================================
-# Target rules for targets named write_batch_test
-
-# Build rule for target.
-write_batch_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 write_batch_test
-.PHONY : write_batch_test
-
-# fast build rule for target.
-write_batch_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/write_batch_test.dir/build.make CMakeFiles/write_batch_test.dir/build
-.PHONY : write_batch_test/fast
-
-#=============================================================================
-# Target rules for targets named write_callback_test
-
-# Build rule for target.
-write_callback_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 write_callback_test
-.PHONY : write_callback_test
-
-# fast build rule for target.
-write_callback_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/write_callback_test.dir/build.make CMakeFiles/write_callback_test.dir/build
-.PHONY : write_callback_test/fast
-
-#=============================================================================
-# Target rules for targets named write_controller_test
-
-# Build rule for target.
-write_controller_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 write_controller_test
-.PHONY : write_controller_test
-
-# fast build rule for target.
-write_controller_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/write_controller_test.dir/build.make CMakeFiles/write_controller_test.dir/build
-.PHONY : write_controller_test/fast
-
-#=============================================================================
-# Target rules for targets named env_test
-
-# Build rule for target.
-env_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 env_test
-.PHONY : env_test
-
-# fast build rule for target.
-env_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/env_test.dir/build.make CMakeFiles/env_test.dir/build
-.PHONY : env_test/fast
-
-#=============================================================================
-# Target rules for targets named io_posix_test
-
-# Build rule for target.
-io_posix_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 io_posix_test
-.PHONY : io_posix_test
-
-# fast build rule for target.
-io_posix_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/io_posix_test.dir/build.make CMakeFiles/io_posix_test.dir/build
-.PHONY : io_posix_test/fast
-
-#=============================================================================
-# Target rules for targets named mock_env_test
-
-# Build rule for target.
-mock_env_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 mock_env_test
-.PHONY : mock_env_test
-
-# fast build rule for target.
-mock_env_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mock_env_test.dir/build.make CMakeFiles/mock_env_test.dir/build
-.PHONY : mock_env_test/fast
-
-#=============================================================================
-# Target rules for targets named delete_scheduler_test
-
-# Build rule for target.
-delete_scheduler_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 delete_scheduler_test
-.PHONY : delete_scheduler_test
-
-# fast build rule for target.
-delete_scheduler_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/delete_scheduler_test.dir/build.make CMakeFiles/delete_scheduler_test.dir/build
-.PHONY : delete_scheduler_test/fast
-
-#=============================================================================
-# Target rules for targets named prefetch_test
-
-# Build rule for target.
-prefetch_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 prefetch_test
-.PHONY : prefetch_test
-
-# fast build rule for target.
-prefetch_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/prefetch_test.dir/build.make CMakeFiles/prefetch_test.dir/build
-.PHONY : prefetch_test/fast
-
-#=============================================================================
-# Target rules for targets named random_access_file_reader_test
-
-# Build rule for target.
-random_access_file_reader_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 random_access_file_reader_test
-.PHONY : random_access_file_reader_test
-
-# fast build rule for target.
-random_access_file_reader_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/random_access_file_reader_test.dir/build.make CMakeFiles/random_access_file_reader_test.dir/build
-.PHONY : random_access_file_reader_test/fast
-
-#=============================================================================
-# Target rules for targets named auto_roll_logger_test
-
-# Build rule for target.
-auto_roll_logger_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 auto_roll_logger_test
-.PHONY : auto_roll_logger_test
-
-# fast build rule for target.
-auto_roll_logger_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/auto_roll_logger_test.dir/build.make CMakeFiles/auto_roll_logger_test.dir/build
-.PHONY : auto_roll_logger_test/fast
-
-#=============================================================================
-# Target rules for targets named env_logger_test
-
-# Build rule for target.
-env_logger_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 env_logger_test
-.PHONY : env_logger_test
-
-# fast build rule for target.
-env_logger_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/env_logger_test.dir/build.make CMakeFiles/env_logger_test.dir/build
-.PHONY : env_logger_test/fast
-
-#=============================================================================
-# Target rules for targets named event_logger_test
-
-# Build rule for target.
-event_logger_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 event_logger_test
-.PHONY : event_logger_test
-
-# fast build rule for target.
-event_logger_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/event_logger_test.dir/build.make CMakeFiles/event_logger_test.dir/build
-.PHONY : event_logger_test/fast
-
-#=============================================================================
-# Target rules for targets named arena_test
-
-# Build rule for target.
-arena_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 arena_test
-.PHONY : arena_test
-
-# fast build rule for target.
-arena_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/arena_test.dir/build.make CMakeFiles/arena_test.dir/build
-.PHONY : arena_test/fast
-
-#=============================================================================
-# Target rules for targets named memory_allocator_test
-
-# Build rule for target.
-memory_allocator_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 memory_allocator_test
-.PHONY : memory_allocator_test
-
-# fast build rule for target.
-memory_allocator_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/memory_allocator_test.dir/build.make CMakeFiles/memory_allocator_test.dir/build
-.PHONY : memory_allocator_test/fast
-
-#=============================================================================
-# Target rules for targets named inlineskiplist_test
-
-# Build rule for target.
-inlineskiplist_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 inlineskiplist_test
-.PHONY : inlineskiplist_test
-
-# fast build rule for target.
-inlineskiplist_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/inlineskiplist_test.dir/build.make CMakeFiles/inlineskiplist_test.dir/build
-.PHONY : inlineskiplist_test/fast
-
-#=============================================================================
-# Target rules for targets named skiplist_test
-
-# Build rule for target.
-skiplist_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 skiplist_test
-.PHONY : skiplist_test
-
-# fast build rule for target.
-skiplist_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/skiplist_test.dir/build.make CMakeFiles/skiplist_test.dir/build
-.PHONY : skiplist_test/fast
-
-#=============================================================================
-# Target rules for targets named write_buffer_manager_test
-
-# Build rule for target.
-write_buffer_manager_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 write_buffer_manager_test
-.PHONY : write_buffer_manager_test
-
-# fast build rule for target.
-write_buffer_manager_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/write_buffer_manager_test.dir/build.make CMakeFiles/write_buffer_manager_test.dir/build
-.PHONY : write_buffer_manager_test/fast
-
-#=============================================================================
-# Target rules for targets named histogram_test
-
-# Build rule for target.
-histogram_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 histogram_test
-.PHONY : histogram_test
-
-# fast build rule for target.
-histogram_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/histogram_test.dir/build.make CMakeFiles/histogram_test.dir/build
-.PHONY : histogram_test/fast
-
-#=============================================================================
-# Target rules for targets named iostats_context_test
-
-# Build rule for target.
-iostats_context_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 iostats_context_test
-.PHONY : iostats_context_test
-
-# fast build rule for target.
-iostats_context_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/iostats_context_test.dir/build.make CMakeFiles/iostats_context_test.dir/build
-.PHONY : iostats_context_test/fast
-
-#=============================================================================
-# Target rules for targets named statistics_test
-
-# Build rule for target.
-statistics_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 statistics_test
-.PHONY : statistics_test
-
-# fast build rule for target.
-statistics_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/statistics_test.dir/build.make CMakeFiles/statistics_test.dir/build
-.PHONY : statistics_test/fast
-
-#=============================================================================
-# Target rules for targets named stats_history_test
-
-# Build rule for target.
-stats_history_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 stats_history_test
-.PHONY : stats_history_test
-
-# fast build rule for target.
-stats_history_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/stats_history_test.dir/build.make CMakeFiles/stats_history_test.dir/build
-.PHONY : stats_history_test/fast
-
-#=============================================================================
-# Target rules for targets named configurable_test
-
-# Build rule for target.
-configurable_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 configurable_test
-.PHONY : configurable_test
-
-# fast build rule for target.
-configurable_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/configurable_test.dir/build.make CMakeFiles/configurable_test.dir/build
-.PHONY : configurable_test/fast
-
-#=============================================================================
-# Target rules for targets named customizable_test
-
-# Build rule for target.
-customizable_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 customizable_test
-.PHONY : customizable_test
-
-# fast build rule for target.
-customizable_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/customizable_test.dir/build.make CMakeFiles/customizable_test.dir/build
-.PHONY : customizable_test/fast
-
-#=============================================================================
-# Target rules for targets named options_settable_test
-
-# Build rule for target.
-options_settable_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 options_settable_test
-.PHONY : options_settable_test
-
-# fast build rule for target.
-options_settable_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/options_settable_test.dir/build.make CMakeFiles/options_settable_test.dir/build
-.PHONY : options_settable_test/fast
-
-#=============================================================================
-# Target rules for targets named options_test
-
-# Build rule for target.
-options_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 options_test
-.PHONY : options_test
-
-# fast build rule for target.
-options_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/options_test.dir/build.make CMakeFiles/options_test.dir/build
-.PHONY : options_test/fast
-
-#=============================================================================
-# Target rules for targets named block_based_table_reader_test
-
-# Build rule for target.
-block_based_table_reader_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 block_based_table_reader_test
-.PHONY : block_based_table_reader_test
-
-# fast build rule for target.
-block_based_table_reader_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/block_based_table_reader_test.dir/build.make CMakeFiles/block_based_table_reader_test.dir/build
-.PHONY : block_based_table_reader_test/fast
-
-#=============================================================================
-# Target rules for targets named block_test
-
-# Build rule for target.
-block_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 block_test
-.PHONY : block_test
-
-# fast build rule for target.
-block_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/block_test.dir/build.make CMakeFiles/block_test.dir/build
-.PHONY : block_test/fast
-
-#=============================================================================
-# Target rules for targets named data_block_hash_index_test
-
-# Build rule for target.
-data_block_hash_index_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 data_block_hash_index_test
-.PHONY : data_block_hash_index_test
-
-# fast build rule for target.
-data_block_hash_index_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/data_block_hash_index_test.dir/build.make CMakeFiles/data_block_hash_index_test.dir/build
-.PHONY : data_block_hash_index_test/fast
-
-#=============================================================================
-# Target rules for targets named full_filter_block_test
-
-# Build rule for target.
-full_filter_block_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 full_filter_block_test
-.PHONY : full_filter_block_test
-
-# fast build rule for target.
-full_filter_block_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/full_filter_block_test.dir/build.make CMakeFiles/full_filter_block_test.dir/build
-.PHONY : full_filter_block_test/fast
-
-#=============================================================================
-# Target rules for targets named partitioned_filter_block_test
-
-# Build rule for target.
-partitioned_filter_block_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 partitioned_filter_block_test
-.PHONY : partitioned_filter_block_test
-
-# fast build rule for target.
-partitioned_filter_block_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/partitioned_filter_block_test.dir/build.make CMakeFiles/partitioned_filter_block_test.dir/build
-.PHONY : partitioned_filter_block_test/fast
-
-#=============================================================================
-# Target rules for targets named cleanable_test
-
-# Build rule for target.
-cleanable_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cleanable_test
-.PHONY : cleanable_test
-
-# fast build rule for target.
-cleanable_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cleanable_test.dir/build.make CMakeFiles/cleanable_test.dir/build
-.PHONY : cleanable_test/fast
-
-#=============================================================================
-# Target rules for targets named cuckoo_table_builder_test
-
-# Build rule for target.
-cuckoo_table_builder_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cuckoo_table_builder_test
-.PHONY : cuckoo_table_builder_test
-
-# fast build rule for target.
-cuckoo_table_builder_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cuckoo_table_builder_test.dir/build.make CMakeFiles/cuckoo_table_builder_test.dir/build
-.PHONY : cuckoo_table_builder_test/fast
-
-#=============================================================================
-# Target rules for targets named cuckoo_table_reader_test
-
-# Build rule for target.
-cuckoo_table_reader_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cuckoo_table_reader_test
-.PHONY : cuckoo_table_reader_test
-
-# fast build rule for target.
-cuckoo_table_reader_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cuckoo_table_reader_test.dir/build.make CMakeFiles/cuckoo_table_reader_test.dir/build
-.PHONY : cuckoo_table_reader_test/fast
-
-#=============================================================================
-# Target rules for targets named merger_test
-
-# Build rule for target.
-merger_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 merger_test
-.PHONY : merger_test
-
-# fast build rule for target.
-merger_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/merger_test.dir/build.make CMakeFiles/merger_test.dir/build
-.PHONY : merger_test/fast
-
-#=============================================================================
-# Target rules for targets named sst_file_reader_test
-
-# Build rule for target.
-sst_file_reader_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sst_file_reader_test
-.PHONY : sst_file_reader_test
-
-# fast build rule for target.
-sst_file_reader_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sst_file_reader_test.dir/build.make CMakeFiles/sst_file_reader_test.dir/build
-.PHONY : sst_file_reader_test/fast
-
-#=============================================================================
-# Target rules for targets named table_test
-
-# Build rule for target.
-table_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 table_test
-.PHONY : table_test
-
-# fast build rule for target.
-table_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/table_test.dir/build.make CMakeFiles/table_test.dir/build
-.PHONY : table_test/fast
-
-#=============================================================================
-# Target rules for targets named block_fetcher_test
-
-# Build rule for target.
-block_fetcher_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 block_fetcher_test
-.PHONY : block_fetcher_test
-
-# fast build rule for target.
-block_fetcher_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/block_fetcher_test.dir/build.make CMakeFiles/block_fetcher_test.dir/build
-.PHONY : block_fetcher_test/fast
-
-#=============================================================================
-# Target rules for targets named testutil_test
-
-# Build rule for target.
-testutil_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 testutil_test
-.PHONY : testutil_test
-
-# fast build rule for target.
-testutil_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testutil_test.dir/build.make CMakeFiles/testutil_test.dir/build
-.PHONY : testutil_test/fast
-
-#=============================================================================
-# Target rules for targets named block_cache_tracer_test
-
-# Build rule for target.
-block_cache_tracer_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 block_cache_tracer_test
-.PHONY : block_cache_tracer_test
-
-# fast build rule for target.
-block_cache_tracer_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/block_cache_tracer_test.dir/build.make CMakeFiles/block_cache_tracer_test.dir/build
-.PHONY : block_cache_tracer_test/fast
-
-#=============================================================================
-# Target rules for targets named io_tracer_test
-
-# Build rule for target.
-io_tracer_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 io_tracer_test
-.PHONY : io_tracer_test
-
-# fast build rule for target.
-io_tracer_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/io_tracer_test.dir/build.make CMakeFiles/io_tracer_test.dir/build
-.PHONY : io_tracer_test/fast
-
-#=============================================================================
-# Target rules for targets named block_cache_trace_analyzer_test
-
-# Build rule for target.
-block_cache_trace_analyzer_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 block_cache_trace_analyzer_test
-.PHONY : block_cache_trace_analyzer_test
-
-# fast build rule for target.
-block_cache_trace_analyzer_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/block_cache_trace_analyzer_test.dir/build.make CMakeFiles/block_cache_trace_analyzer_test.dir/build
-.PHONY : block_cache_trace_analyzer_test/fast
-
-#=============================================================================
-# Target rules for targets named io_tracer_parser_test
-
-# Build rule for target.
-io_tracer_parser_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 io_tracer_parser_test
-.PHONY : io_tracer_parser_test
-
-# fast build rule for target.
-io_tracer_parser_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/io_tracer_parser_test.dir/build.make CMakeFiles/io_tracer_parser_test.dir/build
-.PHONY : io_tracer_parser_test/fast
-
-#=============================================================================
-# Target rules for targets named ldb_cmd_test
-
-# Build rule for target.
-ldb_cmd_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ldb_cmd_test
-.PHONY : ldb_cmd_test
-
-# fast build rule for target.
-ldb_cmd_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ldb_cmd_test.dir/build.make CMakeFiles/ldb_cmd_test.dir/build
-.PHONY : ldb_cmd_test/fast
-
-#=============================================================================
-# Target rules for targets named reduce_levels_test
-
-# Build rule for target.
-reduce_levels_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 reduce_levels_test
-.PHONY : reduce_levels_test
-
-# fast build rule for target.
-reduce_levels_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/reduce_levels_test.dir/build.make CMakeFiles/reduce_levels_test.dir/build
-.PHONY : reduce_levels_test/fast
-
-#=============================================================================
-# Target rules for targets named sst_dump_test
-
-# Build rule for target.
-sst_dump_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sst_dump_test
-.PHONY : sst_dump_test
-
-# fast build rule for target.
-sst_dump_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sst_dump_test.dir/build.make CMakeFiles/sst_dump_test.dir/build
-.PHONY : sst_dump_test/fast
-
-#=============================================================================
-# Target rules for targets named trace_analyzer_test
-
-# Build rule for target.
-trace_analyzer_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 trace_analyzer_test
-.PHONY : trace_analyzer_test
-
-# fast build rule for target.
-trace_analyzer_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/trace_analyzer_test.dir/build.make CMakeFiles/trace_analyzer_test.dir/build
-.PHONY : trace_analyzer_test/fast
-
-#=============================================================================
-# Target rules for targets named autovector_test
-
-# Build rule for target.
-autovector_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 autovector_test
-.PHONY : autovector_test
-
-# fast build rule for target.
-autovector_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/autovector_test.dir/build.make CMakeFiles/autovector_test.dir/build
-.PHONY : autovector_test/fast
-
-#=============================================================================
-# Target rules for targets named bloom_test
-
-# Build rule for target.
-bloom_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 bloom_test
-.PHONY : bloom_test
-
-# fast build rule for target.
-bloom_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bloom_test.dir/build.make CMakeFiles/bloom_test.dir/build
-.PHONY : bloom_test/fast
-
-#=============================================================================
-# Target rules for targets named coding_test
-
-# Build rule for target.
-coding_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 coding_test
-.PHONY : coding_test
-
-# fast build rule for target.
-coding_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/coding_test.dir/build.make CMakeFiles/coding_test.dir/build
-.PHONY : coding_test/fast
-
-#=============================================================================
-# Target rules for targets named crc32c_test
-
-# Build rule for target.
-crc32c_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 crc32c_test
-.PHONY : crc32c_test
-
-# fast build rule for target.
-crc32c_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/crc32c_test.dir/build.make CMakeFiles/crc32c_test.dir/build
-.PHONY : crc32c_test/fast
-
-#=============================================================================
-# Target rules for targets named defer_test
-
-# Build rule for target.
-defer_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 defer_test
-.PHONY : defer_test
-
-# fast build rule for target.
-defer_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/defer_test.dir/build.make CMakeFiles/defer_test.dir/build
-.PHONY : defer_test/fast
-
-#=============================================================================
-# Target rules for targets named dynamic_bloom_test
-
-# Build rule for target.
-dynamic_bloom_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dynamic_bloom_test
-.PHONY : dynamic_bloom_test
-
-# fast build rule for target.
-dynamic_bloom_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/dynamic_bloom_test.dir/build.make CMakeFiles/dynamic_bloom_test.dir/build
-.PHONY : dynamic_bloom_test/fast
-
-#=============================================================================
-# Target rules for targets named file_reader_writer_test
-
-# Build rule for target.
-file_reader_writer_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 file_reader_writer_test
-.PHONY : file_reader_writer_test
-
-# fast build rule for target.
-file_reader_writer_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/file_reader_writer_test.dir/build.make CMakeFiles/file_reader_writer_test.dir/build
-.PHONY : file_reader_writer_test/fast
-
-#=============================================================================
-# Target rules for targets named filelock_test
-
-# Build rule for target.
-filelock_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 filelock_test
-.PHONY : filelock_test
-
-# fast build rule for target.
-filelock_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/filelock_test.dir/build.make CMakeFiles/filelock_test.dir/build
-.PHONY : filelock_test/fast
-
-#=============================================================================
-# Target rules for targets named hash_test
-
-# Build rule for target.
-hash_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hash_test
-.PHONY : hash_test
-
-# fast build rule for target.
-hash_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hash_test.dir/build.make CMakeFiles/hash_test.dir/build
-.PHONY : hash_test/fast
-
-#=============================================================================
-# Target rules for targets named heap_test
-
-# Build rule for target.
-heap_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 heap_test
-.PHONY : heap_test
-
-# fast build rule for target.
-heap_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/heap_test.dir/build.make CMakeFiles/heap_test.dir/build
-.PHONY : heap_test/fast
-
-#=============================================================================
-# Target rules for targets named random_test
-
-# Build rule for target.
-random_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 random_test
-.PHONY : random_test
-
-# fast build rule for target.
-random_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/random_test.dir/build.make CMakeFiles/random_test.dir/build
-.PHONY : random_test/fast
-
-#=============================================================================
-# Target rules for targets named rate_limiter_test
-
-# Build rule for target.
-rate_limiter_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 rate_limiter_test
-.PHONY : rate_limiter_test
-
-# fast build rule for target.
-rate_limiter_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rate_limiter_test.dir/build.make CMakeFiles/rate_limiter_test.dir/build
-.PHONY : rate_limiter_test/fast
-
-#=============================================================================
-# Target rules for targets named repeatable_thread_test
-
-# Build rule for target.
-repeatable_thread_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 repeatable_thread_test
-.PHONY : repeatable_thread_test
-
-# fast build rule for target.
-repeatable_thread_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/repeatable_thread_test.dir/build.make CMakeFiles/repeatable_thread_test.dir/build
-.PHONY : repeatable_thread_test/fast
-
-#=============================================================================
-# Target rules for targets named ribbon_test
-
-# Build rule for target.
-ribbon_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ribbon_test
-.PHONY : ribbon_test
-
-# fast build rule for target.
-ribbon_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ribbon_test.dir/build.make CMakeFiles/ribbon_test.dir/build
-.PHONY : ribbon_test/fast
-
-#=============================================================================
-# Target rules for targets named slice_test
-
-# Build rule for target.
-slice_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 slice_test
-.PHONY : slice_test
-
-# fast build rule for target.
-slice_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/slice_test.dir/build.make CMakeFiles/slice_test.dir/build
-.PHONY : slice_test/fast
-
-#=============================================================================
-# Target rules for targets named slice_transform_test
-
-# Build rule for target.
-slice_transform_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 slice_transform_test
-.PHONY : slice_transform_test
-
-# fast build rule for target.
-slice_transform_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/slice_transform_test.dir/build.make CMakeFiles/slice_transform_test.dir/build
-.PHONY : slice_transform_test/fast
-
-#=============================================================================
-# Target rules for targets named string_util_test
-
-# Build rule for target.
-string_util_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 string_util_test
-.PHONY : string_util_test
-
-# fast build rule for target.
-string_util_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/string_util_test.dir/build.make CMakeFiles/string_util_test.dir/build
-.PHONY : string_util_test/fast
-
-#=============================================================================
-# Target rules for targets named timer_queue_test
-
-# Build rule for target.
-timer_queue_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 timer_queue_test
-.PHONY : timer_queue_test
-
-# fast build rule for target.
-timer_queue_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/timer_queue_test.dir/build.make CMakeFiles/timer_queue_test.dir/build
-.PHONY : timer_queue_test/fast
-
-#=============================================================================
-# Target rules for targets named timer_test
-
-# Build rule for target.
-timer_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 timer_test
-.PHONY : timer_test
-
-# fast build rule for target.
-timer_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/timer_test.dir/build.make CMakeFiles/timer_test.dir/build
-.PHONY : timer_test/fast
-
-#=============================================================================
-# Target rules for targets named thread_list_test
-
-# Build rule for target.
-thread_list_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 thread_list_test
-.PHONY : thread_list_test
-
-# fast build rule for target.
-thread_list_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/thread_list_test.dir/build.make CMakeFiles/thread_list_test.dir/build
-.PHONY : thread_list_test/fast
-
-#=============================================================================
-# Target rules for targets named thread_local_test
-
-# Build rule for target.
-thread_local_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 thread_local_test
-.PHONY : thread_local_test
-
-# fast build rule for target.
-thread_local_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/thread_local_test.dir/build.make CMakeFiles/thread_local_test.dir/build
-.PHONY : thread_local_test/fast
-
-#=============================================================================
-# Target rules for targets named udt_util_test
-
-# Build rule for target.
-udt_util_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 udt_util_test
-.PHONY : udt_util_test
-
-# fast build rule for target.
-udt_util_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/udt_util_test.dir/build.make CMakeFiles/udt_util_test.dir/build
-.PHONY : udt_util_test/fast
-
-#=============================================================================
-# Target rules for targets named work_queue_test
-
-# Build rule for target.
-work_queue_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 work_queue_test
-.PHONY : work_queue_test
-
-# fast build rule for target.
-work_queue_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/work_queue_test.dir/build.make CMakeFiles/work_queue_test.dir/build
-.PHONY : work_queue_test/fast
-
-#=============================================================================
-# Target rules for targets named agg_merge_test
-
-# Build rule for target.
-agg_merge_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 agg_merge_test
-.PHONY : agg_merge_test
-
-# fast build rule for target.
-agg_merge_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/agg_merge_test.dir/build.make CMakeFiles/agg_merge_test.dir/build
-.PHONY : agg_merge_test/fast
-
-#=============================================================================
-# Target rules for targets named backup_engine_test
-
-# Build rule for target.
-backup_engine_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 backup_engine_test
-.PHONY : backup_engine_test
-
-# fast build rule for target.
-backup_engine_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/backup_engine_test.dir/build.make CMakeFiles/backup_engine_test.dir/build
-.PHONY : backup_engine_test/fast
-
-#=============================================================================
-# Target rules for targets named blob_db_test
-
-# Build rule for target.
-blob_db_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 blob_db_test
-.PHONY : blob_db_test
-
-# fast build rule for target.
-blob_db_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/blob_db_test.dir/build.make CMakeFiles/blob_db_test.dir/build
-.PHONY : blob_db_test/fast
-
-#=============================================================================
-# Target rules for targets named cassandra_functional_test
-
-# Build rule for target.
-cassandra_functional_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cassandra_functional_test
-.PHONY : cassandra_functional_test
-
-# fast build rule for target.
-cassandra_functional_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cassandra_functional_test.dir/build.make CMakeFiles/cassandra_functional_test.dir/build
-.PHONY : cassandra_functional_test/fast
-
-#=============================================================================
-# Target rules for targets named cassandra_format_test
-
-# Build rule for target.
-cassandra_format_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cassandra_format_test
-.PHONY : cassandra_format_test
-
-# fast build rule for target.
-cassandra_format_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cassandra_format_test.dir/build.make CMakeFiles/cassandra_format_test.dir/build
-.PHONY : cassandra_format_test/fast
-
-#=============================================================================
-# Target rules for targets named cassandra_row_merge_test
-
-# Build rule for target.
-cassandra_row_merge_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cassandra_row_merge_test
-.PHONY : cassandra_row_merge_test
-
-# fast build rule for target.
-cassandra_row_merge_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cassandra_row_merge_test.dir/build.make CMakeFiles/cassandra_row_merge_test.dir/build
-.PHONY : cassandra_row_merge_test/fast
-
-#=============================================================================
-# Target rules for targets named cassandra_serialize_test
-
-# Build rule for target.
-cassandra_serialize_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cassandra_serialize_test
-.PHONY : cassandra_serialize_test
-
-# fast build rule for target.
-cassandra_serialize_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cassandra_serialize_test.dir/build.make CMakeFiles/cassandra_serialize_test.dir/build
-.PHONY : cassandra_serialize_test/fast
-
-#=============================================================================
-# Target rules for targets named checkpoint_test
-
-# Build rule for target.
-checkpoint_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 checkpoint_test
-.PHONY : checkpoint_test
-
-# fast build rule for target.
-checkpoint_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkpoint_test.dir/build.make CMakeFiles/checkpoint_test.dir/build
-.PHONY : checkpoint_test/fast
-
-#=============================================================================
-# Target rules for targets named env_timed_test
-
-# Build rule for target.
-env_timed_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 env_timed_test
-.PHONY : env_timed_test
-
-# fast build rule for target.
-env_timed_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/env_timed_test.dir/build.make CMakeFiles/env_timed_test.dir/build
-.PHONY : env_timed_test/fast
-
-#=============================================================================
-# Target rules for targets named memory_test
-
-# Build rule for target.
-memory_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 memory_test
-.PHONY : memory_test
-
-# fast build rule for target.
-memory_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/memory_test.dir/build.make CMakeFiles/memory_test.dir/build
-.PHONY : memory_test/fast
-
-#=============================================================================
-# Target rules for targets named stringappend_test
-
-# Build rule for target.
-stringappend_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 stringappend_test
-.PHONY : stringappend_test
-
-# fast build rule for target.
-stringappend_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/stringappend_test.dir/build.make CMakeFiles/stringappend_test.dir/build
-.PHONY : stringappend_test/fast
-
-#=============================================================================
-# Target rules for targets named object_registry_test
-
-# Build rule for target.
-object_registry_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 object_registry_test
-.PHONY : object_registry_test
-
-# fast build rule for target.
-object_registry_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/object_registry_test.dir/build.make CMakeFiles/object_registry_test.dir/build
-.PHONY : object_registry_test/fast
-
-#=============================================================================
-# Target rules for targets named option_change_migration_test
-
-# Build rule for target.
-option_change_migration_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 option_change_migration_test
-.PHONY : option_change_migration_test
-
-# fast build rule for target.
-option_change_migration_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/option_change_migration_test.dir/build.make CMakeFiles/option_change_migration_test.dir/build
-.PHONY : option_change_migration_test/fast
-
-#=============================================================================
-# Target rules for targets named options_util_test
-
-# Build rule for target.
-options_util_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 options_util_test
-.PHONY : options_util_test
-
-# fast build rule for target.
-options_util_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/options_util_test.dir/build.make CMakeFiles/options_util_test.dir/build
-.PHONY : options_util_test/fast
-
-#=============================================================================
-# Target rules for targets named hash_table_test
-
-# Build rule for target.
-hash_table_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hash_table_test
-.PHONY : hash_table_test
-
-# fast build rule for target.
-hash_table_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hash_table_test.dir/build.make CMakeFiles/hash_table_test.dir/build
-.PHONY : hash_table_test/fast
-
-#=============================================================================
-# Target rules for targets named persistent_cache_test
-
-# Build rule for target.
-persistent_cache_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 persistent_cache_test
-.PHONY : persistent_cache_test
-
-# fast build rule for target.
-persistent_cache_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/persistent_cache_test.dir/build.make CMakeFiles/persistent_cache_test.dir/build
-.PHONY : persistent_cache_test/fast
-
-#=============================================================================
-# Target rules for targets named cache_simulator_test
-
-# Build rule for target.
-cache_simulator_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cache_simulator_test
-.PHONY : cache_simulator_test
-
-# fast build rule for target.
-cache_simulator_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cache_simulator_test.dir/build.make CMakeFiles/cache_simulator_test.dir/build
-.PHONY : cache_simulator_test/fast
-
-#=============================================================================
-# Target rules for targets named sim_cache_test
-
-# Build rule for target.
-sim_cache_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sim_cache_test
-.PHONY : sim_cache_test
-
-# fast build rule for target.
-sim_cache_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim_cache_test.dir/build.make CMakeFiles/sim_cache_test.dir/build
-.PHONY : sim_cache_test/fast
-
-#=============================================================================
-# Target rules for targets named compact_for_tiering_collector_test
-
-# Build rule for target.
-compact_for_tiering_collector_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 compact_for_tiering_collector_test
-.PHONY : compact_for_tiering_collector_test
-
-# fast build rule for target.
-compact_for_tiering_collector_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/compact_for_tiering_collector_test.dir/build.make CMakeFiles/compact_for_tiering_collector_test.dir/build
-.PHONY : compact_for_tiering_collector_test/fast
-
-#=============================================================================
-# Target rules for targets named compact_on_deletion_collector_test
-
-# Build rule for target.
-compact_on_deletion_collector_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 compact_on_deletion_collector_test
-.PHONY : compact_on_deletion_collector_test
-
-# fast build rule for target.
-compact_on_deletion_collector_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/compact_on_deletion_collector_test.dir/build.make CMakeFiles/compact_on_deletion_collector_test.dir/build
-.PHONY : compact_on_deletion_collector_test/fast
-
-#=============================================================================
-# Target rules for targets named optimistic_transaction_test
-
-# Build rule for target.
-optimistic_transaction_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 optimistic_transaction_test
-.PHONY : optimistic_transaction_test
-
-# fast build rule for target.
-optimistic_transaction_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/optimistic_transaction_test.dir/build.make CMakeFiles/optimistic_transaction_test.dir/build
-.PHONY : optimistic_transaction_test/fast
-
-#=============================================================================
-# Target rules for targets named transaction_test
-
-# Build rule for target.
-transaction_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 transaction_test
-.PHONY : transaction_test
-
-# fast build rule for target.
-transaction_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/transaction_test.dir/build.make CMakeFiles/transaction_test.dir/build
-.PHONY : transaction_test/fast
-
-#=============================================================================
-# Target rules for targets named point_lock_manager_test
-
-# Build rule for target.
-point_lock_manager_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 point_lock_manager_test
-.PHONY : point_lock_manager_test
-
-# fast build rule for target.
-point_lock_manager_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/point_lock_manager_test.dir/build.make CMakeFiles/point_lock_manager_test.dir/build
-.PHONY : point_lock_manager_test/fast
-
-#=============================================================================
-# Target rules for targets named write_committed_transaction_ts_test
-
-# Build rule for target.
-write_committed_transaction_ts_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 write_committed_transaction_ts_test
-.PHONY : write_committed_transaction_ts_test
-
-# fast build rule for target.
-write_committed_transaction_ts_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/write_committed_transaction_ts_test.dir/build.make CMakeFiles/write_committed_transaction_ts_test.dir/build
-.PHONY : write_committed_transaction_ts_test/fast
-
-#=============================================================================
-# Target rules for targets named write_prepared_transaction_test
-
-# Build rule for target.
-write_prepared_transaction_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 write_prepared_transaction_test
-.PHONY : write_prepared_transaction_test
-
-# fast build rule for target.
-write_prepared_transaction_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/write_prepared_transaction_test.dir/build.make CMakeFiles/write_prepared_transaction_test.dir/build
-.PHONY : write_prepared_transaction_test/fast
-
-#=============================================================================
-# Target rules for targets named write_unprepared_transaction_test
-
-# Build rule for target.
-write_unprepared_transaction_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 write_unprepared_transaction_test
-.PHONY : write_unprepared_transaction_test
-
-# fast build rule for target.
-write_unprepared_transaction_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/write_unprepared_transaction_test.dir/build.make CMakeFiles/write_unprepared_transaction_test.dir/build
-.PHONY : write_unprepared_transaction_test/fast
-
-#=============================================================================
-# Target rules for targets named range_locking_test
-
-# Build rule for target.
-range_locking_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 range_locking_test
-.PHONY : range_locking_test
-
-# fast build rule for target.
-range_locking_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/range_locking_test.dir/build.make CMakeFiles/range_locking_test.dir/build
-.PHONY : range_locking_test/fast
-
-#=============================================================================
-# Target rules for targets named timestamped_snapshot_test
-
-# Build rule for target.
-timestamped_snapshot_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 timestamped_snapshot_test
-.PHONY : timestamped_snapshot_test
-
-# fast build rule for target.
-timestamped_snapshot_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/timestamped_snapshot_test.dir/build.make CMakeFiles/timestamped_snapshot_test.dir/build
-.PHONY : timestamped_snapshot_test/fast
-
-#=============================================================================
-# Target rules for targets named ttl_test
-
-# Build rule for target.
-ttl_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ttl_test
-.PHONY : ttl_test
-
-# fast build rule for target.
-ttl_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ttl_test.dir/build.make CMakeFiles/ttl_test.dir/build
-.PHONY : ttl_test/fast
-
-#=============================================================================
-# Target rules for targets named types_util_test
-
-# Build rule for target.
-types_util_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 types_util_test
-.PHONY : types_util_test
-
-# fast build rule for target.
-types_util_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/types_util_test.dir/build.make CMakeFiles/types_util_test.dir/build
-.PHONY : types_util_test/fast
-
-#=============================================================================
-# Target rules for targets named util_merge_operators_test
-
-# Build rule for target.
-util_merge_operators_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 util_merge_operators_test
-.PHONY : util_merge_operators_test
-
-# fast build rule for target.
-util_merge_operators_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/util_merge_operators_test.dir/build.make CMakeFiles/util_merge_operators_test.dir/build
-.PHONY : util_merge_operators_test/fast
-
-#=============================================================================
-# Target rules for targets named write_batch_with_index_test
-
-# Build rule for target.
-write_batch_with_index_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 write_batch_with_index_test
-.PHONY : write_batch_with_index_test
-
-# fast build rule for target.
-write_batch_with_index_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/write_batch_with_index_test.dir/build.make CMakeFiles/write_batch_with_index_test.dir/build
-.PHONY : write_batch_with_index_test/fast
-
-#=============================================================================
-# Target rules for targets named c_test
-
-# Build rule for target.
-c_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 c_test
-.PHONY : c_test
-
-# fast build rule for target.
-c_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/c_test.dir/build.make CMakeFiles/c_test.dir/build
-.PHONY : c_test/fast
 
 #=============================================================================
 # Target rules for targets named db_bench
@@ -3410,54 +683,6 @@ cache/cache_reservation_manager.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/cache/cache_reservation_manager.cc.s
 .PHONY : cache/cache_reservation_manager.cc.s
 
-cache/cache_reservation_manager_test.o: cache/cache_reservation_manager_test.cc.o
-.PHONY : cache/cache_reservation_manager_test.o
-
-# target to build an object file
-cache/cache_reservation_manager_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cache_reservation_manager_test.dir/build.make CMakeFiles/cache_reservation_manager_test.dir/cache/cache_reservation_manager_test.cc.o
-.PHONY : cache/cache_reservation_manager_test.cc.o
-
-cache/cache_reservation_manager_test.i: cache/cache_reservation_manager_test.cc.i
-.PHONY : cache/cache_reservation_manager_test.i
-
-# target to preprocess a source file
-cache/cache_reservation_manager_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cache_reservation_manager_test.dir/build.make CMakeFiles/cache_reservation_manager_test.dir/cache/cache_reservation_manager_test.cc.i
-.PHONY : cache/cache_reservation_manager_test.cc.i
-
-cache/cache_reservation_manager_test.s: cache/cache_reservation_manager_test.cc.s
-.PHONY : cache/cache_reservation_manager_test.s
-
-# target to generate assembly for a file
-cache/cache_reservation_manager_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cache_reservation_manager_test.dir/build.make CMakeFiles/cache_reservation_manager_test.dir/cache/cache_reservation_manager_test.cc.s
-.PHONY : cache/cache_reservation_manager_test.cc.s
-
-cache/cache_test.o: cache/cache_test.cc.o
-.PHONY : cache/cache_test.o
-
-# target to build an object file
-cache/cache_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cache_test.dir/build.make CMakeFiles/cache_test.dir/cache/cache_test.cc.o
-.PHONY : cache/cache_test.cc.o
-
-cache/cache_test.i: cache/cache_test.cc.i
-.PHONY : cache/cache_test.i
-
-# target to preprocess a source file
-cache/cache_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cache_test.dir/build.make CMakeFiles/cache_test.dir/cache/cache_test.cc.i
-.PHONY : cache/cache_test.cc.i
-
-cache/cache_test.s: cache/cache_test.cc.s
-.PHONY : cache/cache_test.s
-
-# target to generate assembly for a file
-cache/cache_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cache_test.dir/build.make CMakeFiles/cache_test.dir/cache/cache_test.cc.s
-.PHONY : cache/cache_test.cc.s
-
 cache/charged_cache.o: cache/charged_cache.cc.o
 .PHONY : cache/charged_cache.o
 
@@ -3539,30 +764,6 @@ cache/compressed_secondary_cache.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/cache/compressed_secondary_cache.cc.s
 .PHONY : cache/compressed_secondary_cache.cc.s
 
-cache/compressed_secondary_cache_test.o: cache/compressed_secondary_cache_test.cc.o
-.PHONY : cache/compressed_secondary_cache_test.o
-
-# target to build an object file
-cache/compressed_secondary_cache_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/compressed_secondary_cache_test.dir/build.make CMakeFiles/compressed_secondary_cache_test.dir/cache/compressed_secondary_cache_test.cc.o
-.PHONY : cache/compressed_secondary_cache_test.cc.o
-
-cache/compressed_secondary_cache_test.i: cache/compressed_secondary_cache_test.cc.i
-.PHONY : cache/compressed_secondary_cache_test.i
-
-# target to preprocess a source file
-cache/compressed_secondary_cache_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/compressed_secondary_cache_test.dir/build.make CMakeFiles/compressed_secondary_cache_test.dir/cache/compressed_secondary_cache_test.cc.i
-.PHONY : cache/compressed_secondary_cache_test.cc.i
-
-cache/compressed_secondary_cache_test.s: cache/compressed_secondary_cache_test.cc.s
-.PHONY : cache/compressed_secondary_cache_test.s
-
-# target to generate assembly for a file
-cache/compressed_secondary_cache_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/compressed_secondary_cache_test.dir/build.make CMakeFiles/compressed_secondary_cache_test.dir/cache/compressed_secondary_cache_test.cc.s
-.PHONY : cache/compressed_secondary_cache_test.cc.s
-
 cache/lru_cache.o: cache/lru_cache.cc.o
 .PHONY : cache/lru_cache.o
 
@@ -3589,30 +790,6 @@ cache/lru_cache.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb.dir/build.make CMakeFiles/rocksdb.dir/cache/lru_cache.cc.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/cache/lru_cache.cc.s
 .PHONY : cache/lru_cache.cc.s
-
-cache/lru_cache_test.o: cache/lru_cache_test.cc.o
-.PHONY : cache/lru_cache_test.o
-
-# target to build an object file
-cache/lru_cache_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lru_cache_test.dir/build.make CMakeFiles/lru_cache_test.dir/cache/lru_cache_test.cc.o
-.PHONY : cache/lru_cache_test.cc.o
-
-cache/lru_cache_test.i: cache/lru_cache_test.cc.i
-.PHONY : cache/lru_cache_test.i
-
-# target to preprocess a source file
-cache/lru_cache_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lru_cache_test.dir/build.make CMakeFiles/lru_cache_test.dir/cache/lru_cache_test.cc.i
-.PHONY : cache/lru_cache_test.cc.i
-
-cache/lru_cache_test.s: cache/lru_cache_test.cc.s
-.PHONY : cache/lru_cache_test.s
-
-# target to generate assembly for a file
-cache/lru_cache_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lru_cache_test.dir/build.make CMakeFiles/lru_cache_test.dir/cache/lru_cache_test.cc.s
-.PHONY : cache/lru_cache_test.cc.s
 
 cache/secondary_cache.o: cache/secondary_cache.cc.o
 .PHONY : cache/secondary_cache.o
@@ -3722,30 +899,6 @@ cache/tiered_secondary_cache.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/cache/tiered_secondary_cache.cc.s
 .PHONY : cache/tiered_secondary_cache.cc.s
 
-cache/tiered_secondary_cache_test.o: cache/tiered_secondary_cache_test.cc.o
-.PHONY : cache/tiered_secondary_cache_test.o
-
-# target to build an object file
-cache/tiered_secondary_cache_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tiered_secondary_cache_test.dir/build.make CMakeFiles/tiered_secondary_cache_test.dir/cache/tiered_secondary_cache_test.cc.o
-.PHONY : cache/tiered_secondary_cache_test.cc.o
-
-cache/tiered_secondary_cache_test.i: cache/tiered_secondary_cache_test.cc.i
-.PHONY : cache/tiered_secondary_cache_test.i
-
-# target to preprocess a source file
-cache/tiered_secondary_cache_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tiered_secondary_cache_test.dir/build.make CMakeFiles/tiered_secondary_cache_test.dir/cache/tiered_secondary_cache_test.cc.i
-.PHONY : cache/tiered_secondary_cache_test.cc.i
-
-cache/tiered_secondary_cache_test.s: cache/tiered_secondary_cache_test.cc.s
-.PHONY : cache/tiered_secondary_cache_test.s
-
-# target to generate assembly for a file
-cache/tiered_secondary_cache_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tiered_secondary_cache_test.dir/build.make CMakeFiles/tiered_secondary_cache_test.dir/cache/tiered_secondary_cache_test.cc.s
-.PHONY : cache/tiered_secondary_cache_test.cc.s
-
 db/arena_wrapped_db_iter.o: db/arena_wrapped_db_iter.cc.o
 .PHONY : db/arena_wrapped_db_iter.o
 
@@ -3827,30 +980,6 @@ db/blob/blob_contents.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/db/blob/blob_contents.cc.s
 .PHONY : db/blob/blob_contents.cc.s
 
-db/blob/blob_counting_iterator_test.o: db/blob/blob_counting_iterator_test.cc.o
-.PHONY : db/blob/blob_counting_iterator_test.o
-
-# target to build an object file
-db/blob/blob_counting_iterator_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/blob_counting_iterator_test.dir/build.make CMakeFiles/blob_counting_iterator_test.dir/db/blob/blob_counting_iterator_test.cc.o
-.PHONY : db/blob/blob_counting_iterator_test.cc.o
-
-db/blob/blob_counting_iterator_test.i: db/blob/blob_counting_iterator_test.cc.i
-.PHONY : db/blob/blob_counting_iterator_test.i
-
-# target to preprocess a source file
-db/blob/blob_counting_iterator_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/blob_counting_iterator_test.dir/build.make CMakeFiles/blob_counting_iterator_test.dir/db/blob/blob_counting_iterator_test.cc.i
-.PHONY : db/blob/blob_counting_iterator_test.cc.i
-
-db/blob/blob_counting_iterator_test.s: db/blob/blob_counting_iterator_test.cc.s
-.PHONY : db/blob/blob_counting_iterator_test.s
-
-# target to generate assembly for a file
-db/blob/blob_counting_iterator_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/blob_counting_iterator_test.dir/build.make CMakeFiles/blob_counting_iterator_test.dir/db/blob/blob_counting_iterator_test.cc.s
-.PHONY : db/blob/blob_counting_iterator_test.cc.s
-
 db/blob/blob_fetcher.o: db/blob/blob_fetcher.cc.o
 .PHONY : db/blob/blob_fetcher.o
 
@@ -3905,30 +1034,6 @@ db/blob/blob_file_addition.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/db/blob/blob_file_addition.cc.s
 .PHONY : db/blob/blob_file_addition.cc.s
 
-db/blob/blob_file_addition_test.o: db/blob/blob_file_addition_test.cc.o
-.PHONY : db/blob/blob_file_addition_test.o
-
-# target to build an object file
-db/blob/blob_file_addition_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/blob_file_addition_test.dir/build.make CMakeFiles/blob_file_addition_test.dir/db/blob/blob_file_addition_test.cc.o
-.PHONY : db/blob/blob_file_addition_test.cc.o
-
-db/blob/blob_file_addition_test.i: db/blob/blob_file_addition_test.cc.i
-.PHONY : db/blob/blob_file_addition_test.i
-
-# target to preprocess a source file
-db/blob/blob_file_addition_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/blob_file_addition_test.dir/build.make CMakeFiles/blob_file_addition_test.dir/db/blob/blob_file_addition_test.cc.i
-.PHONY : db/blob/blob_file_addition_test.cc.i
-
-db/blob/blob_file_addition_test.s: db/blob/blob_file_addition_test.cc.s
-.PHONY : db/blob/blob_file_addition_test.s
-
-# target to generate assembly for a file
-db/blob/blob_file_addition_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/blob_file_addition_test.dir/build.make CMakeFiles/blob_file_addition_test.dir/db/blob/blob_file_addition_test.cc.s
-.PHONY : db/blob/blob_file_addition_test.cc.s
-
 db/blob/blob_file_builder.o: db/blob/blob_file_builder.cc.o
 .PHONY : db/blob/blob_file_builder.o
 
@@ -3955,30 +1060,6 @@ db/blob/blob_file_builder.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb.dir/build.make CMakeFiles/rocksdb.dir/db/blob/blob_file_builder.cc.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/db/blob/blob_file_builder.cc.s
 .PHONY : db/blob/blob_file_builder.cc.s
-
-db/blob/blob_file_builder_test.o: db/blob/blob_file_builder_test.cc.o
-.PHONY : db/blob/blob_file_builder_test.o
-
-# target to build an object file
-db/blob/blob_file_builder_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/blob_file_builder_test.dir/build.make CMakeFiles/blob_file_builder_test.dir/db/blob/blob_file_builder_test.cc.o
-.PHONY : db/blob/blob_file_builder_test.cc.o
-
-db/blob/blob_file_builder_test.i: db/blob/blob_file_builder_test.cc.i
-.PHONY : db/blob/blob_file_builder_test.i
-
-# target to preprocess a source file
-db/blob/blob_file_builder_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/blob_file_builder_test.dir/build.make CMakeFiles/blob_file_builder_test.dir/db/blob/blob_file_builder_test.cc.i
-.PHONY : db/blob/blob_file_builder_test.cc.i
-
-db/blob/blob_file_builder_test.s: db/blob/blob_file_builder_test.cc.s
-.PHONY : db/blob/blob_file_builder_test.s
-
-# target to generate assembly for a file
-db/blob/blob_file_builder_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/blob_file_builder_test.dir/build.make CMakeFiles/blob_file_builder_test.dir/db/blob/blob_file_builder_test.cc.s
-.PHONY : db/blob/blob_file_builder_test.cc.s
 
 db/blob/blob_file_cache.o: db/blob/blob_file_cache.cc.o
 .PHONY : db/blob/blob_file_cache.o
@@ -4007,30 +1088,6 @@ db/blob/blob_file_cache.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/db/blob/blob_file_cache.cc.s
 .PHONY : db/blob/blob_file_cache.cc.s
 
-db/blob/blob_file_cache_test.o: db/blob/blob_file_cache_test.cc.o
-.PHONY : db/blob/blob_file_cache_test.o
-
-# target to build an object file
-db/blob/blob_file_cache_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/blob_file_cache_test.dir/build.make CMakeFiles/blob_file_cache_test.dir/db/blob/blob_file_cache_test.cc.o
-.PHONY : db/blob/blob_file_cache_test.cc.o
-
-db/blob/blob_file_cache_test.i: db/blob/blob_file_cache_test.cc.i
-.PHONY : db/blob/blob_file_cache_test.i
-
-# target to preprocess a source file
-db/blob/blob_file_cache_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/blob_file_cache_test.dir/build.make CMakeFiles/blob_file_cache_test.dir/db/blob/blob_file_cache_test.cc.i
-.PHONY : db/blob/blob_file_cache_test.cc.i
-
-db/blob/blob_file_cache_test.s: db/blob/blob_file_cache_test.cc.s
-.PHONY : db/blob/blob_file_cache_test.s
-
-# target to generate assembly for a file
-db/blob/blob_file_cache_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/blob_file_cache_test.dir/build.make CMakeFiles/blob_file_cache_test.dir/db/blob/blob_file_cache_test.cc.s
-.PHONY : db/blob/blob_file_cache_test.cc.s
-
 db/blob/blob_file_garbage.o: db/blob/blob_file_garbage.cc.o
 .PHONY : db/blob/blob_file_garbage.o
 
@@ -4057,30 +1114,6 @@ db/blob/blob_file_garbage.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb.dir/build.make CMakeFiles/rocksdb.dir/db/blob/blob_file_garbage.cc.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/db/blob/blob_file_garbage.cc.s
 .PHONY : db/blob/blob_file_garbage.cc.s
-
-db/blob/blob_file_garbage_test.o: db/blob/blob_file_garbage_test.cc.o
-.PHONY : db/blob/blob_file_garbage_test.o
-
-# target to build an object file
-db/blob/blob_file_garbage_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/blob_file_garbage_test.dir/build.make CMakeFiles/blob_file_garbage_test.dir/db/blob/blob_file_garbage_test.cc.o
-.PHONY : db/blob/blob_file_garbage_test.cc.o
-
-db/blob/blob_file_garbage_test.i: db/blob/blob_file_garbage_test.cc.i
-.PHONY : db/blob/blob_file_garbage_test.i
-
-# target to preprocess a source file
-db/blob/blob_file_garbage_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/blob_file_garbage_test.dir/build.make CMakeFiles/blob_file_garbage_test.dir/db/blob/blob_file_garbage_test.cc.i
-.PHONY : db/blob/blob_file_garbage_test.cc.i
-
-db/blob/blob_file_garbage_test.s: db/blob/blob_file_garbage_test.cc.s
-.PHONY : db/blob/blob_file_garbage_test.s
-
-# target to generate assembly for a file
-db/blob/blob_file_garbage_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/blob_file_garbage_test.dir/build.make CMakeFiles/blob_file_garbage_test.dir/db/blob/blob_file_garbage_test.cc.s
-.PHONY : db/blob/blob_file_garbage_test.cc.s
 
 db/blob/blob_file_meta.o: db/blob/blob_file_meta.cc.o
 .PHONY : db/blob/blob_file_meta.o
@@ -4136,30 +1169,6 @@ db/blob/blob_file_reader.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/db/blob/blob_file_reader.cc.s
 .PHONY : db/blob/blob_file_reader.cc.s
 
-db/blob/blob_file_reader_test.o: db/blob/blob_file_reader_test.cc.o
-.PHONY : db/blob/blob_file_reader_test.o
-
-# target to build an object file
-db/blob/blob_file_reader_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/blob_file_reader_test.dir/build.make CMakeFiles/blob_file_reader_test.dir/db/blob/blob_file_reader_test.cc.o
-.PHONY : db/blob/blob_file_reader_test.cc.o
-
-db/blob/blob_file_reader_test.i: db/blob/blob_file_reader_test.cc.i
-.PHONY : db/blob/blob_file_reader_test.i
-
-# target to preprocess a source file
-db/blob/blob_file_reader_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/blob_file_reader_test.dir/build.make CMakeFiles/blob_file_reader_test.dir/db/blob/blob_file_reader_test.cc.i
-.PHONY : db/blob/blob_file_reader_test.cc.i
-
-db/blob/blob_file_reader_test.s: db/blob/blob_file_reader_test.cc.s
-.PHONY : db/blob/blob_file_reader_test.s
-
-# target to generate assembly for a file
-db/blob/blob_file_reader_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/blob_file_reader_test.dir/build.make CMakeFiles/blob_file_reader_test.dir/db/blob/blob_file_reader_test.cc.s
-.PHONY : db/blob/blob_file_reader_test.cc.s
-
 db/blob/blob_garbage_meter.o: db/blob/blob_garbage_meter.cc.o
 .PHONY : db/blob/blob_garbage_meter.o
 
@@ -4186,30 +1195,6 @@ db/blob/blob_garbage_meter.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb.dir/build.make CMakeFiles/rocksdb.dir/db/blob/blob_garbage_meter.cc.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/db/blob/blob_garbage_meter.cc.s
 .PHONY : db/blob/blob_garbage_meter.cc.s
-
-db/blob/blob_garbage_meter_test.o: db/blob/blob_garbage_meter_test.cc.o
-.PHONY : db/blob/blob_garbage_meter_test.o
-
-# target to build an object file
-db/blob/blob_garbage_meter_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/blob_garbage_meter_test.dir/build.make CMakeFiles/blob_garbage_meter_test.dir/db/blob/blob_garbage_meter_test.cc.o
-.PHONY : db/blob/blob_garbage_meter_test.cc.o
-
-db/blob/blob_garbage_meter_test.i: db/blob/blob_garbage_meter_test.cc.i
-.PHONY : db/blob/blob_garbage_meter_test.i
-
-# target to preprocess a source file
-db/blob/blob_garbage_meter_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/blob_garbage_meter_test.dir/build.make CMakeFiles/blob_garbage_meter_test.dir/db/blob/blob_garbage_meter_test.cc.i
-.PHONY : db/blob/blob_garbage_meter_test.cc.i
-
-db/blob/blob_garbage_meter_test.s: db/blob/blob_garbage_meter_test.cc.s
-.PHONY : db/blob/blob_garbage_meter_test.s
-
-# target to generate assembly for a file
-db/blob/blob_garbage_meter_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/blob_garbage_meter_test.dir/build.make CMakeFiles/blob_garbage_meter_test.dir/db/blob/blob_garbage_meter_test.cc.s
-.PHONY : db/blob/blob_garbage_meter_test.cc.s
 
 db/blob/blob_log_format.o: db/blob/blob_log_format.cc.o
 .PHONY : db/blob/blob_log_format.o
@@ -4319,126 +1304,6 @@ db/blob/blob_source.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/db/blob/blob_source.cc.s
 .PHONY : db/blob/blob_source.cc.s
 
-db/blob/blob_source_test.o: db/blob/blob_source_test.cc.o
-.PHONY : db/blob/blob_source_test.o
-
-# target to build an object file
-db/blob/blob_source_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/blob_source_test.dir/build.make CMakeFiles/blob_source_test.dir/db/blob/blob_source_test.cc.o
-.PHONY : db/blob/blob_source_test.cc.o
-
-db/blob/blob_source_test.i: db/blob/blob_source_test.cc.i
-.PHONY : db/blob/blob_source_test.i
-
-# target to preprocess a source file
-db/blob/blob_source_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/blob_source_test.dir/build.make CMakeFiles/blob_source_test.dir/db/blob/blob_source_test.cc.i
-.PHONY : db/blob/blob_source_test.cc.i
-
-db/blob/blob_source_test.s: db/blob/blob_source_test.cc.s
-.PHONY : db/blob/blob_source_test.s
-
-# target to generate assembly for a file
-db/blob/blob_source_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/blob_source_test.dir/build.make CMakeFiles/blob_source_test.dir/db/blob/blob_source_test.cc.s
-.PHONY : db/blob/blob_source_test.cc.s
-
-db/blob/db_blob_basic_test.o: db/blob/db_blob_basic_test.cc.o
-.PHONY : db/blob/db_blob_basic_test.o
-
-# target to build an object file
-db/blob/db_blob_basic_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_blob_basic_test.dir/build.make CMakeFiles/db_blob_basic_test.dir/db/blob/db_blob_basic_test.cc.o
-.PHONY : db/blob/db_blob_basic_test.cc.o
-
-db/blob/db_blob_basic_test.i: db/blob/db_blob_basic_test.cc.i
-.PHONY : db/blob/db_blob_basic_test.i
-
-# target to preprocess a source file
-db/blob/db_blob_basic_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_blob_basic_test.dir/build.make CMakeFiles/db_blob_basic_test.dir/db/blob/db_blob_basic_test.cc.i
-.PHONY : db/blob/db_blob_basic_test.cc.i
-
-db/blob/db_blob_basic_test.s: db/blob/db_blob_basic_test.cc.s
-.PHONY : db/blob/db_blob_basic_test.s
-
-# target to generate assembly for a file
-db/blob/db_blob_basic_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_blob_basic_test.dir/build.make CMakeFiles/db_blob_basic_test.dir/db/blob/db_blob_basic_test.cc.s
-.PHONY : db/blob/db_blob_basic_test.cc.s
-
-db/blob/db_blob_compaction_test.o: db/blob/db_blob_compaction_test.cc.o
-.PHONY : db/blob/db_blob_compaction_test.o
-
-# target to build an object file
-db/blob/db_blob_compaction_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_blob_compaction_test.dir/build.make CMakeFiles/db_blob_compaction_test.dir/db/blob/db_blob_compaction_test.cc.o
-.PHONY : db/blob/db_blob_compaction_test.cc.o
-
-db/blob/db_blob_compaction_test.i: db/blob/db_blob_compaction_test.cc.i
-.PHONY : db/blob/db_blob_compaction_test.i
-
-# target to preprocess a source file
-db/blob/db_blob_compaction_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_blob_compaction_test.dir/build.make CMakeFiles/db_blob_compaction_test.dir/db/blob/db_blob_compaction_test.cc.i
-.PHONY : db/blob/db_blob_compaction_test.cc.i
-
-db/blob/db_blob_compaction_test.s: db/blob/db_blob_compaction_test.cc.s
-.PHONY : db/blob/db_blob_compaction_test.s
-
-# target to generate assembly for a file
-db/blob/db_blob_compaction_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_blob_compaction_test.dir/build.make CMakeFiles/db_blob_compaction_test.dir/db/blob/db_blob_compaction_test.cc.s
-.PHONY : db/blob/db_blob_compaction_test.cc.s
-
-db/blob/db_blob_corruption_test.o: db/blob/db_blob_corruption_test.cc.o
-.PHONY : db/blob/db_blob_corruption_test.o
-
-# target to build an object file
-db/blob/db_blob_corruption_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_blob_corruption_test.dir/build.make CMakeFiles/db_blob_corruption_test.dir/db/blob/db_blob_corruption_test.cc.o
-.PHONY : db/blob/db_blob_corruption_test.cc.o
-
-db/blob/db_blob_corruption_test.i: db/blob/db_blob_corruption_test.cc.i
-.PHONY : db/blob/db_blob_corruption_test.i
-
-# target to preprocess a source file
-db/blob/db_blob_corruption_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_blob_corruption_test.dir/build.make CMakeFiles/db_blob_corruption_test.dir/db/blob/db_blob_corruption_test.cc.i
-.PHONY : db/blob/db_blob_corruption_test.cc.i
-
-db/blob/db_blob_corruption_test.s: db/blob/db_blob_corruption_test.cc.s
-.PHONY : db/blob/db_blob_corruption_test.s
-
-# target to generate assembly for a file
-db/blob/db_blob_corruption_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_blob_corruption_test.dir/build.make CMakeFiles/db_blob_corruption_test.dir/db/blob/db_blob_corruption_test.cc.s
-.PHONY : db/blob/db_blob_corruption_test.cc.s
-
-db/blob/db_blob_index_test.o: db/blob/db_blob_index_test.cc.o
-.PHONY : db/blob/db_blob_index_test.o
-
-# target to build an object file
-db/blob/db_blob_index_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_blob_index_test.dir/build.make CMakeFiles/db_blob_index_test.dir/db/blob/db_blob_index_test.cc.o
-.PHONY : db/blob/db_blob_index_test.cc.o
-
-db/blob/db_blob_index_test.i: db/blob/db_blob_index_test.cc.i
-.PHONY : db/blob/db_blob_index_test.i
-
-# target to preprocess a source file
-db/blob/db_blob_index_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_blob_index_test.dir/build.make CMakeFiles/db_blob_index_test.dir/db/blob/db_blob_index_test.cc.i
-.PHONY : db/blob/db_blob_index_test.cc.i
-
-db/blob/db_blob_index_test.s: db/blob/db_blob_index_test.cc.s
-.PHONY : db/blob/db_blob_index_test.s
-
-# target to generate assembly for a file
-db/blob/db_blob_index_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_blob_index_test.dir/build.make CMakeFiles/db_blob_index_test.dir/db/blob/db_blob_index_test.cc.s
-.PHONY : db/blob/db_blob_index_test.cc.s
-
 db/blob/prefetch_buffer_collection.o: db/blob/prefetch_buffer_collection.cc.o
 .PHONY : db/blob/prefetch_buffer_collection.o
 
@@ -4520,30 +1385,6 @@ db/c.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/db/c.cc.s
 .PHONY : db/c.cc.s
 
-db/c_test.o: db/c_test.c.o
-.PHONY : db/c_test.o
-
-# target to build an object file
-db/c_test.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/c_test.dir/build.make CMakeFiles/c_test.dir/db/c_test.c.o
-.PHONY : db/c_test.c.o
-
-db/c_test.i: db/c_test.c.i
-.PHONY : db/c_test.i
-
-# target to preprocess a source file
-db/c_test.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/c_test.dir/build.make CMakeFiles/c_test.dir/db/c_test.c.i
-.PHONY : db/c_test.c.i
-
-db/c_test.s: db/c_test.c.s
-.PHONY : db/c_test.s
-
-# target to generate assembly for a file
-db/c_test.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/c_test.dir/build.make CMakeFiles/c_test.dir/db/c_test.c.s
-.PHONY : db/c_test.c.s
-
 db/coalescing_iterator.o: db/coalescing_iterator.cc.o
 .PHONY : db/coalescing_iterator.o
 
@@ -4597,78 +1438,6 @@ db/column_family.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb.dir/build.make CMakeFiles/rocksdb.dir/db/column_family.cc.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/db/column_family.cc.s
 .PHONY : db/column_family.cc.s
-
-db/column_family_test.o: db/column_family_test.cc.o
-.PHONY : db/column_family_test.o
-
-# target to build an object file
-db/column_family_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/column_family_test.dir/build.make CMakeFiles/column_family_test.dir/db/column_family_test.cc.o
-.PHONY : db/column_family_test.cc.o
-
-db/column_family_test.i: db/column_family_test.cc.i
-.PHONY : db/column_family_test.i
-
-# target to preprocess a source file
-db/column_family_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/column_family_test.dir/build.make CMakeFiles/column_family_test.dir/db/column_family_test.cc.i
-.PHONY : db/column_family_test.cc.i
-
-db/column_family_test.s: db/column_family_test.cc.s
-.PHONY : db/column_family_test.s
-
-# target to generate assembly for a file
-db/column_family_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/column_family_test.dir/build.make CMakeFiles/column_family_test.dir/db/column_family_test.cc.s
-.PHONY : db/column_family_test.cc.s
-
-db/compact_files_test.o: db/compact_files_test.cc.o
-.PHONY : db/compact_files_test.o
-
-# target to build an object file
-db/compact_files_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/compact_files_test.dir/build.make CMakeFiles/compact_files_test.dir/db/compact_files_test.cc.o
-.PHONY : db/compact_files_test.cc.o
-
-db/compact_files_test.i: db/compact_files_test.cc.i
-.PHONY : db/compact_files_test.i
-
-# target to preprocess a source file
-db/compact_files_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/compact_files_test.dir/build.make CMakeFiles/compact_files_test.dir/db/compact_files_test.cc.i
-.PHONY : db/compact_files_test.cc.i
-
-db/compact_files_test.s: db/compact_files_test.cc.s
-.PHONY : db/compact_files_test.s
-
-# target to generate assembly for a file
-db/compact_files_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/compact_files_test.dir/build.make CMakeFiles/compact_files_test.dir/db/compact_files_test.cc.s
-.PHONY : db/compact_files_test.cc.s
-
-db/compaction/clipping_iterator_test.o: db/compaction/clipping_iterator_test.cc.o
-.PHONY : db/compaction/clipping_iterator_test.o
-
-# target to build an object file
-db/compaction/clipping_iterator_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/clipping_iterator_test.dir/build.make CMakeFiles/clipping_iterator_test.dir/db/compaction/clipping_iterator_test.cc.o
-.PHONY : db/compaction/clipping_iterator_test.cc.o
-
-db/compaction/clipping_iterator_test.i: db/compaction/clipping_iterator_test.cc.i
-.PHONY : db/compaction/clipping_iterator_test.i
-
-# target to preprocess a source file
-db/compaction/clipping_iterator_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/clipping_iterator_test.dir/build.make CMakeFiles/clipping_iterator_test.dir/db/compaction/clipping_iterator_test.cc.i
-.PHONY : db/compaction/clipping_iterator_test.cc.i
-
-db/compaction/clipping_iterator_test.s: db/compaction/clipping_iterator_test.cc.s
-.PHONY : db/compaction/clipping_iterator_test.s
-
-# target to generate assembly for a file
-db/compaction/clipping_iterator_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/clipping_iterator_test.dir/build.make CMakeFiles/clipping_iterator_test.dir/db/compaction/clipping_iterator_test.cc.s
-.PHONY : db/compaction/clipping_iterator_test.cc.s
 
 db/compaction/compaction.o: db/compaction/compaction.cc.o
 .PHONY : db/compaction/compaction.o
@@ -4724,30 +1493,6 @@ db/compaction/compaction_iterator.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/db/compaction/compaction_iterator.cc.s
 .PHONY : db/compaction/compaction_iterator.cc.s
 
-db/compaction/compaction_iterator_test.o: db/compaction/compaction_iterator_test.cc.o
-.PHONY : db/compaction/compaction_iterator_test.o
-
-# target to build an object file
-db/compaction/compaction_iterator_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/compaction_iterator_test.dir/build.make CMakeFiles/compaction_iterator_test.dir/db/compaction/compaction_iterator_test.cc.o
-.PHONY : db/compaction/compaction_iterator_test.cc.o
-
-db/compaction/compaction_iterator_test.i: db/compaction/compaction_iterator_test.cc.i
-.PHONY : db/compaction/compaction_iterator_test.i
-
-# target to preprocess a source file
-db/compaction/compaction_iterator_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/compaction_iterator_test.dir/build.make CMakeFiles/compaction_iterator_test.dir/db/compaction/compaction_iterator_test.cc.i
-.PHONY : db/compaction/compaction_iterator_test.cc.i
-
-db/compaction/compaction_iterator_test.s: db/compaction/compaction_iterator_test.cc.s
-.PHONY : db/compaction/compaction_iterator_test.s
-
-# target to generate assembly for a file
-db/compaction/compaction_iterator_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/compaction_iterator_test.dir/build.make CMakeFiles/compaction_iterator_test.dir/db/compaction/compaction_iterator_test.cc.s
-.PHONY : db/compaction/compaction_iterator_test.cc.s
-
 db/compaction/compaction_job.o: db/compaction/compaction_job.cc.o
 .PHONY : db/compaction/compaction_job.o
 
@@ -4774,54 +1519,6 @@ db/compaction/compaction_job.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb.dir/build.make CMakeFiles/rocksdb.dir/db/compaction/compaction_job.cc.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/db/compaction/compaction_job.cc.s
 .PHONY : db/compaction/compaction_job.cc.s
-
-db/compaction/compaction_job_stats_test.o: db/compaction/compaction_job_stats_test.cc.o
-.PHONY : db/compaction/compaction_job_stats_test.o
-
-# target to build an object file
-db/compaction/compaction_job_stats_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/compaction_job_stats_test.dir/build.make CMakeFiles/compaction_job_stats_test.dir/db/compaction/compaction_job_stats_test.cc.o
-.PHONY : db/compaction/compaction_job_stats_test.cc.o
-
-db/compaction/compaction_job_stats_test.i: db/compaction/compaction_job_stats_test.cc.i
-.PHONY : db/compaction/compaction_job_stats_test.i
-
-# target to preprocess a source file
-db/compaction/compaction_job_stats_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/compaction_job_stats_test.dir/build.make CMakeFiles/compaction_job_stats_test.dir/db/compaction/compaction_job_stats_test.cc.i
-.PHONY : db/compaction/compaction_job_stats_test.cc.i
-
-db/compaction/compaction_job_stats_test.s: db/compaction/compaction_job_stats_test.cc.s
-.PHONY : db/compaction/compaction_job_stats_test.s
-
-# target to generate assembly for a file
-db/compaction/compaction_job_stats_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/compaction_job_stats_test.dir/build.make CMakeFiles/compaction_job_stats_test.dir/db/compaction/compaction_job_stats_test.cc.s
-.PHONY : db/compaction/compaction_job_stats_test.cc.s
-
-db/compaction/compaction_job_test.o: db/compaction/compaction_job_test.cc.o
-.PHONY : db/compaction/compaction_job_test.o
-
-# target to build an object file
-db/compaction/compaction_job_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/compaction_job_test.dir/build.make CMakeFiles/compaction_job_test.dir/db/compaction/compaction_job_test.cc.o
-.PHONY : db/compaction/compaction_job_test.cc.o
-
-db/compaction/compaction_job_test.i: db/compaction/compaction_job_test.cc.i
-.PHONY : db/compaction/compaction_job_test.i
-
-# target to preprocess a source file
-db/compaction/compaction_job_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/compaction_job_test.dir/build.make CMakeFiles/compaction_job_test.dir/db/compaction/compaction_job_test.cc.i
-.PHONY : db/compaction/compaction_job_test.cc.i
-
-db/compaction/compaction_job_test.s: db/compaction/compaction_job_test.cc.s
-.PHONY : db/compaction/compaction_job_test.s
-
-# target to generate assembly for a file
-db/compaction/compaction_job_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/compaction_job_test.dir/build.make CMakeFiles/compaction_job_test.dir/db/compaction/compaction_job_test.cc.s
-.PHONY : db/compaction/compaction_job_test.cc.s
 
 db/compaction/compaction_outputs.o: db/compaction/compaction_outputs.cc.o
 .PHONY : db/compaction/compaction_outputs.o
@@ -4931,30 +1628,6 @@ db/compaction/compaction_picker_level.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/db/compaction/compaction_picker_level.cc.s
 .PHONY : db/compaction/compaction_picker_level.cc.s
 
-db/compaction/compaction_picker_test.o: db/compaction/compaction_picker_test.cc.o
-.PHONY : db/compaction/compaction_picker_test.o
-
-# target to build an object file
-db/compaction/compaction_picker_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/compaction_picker_test.dir/build.make CMakeFiles/compaction_picker_test.dir/db/compaction/compaction_picker_test.cc.o
-.PHONY : db/compaction/compaction_picker_test.cc.o
-
-db/compaction/compaction_picker_test.i: db/compaction/compaction_picker_test.cc.i
-.PHONY : db/compaction/compaction_picker_test.i
-
-# target to preprocess a source file
-db/compaction/compaction_picker_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/compaction_picker_test.dir/build.make CMakeFiles/compaction_picker_test.dir/db/compaction/compaction_picker_test.cc.i
-.PHONY : db/compaction/compaction_picker_test.cc.i
-
-db/compaction/compaction_picker_test.s: db/compaction/compaction_picker_test.cc.s
-.PHONY : db/compaction/compaction_picker_test.s
-
-# target to generate assembly for a file
-db/compaction/compaction_picker_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/compaction_picker_test.dir/build.make CMakeFiles/compaction_picker_test.dir/db/compaction/compaction_picker_test.cc.s
-.PHONY : db/compaction/compaction_picker_test.cc.s
-
 db/compaction/compaction_picker_universal.o: db/compaction/compaction_picker_universal.cc.o
 .PHONY : db/compaction/compaction_picker_universal.o
 
@@ -5008,30 +1681,6 @@ db/compaction/compaction_service_job.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb.dir/build.make CMakeFiles/rocksdb.dir/db/compaction/compaction_service_job.cc.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/db/compaction/compaction_service_job.cc.s
 .PHONY : db/compaction/compaction_service_job.cc.s
-
-db/compaction/compaction_service_test.o: db/compaction/compaction_service_test.cc.o
-.PHONY : db/compaction/compaction_service_test.o
-
-# target to build an object file
-db/compaction/compaction_service_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/compaction_service_test.dir/build.make CMakeFiles/compaction_service_test.dir/db/compaction/compaction_service_test.cc.o
-.PHONY : db/compaction/compaction_service_test.cc.o
-
-db/compaction/compaction_service_test.i: db/compaction/compaction_service_test.cc.i
-.PHONY : db/compaction/compaction_service_test.i
-
-# target to preprocess a source file
-db/compaction/compaction_service_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/compaction_service_test.dir/build.make CMakeFiles/compaction_service_test.dir/db/compaction/compaction_service_test.cc.i
-.PHONY : db/compaction/compaction_service_test.cc.i
-
-db/compaction/compaction_service_test.s: db/compaction/compaction_service_test.cc.s
-.PHONY : db/compaction/compaction_service_test.s
-
-# target to generate assembly for a file
-db/compaction/compaction_service_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/compaction_service_test.dir/build.make CMakeFiles/compaction_service_test.dir/db/compaction/compaction_service_test.cc.s
-.PHONY : db/compaction/compaction_service_test.cc.s
 
 db/compaction/compaction_state.o: db/compaction/compaction_state.cc.o
 .PHONY : db/compaction/compaction_state.o
@@ -5114,54 +1763,6 @@ db/compaction/subcompaction_state.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/db/compaction/subcompaction_state.cc.s
 .PHONY : db/compaction/subcompaction_state.cc.s
 
-db/compaction/tiered_compaction_test.o: db/compaction/tiered_compaction_test.cc.o
-.PHONY : db/compaction/tiered_compaction_test.o
-
-# target to build an object file
-db/compaction/tiered_compaction_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tiered_compaction_test.dir/build.make CMakeFiles/tiered_compaction_test.dir/db/compaction/tiered_compaction_test.cc.o
-.PHONY : db/compaction/tiered_compaction_test.cc.o
-
-db/compaction/tiered_compaction_test.i: db/compaction/tiered_compaction_test.cc.i
-.PHONY : db/compaction/tiered_compaction_test.i
-
-# target to preprocess a source file
-db/compaction/tiered_compaction_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tiered_compaction_test.dir/build.make CMakeFiles/tiered_compaction_test.dir/db/compaction/tiered_compaction_test.cc.i
-.PHONY : db/compaction/tiered_compaction_test.cc.i
-
-db/compaction/tiered_compaction_test.s: db/compaction/tiered_compaction_test.cc.s
-.PHONY : db/compaction/tiered_compaction_test.s
-
-# target to generate assembly for a file
-db/compaction/tiered_compaction_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tiered_compaction_test.dir/build.make CMakeFiles/tiered_compaction_test.dir/db/compaction/tiered_compaction_test.cc.s
-.PHONY : db/compaction/tiered_compaction_test.cc.s
-
-db/comparator_db_test.o: db/comparator_db_test.cc.o
-.PHONY : db/comparator_db_test.o
-
-# target to build an object file
-db/comparator_db_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/comparator_db_test.dir/build.make CMakeFiles/comparator_db_test.dir/db/comparator_db_test.cc.o
-.PHONY : db/comparator_db_test.cc.o
-
-db/comparator_db_test.i: db/comparator_db_test.cc.i
-.PHONY : db/comparator_db_test.i
-
-# target to preprocess a source file
-db/comparator_db_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/comparator_db_test.dir/build.make CMakeFiles/comparator_db_test.dir/db/comparator_db_test.cc.i
-.PHONY : db/comparator_db_test.cc.i
-
-db/comparator_db_test.s: db/comparator_db_test.cc.s
-.PHONY : db/comparator_db_test.s
-
-# target to generate assembly for a file
-db/comparator_db_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/comparator_db_test.dir/build.make CMakeFiles/comparator_db_test.dir/db/comparator_db_test.cc.s
-.PHONY : db/comparator_db_test.cc.s
-
 db/convenience.o: db/convenience.cc.o
 .PHONY : db/convenience.o
 
@@ -5189,246 +1790,6 @@ db/convenience.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/db/convenience.cc.s
 .PHONY : db/convenience.cc.s
 
-db/corruption_test.o: db/corruption_test.cc.o
-.PHONY : db/corruption_test.o
-
-# target to build an object file
-db/corruption_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/corruption_test.dir/build.make CMakeFiles/corruption_test.dir/db/corruption_test.cc.o
-.PHONY : db/corruption_test.cc.o
-
-db/corruption_test.i: db/corruption_test.cc.i
-.PHONY : db/corruption_test.i
-
-# target to preprocess a source file
-db/corruption_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/corruption_test.dir/build.make CMakeFiles/corruption_test.dir/db/corruption_test.cc.i
-.PHONY : db/corruption_test.cc.i
-
-db/corruption_test.s: db/corruption_test.cc.s
-.PHONY : db/corruption_test.s
-
-# target to generate assembly for a file
-db/corruption_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/corruption_test.dir/build.make CMakeFiles/corruption_test.dir/db/corruption_test.cc.s
-.PHONY : db/corruption_test.cc.s
-
-db/cuckoo_table_db_test.o: db/cuckoo_table_db_test.cc.o
-.PHONY : db/cuckoo_table_db_test.o
-
-# target to build an object file
-db/cuckoo_table_db_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cuckoo_table_db_test.dir/build.make CMakeFiles/cuckoo_table_db_test.dir/db/cuckoo_table_db_test.cc.o
-.PHONY : db/cuckoo_table_db_test.cc.o
-
-db/cuckoo_table_db_test.i: db/cuckoo_table_db_test.cc.i
-.PHONY : db/cuckoo_table_db_test.i
-
-# target to preprocess a source file
-db/cuckoo_table_db_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cuckoo_table_db_test.dir/build.make CMakeFiles/cuckoo_table_db_test.dir/db/cuckoo_table_db_test.cc.i
-.PHONY : db/cuckoo_table_db_test.cc.i
-
-db/cuckoo_table_db_test.s: db/cuckoo_table_db_test.cc.s
-.PHONY : db/cuckoo_table_db_test.s
-
-# target to generate assembly for a file
-db/cuckoo_table_db_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cuckoo_table_db_test.dir/build.make CMakeFiles/cuckoo_table_db_test.dir/db/cuckoo_table_db_test.cc.s
-.PHONY : db/cuckoo_table_db_test.cc.s
-
-db/db_basic_test.o: db/db_basic_test.cc.o
-.PHONY : db/db_basic_test.o
-
-# target to build an object file
-db/db_basic_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_basic_test.dir/build.make CMakeFiles/db_basic_test.dir/db/db_basic_test.cc.o
-.PHONY : db/db_basic_test.cc.o
-
-db/db_basic_test.i: db/db_basic_test.cc.i
-.PHONY : db/db_basic_test.i
-
-# target to preprocess a source file
-db/db_basic_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_basic_test.dir/build.make CMakeFiles/db_basic_test.dir/db/db_basic_test.cc.i
-.PHONY : db/db_basic_test.cc.i
-
-db/db_basic_test.s: db/db_basic_test.cc.s
-.PHONY : db/db_basic_test.s
-
-# target to generate assembly for a file
-db/db_basic_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_basic_test.dir/build.make CMakeFiles/db_basic_test.dir/db/db_basic_test.cc.s
-.PHONY : db/db_basic_test.cc.s
-
-db/db_block_cache_test.o: db/db_block_cache_test.cc.o
-.PHONY : db/db_block_cache_test.o
-
-# target to build an object file
-db/db_block_cache_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_block_cache_test.dir/build.make CMakeFiles/db_block_cache_test.dir/db/db_block_cache_test.cc.o
-.PHONY : db/db_block_cache_test.cc.o
-
-db/db_block_cache_test.i: db/db_block_cache_test.cc.i
-.PHONY : db/db_block_cache_test.i
-
-# target to preprocess a source file
-db/db_block_cache_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_block_cache_test.dir/build.make CMakeFiles/db_block_cache_test.dir/db/db_block_cache_test.cc.i
-.PHONY : db/db_block_cache_test.cc.i
-
-db/db_block_cache_test.s: db/db_block_cache_test.cc.s
-.PHONY : db/db_block_cache_test.s
-
-# target to generate assembly for a file
-db/db_block_cache_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_block_cache_test.dir/build.make CMakeFiles/db_block_cache_test.dir/db/db_block_cache_test.cc.s
-.PHONY : db/db_block_cache_test.cc.s
-
-db/db_bloom_filter_test.o: db/db_bloom_filter_test.cc.o
-.PHONY : db/db_bloom_filter_test.o
-
-# target to build an object file
-db/db_bloom_filter_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_bloom_filter_test.dir/build.make CMakeFiles/db_bloom_filter_test.dir/db/db_bloom_filter_test.cc.o
-.PHONY : db/db_bloom_filter_test.cc.o
-
-db/db_bloom_filter_test.i: db/db_bloom_filter_test.cc.i
-.PHONY : db/db_bloom_filter_test.i
-
-# target to preprocess a source file
-db/db_bloom_filter_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_bloom_filter_test.dir/build.make CMakeFiles/db_bloom_filter_test.dir/db/db_bloom_filter_test.cc.i
-.PHONY : db/db_bloom_filter_test.cc.i
-
-db/db_bloom_filter_test.s: db/db_bloom_filter_test.cc.s
-.PHONY : db/db_bloom_filter_test.s
-
-# target to generate assembly for a file
-db/db_bloom_filter_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_bloom_filter_test.dir/build.make CMakeFiles/db_bloom_filter_test.dir/db/db_bloom_filter_test.cc.s
-.PHONY : db/db_bloom_filter_test.cc.s
-
-db/db_clip_test.o: db/db_clip_test.cc.o
-.PHONY : db/db_clip_test.o
-
-# target to build an object file
-db/db_clip_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_clip_test.dir/build.make CMakeFiles/db_clip_test.dir/db/db_clip_test.cc.o
-.PHONY : db/db_clip_test.cc.o
-
-db/db_clip_test.i: db/db_clip_test.cc.i
-.PHONY : db/db_clip_test.i
-
-# target to preprocess a source file
-db/db_clip_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_clip_test.dir/build.make CMakeFiles/db_clip_test.dir/db/db_clip_test.cc.i
-.PHONY : db/db_clip_test.cc.i
-
-db/db_clip_test.s: db/db_clip_test.cc.s
-.PHONY : db/db_clip_test.s
-
-# target to generate assembly for a file
-db/db_clip_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_clip_test.dir/build.make CMakeFiles/db_clip_test.dir/db/db_clip_test.cc.s
-.PHONY : db/db_clip_test.cc.s
-
-db/db_compaction_filter_test.o: db/db_compaction_filter_test.cc.o
-.PHONY : db/db_compaction_filter_test.o
-
-# target to build an object file
-db/db_compaction_filter_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_compaction_filter_test.dir/build.make CMakeFiles/db_compaction_filter_test.dir/db/db_compaction_filter_test.cc.o
-.PHONY : db/db_compaction_filter_test.cc.o
-
-db/db_compaction_filter_test.i: db/db_compaction_filter_test.cc.i
-.PHONY : db/db_compaction_filter_test.i
-
-# target to preprocess a source file
-db/db_compaction_filter_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_compaction_filter_test.dir/build.make CMakeFiles/db_compaction_filter_test.dir/db/db_compaction_filter_test.cc.i
-.PHONY : db/db_compaction_filter_test.cc.i
-
-db/db_compaction_filter_test.s: db/db_compaction_filter_test.cc.s
-.PHONY : db/db_compaction_filter_test.s
-
-# target to generate assembly for a file
-db/db_compaction_filter_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_compaction_filter_test.dir/build.make CMakeFiles/db_compaction_filter_test.dir/db/db_compaction_filter_test.cc.s
-.PHONY : db/db_compaction_filter_test.cc.s
-
-db/db_compaction_test.o: db/db_compaction_test.cc.o
-.PHONY : db/db_compaction_test.o
-
-# target to build an object file
-db/db_compaction_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_compaction_test.dir/build.make CMakeFiles/db_compaction_test.dir/db/db_compaction_test.cc.o
-.PHONY : db/db_compaction_test.cc.o
-
-db/db_compaction_test.i: db/db_compaction_test.cc.i
-.PHONY : db/db_compaction_test.i
-
-# target to preprocess a source file
-db/db_compaction_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_compaction_test.dir/build.make CMakeFiles/db_compaction_test.dir/db/db_compaction_test.cc.i
-.PHONY : db/db_compaction_test.cc.i
-
-db/db_compaction_test.s: db/db_compaction_test.cc.s
-.PHONY : db/db_compaction_test.s
-
-# target to generate assembly for a file
-db/db_compaction_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_compaction_test.dir/build.make CMakeFiles/db_compaction_test.dir/db/db_compaction_test.cc.s
-.PHONY : db/db_compaction_test.cc.s
-
-db/db_dynamic_level_test.o: db/db_dynamic_level_test.cc.o
-.PHONY : db/db_dynamic_level_test.o
-
-# target to build an object file
-db/db_dynamic_level_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_dynamic_level_test.dir/build.make CMakeFiles/db_dynamic_level_test.dir/db/db_dynamic_level_test.cc.o
-.PHONY : db/db_dynamic_level_test.cc.o
-
-db/db_dynamic_level_test.i: db/db_dynamic_level_test.cc.i
-.PHONY : db/db_dynamic_level_test.i
-
-# target to preprocess a source file
-db/db_dynamic_level_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_dynamic_level_test.dir/build.make CMakeFiles/db_dynamic_level_test.dir/db/db_dynamic_level_test.cc.i
-.PHONY : db/db_dynamic_level_test.cc.i
-
-db/db_dynamic_level_test.s: db/db_dynamic_level_test.cc.s
-.PHONY : db/db_dynamic_level_test.s
-
-# target to generate assembly for a file
-db/db_dynamic_level_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_dynamic_level_test.dir/build.make CMakeFiles/db_dynamic_level_test.dir/db/db_dynamic_level_test.cc.s
-.PHONY : db/db_dynamic_level_test.cc.s
-
-db/db_encryption_test.o: db/db_encryption_test.cc.o
-.PHONY : db/db_encryption_test.o
-
-# target to build an object file
-db/db_encryption_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_encryption_test.dir/build.make CMakeFiles/db_encryption_test.dir/db/db_encryption_test.cc.o
-.PHONY : db/db_encryption_test.cc.o
-
-db/db_encryption_test.i: db/db_encryption_test.cc.i
-.PHONY : db/db_encryption_test.i
-
-# target to preprocess a source file
-db/db_encryption_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_encryption_test.dir/build.make CMakeFiles/db_encryption_test.dir/db/db_encryption_test.cc.i
-.PHONY : db/db_encryption_test.cc.i
-
-db/db_encryption_test.s: db/db_encryption_test.cc.s
-.PHONY : db/db_encryption_test.s
-
-# target to generate assembly for a file
-db/db_encryption_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_encryption_test.dir/build.make CMakeFiles/db_encryption_test.dir/db/db_encryption_test.cc.s
-.PHONY : db/db_encryption_test.cc.s
-
 db/db_filesnapshot.o: db/db_filesnapshot.cc.o
 .PHONY : db/db_filesnapshot.o
 
@@ -5455,54 +1816,6 @@ db/db_filesnapshot.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb.dir/build.make CMakeFiles/rocksdb.dir/db/db_filesnapshot.cc.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/db/db_filesnapshot.cc.s
 .PHONY : db/db_filesnapshot.cc.s
-
-db/db_flush_test.o: db/db_flush_test.cc.o
-.PHONY : db/db_flush_test.o
-
-# target to build an object file
-db/db_flush_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_flush_test.dir/build.make CMakeFiles/db_flush_test.dir/db/db_flush_test.cc.o
-.PHONY : db/db_flush_test.cc.o
-
-db/db_flush_test.i: db/db_flush_test.cc.i
-.PHONY : db/db_flush_test.i
-
-# target to preprocess a source file
-db/db_flush_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_flush_test.dir/build.make CMakeFiles/db_flush_test.dir/db/db_flush_test.cc.i
-.PHONY : db/db_flush_test.cc.i
-
-db/db_flush_test.s: db/db_flush_test.cc.s
-.PHONY : db/db_flush_test.s
-
-# target to generate assembly for a file
-db/db_flush_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_flush_test.dir/build.make CMakeFiles/db_flush_test.dir/db/db_flush_test.cc.s
-.PHONY : db/db_flush_test.cc.s
-
-db/db_follower_test.o: db/db_follower_test.cc.o
-.PHONY : db/db_follower_test.o
-
-# target to build an object file
-db/db_follower_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_follower_test.dir/build.make CMakeFiles/db_follower_test.dir/db/db_follower_test.cc.o
-.PHONY : db/db_follower_test.cc.o
-
-db/db_follower_test.i: db/db_follower_test.cc.i
-.PHONY : db/db_follower_test.i
-
-# target to preprocess a source file
-db/db_follower_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_follower_test.dir/build.make CMakeFiles/db_follower_test.dir/db/db_follower_test.cc.i
-.PHONY : db/db_follower_test.cc.i
-
-db/db_follower_test.s: db/db_follower_test.cc.s
-.PHONY : db/db_follower_test.s
-
-# target to generate assembly for a file
-db/db_follower_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_follower_test.dir/build.make CMakeFiles/db_follower_test.dir/db/db_follower_test.cc.s
-.PHONY : db/db_follower_test.cc.s
 
 db/db_impl/compacted_db_impl.o: db/db_impl/compacted_db_impl.cc.o
 .PHONY : db/db_impl/compacted_db_impl.o
@@ -5828,54 +2141,6 @@ db/db_info_dumper.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/db/db_info_dumper.cc.s
 .PHONY : db/db_info_dumper.cc.s
 
-db/db_inplace_update_test.o: db/db_inplace_update_test.cc.o
-.PHONY : db/db_inplace_update_test.o
-
-# target to build an object file
-db/db_inplace_update_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_inplace_update_test.dir/build.make CMakeFiles/db_inplace_update_test.dir/db/db_inplace_update_test.cc.o
-.PHONY : db/db_inplace_update_test.cc.o
-
-db/db_inplace_update_test.i: db/db_inplace_update_test.cc.i
-.PHONY : db/db_inplace_update_test.i
-
-# target to preprocess a source file
-db/db_inplace_update_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_inplace_update_test.dir/build.make CMakeFiles/db_inplace_update_test.dir/db/db_inplace_update_test.cc.i
-.PHONY : db/db_inplace_update_test.cc.i
-
-db/db_inplace_update_test.s: db/db_inplace_update_test.cc.s
-.PHONY : db/db_inplace_update_test.s
-
-# target to generate assembly for a file
-db/db_inplace_update_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_inplace_update_test.dir/build.make CMakeFiles/db_inplace_update_test.dir/db/db_inplace_update_test.cc.s
-.PHONY : db/db_inplace_update_test.cc.s
-
-db/db_io_failure_test.o: db/db_io_failure_test.cc.o
-.PHONY : db/db_io_failure_test.o
-
-# target to build an object file
-db/db_io_failure_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_io_failure_test.dir/build.make CMakeFiles/db_io_failure_test.dir/db/db_io_failure_test.cc.o
-.PHONY : db/db_io_failure_test.cc.o
-
-db/db_io_failure_test.i: db/db_io_failure_test.cc.i
-.PHONY : db/db_io_failure_test.i
-
-# target to preprocess a source file
-db/db_io_failure_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_io_failure_test.dir/build.make CMakeFiles/db_io_failure_test.dir/db/db_io_failure_test.cc.i
-.PHONY : db/db_io_failure_test.cc.i
-
-db/db_io_failure_test.s: db/db_io_failure_test.cc.s
-.PHONY : db/db_io_failure_test.s
-
-# target to generate assembly for a file
-db/db_io_failure_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_io_failure_test.dir/build.make CMakeFiles/db_io_failure_test.dir/db/db_io_failure_test.cc.s
-.PHONY : db/db_io_failure_test.cc.s
-
 db/db_iter.o: db/db_iter.cc.o
 .PHONY : db/db_iter.o
 
@@ -5902,702 +2167,6 @@ db/db_iter.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb.dir/build.make CMakeFiles/rocksdb.dir/db/db_iter.cc.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/db/db_iter.cc.s
 .PHONY : db/db_iter.cc.s
-
-db/db_iter_stress_test.o: db/db_iter_stress_test.cc.o
-.PHONY : db/db_iter_stress_test.o
-
-# target to build an object file
-db/db_iter_stress_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_iter_stress_test.dir/build.make CMakeFiles/db_iter_stress_test.dir/db/db_iter_stress_test.cc.o
-.PHONY : db/db_iter_stress_test.cc.o
-
-db/db_iter_stress_test.i: db/db_iter_stress_test.cc.i
-.PHONY : db/db_iter_stress_test.i
-
-# target to preprocess a source file
-db/db_iter_stress_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_iter_stress_test.dir/build.make CMakeFiles/db_iter_stress_test.dir/db/db_iter_stress_test.cc.i
-.PHONY : db/db_iter_stress_test.cc.i
-
-db/db_iter_stress_test.s: db/db_iter_stress_test.cc.s
-.PHONY : db/db_iter_stress_test.s
-
-# target to generate assembly for a file
-db/db_iter_stress_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_iter_stress_test.dir/build.make CMakeFiles/db_iter_stress_test.dir/db/db_iter_stress_test.cc.s
-.PHONY : db/db_iter_stress_test.cc.s
-
-db/db_iter_test.o: db/db_iter_test.cc.o
-.PHONY : db/db_iter_test.o
-
-# target to build an object file
-db/db_iter_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_iter_test.dir/build.make CMakeFiles/db_iter_test.dir/db/db_iter_test.cc.o
-.PHONY : db/db_iter_test.cc.o
-
-db/db_iter_test.i: db/db_iter_test.cc.i
-.PHONY : db/db_iter_test.i
-
-# target to preprocess a source file
-db/db_iter_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_iter_test.dir/build.make CMakeFiles/db_iter_test.dir/db/db_iter_test.cc.i
-.PHONY : db/db_iter_test.cc.i
-
-db/db_iter_test.s: db/db_iter_test.cc.s
-.PHONY : db/db_iter_test.s
-
-# target to generate assembly for a file
-db/db_iter_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_iter_test.dir/build.make CMakeFiles/db_iter_test.dir/db/db_iter_test.cc.s
-.PHONY : db/db_iter_test.cc.s
-
-db/db_iterator_test.o: db/db_iterator_test.cc.o
-.PHONY : db/db_iterator_test.o
-
-# target to build an object file
-db/db_iterator_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_iterator_test.dir/build.make CMakeFiles/db_iterator_test.dir/db/db_iterator_test.cc.o
-.PHONY : db/db_iterator_test.cc.o
-
-db/db_iterator_test.i: db/db_iterator_test.cc.i
-.PHONY : db/db_iterator_test.i
-
-# target to preprocess a source file
-db/db_iterator_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_iterator_test.dir/build.make CMakeFiles/db_iterator_test.dir/db/db_iterator_test.cc.i
-.PHONY : db/db_iterator_test.cc.i
-
-db/db_iterator_test.s: db/db_iterator_test.cc.s
-.PHONY : db/db_iterator_test.s
-
-# target to generate assembly for a file
-db/db_iterator_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_iterator_test.dir/build.make CMakeFiles/db_iterator_test.dir/db/db_iterator_test.cc.s
-.PHONY : db/db_iterator_test.cc.s
-
-db/db_kv_checksum_test.o: db/db_kv_checksum_test.cc.o
-.PHONY : db/db_kv_checksum_test.o
-
-# target to build an object file
-db/db_kv_checksum_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_kv_checksum_test.dir/build.make CMakeFiles/db_kv_checksum_test.dir/db/db_kv_checksum_test.cc.o
-.PHONY : db/db_kv_checksum_test.cc.o
-
-db/db_kv_checksum_test.i: db/db_kv_checksum_test.cc.i
-.PHONY : db/db_kv_checksum_test.i
-
-# target to preprocess a source file
-db/db_kv_checksum_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_kv_checksum_test.dir/build.make CMakeFiles/db_kv_checksum_test.dir/db/db_kv_checksum_test.cc.i
-.PHONY : db/db_kv_checksum_test.cc.i
-
-db/db_kv_checksum_test.s: db/db_kv_checksum_test.cc.s
-.PHONY : db/db_kv_checksum_test.s
-
-# target to generate assembly for a file
-db/db_kv_checksum_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_kv_checksum_test.dir/build.make CMakeFiles/db_kv_checksum_test.dir/db/db_kv_checksum_test.cc.s
-.PHONY : db/db_kv_checksum_test.cc.s
-
-db/db_log_iter_test.o: db/db_log_iter_test.cc.o
-.PHONY : db/db_log_iter_test.o
-
-# target to build an object file
-db/db_log_iter_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_log_iter_test.dir/build.make CMakeFiles/db_log_iter_test.dir/db/db_log_iter_test.cc.o
-.PHONY : db/db_log_iter_test.cc.o
-
-db/db_log_iter_test.i: db/db_log_iter_test.cc.i
-.PHONY : db/db_log_iter_test.i
-
-# target to preprocess a source file
-db/db_log_iter_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_log_iter_test.dir/build.make CMakeFiles/db_log_iter_test.dir/db/db_log_iter_test.cc.i
-.PHONY : db/db_log_iter_test.cc.i
-
-db/db_log_iter_test.s: db/db_log_iter_test.cc.s
-.PHONY : db/db_log_iter_test.s
-
-# target to generate assembly for a file
-db/db_log_iter_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_log_iter_test.dir/build.make CMakeFiles/db_log_iter_test.dir/db/db_log_iter_test.cc.s
-.PHONY : db/db_log_iter_test.cc.s
-
-db/db_logical_block_size_cache_test.o: db/db_logical_block_size_cache_test.cc.o
-.PHONY : db/db_logical_block_size_cache_test.o
-
-# target to build an object file
-db/db_logical_block_size_cache_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_logical_block_size_cache_test.dir/build.make CMakeFiles/db_logical_block_size_cache_test.dir/db/db_logical_block_size_cache_test.cc.o
-.PHONY : db/db_logical_block_size_cache_test.cc.o
-
-db/db_logical_block_size_cache_test.i: db/db_logical_block_size_cache_test.cc.i
-.PHONY : db/db_logical_block_size_cache_test.i
-
-# target to preprocess a source file
-db/db_logical_block_size_cache_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_logical_block_size_cache_test.dir/build.make CMakeFiles/db_logical_block_size_cache_test.dir/db/db_logical_block_size_cache_test.cc.i
-.PHONY : db/db_logical_block_size_cache_test.cc.i
-
-db/db_logical_block_size_cache_test.s: db/db_logical_block_size_cache_test.cc.s
-.PHONY : db/db_logical_block_size_cache_test.s
-
-# target to generate assembly for a file
-db/db_logical_block_size_cache_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_logical_block_size_cache_test.dir/build.make CMakeFiles/db_logical_block_size_cache_test.dir/db/db_logical_block_size_cache_test.cc.s
-.PHONY : db/db_logical_block_size_cache_test.cc.s
-
-db/db_memtable_test.o: db/db_memtable_test.cc.o
-.PHONY : db/db_memtable_test.o
-
-# target to build an object file
-db/db_memtable_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_memtable_test.dir/build.make CMakeFiles/db_memtable_test.dir/db/db_memtable_test.cc.o
-.PHONY : db/db_memtable_test.cc.o
-
-db/db_memtable_test.i: db/db_memtable_test.cc.i
-.PHONY : db/db_memtable_test.i
-
-# target to preprocess a source file
-db/db_memtable_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_memtable_test.dir/build.make CMakeFiles/db_memtable_test.dir/db/db_memtable_test.cc.i
-.PHONY : db/db_memtable_test.cc.i
-
-db/db_memtable_test.s: db/db_memtable_test.cc.s
-.PHONY : db/db_memtable_test.s
-
-# target to generate assembly for a file
-db/db_memtable_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_memtable_test.dir/build.make CMakeFiles/db_memtable_test.dir/db/db_memtable_test.cc.s
-.PHONY : db/db_memtable_test.cc.s
-
-db/db_merge_operand_test.o: db/db_merge_operand_test.cc.o
-.PHONY : db/db_merge_operand_test.o
-
-# target to build an object file
-db/db_merge_operand_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_merge_operand_test.dir/build.make CMakeFiles/db_merge_operand_test.dir/db/db_merge_operand_test.cc.o
-.PHONY : db/db_merge_operand_test.cc.o
-
-db/db_merge_operand_test.i: db/db_merge_operand_test.cc.i
-.PHONY : db/db_merge_operand_test.i
-
-# target to preprocess a source file
-db/db_merge_operand_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_merge_operand_test.dir/build.make CMakeFiles/db_merge_operand_test.dir/db/db_merge_operand_test.cc.i
-.PHONY : db/db_merge_operand_test.cc.i
-
-db/db_merge_operand_test.s: db/db_merge_operand_test.cc.s
-.PHONY : db/db_merge_operand_test.s
-
-# target to generate assembly for a file
-db/db_merge_operand_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_merge_operand_test.dir/build.make CMakeFiles/db_merge_operand_test.dir/db/db_merge_operand_test.cc.s
-.PHONY : db/db_merge_operand_test.cc.s
-
-db/db_merge_operator_test.o: db/db_merge_operator_test.cc.o
-.PHONY : db/db_merge_operator_test.o
-
-# target to build an object file
-db/db_merge_operator_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_merge_operator_test.dir/build.make CMakeFiles/db_merge_operator_test.dir/db/db_merge_operator_test.cc.o
-.PHONY : db/db_merge_operator_test.cc.o
-
-db/db_merge_operator_test.i: db/db_merge_operator_test.cc.i
-.PHONY : db/db_merge_operator_test.i
-
-# target to preprocess a source file
-db/db_merge_operator_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_merge_operator_test.dir/build.make CMakeFiles/db_merge_operator_test.dir/db/db_merge_operator_test.cc.i
-.PHONY : db/db_merge_operator_test.cc.i
-
-db/db_merge_operator_test.s: db/db_merge_operator_test.cc.s
-.PHONY : db/db_merge_operator_test.s
-
-# target to generate assembly for a file
-db/db_merge_operator_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_merge_operator_test.dir/build.make CMakeFiles/db_merge_operator_test.dir/db/db_merge_operator_test.cc.s
-.PHONY : db/db_merge_operator_test.cc.s
-
-db/db_options_test.o: db/db_options_test.cc.o
-.PHONY : db/db_options_test.o
-
-# target to build an object file
-db/db_options_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_options_test.dir/build.make CMakeFiles/db_options_test.dir/db/db_options_test.cc.o
-.PHONY : db/db_options_test.cc.o
-
-db/db_options_test.i: db/db_options_test.cc.i
-.PHONY : db/db_options_test.i
-
-# target to preprocess a source file
-db/db_options_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_options_test.dir/build.make CMakeFiles/db_options_test.dir/db/db_options_test.cc.i
-.PHONY : db/db_options_test.cc.i
-
-db/db_options_test.s: db/db_options_test.cc.s
-.PHONY : db/db_options_test.s
-
-# target to generate assembly for a file
-db/db_options_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_options_test.dir/build.make CMakeFiles/db_options_test.dir/db/db_options_test.cc.s
-.PHONY : db/db_options_test.cc.s
-
-db/db_properties_test.o: db/db_properties_test.cc.o
-.PHONY : db/db_properties_test.o
-
-# target to build an object file
-db/db_properties_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_properties_test.dir/build.make CMakeFiles/db_properties_test.dir/db/db_properties_test.cc.o
-.PHONY : db/db_properties_test.cc.o
-
-db/db_properties_test.i: db/db_properties_test.cc.i
-.PHONY : db/db_properties_test.i
-
-# target to preprocess a source file
-db/db_properties_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_properties_test.dir/build.make CMakeFiles/db_properties_test.dir/db/db_properties_test.cc.i
-.PHONY : db/db_properties_test.cc.i
-
-db/db_properties_test.s: db/db_properties_test.cc.s
-.PHONY : db/db_properties_test.s
-
-# target to generate assembly for a file
-db/db_properties_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_properties_test.dir/build.make CMakeFiles/db_properties_test.dir/db/db_properties_test.cc.s
-.PHONY : db/db_properties_test.cc.s
-
-db/db_range_del_test.o: db/db_range_del_test.cc.o
-.PHONY : db/db_range_del_test.o
-
-# target to build an object file
-db/db_range_del_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_range_del_test.dir/build.make CMakeFiles/db_range_del_test.dir/db/db_range_del_test.cc.o
-.PHONY : db/db_range_del_test.cc.o
-
-db/db_range_del_test.i: db/db_range_del_test.cc.i
-.PHONY : db/db_range_del_test.i
-
-# target to preprocess a source file
-db/db_range_del_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_range_del_test.dir/build.make CMakeFiles/db_range_del_test.dir/db/db_range_del_test.cc.i
-.PHONY : db/db_range_del_test.cc.i
-
-db/db_range_del_test.s: db/db_range_del_test.cc.s
-.PHONY : db/db_range_del_test.s
-
-# target to generate assembly for a file
-db/db_range_del_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_range_del_test.dir/build.make CMakeFiles/db_range_del_test.dir/db/db_range_del_test.cc.s
-.PHONY : db/db_range_del_test.cc.s
-
-db/db_rate_limiter_test.o: db/db_rate_limiter_test.cc.o
-.PHONY : db/db_rate_limiter_test.o
-
-# target to build an object file
-db/db_rate_limiter_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_rate_limiter_test.dir/build.make CMakeFiles/db_rate_limiter_test.dir/db/db_rate_limiter_test.cc.o
-.PHONY : db/db_rate_limiter_test.cc.o
-
-db/db_rate_limiter_test.i: db/db_rate_limiter_test.cc.i
-.PHONY : db/db_rate_limiter_test.i
-
-# target to preprocess a source file
-db/db_rate_limiter_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_rate_limiter_test.dir/build.make CMakeFiles/db_rate_limiter_test.dir/db/db_rate_limiter_test.cc.i
-.PHONY : db/db_rate_limiter_test.cc.i
-
-db/db_rate_limiter_test.s: db/db_rate_limiter_test.cc.s
-.PHONY : db/db_rate_limiter_test.s
-
-# target to generate assembly for a file
-db/db_rate_limiter_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_rate_limiter_test.dir/build.make CMakeFiles/db_rate_limiter_test.dir/db/db_rate_limiter_test.cc.s
-.PHONY : db/db_rate_limiter_test.cc.s
-
-db/db_readonly_with_timestamp_test.o: db/db_readonly_with_timestamp_test.cc.o
-.PHONY : db/db_readonly_with_timestamp_test.o
-
-# target to build an object file
-db/db_readonly_with_timestamp_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_readonly_with_timestamp_test.dir/build.make CMakeFiles/db_readonly_with_timestamp_test.dir/db/db_readonly_with_timestamp_test.cc.o
-.PHONY : db/db_readonly_with_timestamp_test.cc.o
-
-db/db_readonly_with_timestamp_test.i: db/db_readonly_with_timestamp_test.cc.i
-.PHONY : db/db_readonly_with_timestamp_test.i
-
-# target to preprocess a source file
-db/db_readonly_with_timestamp_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_readonly_with_timestamp_test.dir/build.make CMakeFiles/db_readonly_with_timestamp_test.dir/db/db_readonly_with_timestamp_test.cc.i
-.PHONY : db/db_readonly_with_timestamp_test.cc.i
-
-db/db_readonly_with_timestamp_test.s: db/db_readonly_with_timestamp_test.cc.s
-.PHONY : db/db_readonly_with_timestamp_test.s
-
-# target to generate assembly for a file
-db/db_readonly_with_timestamp_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_readonly_with_timestamp_test.dir/build.make CMakeFiles/db_readonly_with_timestamp_test.dir/db/db_readonly_with_timestamp_test.cc.s
-.PHONY : db/db_readonly_with_timestamp_test.cc.s
-
-db/db_secondary_test.o: db/db_secondary_test.cc.o
-.PHONY : db/db_secondary_test.o
-
-# target to build an object file
-db/db_secondary_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_secondary_test.dir/build.make CMakeFiles/db_secondary_test.dir/db/db_secondary_test.cc.o
-.PHONY : db/db_secondary_test.cc.o
-
-db/db_secondary_test.i: db/db_secondary_test.cc.i
-.PHONY : db/db_secondary_test.i
-
-# target to preprocess a source file
-db/db_secondary_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_secondary_test.dir/build.make CMakeFiles/db_secondary_test.dir/db/db_secondary_test.cc.i
-.PHONY : db/db_secondary_test.cc.i
-
-db/db_secondary_test.s: db/db_secondary_test.cc.s
-.PHONY : db/db_secondary_test.s
-
-# target to generate assembly for a file
-db/db_secondary_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_secondary_test.dir/build.make CMakeFiles/db_secondary_test.dir/db/db_secondary_test.cc.s
-.PHONY : db/db_secondary_test.cc.s
-
-db/db_sst_test.o: db/db_sst_test.cc.o
-.PHONY : db/db_sst_test.o
-
-# target to build an object file
-db/db_sst_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_sst_test.dir/build.make CMakeFiles/db_sst_test.dir/db/db_sst_test.cc.o
-.PHONY : db/db_sst_test.cc.o
-
-db/db_sst_test.i: db/db_sst_test.cc.i
-.PHONY : db/db_sst_test.i
-
-# target to preprocess a source file
-db/db_sst_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_sst_test.dir/build.make CMakeFiles/db_sst_test.dir/db/db_sst_test.cc.i
-.PHONY : db/db_sst_test.cc.i
-
-db/db_sst_test.s: db/db_sst_test.cc.s
-.PHONY : db/db_sst_test.s
-
-# target to generate assembly for a file
-db/db_sst_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_sst_test.dir/build.make CMakeFiles/db_sst_test.dir/db/db_sst_test.cc.s
-.PHONY : db/db_sst_test.cc.s
-
-db/db_statistics_test.o: db/db_statistics_test.cc.o
-.PHONY : db/db_statistics_test.o
-
-# target to build an object file
-db/db_statistics_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_statistics_test.dir/build.make CMakeFiles/db_statistics_test.dir/db/db_statistics_test.cc.o
-.PHONY : db/db_statistics_test.cc.o
-
-db/db_statistics_test.i: db/db_statistics_test.cc.i
-.PHONY : db/db_statistics_test.i
-
-# target to preprocess a source file
-db/db_statistics_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_statistics_test.dir/build.make CMakeFiles/db_statistics_test.dir/db/db_statistics_test.cc.i
-.PHONY : db/db_statistics_test.cc.i
-
-db/db_statistics_test.s: db/db_statistics_test.cc.s
-.PHONY : db/db_statistics_test.s
-
-# target to generate assembly for a file
-db/db_statistics_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_statistics_test.dir/build.make CMakeFiles/db_statistics_test.dir/db/db_statistics_test.cc.s
-.PHONY : db/db_statistics_test.cc.s
-
-db/db_table_properties_test.o: db/db_table_properties_test.cc.o
-.PHONY : db/db_table_properties_test.o
-
-# target to build an object file
-db/db_table_properties_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_table_properties_test.dir/build.make CMakeFiles/db_table_properties_test.dir/db/db_table_properties_test.cc.o
-.PHONY : db/db_table_properties_test.cc.o
-
-db/db_table_properties_test.i: db/db_table_properties_test.cc.i
-.PHONY : db/db_table_properties_test.i
-
-# target to preprocess a source file
-db/db_table_properties_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_table_properties_test.dir/build.make CMakeFiles/db_table_properties_test.dir/db/db_table_properties_test.cc.i
-.PHONY : db/db_table_properties_test.cc.i
-
-db/db_table_properties_test.s: db/db_table_properties_test.cc.s
-.PHONY : db/db_table_properties_test.s
-
-# target to generate assembly for a file
-db/db_table_properties_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_table_properties_test.dir/build.make CMakeFiles/db_table_properties_test.dir/db/db_table_properties_test.cc.s
-.PHONY : db/db_table_properties_test.cc.s
-
-db/db_tailing_iter_test.o: db/db_tailing_iter_test.cc.o
-.PHONY : db/db_tailing_iter_test.o
-
-# target to build an object file
-db/db_tailing_iter_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_tailing_iter_test.dir/build.make CMakeFiles/db_tailing_iter_test.dir/db/db_tailing_iter_test.cc.o
-.PHONY : db/db_tailing_iter_test.cc.o
-
-db/db_tailing_iter_test.i: db/db_tailing_iter_test.cc.i
-.PHONY : db/db_tailing_iter_test.i
-
-# target to preprocess a source file
-db/db_tailing_iter_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_tailing_iter_test.dir/build.make CMakeFiles/db_tailing_iter_test.dir/db/db_tailing_iter_test.cc.i
-.PHONY : db/db_tailing_iter_test.cc.i
-
-db/db_tailing_iter_test.s: db/db_tailing_iter_test.cc.s
-.PHONY : db/db_tailing_iter_test.s
-
-# target to generate assembly for a file
-db/db_tailing_iter_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_tailing_iter_test.dir/build.make CMakeFiles/db_tailing_iter_test.dir/db/db_tailing_iter_test.cc.s
-.PHONY : db/db_tailing_iter_test.cc.s
-
-db/db_test.o: db/db_test.cc.o
-.PHONY : db/db_test.o
-
-# target to build an object file
-db/db_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_test.dir/build.make CMakeFiles/db_test.dir/db/db_test.cc.o
-.PHONY : db/db_test.cc.o
-
-db/db_test.i: db/db_test.cc.i
-.PHONY : db/db_test.i
-
-# target to preprocess a source file
-db/db_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_test.dir/build.make CMakeFiles/db_test.dir/db/db_test.cc.i
-.PHONY : db/db_test.cc.i
-
-db/db_test.s: db/db_test.cc.s
-.PHONY : db/db_test.s
-
-# target to generate assembly for a file
-db/db_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_test.dir/build.make CMakeFiles/db_test.dir/db/db_test.cc.s
-.PHONY : db/db_test.cc.s
-
-db/db_test2.o: db/db_test2.cc.o
-.PHONY : db/db_test2.o
-
-# target to build an object file
-db/db_test2.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_test2.dir/build.make CMakeFiles/db_test2.dir/db/db_test2.cc.o
-.PHONY : db/db_test2.cc.o
-
-db/db_test2.i: db/db_test2.cc.i
-.PHONY : db/db_test2.i
-
-# target to preprocess a source file
-db/db_test2.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_test2.dir/build.make CMakeFiles/db_test2.dir/db/db_test2.cc.i
-.PHONY : db/db_test2.cc.i
-
-db/db_test2.s: db/db_test2.cc.s
-.PHONY : db/db_test2.s
-
-# target to generate assembly for a file
-db/db_test2.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_test2.dir/build.make CMakeFiles/db_test2.dir/db/db_test2.cc.s
-.PHONY : db/db_test2.cc.s
-
-db/db_test_util.o: db/db_test_util.cc.o
-.PHONY : db/db_test_util.o
-
-# target to build an object file
-db/db_test_util.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testutillib.dir/build.make CMakeFiles/testutillib.dir/db/db_test_util.cc.o
-.PHONY : db/db_test_util.cc.o
-
-db/db_test_util.i: db/db_test_util.cc.i
-.PHONY : db/db_test_util.i
-
-# target to preprocess a source file
-db/db_test_util.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testutillib.dir/build.make CMakeFiles/testutillib.dir/db/db_test_util.cc.i
-.PHONY : db/db_test_util.cc.i
-
-db/db_test_util.s: db/db_test_util.cc.s
-.PHONY : db/db_test_util.s
-
-# target to generate assembly for a file
-db/db_test_util.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testutillib.dir/build.make CMakeFiles/testutillib.dir/db/db_test_util.cc.s
-.PHONY : db/db_test_util.cc.s
-
-db/db_universal_compaction_test.o: db/db_universal_compaction_test.cc.o
-.PHONY : db/db_universal_compaction_test.o
-
-# target to build an object file
-db/db_universal_compaction_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_universal_compaction_test.dir/build.make CMakeFiles/db_universal_compaction_test.dir/db/db_universal_compaction_test.cc.o
-.PHONY : db/db_universal_compaction_test.cc.o
-
-db/db_universal_compaction_test.i: db/db_universal_compaction_test.cc.i
-.PHONY : db/db_universal_compaction_test.i
-
-# target to preprocess a source file
-db/db_universal_compaction_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_universal_compaction_test.dir/build.make CMakeFiles/db_universal_compaction_test.dir/db/db_universal_compaction_test.cc.i
-.PHONY : db/db_universal_compaction_test.cc.i
-
-db/db_universal_compaction_test.s: db/db_universal_compaction_test.cc.s
-.PHONY : db/db_universal_compaction_test.s
-
-# target to generate assembly for a file
-db/db_universal_compaction_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_universal_compaction_test.dir/build.make CMakeFiles/db_universal_compaction_test.dir/db/db_universal_compaction_test.cc.s
-.PHONY : db/db_universal_compaction_test.cc.s
-
-db/db_wal_test.o: db/db_wal_test.cc.o
-.PHONY : db/db_wal_test.o
-
-# target to build an object file
-db/db_wal_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_wal_test.dir/build.make CMakeFiles/db_wal_test.dir/db/db_wal_test.cc.o
-.PHONY : db/db_wal_test.cc.o
-
-db/db_wal_test.i: db/db_wal_test.cc.i
-.PHONY : db/db_wal_test.i
-
-# target to preprocess a source file
-db/db_wal_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_wal_test.dir/build.make CMakeFiles/db_wal_test.dir/db/db_wal_test.cc.i
-.PHONY : db/db_wal_test.cc.i
-
-db/db_wal_test.s: db/db_wal_test.cc.s
-.PHONY : db/db_wal_test.s
-
-# target to generate assembly for a file
-db/db_wal_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_wal_test.dir/build.make CMakeFiles/db_wal_test.dir/db/db_wal_test.cc.s
-.PHONY : db/db_wal_test.cc.s
-
-db/db_with_timestamp_basic_test.o: db/db_with_timestamp_basic_test.cc.o
-.PHONY : db/db_with_timestamp_basic_test.o
-
-# target to build an object file
-db/db_with_timestamp_basic_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_with_timestamp_basic_test.dir/build.make CMakeFiles/db_with_timestamp_basic_test.dir/db/db_with_timestamp_basic_test.cc.o
-.PHONY : db/db_with_timestamp_basic_test.cc.o
-
-db/db_with_timestamp_basic_test.i: db/db_with_timestamp_basic_test.cc.i
-.PHONY : db/db_with_timestamp_basic_test.i
-
-# target to preprocess a source file
-db/db_with_timestamp_basic_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_with_timestamp_basic_test.dir/build.make CMakeFiles/db_with_timestamp_basic_test.dir/db/db_with_timestamp_basic_test.cc.i
-.PHONY : db/db_with_timestamp_basic_test.cc.i
-
-db/db_with_timestamp_basic_test.s: db/db_with_timestamp_basic_test.cc.s
-.PHONY : db/db_with_timestamp_basic_test.s
-
-# target to generate assembly for a file
-db/db_with_timestamp_basic_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_with_timestamp_basic_test.dir/build.make CMakeFiles/db_with_timestamp_basic_test.dir/db/db_with_timestamp_basic_test.cc.s
-.PHONY : db/db_with_timestamp_basic_test.cc.s
-
-db/db_with_timestamp_compaction_test.o: db/db_with_timestamp_compaction_test.cc.o
-.PHONY : db/db_with_timestamp_compaction_test.o
-
-# target to build an object file
-db/db_with_timestamp_compaction_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_with_timestamp_compaction_test.dir/build.make CMakeFiles/db_with_timestamp_compaction_test.dir/db/db_with_timestamp_compaction_test.cc.o
-.PHONY : db/db_with_timestamp_compaction_test.cc.o
-
-db/db_with_timestamp_compaction_test.i: db/db_with_timestamp_compaction_test.cc.i
-.PHONY : db/db_with_timestamp_compaction_test.i
-
-# target to preprocess a source file
-db/db_with_timestamp_compaction_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_with_timestamp_compaction_test.dir/build.make CMakeFiles/db_with_timestamp_compaction_test.dir/db/db_with_timestamp_compaction_test.cc.i
-.PHONY : db/db_with_timestamp_compaction_test.cc.i
-
-db/db_with_timestamp_compaction_test.s: db/db_with_timestamp_compaction_test.cc.s
-.PHONY : db/db_with_timestamp_compaction_test.s
-
-# target to generate assembly for a file
-db/db_with_timestamp_compaction_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_with_timestamp_compaction_test.dir/build.make CMakeFiles/db_with_timestamp_compaction_test.dir/db/db_with_timestamp_compaction_test.cc.s
-.PHONY : db/db_with_timestamp_compaction_test.cc.s
-
-db/db_with_timestamp_test_util.o: db/db_with_timestamp_test_util.cc.o
-.PHONY : db/db_with_timestamp_test_util.o
-
-# target to build an object file
-db/db_with_timestamp_test_util.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testutillib.dir/build.make CMakeFiles/testutillib.dir/db/db_with_timestamp_test_util.cc.o
-.PHONY : db/db_with_timestamp_test_util.cc.o
-
-db/db_with_timestamp_test_util.i: db/db_with_timestamp_test_util.cc.i
-.PHONY : db/db_with_timestamp_test_util.i
-
-# target to preprocess a source file
-db/db_with_timestamp_test_util.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testutillib.dir/build.make CMakeFiles/testutillib.dir/db/db_with_timestamp_test_util.cc.i
-.PHONY : db/db_with_timestamp_test_util.cc.i
-
-db/db_with_timestamp_test_util.s: db/db_with_timestamp_test_util.cc.s
-.PHONY : db/db_with_timestamp_test_util.s
-
-# target to generate assembly for a file
-db/db_with_timestamp_test_util.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testutillib.dir/build.make CMakeFiles/testutillib.dir/db/db_with_timestamp_test_util.cc.s
-.PHONY : db/db_with_timestamp_test_util.cc.s
-
-db/db_write_buffer_manager_test.o: db/db_write_buffer_manager_test.cc.o
-.PHONY : db/db_write_buffer_manager_test.o
-
-# target to build an object file
-db/db_write_buffer_manager_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_write_buffer_manager_test.dir/build.make CMakeFiles/db_write_buffer_manager_test.dir/db/db_write_buffer_manager_test.cc.o
-.PHONY : db/db_write_buffer_manager_test.cc.o
-
-db/db_write_buffer_manager_test.i: db/db_write_buffer_manager_test.cc.i
-.PHONY : db/db_write_buffer_manager_test.i
-
-# target to preprocess a source file
-db/db_write_buffer_manager_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_write_buffer_manager_test.dir/build.make CMakeFiles/db_write_buffer_manager_test.dir/db/db_write_buffer_manager_test.cc.i
-.PHONY : db/db_write_buffer_manager_test.cc.i
-
-db/db_write_buffer_manager_test.s: db/db_write_buffer_manager_test.cc.s
-.PHONY : db/db_write_buffer_manager_test.s
-
-# target to generate assembly for a file
-db/db_write_buffer_manager_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_write_buffer_manager_test.dir/build.make CMakeFiles/db_write_buffer_manager_test.dir/db/db_write_buffer_manager_test.cc.s
-.PHONY : db/db_write_buffer_manager_test.cc.s
-
-db/db_write_test.o: db/db_write_test.cc.o
-.PHONY : db/db_write_test.o
-
-# target to build an object file
-db/db_write_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_write_test.dir/build.make CMakeFiles/db_write_test.dir/db/db_write_test.cc.o
-.PHONY : db/db_write_test.cc.o
-
-db/db_write_test.i: db/db_write_test.cc.i
-.PHONY : db/db_write_test.i
-
-# target to preprocess a source file
-db/db_write_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_write_test.dir/build.make CMakeFiles/db_write_test.dir/db/db_write_test.cc.i
-.PHONY : db/db_write_test.cc.i
-
-db/db_write_test.s: db/db_write_test.cc.s
-.PHONY : db/db_write_test.s
-
-# target to generate assembly for a file
-db/db_write_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_write_test.dir/build.make CMakeFiles/db_write_test.dir/db/db_write_test.cc.s
-.PHONY : db/db_write_test.cc.s
 
 db/dbformat.o: db/dbformat.cc.o
 .PHONY : db/dbformat.o
@@ -6626,54 +2195,6 @@ db/dbformat.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/db/dbformat.cc.s
 .PHONY : db/dbformat.cc.s
 
-db/dbformat_test.o: db/dbformat_test.cc.o
-.PHONY : db/dbformat_test.o
-
-# target to build an object file
-db/dbformat_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/dbformat_test.dir/build.make CMakeFiles/dbformat_test.dir/db/dbformat_test.cc.o
-.PHONY : db/dbformat_test.cc.o
-
-db/dbformat_test.i: db/dbformat_test.cc.i
-.PHONY : db/dbformat_test.i
-
-# target to preprocess a source file
-db/dbformat_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/dbformat_test.dir/build.make CMakeFiles/dbformat_test.dir/db/dbformat_test.cc.i
-.PHONY : db/dbformat_test.cc.i
-
-db/dbformat_test.s: db/dbformat_test.cc.s
-.PHONY : db/dbformat_test.s
-
-# target to generate assembly for a file
-db/dbformat_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/dbformat_test.dir/build.make CMakeFiles/dbformat_test.dir/db/dbformat_test.cc.s
-.PHONY : db/dbformat_test.cc.s
-
-db/deletefile_test.o: db/deletefile_test.cc.o
-.PHONY : db/deletefile_test.o
-
-# target to build an object file
-db/deletefile_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/deletefile_test.dir/build.make CMakeFiles/deletefile_test.dir/db/deletefile_test.cc.o
-.PHONY : db/deletefile_test.cc.o
-
-db/deletefile_test.i: db/deletefile_test.cc.i
-.PHONY : db/deletefile_test.i
-
-# target to preprocess a source file
-db/deletefile_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/deletefile_test.dir/build.make CMakeFiles/deletefile_test.dir/db/deletefile_test.cc.i
-.PHONY : db/deletefile_test.cc.i
-
-db/deletefile_test.s: db/deletefile_test.cc.s
-.PHONY : db/deletefile_test.s
-
-# target to generate assembly for a file
-db/deletefile_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/deletefile_test.dir/build.make CMakeFiles/deletefile_test.dir/db/deletefile_test.cc.s
-.PHONY : db/deletefile_test.cc.s
-
 db/error_handler.o: db/error_handler.cc.o
 .PHONY : db/error_handler.o
 
@@ -6700,30 +2221,6 @@ db/error_handler.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb.dir/build.make CMakeFiles/rocksdb.dir/db/error_handler.cc.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/db/error_handler.cc.s
 .PHONY : db/error_handler.cc.s
-
-db/error_handler_fs_test.o: db/error_handler_fs_test.cc.o
-.PHONY : db/error_handler_fs_test.o
-
-# target to build an object file
-db/error_handler_fs_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/error_handler_fs_test.dir/build.make CMakeFiles/error_handler_fs_test.dir/db/error_handler_fs_test.cc.o
-.PHONY : db/error_handler_fs_test.cc.o
-
-db/error_handler_fs_test.i: db/error_handler_fs_test.cc.i
-.PHONY : db/error_handler_fs_test.i
-
-# target to preprocess a source file
-db/error_handler_fs_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/error_handler_fs_test.dir/build.make CMakeFiles/error_handler_fs_test.dir/db/error_handler_fs_test.cc.i
-.PHONY : db/error_handler_fs_test.cc.i
-
-db/error_handler_fs_test.s: db/error_handler_fs_test.cc.s
-.PHONY : db/error_handler_fs_test.s
-
-# target to generate assembly for a file
-db/error_handler_fs_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/error_handler_fs_test.dir/build.make CMakeFiles/error_handler_fs_test.dir/db/error_handler_fs_test.cc.s
-.PHONY : db/error_handler_fs_test.cc.s
 
 db/event_helpers.o: db/event_helpers.cc.o
 .PHONY : db/event_helpers.o
@@ -6779,30 +2276,6 @@ db/experimental.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/db/experimental.cc.s
 .PHONY : db/experimental.cc.s
 
-db/external_sst_file_basic_test.o: db/external_sst_file_basic_test.cc.o
-.PHONY : db/external_sst_file_basic_test.o
-
-# target to build an object file
-db/external_sst_file_basic_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/external_sst_file_basic_test.dir/build.make CMakeFiles/external_sst_file_basic_test.dir/db/external_sst_file_basic_test.cc.o
-.PHONY : db/external_sst_file_basic_test.cc.o
-
-db/external_sst_file_basic_test.i: db/external_sst_file_basic_test.cc.i
-.PHONY : db/external_sst_file_basic_test.i
-
-# target to preprocess a source file
-db/external_sst_file_basic_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/external_sst_file_basic_test.dir/build.make CMakeFiles/external_sst_file_basic_test.dir/db/external_sst_file_basic_test.cc.i
-.PHONY : db/external_sst_file_basic_test.cc.i
-
-db/external_sst_file_basic_test.s: db/external_sst_file_basic_test.cc.s
-.PHONY : db/external_sst_file_basic_test.s
-
-# target to generate assembly for a file
-db/external_sst_file_basic_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/external_sst_file_basic_test.dir/build.make CMakeFiles/external_sst_file_basic_test.dir/db/external_sst_file_basic_test.cc.s
-.PHONY : db/external_sst_file_basic_test.cc.s
-
 db/external_sst_file_ingestion_job.o: db/external_sst_file_ingestion_job.cc.o
 .PHONY : db/external_sst_file_ingestion_job.o
 
@@ -6829,54 +2302,6 @@ db/external_sst_file_ingestion_job.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb.dir/build.make CMakeFiles/rocksdb.dir/db/external_sst_file_ingestion_job.cc.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/db/external_sst_file_ingestion_job.cc.s
 .PHONY : db/external_sst_file_ingestion_job.cc.s
-
-db/external_sst_file_test.o: db/external_sst_file_test.cc.o
-.PHONY : db/external_sst_file_test.o
-
-# target to build an object file
-db/external_sst_file_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/external_sst_file_test.dir/build.make CMakeFiles/external_sst_file_test.dir/db/external_sst_file_test.cc.o
-.PHONY : db/external_sst_file_test.cc.o
-
-db/external_sst_file_test.i: db/external_sst_file_test.cc.i
-.PHONY : db/external_sst_file_test.i
-
-# target to preprocess a source file
-db/external_sst_file_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/external_sst_file_test.dir/build.make CMakeFiles/external_sst_file_test.dir/db/external_sst_file_test.cc.i
-.PHONY : db/external_sst_file_test.cc.i
-
-db/external_sst_file_test.s: db/external_sst_file_test.cc.s
-.PHONY : db/external_sst_file_test.s
-
-# target to generate assembly for a file
-db/external_sst_file_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/external_sst_file_test.dir/build.make CMakeFiles/external_sst_file_test.dir/db/external_sst_file_test.cc.s
-.PHONY : db/external_sst_file_test.cc.s
-
-db/fault_injection_test.o: db/fault_injection_test.cc.o
-.PHONY : db/fault_injection_test.o
-
-# target to build an object file
-db/fault_injection_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fault_injection_test.dir/build.make CMakeFiles/fault_injection_test.dir/db/fault_injection_test.cc.o
-.PHONY : db/fault_injection_test.cc.o
-
-db/fault_injection_test.i: db/fault_injection_test.cc.i
-.PHONY : db/fault_injection_test.i
-
-# target to preprocess a source file
-db/fault_injection_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fault_injection_test.dir/build.make CMakeFiles/fault_injection_test.dir/db/fault_injection_test.cc.i
-.PHONY : db/fault_injection_test.cc.i
-
-db/fault_injection_test.s: db/fault_injection_test.cc.s
-.PHONY : db/fault_injection_test.s
-
-# target to generate assembly for a file
-db/fault_injection_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fault_injection_test.dir/build.make CMakeFiles/fault_injection_test.dir/db/fault_injection_test.cc.s
-.PHONY : db/fault_injection_test.cc.s
 
 db/file_indexer.o: db/file_indexer.cc.o
 .PHONY : db/file_indexer.o
@@ -6905,54 +2330,6 @@ db/file_indexer.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/db/file_indexer.cc.s
 .PHONY : db/file_indexer.cc.s
 
-db/file_indexer_test.o: db/file_indexer_test.cc.o
-.PHONY : db/file_indexer_test.o
-
-# target to build an object file
-db/file_indexer_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/file_indexer_test.dir/build.make CMakeFiles/file_indexer_test.dir/db/file_indexer_test.cc.o
-.PHONY : db/file_indexer_test.cc.o
-
-db/file_indexer_test.i: db/file_indexer_test.cc.i
-.PHONY : db/file_indexer_test.i
-
-# target to preprocess a source file
-db/file_indexer_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/file_indexer_test.dir/build.make CMakeFiles/file_indexer_test.dir/db/file_indexer_test.cc.i
-.PHONY : db/file_indexer_test.cc.i
-
-db/file_indexer_test.s: db/file_indexer_test.cc.s
-.PHONY : db/file_indexer_test.s
-
-# target to generate assembly for a file
-db/file_indexer_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/file_indexer_test.dir/build.make CMakeFiles/file_indexer_test.dir/db/file_indexer_test.cc.s
-.PHONY : db/file_indexer_test.cc.s
-
-db/filename_test.o: db/filename_test.cc.o
-.PHONY : db/filename_test.o
-
-# target to build an object file
-db/filename_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/filename_test.dir/build.make CMakeFiles/filename_test.dir/db/filename_test.cc.o
-.PHONY : db/filename_test.cc.o
-
-db/filename_test.i: db/filename_test.cc.i
-.PHONY : db/filename_test.i
-
-# target to preprocess a source file
-db/filename_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/filename_test.dir/build.make CMakeFiles/filename_test.dir/db/filename_test.cc.i
-.PHONY : db/filename_test.cc.i
-
-db/filename_test.s: db/filename_test.cc.s
-.PHONY : db/filename_test.s
-
-# target to generate assembly for a file
-db/filename_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/filename_test.dir/build.make CMakeFiles/filename_test.dir/db/filename_test.cc.s
-.PHONY : db/filename_test.cc.s
-
 db/flush_job.o: db/flush_job.cc.o
 .PHONY : db/flush_job.o
 
@@ -6979,30 +2356,6 @@ db/flush_job.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb.dir/build.make CMakeFiles/rocksdb.dir/db/flush_job.cc.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/db/flush_job.cc.s
 .PHONY : db/flush_job.cc.s
-
-db/flush_job_test.o: db/flush_job_test.cc.o
-.PHONY : db/flush_job_test.o
-
-# target to build an object file
-db/flush_job_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/flush_job_test.dir/build.make CMakeFiles/flush_job_test.dir/db/flush_job_test.cc.o
-.PHONY : db/flush_job_test.cc.o
-
-db/flush_job_test.i: db/flush_job_test.cc.i
-.PHONY : db/flush_job_test.i
-
-# target to preprocess a source file
-db/flush_job_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/flush_job_test.dir/build.make CMakeFiles/flush_job_test.dir/db/flush_job_test.cc.i
-.PHONY : db/flush_job_test.cc.i
-
-db/flush_job_test.s: db/flush_job_test.cc.s
-.PHONY : db/flush_job_test.s
-
-# target to generate assembly for a file
-db/flush_job_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/flush_job_test.dir/build.make CMakeFiles/flush_job_test.dir/db/flush_job_test.cc.s
-.PHONY : db/flush_job_test.cc.s
 
 db/flush_scheduler.o: db/flush_scheduler.cc.o
 .PHONY : db/flush_scheduler.o
@@ -7085,30 +2438,6 @@ db/import_column_family_job.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/db/import_column_family_job.cc.s
 .PHONY : db/import_column_family_job.cc.s
 
-db/import_column_family_test.o: db/import_column_family_test.cc.o
-.PHONY : db/import_column_family_test.o
-
-# target to build an object file
-db/import_column_family_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/import_column_family_test.dir/build.make CMakeFiles/import_column_family_test.dir/db/import_column_family_test.cc.o
-.PHONY : db/import_column_family_test.cc.o
-
-db/import_column_family_test.i: db/import_column_family_test.cc.i
-.PHONY : db/import_column_family_test.i
-
-# target to preprocess a source file
-db/import_column_family_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/import_column_family_test.dir/build.make CMakeFiles/import_column_family_test.dir/db/import_column_family_test.cc.i
-.PHONY : db/import_column_family_test.cc.i
-
-db/import_column_family_test.s: db/import_column_family_test.cc.s
-.PHONY : db/import_column_family_test.s
-
-# target to generate assembly for a file
-db/import_column_family_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/import_column_family_test.dir/build.make CMakeFiles/import_column_family_test.dir/db/import_column_family_test.cc.s
-.PHONY : db/import_column_family_test.cc.s
-
 db/internal_stats.o: db/internal_stats.cc.o
 .PHONY : db/internal_stats.o
 
@@ -7136,30 +2465,6 @@ db/internal_stats.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/db/internal_stats.cc.s
 .PHONY : db/internal_stats.cc.s
 
-db/listener_test.o: db/listener_test.cc.o
-.PHONY : db/listener_test.o
-
-# target to build an object file
-db/listener_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/listener_test.dir/build.make CMakeFiles/listener_test.dir/db/listener_test.cc.o
-.PHONY : db/listener_test.cc.o
-
-db/listener_test.i: db/listener_test.cc.i
-.PHONY : db/listener_test.i
-
-# target to preprocess a source file
-db/listener_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/listener_test.dir/build.make CMakeFiles/listener_test.dir/db/listener_test.cc.i
-.PHONY : db/listener_test.cc.i
-
-db/listener_test.s: db/listener_test.cc.s
-.PHONY : db/listener_test.s
-
-# target to generate assembly for a file
-db/listener_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/listener_test.dir/build.make CMakeFiles/listener_test.dir/db/listener_test.cc.s
-.PHONY : db/listener_test.cc.s
-
 db/log_reader.o: db/log_reader.cc.o
 .PHONY : db/log_reader.o
 
@@ -7186,30 +2491,6 @@ db/log_reader.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb.dir/build.make CMakeFiles/rocksdb.dir/db/log_reader.cc.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/db/log_reader.cc.s
 .PHONY : db/log_reader.cc.s
-
-db/log_test.o: db/log_test.cc.o
-.PHONY : db/log_test.o
-
-# target to build an object file
-db/log_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/log_test.dir/build.make CMakeFiles/log_test.dir/db/log_test.cc.o
-.PHONY : db/log_test.cc.o
-
-db/log_test.i: db/log_test.cc.i
-.PHONY : db/log_test.i
-
-# target to preprocess a source file
-db/log_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/log_test.dir/build.make CMakeFiles/log_test.dir/db/log_test.cc.i
-.PHONY : db/log_test.cc.i
-
-db/log_test.s: db/log_test.cc.s
-.PHONY : db/log_test.s
-
-# target to generate assembly for a file
-db/log_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/log_test.dir/build.make CMakeFiles/log_test.dir/db/log_test.cc.s
-.PHONY : db/log_test.cc.s
 
 db/log_writer.o: db/log_writer.cc.o
 .PHONY : db/log_writer.o
@@ -7292,30 +2573,6 @@ db/malloc_stats.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/db/malloc_stats.cc.s
 .PHONY : db/malloc_stats.cc.s
 
-db/manual_compaction_test.o: db/manual_compaction_test.cc.o
-.PHONY : db/manual_compaction_test.o
-
-# target to build an object file
-db/manual_compaction_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/manual_compaction_test.dir/build.make CMakeFiles/manual_compaction_test.dir/db/manual_compaction_test.cc.o
-.PHONY : db/manual_compaction_test.cc.o
-
-db/manual_compaction_test.i: db/manual_compaction_test.cc.i
-.PHONY : db/manual_compaction_test.i
-
-# target to preprocess a source file
-db/manual_compaction_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/manual_compaction_test.dir/build.make CMakeFiles/manual_compaction_test.dir/db/manual_compaction_test.cc.i
-.PHONY : db/manual_compaction_test.cc.i
-
-db/manual_compaction_test.s: db/manual_compaction_test.cc.s
-.PHONY : db/manual_compaction_test.s
-
-# target to generate assembly for a file
-db/manual_compaction_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/manual_compaction_test.dir/build.make CMakeFiles/manual_compaction_test.dir/db/manual_compaction_test.cc.s
-.PHONY : db/manual_compaction_test.cc.s
-
 db/memtable.o: db/memtable.cc.o
 .PHONY : db/memtable.o
 
@@ -7370,30 +2627,6 @@ db/memtable_list.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/db/memtable_list.cc.s
 .PHONY : db/memtable_list.cc.s
 
-db/memtable_list_test.o: db/memtable_list_test.cc.o
-.PHONY : db/memtable_list_test.o
-
-# target to build an object file
-db/memtable_list_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/memtable_list_test.dir/build.make CMakeFiles/memtable_list_test.dir/db/memtable_list_test.cc.o
-.PHONY : db/memtable_list_test.cc.o
-
-db/memtable_list_test.i: db/memtable_list_test.cc.i
-.PHONY : db/memtable_list_test.i
-
-# target to preprocess a source file
-db/memtable_list_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/memtable_list_test.dir/build.make CMakeFiles/memtable_list_test.dir/db/memtable_list_test.cc.i
-.PHONY : db/memtable_list_test.cc.i
-
-db/memtable_list_test.s: db/memtable_list_test.cc.s
-.PHONY : db/memtable_list_test.s
-
-# target to generate assembly for a file
-db/memtable_list_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/memtable_list_test.dir/build.make CMakeFiles/memtable_list_test.dir/db/memtable_list_test.cc.s
-.PHONY : db/memtable_list_test.cc.s
-
 db/merge_helper.o: db/merge_helper.cc.o
 .PHONY : db/merge_helper.o
 
@@ -7420,30 +2653,6 @@ db/merge_helper.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb.dir/build.make CMakeFiles/rocksdb.dir/db/merge_helper.cc.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/db/merge_helper.cc.s
 .PHONY : db/merge_helper.cc.s
-
-db/merge_helper_test.o: db/merge_helper_test.cc.o
-.PHONY : db/merge_helper_test.o
-
-# target to build an object file
-db/merge_helper_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/merge_helper_test.dir/build.make CMakeFiles/merge_helper_test.dir/db/merge_helper_test.cc.o
-.PHONY : db/merge_helper_test.cc.o
-
-db/merge_helper_test.i: db/merge_helper_test.cc.i
-.PHONY : db/merge_helper_test.i
-
-# target to preprocess a source file
-db/merge_helper_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/merge_helper_test.dir/build.make CMakeFiles/merge_helper_test.dir/db/merge_helper_test.cc.i
-.PHONY : db/merge_helper_test.cc.i
-
-db/merge_helper_test.s: db/merge_helper_test.cc.s
-.PHONY : db/merge_helper_test.s
-
-# target to generate assembly for a file
-db/merge_helper_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/merge_helper_test.dir/build.make CMakeFiles/merge_helper_test.dir/db/merge_helper_test.cc.s
-.PHONY : db/merge_helper_test.cc.s
 
 db/merge_operator.o: db/merge_operator.cc.o
 .PHONY : db/merge_operator.o
@@ -7472,102 +2681,6 @@ db/merge_operator.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/db/merge_operator.cc.s
 .PHONY : db/merge_operator.cc.s
 
-db/merge_test.o: db/merge_test.cc.o
-.PHONY : db/merge_test.o
-
-# target to build an object file
-db/merge_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/merge_test.dir/build.make CMakeFiles/merge_test.dir/db/merge_test.cc.o
-.PHONY : db/merge_test.cc.o
-
-db/merge_test.i: db/merge_test.cc.i
-.PHONY : db/merge_test.i
-
-# target to preprocess a source file
-db/merge_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/merge_test.dir/build.make CMakeFiles/merge_test.dir/db/merge_test.cc.i
-.PHONY : db/merge_test.cc.i
-
-db/merge_test.s: db/merge_test.cc.s
-.PHONY : db/merge_test.s
-
-# target to generate assembly for a file
-db/merge_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/merge_test.dir/build.make CMakeFiles/merge_test.dir/db/merge_test.cc.s
-.PHONY : db/merge_test.cc.s
-
-db/multi_cf_iterator_test.o: db/multi_cf_iterator_test.cc.o
-.PHONY : db/multi_cf_iterator_test.o
-
-# target to build an object file
-db/multi_cf_iterator_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/multi_cf_iterator_test.dir/build.make CMakeFiles/multi_cf_iterator_test.dir/db/multi_cf_iterator_test.cc.o
-.PHONY : db/multi_cf_iterator_test.cc.o
-
-db/multi_cf_iterator_test.i: db/multi_cf_iterator_test.cc.i
-.PHONY : db/multi_cf_iterator_test.i
-
-# target to preprocess a source file
-db/multi_cf_iterator_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/multi_cf_iterator_test.dir/build.make CMakeFiles/multi_cf_iterator_test.dir/db/multi_cf_iterator_test.cc.i
-.PHONY : db/multi_cf_iterator_test.cc.i
-
-db/multi_cf_iterator_test.s: db/multi_cf_iterator_test.cc.s
-.PHONY : db/multi_cf_iterator_test.s
-
-# target to generate assembly for a file
-db/multi_cf_iterator_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/multi_cf_iterator_test.dir/build.make CMakeFiles/multi_cf_iterator_test.dir/db/multi_cf_iterator_test.cc.s
-.PHONY : db/multi_cf_iterator_test.cc.s
-
-db/obsolete_files_test.o: db/obsolete_files_test.cc.o
-.PHONY : db/obsolete_files_test.o
-
-# target to build an object file
-db/obsolete_files_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/obsolete_files_test.dir/build.make CMakeFiles/obsolete_files_test.dir/db/obsolete_files_test.cc.o
-.PHONY : db/obsolete_files_test.cc.o
-
-db/obsolete_files_test.i: db/obsolete_files_test.cc.i
-.PHONY : db/obsolete_files_test.i
-
-# target to preprocess a source file
-db/obsolete_files_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/obsolete_files_test.dir/build.make CMakeFiles/obsolete_files_test.dir/db/obsolete_files_test.cc.i
-.PHONY : db/obsolete_files_test.cc.i
-
-db/obsolete_files_test.s: db/obsolete_files_test.cc.s
-.PHONY : db/obsolete_files_test.s
-
-# target to generate assembly for a file
-db/obsolete_files_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/obsolete_files_test.dir/build.make CMakeFiles/obsolete_files_test.dir/db/obsolete_files_test.cc.s
-.PHONY : db/obsolete_files_test.cc.s
-
-db/options_file_test.o: db/options_file_test.cc.o
-.PHONY : db/options_file_test.o
-
-# target to build an object file
-db/options_file_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/options_file_test.dir/build.make CMakeFiles/options_file_test.dir/db/options_file_test.cc.o
-.PHONY : db/options_file_test.cc.o
-
-db/options_file_test.i: db/options_file_test.cc.i
-.PHONY : db/options_file_test.i
-
-# target to preprocess a source file
-db/options_file_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/options_file_test.dir/build.make CMakeFiles/options_file_test.dir/db/options_file_test.cc.i
-.PHONY : db/options_file_test.cc.i
-
-db/options_file_test.s: db/options_file_test.cc.s
-.PHONY : db/options_file_test.s
-
-# target to generate assembly for a file
-db/options_file_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/options_file_test.dir/build.make CMakeFiles/options_file_test.dir/db/options_file_test.cc.s
-.PHONY : db/options_file_test.cc.s
-
 db/output_validator.o: db/output_validator.cc.o
 .PHONY : db/output_validator.o
 
@@ -7595,30 +2708,6 @@ db/output_validator.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/db/output_validator.cc.s
 .PHONY : db/output_validator.cc.s
 
-db/perf_context_test.o: db/perf_context_test.cc.o
-.PHONY : db/perf_context_test.o
-
-# target to build an object file
-db/perf_context_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/perf_context_test.dir/build.make CMakeFiles/perf_context_test.dir/db/perf_context_test.cc.o
-.PHONY : db/perf_context_test.cc.o
-
-db/perf_context_test.i: db/perf_context_test.cc.i
-.PHONY : db/perf_context_test.i
-
-# target to preprocess a source file
-db/perf_context_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/perf_context_test.dir/build.make CMakeFiles/perf_context_test.dir/db/perf_context_test.cc.i
-.PHONY : db/perf_context_test.cc.i
-
-db/perf_context_test.s: db/perf_context_test.cc.s
-.PHONY : db/perf_context_test.s
-
-# target to generate assembly for a file
-db/perf_context_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/perf_context_test.dir/build.make CMakeFiles/perf_context_test.dir/db/perf_context_test.cc.s
-.PHONY : db/perf_context_test.cc.s
-
 db/periodic_task_scheduler.o: db/periodic_task_scheduler.cc.o
 .PHONY : db/periodic_task_scheduler.o
 
@@ -7645,78 +2734,6 @@ db/periodic_task_scheduler.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb.dir/build.make CMakeFiles/rocksdb.dir/db/periodic_task_scheduler.cc.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/db/periodic_task_scheduler.cc.s
 .PHONY : db/periodic_task_scheduler.cc.s
-
-db/periodic_task_scheduler_test.o: db/periodic_task_scheduler_test.cc.o
-.PHONY : db/periodic_task_scheduler_test.o
-
-# target to build an object file
-db/periodic_task_scheduler_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/periodic_task_scheduler_test.dir/build.make CMakeFiles/periodic_task_scheduler_test.dir/db/periodic_task_scheduler_test.cc.o
-.PHONY : db/periodic_task_scheduler_test.cc.o
-
-db/periodic_task_scheduler_test.i: db/periodic_task_scheduler_test.cc.i
-.PHONY : db/periodic_task_scheduler_test.i
-
-# target to preprocess a source file
-db/periodic_task_scheduler_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/periodic_task_scheduler_test.dir/build.make CMakeFiles/periodic_task_scheduler_test.dir/db/periodic_task_scheduler_test.cc.i
-.PHONY : db/periodic_task_scheduler_test.cc.i
-
-db/periodic_task_scheduler_test.s: db/periodic_task_scheduler_test.cc.s
-.PHONY : db/periodic_task_scheduler_test.s
-
-# target to generate assembly for a file
-db/periodic_task_scheduler_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/periodic_task_scheduler_test.dir/build.make CMakeFiles/periodic_task_scheduler_test.dir/db/periodic_task_scheduler_test.cc.s
-.PHONY : db/periodic_task_scheduler_test.cc.s
-
-db/plain_table_db_test.o: db/plain_table_db_test.cc.o
-.PHONY : db/plain_table_db_test.o
-
-# target to build an object file
-db/plain_table_db_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/plain_table_db_test.dir/build.make CMakeFiles/plain_table_db_test.dir/db/plain_table_db_test.cc.o
-.PHONY : db/plain_table_db_test.cc.o
-
-db/plain_table_db_test.i: db/plain_table_db_test.cc.i
-.PHONY : db/plain_table_db_test.i
-
-# target to preprocess a source file
-db/plain_table_db_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/plain_table_db_test.dir/build.make CMakeFiles/plain_table_db_test.dir/db/plain_table_db_test.cc.i
-.PHONY : db/plain_table_db_test.cc.i
-
-db/plain_table_db_test.s: db/plain_table_db_test.cc.s
-.PHONY : db/plain_table_db_test.s
-
-# target to generate assembly for a file
-db/plain_table_db_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/plain_table_db_test.dir/build.make CMakeFiles/plain_table_db_test.dir/db/plain_table_db_test.cc.s
-.PHONY : db/plain_table_db_test.cc.s
-
-db/prefix_test.o: db/prefix_test.cc.o
-.PHONY : db/prefix_test.o
-
-# target to build an object file
-db/prefix_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/prefix_test.dir/build.make CMakeFiles/prefix_test.dir/db/prefix_test.cc.o
-.PHONY : db/prefix_test.cc.o
-
-db/prefix_test.i: db/prefix_test.cc.i
-.PHONY : db/prefix_test.i
-
-# target to preprocess a source file
-db/prefix_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/prefix_test.dir/build.make CMakeFiles/prefix_test.dir/db/prefix_test.cc.i
-.PHONY : db/prefix_test.cc.i
-
-db/prefix_test.s: db/prefix_test.cc.s
-.PHONY : db/prefix_test.s
-
-# target to generate assembly for a file
-db/prefix_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/prefix_test.dir/build.make CMakeFiles/prefix_test.dir/db/prefix_test.cc.s
-.PHONY : db/prefix_test.cc.s
 
 db/range_del_aggregator.o: db/range_del_aggregator.cc.o
 .PHONY : db/range_del_aggregator.o
@@ -7769,30 +2786,6 @@ db/range_del_aggregator_bench.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/range_del_aggregator_bench.dir/build.make CMakeFiles/range_del_aggregator_bench.dir/db/range_del_aggregator_bench.cc.s
 .PHONY : db/range_del_aggregator_bench.cc.s
 
-db/range_del_aggregator_test.o: db/range_del_aggregator_test.cc.o
-.PHONY : db/range_del_aggregator_test.o
-
-# target to build an object file
-db/range_del_aggregator_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/range_del_aggregator_test.dir/build.make CMakeFiles/range_del_aggregator_test.dir/db/range_del_aggregator_test.cc.o
-.PHONY : db/range_del_aggregator_test.cc.o
-
-db/range_del_aggregator_test.i: db/range_del_aggregator_test.cc.i
-.PHONY : db/range_del_aggregator_test.i
-
-# target to preprocess a source file
-db/range_del_aggregator_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/range_del_aggregator_test.dir/build.make CMakeFiles/range_del_aggregator_test.dir/db/range_del_aggregator_test.cc.i
-.PHONY : db/range_del_aggregator_test.cc.i
-
-db/range_del_aggregator_test.s: db/range_del_aggregator_test.cc.s
-.PHONY : db/range_del_aggregator_test.s
-
-# target to generate assembly for a file
-db/range_del_aggregator_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/range_del_aggregator_test.dir/build.make CMakeFiles/range_del_aggregator_test.dir/db/range_del_aggregator_test.cc.s
-.PHONY : db/range_del_aggregator_test.cc.s
-
 db/range_tombstone_fragmenter.o: db/range_tombstone_fragmenter.cc.o
 .PHONY : db/range_tombstone_fragmenter.o
 
@@ -7820,30 +2813,6 @@ db/range_tombstone_fragmenter.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/db/range_tombstone_fragmenter.cc.s
 .PHONY : db/range_tombstone_fragmenter.cc.s
 
-db/range_tombstone_fragmenter_test.o: db/range_tombstone_fragmenter_test.cc.o
-.PHONY : db/range_tombstone_fragmenter_test.o
-
-# target to build an object file
-db/range_tombstone_fragmenter_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/range_tombstone_fragmenter_test.dir/build.make CMakeFiles/range_tombstone_fragmenter_test.dir/db/range_tombstone_fragmenter_test.cc.o
-.PHONY : db/range_tombstone_fragmenter_test.cc.o
-
-db/range_tombstone_fragmenter_test.i: db/range_tombstone_fragmenter_test.cc.i
-.PHONY : db/range_tombstone_fragmenter_test.i
-
-# target to preprocess a source file
-db/range_tombstone_fragmenter_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/range_tombstone_fragmenter_test.dir/build.make CMakeFiles/range_tombstone_fragmenter_test.dir/db/range_tombstone_fragmenter_test.cc.i
-.PHONY : db/range_tombstone_fragmenter_test.cc.i
-
-db/range_tombstone_fragmenter_test.s: db/range_tombstone_fragmenter_test.cc.s
-.PHONY : db/range_tombstone_fragmenter_test.s
-
-# target to generate assembly for a file
-db/range_tombstone_fragmenter_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/range_tombstone_fragmenter_test.dir/build.make CMakeFiles/range_tombstone_fragmenter_test.dir/db/range_tombstone_fragmenter_test.cc.s
-.PHONY : db/range_tombstone_fragmenter_test.cc.s
-
 db/repair.o: db/repair.cc.o
 .PHONY : db/repair.o
 
@@ -7870,54 +2839,6 @@ db/repair.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb.dir/build.make CMakeFiles/rocksdb.dir/db/repair.cc.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/db/repair.cc.s
 .PHONY : db/repair.cc.s
-
-db/repair_test.o: db/repair_test.cc.o
-.PHONY : db/repair_test.o
-
-# target to build an object file
-db/repair_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/repair_test.dir/build.make CMakeFiles/repair_test.dir/db/repair_test.cc.o
-.PHONY : db/repair_test.cc.o
-
-db/repair_test.i: db/repair_test.cc.i
-.PHONY : db/repair_test.i
-
-# target to preprocess a source file
-db/repair_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/repair_test.dir/build.make CMakeFiles/repair_test.dir/db/repair_test.cc.i
-.PHONY : db/repair_test.cc.i
-
-db/repair_test.s: db/repair_test.cc.s
-.PHONY : db/repair_test.s
-
-# target to generate assembly for a file
-db/repair_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/repair_test.dir/build.make CMakeFiles/repair_test.dir/db/repair_test.cc.s
-.PHONY : db/repair_test.cc.s
-
-db/seqno_time_test.o: db/seqno_time_test.cc.o
-.PHONY : db/seqno_time_test.o
-
-# target to build an object file
-db/seqno_time_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/seqno_time_test.dir/build.make CMakeFiles/seqno_time_test.dir/db/seqno_time_test.cc.o
-.PHONY : db/seqno_time_test.cc.o
-
-db/seqno_time_test.i: db/seqno_time_test.cc.i
-.PHONY : db/seqno_time_test.i
-
-# target to preprocess a source file
-db/seqno_time_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/seqno_time_test.dir/build.make CMakeFiles/seqno_time_test.dir/db/seqno_time_test.cc.i
-.PHONY : db/seqno_time_test.cc.i
-
-db/seqno_time_test.s: db/seqno_time_test.cc.s
-.PHONY : db/seqno_time_test.s
-
-# target to generate assembly for a file
-db/seqno_time_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/seqno_time_test.dir/build.make CMakeFiles/seqno_time_test.dir/db/seqno_time_test.cc.s
-.PHONY : db/seqno_time_test.cc.s
 
 db/seqno_to_time_mapping.o: db/seqno_to_time_mapping.cc.o
 .PHONY : db/seqno_to_time_mapping.o
@@ -8027,30 +2948,6 @@ db/table_properties_collector.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/db/table_properties_collector.cc.s
 .PHONY : db/table_properties_collector.cc.s
 
-db/table_properties_collector_test.o: db/table_properties_collector_test.cc.o
-.PHONY : db/table_properties_collector_test.o
-
-# target to build an object file
-db/table_properties_collector_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/table_properties_collector_test.dir/build.make CMakeFiles/table_properties_collector_test.dir/db/table_properties_collector_test.cc.o
-.PHONY : db/table_properties_collector_test.cc.o
-
-db/table_properties_collector_test.i: db/table_properties_collector_test.cc.i
-.PHONY : db/table_properties_collector_test.i
-
-# target to preprocess a source file
-db/table_properties_collector_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/table_properties_collector_test.dir/build.make CMakeFiles/table_properties_collector_test.dir/db/table_properties_collector_test.cc.i
-.PHONY : db/table_properties_collector_test.cc.i
-
-db/table_properties_collector_test.s: db/table_properties_collector_test.cc.s
-.PHONY : db/table_properties_collector_test.s
-
-# target to generate assembly for a file
-db/table_properties_collector_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/table_properties_collector_test.dir/build.make CMakeFiles/table_properties_collector_test.dir/db/table_properties_collector_test.cc.s
-.PHONY : db/table_properties_collector_test.cc.s
-
 db/transaction_log_impl.o: db/transaction_log_impl.cc.o
 .PHONY : db/transaction_log_impl.o
 
@@ -8132,30 +3029,6 @@ db/version_builder.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/db/version_builder.cc.s
 .PHONY : db/version_builder.cc.s
 
-db/version_builder_test.o: db/version_builder_test.cc.o
-.PHONY : db/version_builder_test.o
-
-# target to build an object file
-db/version_builder_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/version_builder_test.dir/build.make CMakeFiles/version_builder_test.dir/db/version_builder_test.cc.o
-.PHONY : db/version_builder_test.cc.o
-
-db/version_builder_test.i: db/version_builder_test.cc.i
-.PHONY : db/version_builder_test.i
-
-# target to preprocess a source file
-db/version_builder_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/version_builder_test.dir/build.make CMakeFiles/version_builder_test.dir/db/version_builder_test.cc.i
-.PHONY : db/version_builder_test.cc.i
-
-db/version_builder_test.s: db/version_builder_test.cc.s
-.PHONY : db/version_builder_test.s
-
-# target to generate assembly for a file
-db/version_builder_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/version_builder_test.dir/build.make CMakeFiles/version_builder_test.dir/db/version_builder_test.cc.s
-.PHONY : db/version_builder_test.cc.s
-
 db/version_edit.o: db/version_edit.cc.o
 .PHONY : db/version_edit.o
 
@@ -8210,30 +3083,6 @@ db/version_edit_handler.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/db/version_edit_handler.cc.s
 .PHONY : db/version_edit_handler.cc.s
 
-db/version_edit_test.o: db/version_edit_test.cc.o
-.PHONY : db/version_edit_test.o
-
-# target to build an object file
-db/version_edit_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/version_edit_test.dir/build.make CMakeFiles/version_edit_test.dir/db/version_edit_test.cc.o
-.PHONY : db/version_edit_test.cc.o
-
-db/version_edit_test.i: db/version_edit_test.cc.i
-.PHONY : db/version_edit_test.i
-
-# target to preprocess a source file
-db/version_edit_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/version_edit_test.dir/build.make CMakeFiles/version_edit_test.dir/db/version_edit_test.cc.i
-.PHONY : db/version_edit_test.cc.i
-
-db/version_edit_test.s: db/version_edit_test.cc.s
-.PHONY : db/version_edit_test.s
-
-# target to generate assembly for a file
-db/version_edit_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/version_edit_test.dir/build.make CMakeFiles/version_edit_test.dir/db/version_edit_test.cc.s
-.PHONY : db/version_edit_test.cc.s
-
 db/version_set.o: db/version_set.cc.o
 .PHONY : db/version_set.o
 
@@ -8260,30 +3109,6 @@ db/version_set.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb.dir/build.make CMakeFiles/rocksdb.dir/db/version_set.cc.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/db/version_set.cc.s
 .PHONY : db/version_set.cc.s
-
-db/version_set_test.o: db/version_set_test.cc.o
-.PHONY : db/version_set_test.o
-
-# target to build an object file
-db/version_set_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/version_set_test.dir/build.make CMakeFiles/version_set_test.dir/db/version_set_test.cc.o
-.PHONY : db/version_set_test.cc.o
-
-db/version_set_test.i: db/version_set_test.cc.i
-.PHONY : db/version_set_test.i
-
-# target to preprocess a source file
-db/version_set_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/version_set_test.dir/build.make CMakeFiles/version_set_test.dir/db/version_set_test.cc.i
-.PHONY : db/version_set_test.cc.i
-
-db/version_set_test.s: db/version_set_test.cc.s
-.PHONY : db/version_set_test.s
-
-# target to generate assembly for a file
-db/version_set_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/version_set_test.dir/build.make CMakeFiles/version_set_test.dir/db/version_set_test.cc.s
-.PHONY : db/version_set_test.cc.s
 
 db/wal_edit.o: db/wal_edit.cc.o
 .PHONY : db/wal_edit.o
@@ -8312,30 +3137,6 @@ db/wal_edit.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/db/wal_edit.cc.s
 .PHONY : db/wal_edit.cc.s
 
-db/wal_edit_test.o: db/wal_edit_test.cc.o
-.PHONY : db/wal_edit_test.o
-
-# target to build an object file
-db/wal_edit_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/wal_edit_test.dir/build.make CMakeFiles/wal_edit_test.dir/db/wal_edit_test.cc.o
-.PHONY : db/wal_edit_test.cc.o
-
-db/wal_edit_test.i: db/wal_edit_test.cc.i
-.PHONY : db/wal_edit_test.i
-
-# target to preprocess a source file
-db/wal_edit_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/wal_edit_test.dir/build.make CMakeFiles/wal_edit_test.dir/db/wal_edit_test.cc.i
-.PHONY : db/wal_edit_test.cc.i
-
-db/wal_edit_test.s: db/wal_edit_test.cc.s
-.PHONY : db/wal_edit_test.s
-
-# target to generate assembly for a file
-db/wal_edit_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/wal_edit_test.dir/build.make CMakeFiles/wal_edit_test.dir/db/wal_edit_test.cc.s
-.PHONY : db/wal_edit_test.cc.s
-
 db/wal_manager.o: db/wal_manager.cc.o
 .PHONY : db/wal_manager.o
 
@@ -8363,54 +3164,6 @@ db/wal_manager.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/db/wal_manager.cc.s
 .PHONY : db/wal_manager.cc.s
 
-db/wal_manager_test.o: db/wal_manager_test.cc.o
-.PHONY : db/wal_manager_test.o
-
-# target to build an object file
-db/wal_manager_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/wal_manager_test.dir/build.make CMakeFiles/wal_manager_test.dir/db/wal_manager_test.cc.o
-.PHONY : db/wal_manager_test.cc.o
-
-db/wal_manager_test.i: db/wal_manager_test.cc.i
-.PHONY : db/wal_manager_test.i
-
-# target to preprocess a source file
-db/wal_manager_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/wal_manager_test.dir/build.make CMakeFiles/wal_manager_test.dir/db/wal_manager_test.cc.i
-.PHONY : db/wal_manager_test.cc.i
-
-db/wal_manager_test.s: db/wal_manager_test.cc.s
-.PHONY : db/wal_manager_test.s
-
-# target to generate assembly for a file
-db/wal_manager_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/wal_manager_test.dir/build.make CMakeFiles/wal_manager_test.dir/db/wal_manager_test.cc.s
-.PHONY : db/wal_manager_test.cc.s
-
-db/wide/db_wide_basic_test.o: db/wide/db_wide_basic_test.cc.o
-.PHONY : db/wide/db_wide_basic_test.o
-
-# target to build an object file
-db/wide/db_wide_basic_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_wide_basic_test.dir/build.make CMakeFiles/db_wide_basic_test.dir/db/wide/db_wide_basic_test.cc.o
-.PHONY : db/wide/db_wide_basic_test.cc.o
-
-db/wide/db_wide_basic_test.i: db/wide/db_wide_basic_test.cc.i
-.PHONY : db/wide/db_wide_basic_test.i
-
-# target to preprocess a source file
-db/wide/db_wide_basic_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_wide_basic_test.dir/build.make CMakeFiles/db_wide_basic_test.dir/db/wide/db_wide_basic_test.cc.i
-.PHONY : db/wide/db_wide_basic_test.cc.i
-
-db/wide/db_wide_basic_test.s: db/wide/db_wide_basic_test.cc.s
-.PHONY : db/wide/db_wide_basic_test.s
-
-# target to generate assembly for a file
-db/wide/db_wide_basic_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_wide_basic_test.dir/build.make CMakeFiles/db_wide_basic_test.dir/db/wide/db_wide_basic_test.cc.s
-.PHONY : db/wide/db_wide_basic_test.cc.s
-
 db/wide/wide_column_serialization.o: db/wide/wide_column_serialization.cc.o
 .PHONY : db/wide/wide_column_serialization.o
 
@@ -8437,30 +3190,6 @@ db/wide/wide_column_serialization.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb.dir/build.make CMakeFiles/rocksdb.dir/db/wide/wide_column_serialization.cc.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/db/wide/wide_column_serialization.cc.s
 .PHONY : db/wide/wide_column_serialization.cc.s
-
-db/wide/wide_column_serialization_test.o: db/wide/wide_column_serialization_test.cc.o
-.PHONY : db/wide/wide_column_serialization_test.o
-
-# target to build an object file
-db/wide/wide_column_serialization_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/wide_column_serialization_test.dir/build.make CMakeFiles/wide_column_serialization_test.dir/db/wide/wide_column_serialization_test.cc.o
-.PHONY : db/wide/wide_column_serialization_test.cc.o
-
-db/wide/wide_column_serialization_test.i: db/wide/wide_column_serialization_test.cc.i
-.PHONY : db/wide/wide_column_serialization_test.i
-
-# target to preprocess a source file
-db/wide/wide_column_serialization_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/wide_column_serialization_test.dir/build.make CMakeFiles/wide_column_serialization_test.dir/db/wide/wide_column_serialization_test.cc.i
-.PHONY : db/wide/wide_column_serialization_test.cc.i
-
-db/wide/wide_column_serialization_test.s: db/wide/wide_column_serialization_test.cc.s
-.PHONY : db/wide/wide_column_serialization_test.s
-
-# target to generate assembly for a file
-db/wide/wide_column_serialization_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/wide_column_serialization_test.dir/build.make CMakeFiles/wide_column_serialization_test.dir/db/wide/wide_column_serialization_test.cc.s
-.PHONY : db/wide/wide_column_serialization_test.cc.s
 
 db/wide/wide_columns.o: db/wide/wide_columns.cc.o
 .PHONY : db/wide/wide_columns.o
@@ -8516,30 +3245,6 @@ db/wide/wide_columns_helper.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/db/wide/wide_columns_helper.cc.s
 .PHONY : db/wide/wide_columns_helper.cc.s
 
-db/wide/wide_columns_helper_test.o: db/wide/wide_columns_helper_test.cc.o
-.PHONY : db/wide/wide_columns_helper_test.o
-
-# target to build an object file
-db/wide/wide_columns_helper_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/wide_columns_helper_test.dir/build.make CMakeFiles/wide_columns_helper_test.dir/db/wide/wide_columns_helper_test.cc.o
-.PHONY : db/wide/wide_columns_helper_test.cc.o
-
-db/wide/wide_columns_helper_test.i: db/wide/wide_columns_helper_test.cc.i
-.PHONY : db/wide/wide_columns_helper_test.i
-
-# target to preprocess a source file
-db/wide/wide_columns_helper_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/wide_columns_helper_test.dir/build.make CMakeFiles/wide_columns_helper_test.dir/db/wide/wide_columns_helper_test.cc.i
-.PHONY : db/wide/wide_columns_helper_test.cc.i
-
-db/wide/wide_columns_helper_test.s: db/wide/wide_columns_helper_test.cc.s
-.PHONY : db/wide/wide_columns_helper_test.s
-
-# target to generate assembly for a file
-db/wide/wide_columns_helper_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/wide_columns_helper_test.dir/build.make CMakeFiles/wide_columns_helper_test.dir/db/wide/wide_columns_helper_test.cc.s
-.PHONY : db/wide/wide_columns_helper_test.cc.s
-
 db/write_batch.o: db/write_batch.cc.o
 .PHONY : db/write_batch.o
 
@@ -8594,54 +3299,6 @@ db/write_batch_base.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/db/write_batch_base.cc.s
 .PHONY : db/write_batch_base.cc.s
 
-db/write_batch_test.o: db/write_batch_test.cc.o
-.PHONY : db/write_batch_test.o
-
-# target to build an object file
-db/write_batch_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/write_batch_test.dir/build.make CMakeFiles/write_batch_test.dir/db/write_batch_test.cc.o
-.PHONY : db/write_batch_test.cc.o
-
-db/write_batch_test.i: db/write_batch_test.cc.i
-.PHONY : db/write_batch_test.i
-
-# target to preprocess a source file
-db/write_batch_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/write_batch_test.dir/build.make CMakeFiles/write_batch_test.dir/db/write_batch_test.cc.i
-.PHONY : db/write_batch_test.cc.i
-
-db/write_batch_test.s: db/write_batch_test.cc.s
-.PHONY : db/write_batch_test.s
-
-# target to generate assembly for a file
-db/write_batch_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/write_batch_test.dir/build.make CMakeFiles/write_batch_test.dir/db/write_batch_test.cc.s
-.PHONY : db/write_batch_test.cc.s
-
-db/write_callback_test.o: db/write_callback_test.cc.o
-.PHONY : db/write_callback_test.o
-
-# target to build an object file
-db/write_callback_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/write_callback_test.dir/build.make CMakeFiles/write_callback_test.dir/db/write_callback_test.cc.o
-.PHONY : db/write_callback_test.cc.o
-
-db/write_callback_test.i: db/write_callback_test.cc.i
-.PHONY : db/write_callback_test.i
-
-# target to preprocess a source file
-db/write_callback_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/write_callback_test.dir/build.make CMakeFiles/write_callback_test.dir/db/write_callback_test.cc.i
-.PHONY : db/write_callback_test.cc.i
-
-db/write_callback_test.s: db/write_callback_test.cc.s
-.PHONY : db/write_callback_test.s
-
-# target to generate assembly for a file
-db/write_callback_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/write_callback_test.dir/build.make CMakeFiles/write_callback_test.dir/db/write_callback_test.cc.s
-.PHONY : db/write_callback_test.cc.s
-
 db/write_controller.o: db/write_controller.cc.o
 .PHONY : db/write_controller.o
 
@@ -8668,30 +3325,6 @@ db/write_controller.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb.dir/build.make CMakeFiles/rocksdb.dir/db/write_controller.cc.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/db/write_controller.cc.s
 .PHONY : db/write_controller.cc.s
-
-db/write_controller_test.o: db/write_controller_test.cc.o
-.PHONY : db/write_controller_test.o
-
-# target to build an object file
-db/write_controller_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/write_controller_test.dir/build.make CMakeFiles/write_controller_test.dir/db/write_controller_test.cc.o
-.PHONY : db/write_controller_test.cc.o
-
-db/write_controller_test.i: db/write_controller_test.cc.i
-.PHONY : db/write_controller_test.i
-
-# target to preprocess a source file
-db/write_controller_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/write_controller_test.dir/build.make CMakeFiles/write_controller_test.dir/db/write_controller_test.cc.i
-.PHONY : db/write_controller_test.cc.i
-
-db/write_controller_test.s: db/write_controller_test.cc.s
-.PHONY : db/write_controller_test.s
-
-# target to generate assembly for a file
-db/write_controller_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/write_controller_test.dir/build.make CMakeFiles/write_controller_test.dir/db/write_controller_test.cc.s
-.PHONY : db/write_controller_test.cc.s
 
 db/write_stall_stats.o: db/write_stall_stats.cc.o
 .PHONY : db/write_stall_stats.o
@@ -8801,30 +3434,6 @@ env/env.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/env/env.cc.s
 .PHONY : env/env.cc.s
 
-env/env_basic_test.o: env/env_basic_test.cc.o
-.PHONY : env/env_basic_test.o
-
-# target to build an object file
-env/env_basic_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/env_basic_test.dir/build.make CMakeFiles/env_basic_test.dir/env/env_basic_test.cc.o
-.PHONY : env/env_basic_test.cc.o
-
-env/env_basic_test.i: env/env_basic_test.cc.i
-.PHONY : env/env_basic_test.i
-
-# target to preprocess a source file
-env/env_basic_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/env_basic_test.dir/build.make CMakeFiles/env_basic_test.dir/env/env_basic_test.cc.i
-.PHONY : env/env_basic_test.cc.i
-
-env/env_basic_test.s: env/env_basic_test.cc.s
-.PHONY : env/env_basic_test.s
-
-# target to generate assembly for a file
-env/env_basic_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/env_basic_test.dir/build.make CMakeFiles/env_basic_test.dir/env/env_basic_test.cc.s
-.PHONY : env/env_basic_test.cc.s
-
 env/env_chroot.o: env/env_chroot.cc.o
 .PHONY : env/env_chroot.o
 
@@ -8905,30 +3514,6 @@ env/env_posix.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb.dir/build.make CMakeFiles/rocksdb.dir/env/env_posix.cc.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/env/env_posix.cc.s
 .PHONY : env/env_posix.cc.s
-
-env/env_test.o: env/env_test.cc.o
-.PHONY : env/env_test.o
-
-# target to build an object file
-env/env_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/env_test.dir/build.make CMakeFiles/env_test.dir/env/env_test.cc.o
-.PHONY : env/env_test.cc.o
-
-env/env_test.i: env/env_test.cc.i
-.PHONY : env/env_test.i
-
-# target to preprocess a source file
-env/env_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/env_test.dir/build.make CMakeFiles/env_test.dir/env/env_test.cc.i
-.PHONY : env/env_test.cc.i
-
-env/env_test.s: env/env_test.cc.s
-.PHONY : env/env_test.s
-
-# target to generate assembly for a file
-env/env_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/env_test.dir/build.make CMakeFiles/env_test.dir/env/env_test.cc.s
-.PHONY : env/env_test.cc.s
 
 env/file_system.o: env/file_system.cc.o
 .PHONY : env/file_system.o
@@ -9092,30 +3677,6 @@ env/io_posix.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/env/io_posix.cc.s
 .PHONY : env/io_posix.cc.s
 
-env/io_posix_test.o: env/io_posix_test.cc.o
-.PHONY : env/io_posix_test.o
-
-# target to build an object file
-env/io_posix_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/io_posix_test.dir/build.make CMakeFiles/io_posix_test.dir/env/io_posix_test.cc.o
-.PHONY : env/io_posix_test.cc.o
-
-env/io_posix_test.i: env/io_posix_test.cc.i
-.PHONY : env/io_posix_test.i
-
-# target to preprocess a source file
-env/io_posix_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/io_posix_test.dir/build.make CMakeFiles/io_posix_test.dir/env/io_posix_test.cc.i
-.PHONY : env/io_posix_test.cc.i
-
-env/io_posix_test.s: env/io_posix_test.cc.s
-.PHONY : env/io_posix_test.s
-
-# target to generate assembly for a file
-env/io_posix_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/io_posix_test.dir/build.make CMakeFiles/io_posix_test.dir/env/io_posix_test.cc.s
-.PHONY : env/io_posix_test.cc.s
-
 env/mock_env.o: env/mock_env.cc.o
 .PHONY : env/mock_env.o
 
@@ -9142,30 +3703,6 @@ env/mock_env.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb.dir/build.make CMakeFiles/rocksdb.dir/env/mock_env.cc.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/env/mock_env.cc.s
 .PHONY : env/mock_env.cc.s
-
-env/mock_env_test.o: env/mock_env_test.cc.o
-.PHONY : env/mock_env_test.o
-
-# target to build an object file
-env/mock_env_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mock_env_test.dir/build.make CMakeFiles/mock_env_test.dir/env/mock_env_test.cc.o
-.PHONY : env/mock_env_test.cc.o
-
-env/mock_env_test.i: env/mock_env_test.cc.i
-.PHONY : env/mock_env_test.i
-
-# target to preprocess a source file
-env/mock_env_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mock_env_test.dir/build.make CMakeFiles/mock_env_test.dir/env/mock_env_test.cc.i
-.PHONY : env/mock_env_test.cc.i
-
-env/mock_env_test.s: env/mock_env_test.cc.s
-.PHONY : env/mock_env_test.s
-
-# target to generate assembly for a file
-env/mock_env_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mock_env_test.dir/build.make CMakeFiles/mock_env_test.dir/env/mock_env_test.cc.s
-.PHONY : env/mock_env_test.cc.s
 
 env/unique_id_gen.o: env/unique_id_gen.cc.o
 .PHONY : env/unique_id_gen.o
@@ -9220,30 +3757,6 @@ file/delete_scheduler.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb.dir/build.make CMakeFiles/rocksdb.dir/file/delete_scheduler.cc.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/file/delete_scheduler.cc.s
 .PHONY : file/delete_scheduler.cc.s
-
-file/delete_scheduler_test.o: file/delete_scheduler_test.cc.o
-.PHONY : file/delete_scheduler_test.o
-
-# target to build an object file
-file/delete_scheduler_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/delete_scheduler_test.dir/build.make CMakeFiles/delete_scheduler_test.dir/file/delete_scheduler_test.cc.o
-.PHONY : file/delete_scheduler_test.cc.o
-
-file/delete_scheduler_test.i: file/delete_scheduler_test.cc.i
-.PHONY : file/delete_scheduler_test.i
-
-# target to preprocess a source file
-file/delete_scheduler_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/delete_scheduler_test.dir/build.make CMakeFiles/delete_scheduler_test.dir/file/delete_scheduler_test.cc.i
-.PHONY : file/delete_scheduler_test.cc.i
-
-file/delete_scheduler_test.s: file/delete_scheduler_test.cc.s
-.PHONY : file/delete_scheduler_test.s
-
-# target to generate assembly for a file
-file/delete_scheduler_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/delete_scheduler_test.dir/build.make CMakeFiles/delete_scheduler_test.dir/file/delete_scheduler_test.cc.s
-.PHONY : file/delete_scheduler_test.cc.s
 
 file/file_prefetch_buffer.o: file/file_prefetch_buffer.cc.o
 .PHONY : file/file_prefetch_buffer.o
@@ -9353,30 +3866,6 @@ file/line_file_reader.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/file/line_file_reader.cc.s
 .PHONY : file/line_file_reader.cc.s
 
-file/prefetch_test.o: file/prefetch_test.cc.o
-.PHONY : file/prefetch_test.o
-
-# target to build an object file
-file/prefetch_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/prefetch_test.dir/build.make CMakeFiles/prefetch_test.dir/file/prefetch_test.cc.o
-.PHONY : file/prefetch_test.cc.o
-
-file/prefetch_test.i: file/prefetch_test.cc.i
-.PHONY : file/prefetch_test.i
-
-# target to preprocess a source file
-file/prefetch_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/prefetch_test.dir/build.make CMakeFiles/prefetch_test.dir/file/prefetch_test.cc.i
-.PHONY : file/prefetch_test.cc.i
-
-file/prefetch_test.s: file/prefetch_test.cc.s
-.PHONY : file/prefetch_test.s
-
-# target to generate assembly for a file
-file/prefetch_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/prefetch_test.dir/build.make CMakeFiles/prefetch_test.dir/file/prefetch_test.cc.s
-.PHONY : file/prefetch_test.cc.s
-
 file/random_access_file_reader.o: file/random_access_file_reader.cc.o
 .PHONY : file/random_access_file_reader.o
 
@@ -9403,30 +3892,6 @@ file/random_access_file_reader.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb.dir/build.make CMakeFiles/rocksdb.dir/file/random_access_file_reader.cc.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/file/random_access_file_reader.cc.s
 .PHONY : file/random_access_file_reader.cc.s
-
-file/random_access_file_reader_test.o: file/random_access_file_reader_test.cc.o
-.PHONY : file/random_access_file_reader_test.o
-
-# target to build an object file
-file/random_access_file_reader_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/random_access_file_reader_test.dir/build.make CMakeFiles/random_access_file_reader_test.dir/file/random_access_file_reader_test.cc.o
-.PHONY : file/random_access_file_reader_test.cc.o
-
-file/random_access_file_reader_test.i: file/random_access_file_reader_test.cc.i
-.PHONY : file/random_access_file_reader_test.i
-
-# target to preprocess a source file
-file/random_access_file_reader_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/random_access_file_reader_test.dir/build.make CMakeFiles/random_access_file_reader_test.dir/file/random_access_file_reader_test.cc.i
-.PHONY : file/random_access_file_reader_test.cc.i
-
-file/random_access_file_reader_test.s: file/random_access_file_reader_test.cc.s
-.PHONY : file/random_access_file_reader_test.s
-
-# target to generate assembly for a file
-file/random_access_file_reader_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/random_access_file_reader_test.dir/build.make CMakeFiles/random_access_file_reader_test.dir/file/random_access_file_reader_test.cc.s
-.PHONY : file/random_access_file_reader_test.cc.s
 
 file/read_write_util.o: file/read_write_util.cc.o
 .PHONY : file/read_write_util.o
@@ -9590,54 +4055,6 @@ logging/auto_roll_logger.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/logging/auto_roll_logger.cc.s
 .PHONY : logging/auto_roll_logger.cc.s
 
-logging/auto_roll_logger_test.o: logging/auto_roll_logger_test.cc.o
-.PHONY : logging/auto_roll_logger_test.o
-
-# target to build an object file
-logging/auto_roll_logger_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/auto_roll_logger_test.dir/build.make CMakeFiles/auto_roll_logger_test.dir/logging/auto_roll_logger_test.cc.o
-.PHONY : logging/auto_roll_logger_test.cc.o
-
-logging/auto_roll_logger_test.i: logging/auto_roll_logger_test.cc.i
-.PHONY : logging/auto_roll_logger_test.i
-
-# target to preprocess a source file
-logging/auto_roll_logger_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/auto_roll_logger_test.dir/build.make CMakeFiles/auto_roll_logger_test.dir/logging/auto_roll_logger_test.cc.i
-.PHONY : logging/auto_roll_logger_test.cc.i
-
-logging/auto_roll_logger_test.s: logging/auto_roll_logger_test.cc.s
-.PHONY : logging/auto_roll_logger_test.s
-
-# target to generate assembly for a file
-logging/auto_roll_logger_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/auto_roll_logger_test.dir/build.make CMakeFiles/auto_roll_logger_test.dir/logging/auto_roll_logger_test.cc.s
-.PHONY : logging/auto_roll_logger_test.cc.s
-
-logging/env_logger_test.o: logging/env_logger_test.cc.o
-.PHONY : logging/env_logger_test.o
-
-# target to build an object file
-logging/env_logger_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/env_logger_test.dir/build.make CMakeFiles/env_logger_test.dir/logging/env_logger_test.cc.o
-.PHONY : logging/env_logger_test.cc.o
-
-logging/env_logger_test.i: logging/env_logger_test.cc.i
-.PHONY : logging/env_logger_test.i
-
-# target to preprocess a source file
-logging/env_logger_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/env_logger_test.dir/build.make CMakeFiles/env_logger_test.dir/logging/env_logger_test.cc.i
-.PHONY : logging/env_logger_test.cc.i
-
-logging/env_logger_test.s: logging/env_logger_test.cc.s
-.PHONY : logging/env_logger_test.s
-
-# target to generate assembly for a file
-logging/env_logger_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/env_logger_test.dir/build.make CMakeFiles/env_logger_test.dir/logging/env_logger_test.cc.s
-.PHONY : logging/env_logger_test.cc.s
-
 logging/event_logger.o: logging/event_logger.cc.o
 .PHONY : logging/event_logger.o
 
@@ -9664,30 +4081,6 @@ logging/event_logger.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb.dir/build.make CMakeFiles/rocksdb.dir/logging/event_logger.cc.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/logging/event_logger.cc.s
 .PHONY : logging/event_logger.cc.s
-
-logging/event_logger_test.o: logging/event_logger_test.cc.o
-.PHONY : logging/event_logger_test.o
-
-# target to build an object file
-logging/event_logger_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/event_logger_test.dir/build.make CMakeFiles/event_logger_test.dir/logging/event_logger_test.cc.o
-.PHONY : logging/event_logger_test.cc.o
-
-logging/event_logger_test.i: logging/event_logger_test.cc.i
-.PHONY : logging/event_logger_test.i
-
-# target to preprocess a source file
-logging/event_logger_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/event_logger_test.dir/build.make CMakeFiles/event_logger_test.dir/logging/event_logger_test.cc.i
-.PHONY : logging/event_logger_test.cc.i
-
-logging/event_logger_test.s: logging/event_logger_test.cc.s
-.PHONY : logging/event_logger_test.s
-
-# target to generate assembly for a file
-logging/event_logger_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/event_logger_test.dir/build.make CMakeFiles/event_logger_test.dir/logging/event_logger_test.cc.s
-.PHONY : logging/event_logger_test.cc.s
 
 logging/log_buffer.o: logging/log_buffer.cc.o
 .PHONY : logging/log_buffer.o
@@ -9742,30 +4135,6 @@ memory/arena.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb.dir/build.make CMakeFiles/rocksdb.dir/memory/arena.cc.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/memory/arena.cc.s
 .PHONY : memory/arena.cc.s
-
-memory/arena_test.o: memory/arena_test.cc.o
-.PHONY : memory/arena_test.o
-
-# target to build an object file
-memory/arena_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/arena_test.dir/build.make CMakeFiles/arena_test.dir/memory/arena_test.cc.o
-.PHONY : memory/arena_test.cc.o
-
-memory/arena_test.i: memory/arena_test.cc.i
-.PHONY : memory/arena_test.i
-
-# target to preprocess a source file
-memory/arena_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/arena_test.dir/build.make CMakeFiles/arena_test.dir/memory/arena_test.cc.i
-.PHONY : memory/arena_test.cc.i
-
-memory/arena_test.s: memory/arena_test.cc.s
-.PHONY : memory/arena_test.s
-
-# target to generate assembly for a file
-memory/arena_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/arena_test.dir/build.make CMakeFiles/arena_test.dir/memory/arena_test.cc.s
-.PHONY : memory/arena_test.cc.s
 
 memory/concurrent_arena.o: memory/concurrent_arena.cc.o
 .PHONY : memory/concurrent_arena.o
@@ -9875,30 +4244,6 @@ memory/memory_allocator.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/memory/memory_allocator.cc.s
 .PHONY : memory/memory_allocator.cc.s
 
-memory/memory_allocator_test.o: memory/memory_allocator_test.cc.o
-.PHONY : memory/memory_allocator_test.o
-
-# target to build an object file
-memory/memory_allocator_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/memory_allocator_test.dir/build.make CMakeFiles/memory_allocator_test.dir/memory/memory_allocator_test.cc.o
-.PHONY : memory/memory_allocator_test.cc.o
-
-memory/memory_allocator_test.i: memory/memory_allocator_test.cc.i
-.PHONY : memory/memory_allocator_test.i
-
-# target to preprocess a source file
-memory/memory_allocator_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/memory_allocator_test.dir/build.make CMakeFiles/memory_allocator_test.dir/memory/memory_allocator_test.cc.i
-.PHONY : memory/memory_allocator_test.cc.i
-
-memory/memory_allocator_test.s: memory/memory_allocator_test.cc.s
-.PHONY : memory/memory_allocator_test.s
-
-# target to generate assembly for a file
-memory/memory_allocator_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/memory_allocator_test.dir/build.make CMakeFiles/memory_allocator_test.dir/memory/memory_allocator_test.cc.s
-.PHONY : memory/memory_allocator_test.cc.s
-
 memtable/alloc_tracker.o: memtable/alloc_tracker.cc.o
 .PHONY : memtable/alloc_tracker.o
 
@@ -9980,30 +4325,6 @@ memtable/hash_skiplist_rep.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/memtable/hash_skiplist_rep.cc.s
 .PHONY : memtable/hash_skiplist_rep.cc.s
 
-memtable/inlineskiplist_test.o: memtable/inlineskiplist_test.cc.o
-.PHONY : memtable/inlineskiplist_test.o
-
-# target to build an object file
-memtable/inlineskiplist_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/inlineskiplist_test.dir/build.make CMakeFiles/inlineskiplist_test.dir/memtable/inlineskiplist_test.cc.o
-.PHONY : memtable/inlineskiplist_test.cc.o
-
-memtable/inlineskiplist_test.i: memtable/inlineskiplist_test.cc.i
-.PHONY : memtable/inlineskiplist_test.i
-
-# target to preprocess a source file
-memtable/inlineskiplist_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/inlineskiplist_test.dir/build.make CMakeFiles/inlineskiplist_test.dir/memtable/inlineskiplist_test.cc.i
-.PHONY : memtable/inlineskiplist_test.cc.i
-
-memtable/inlineskiplist_test.s: memtable/inlineskiplist_test.cc.s
-.PHONY : memtable/inlineskiplist_test.s
-
-# target to generate assembly for a file
-memtable/inlineskiplist_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/inlineskiplist_test.dir/build.make CMakeFiles/inlineskiplist_test.dir/memtable/inlineskiplist_test.cc.s
-.PHONY : memtable/inlineskiplist_test.cc.s
-
 memtable/memtablerep_bench.o: memtable/memtablerep_bench.cc.o
 .PHONY : memtable/memtablerep_bench.o
 
@@ -10027,30 +4348,6 @@ memtable/memtablerep_bench.s: memtable/memtablerep_bench.cc.s
 memtable/memtablerep_bench.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/memtablerep_bench.dir/build.make CMakeFiles/memtablerep_bench.dir/memtable/memtablerep_bench.cc.s
 .PHONY : memtable/memtablerep_bench.cc.s
-
-memtable/skiplist_test.o: memtable/skiplist_test.cc.o
-.PHONY : memtable/skiplist_test.o
-
-# target to build an object file
-memtable/skiplist_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/skiplist_test.dir/build.make CMakeFiles/skiplist_test.dir/memtable/skiplist_test.cc.o
-.PHONY : memtable/skiplist_test.cc.o
-
-memtable/skiplist_test.i: memtable/skiplist_test.cc.i
-.PHONY : memtable/skiplist_test.i
-
-# target to preprocess a source file
-memtable/skiplist_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/skiplist_test.dir/build.make CMakeFiles/skiplist_test.dir/memtable/skiplist_test.cc.i
-.PHONY : memtable/skiplist_test.cc.i
-
-memtable/skiplist_test.s: memtable/skiplist_test.cc.s
-.PHONY : memtable/skiplist_test.s
-
-# target to generate assembly for a file
-memtable/skiplist_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/skiplist_test.dir/build.make CMakeFiles/skiplist_test.dir/memtable/skiplist_test.cc.s
-.PHONY : memtable/skiplist_test.cc.s
 
 memtable/skiplistrep.o: memtable/skiplistrep.cc.o
 .PHONY : memtable/skiplistrep.o
@@ -10133,30 +4430,6 @@ memtable/write_buffer_manager.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/memtable/write_buffer_manager.cc.s
 .PHONY : memtable/write_buffer_manager.cc.s
 
-memtable/write_buffer_manager_test.o: memtable/write_buffer_manager_test.cc.o
-.PHONY : memtable/write_buffer_manager_test.o
-
-# target to build an object file
-memtable/write_buffer_manager_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/write_buffer_manager_test.dir/build.make CMakeFiles/write_buffer_manager_test.dir/memtable/write_buffer_manager_test.cc.o
-.PHONY : memtable/write_buffer_manager_test.cc.o
-
-memtable/write_buffer_manager_test.i: memtable/write_buffer_manager_test.cc.i
-.PHONY : memtable/write_buffer_manager_test.i
-
-# target to preprocess a source file
-memtable/write_buffer_manager_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/write_buffer_manager_test.dir/build.make CMakeFiles/write_buffer_manager_test.dir/memtable/write_buffer_manager_test.cc.i
-.PHONY : memtable/write_buffer_manager_test.cc.i
-
-memtable/write_buffer_manager_test.s: memtable/write_buffer_manager_test.cc.s
-.PHONY : memtable/write_buffer_manager_test.s
-
-# target to generate assembly for a file
-memtable/write_buffer_manager_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/write_buffer_manager_test.dir/build.make CMakeFiles/write_buffer_manager_test.dir/memtable/write_buffer_manager_test.cc.s
-.PHONY : memtable/write_buffer_manager_test.cc.s
-
 monitoring/histogram.o: monitoring/histogram.cc.o
 .PHONY : monitoring/histogram.o
 
@@ -10183,30 +4456,6 @@ monitoring/histogram.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb.dir/build.make CMakeFiles/rocksdb.dir/monitoring/histogram.cc.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/monitoring/histogram.cc.s
 .PHONY : monitoring/histogram.cc.s
-
-monitoring/histogram_test.o: monitoring/histogram_test.cc.o
-.PHONY : monitoring/histogram_test.o
-
-# target to build an object file
-monitoring/histogram_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/histogram_test.dir/build.make CMakeFiles/histogram_test.dir/monitoring/histogram_test.cc.o
-.PHONY : monitoring/histogram_test.cc.o
-
-monitoring/histogram_test.i: monitoring/histogram_test.cc.i
-.PHONY : monitoring/histogram_test.i
-
-# target to preprocess a source file
-monitoring/histogram_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/histogram_test.dir/build.make CMakeFiles/histogram_test.dir/monitoring/histogram_test.cc.i
-.PHONY : monitoring/histogram_test.cc.i
-
-monitoring/histogram_test.s: monitoring/histogram_test.cc.s
-.PHONY : monitoring/histogram_test.s
-
-# target to generate assembly for a file
-monitoring/histogram_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/histogram_test.dir/build.make CMakeFiles/histogram_test.dir/monitoring/histogram_test.cc.s
-.PHONY : monitoring/histogram_test.cc.s
 
 monitoring/histogram_windowing.o: monitoring/histogram_windowing.cc.o
 .PHONY : monitoring/histogram_windowing.o
@@ -10316,30 +4565,6 @@ monitoring/iostats_context.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/monitoring/iostats_context.cc.s
 .PHONY : monitoring/iostats_context.cc.s
 
-monitoring/iostats_context_test.o: monitoring/iostats_context_test.cc.o
-.PHONY : monitoring/iostats_context_test.o
-
-# target to build an object file
-monitoring/iostats_context_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/iostats_context_test.dir/build.make CMakeFiles/iostats_context_test.dir/monitoring/iostats_context_test.cc.o
-.PHONY : monitoring/iostats_context_test.cc.o
-
-monitoring/iostats_context_test.i: monitoring/iostats_context_test.cc.i
-.PHONY : monitoring/iostats_context_test.i
-
-# target to preprocess a source file
-monitoring/iostats_context_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/iostats_context_test.dir/build.make CMakeFiles/iostats_context_test.dir/monitoring/iostats_context_test.cc.i
-.PHONY : monitoring/iostats_context_test.cc.i
-
-monitoring/iostats_context_test.s: monitoring/iostats_context_test.cc.s
-.PHONY : monitoring/iostats_context_test.s
-
-# target to generate assembly for a file
-monitoring/iostats_context_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/iostats_context_test.dir/build.make CMakeFiles/iostats_context_test.dir/monitoring/iostats_context_test.cc.s
-.PHONY : monitoring/iostats_context_test.cc.s
-
 monitoring/perf_context.o: monitoring/perf_context.cc.o
 .PHONY : monitoring/perf_context.o
 
@@ -10448,54 +4673,6 @@ monitoring/statistics.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/monitoring/statistics.cc.s
 .PHONY : monitoring/statistics.cc.s
 
-monitoring/statistics_test.o: monitoring/statistics_test.cc.o
-.PHONY : monitoring/statistics_test.o
-
-# target to build an object file
-monitoring/statistics_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/statistics_test.dir/build.make CMakeFiles/statistics_test.dir/monitoring/statistics_test.cc.o
-.PHONY : monitoring/statistics_test.cc.o
-
-monitoring/statistics_test.i: monitoring/statistics_test.cc.i
-.PHONY : monitoring/statistics_test.i
-
-# target to preprocess a source file
-monitoring/statistics_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/statistics_test.dir/build.make CMakeFiles/statistics_test.dir/monitoring/statistics_test.cc.i
-.PHONY : monitoring/statistics_test.cc.i
-
-monitoring/statistics_test.s: monitoring/statistics_test.cc.s
-.PHONY : monitoring/statistics_test.s
-
-# target to generate assembly for a file
-monitoring/statistics_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/statistics_test.dir/build.make CMakeFiles/statistics_test.dir/monitoring/statistics_test.cc.s
-.PHONY : monitoring/statistics_test.cc.s
-
-monitoring/stats_history_test.o: monitoring/stats_history_test.cc.o
-.PHONY : monitoring/stats_history_test.o
-
-# target to build an object file
-monitoring/stats_history_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/stats_history_test.dir/build.make CMakeFiles/stats_history_test.dir/monitoring/stats_history_test.cc.o
-.PHONY : monitoring/stats_history_test.cc.o
-
-monitoring/stats_history_test.i: monitoring/stats_history_test.cc.i
-.PHONY : monitoring/stats_history_test.i
-
-# target to preprocess a source file
-monitoring/stats_history_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/stats_history_test.dir/build.make CMakeFiles/stats_history_test.dir/monitoring/stats_history_test.cc.i
-.PHONY : monitoring/stats_history_test.cc.i
-
-monitoring/stats_history_test.s: monitoring/stats_history_test.cc.s
-.PHONY : monitoring/stats_history_test.s
-
-# target to generate assembly for a file
-monitoring/stats_history_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/stats_history_test.dir/build.make CMakeFiles/stats_history_test.dir/monitoring/stats_history_test.cc.s
-.PHONY : monitoring/stats_history_test.cc.s
-
 monitoring/thread_status_impl.o: monitoring/thread_status_impl.cc.o
 .PHONY : monitoring/thread_status_impl.o
 
@@ -10549,30 +4726,6 @@ monitoring/thread_status_updater.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb.dir/build.make CMakeFiles/rocksdb.dir/monitoring/thread_status_updater.cc.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/monitoring/thread_status_updater.cc.s
 .PHONY : monitoring/thread_status_updater.cc.s
-
-monitoring/thread_status_updater_debug.o: monitoring/thread_status_updater_debug.cc.o
-.PHONY : monitoring/thread_status_updater_debug.o
-
-# target to build an object file
-monitoring/thread_status_updater_debug.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testutillib.dir/build.make CMakeFiles/testutillib.dir/monitoring/thread_status_updater_debug.cc.o
-.PHONY : monitoring/thread_status_updater_debug.cc.o
-
-monitoring/thread_status_updater_debug.i: monitoring/thread_status_updater_debug.cc.i
-.PHONY : monitoring/thread_status_updater_debug.i
-
-# target to preprocess a source file
-monitoring/thread_status_updater_debug.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testutillib.dir/build.make CMakeFiles/testutillib.dir/monitoring/thread_status_updater_debug.cc.i
-.PHONY : monitoring/thread_status_updater_debug.cc.i
-
-monitoring/thread_status_updater_debug.s: monitoring/thread_status_updater_debug.cc.s
-.PHONY : monitoring/thread_status_updater_debug.s
-
-# target to generate assembly for a file
-monitoring/thread_status_updater_debug.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testutillib.dir/build.make CMakeFiles/testutillib.dir/monitoring/thread_status_updater_debug.cc.s
-.PHONY : monitoring/thread_status_updater_debug.cc.s
 
 monitoring/thread_status_util.o: monitoring/thread_status_util.cc.o
 .PHONY : monitoring/thread_status_util.o
@@ -10682,30 +4835,6 @@ options/configurable.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/options/configurable.cc.s
 .PHONY : options/configurable.cc.s
 
-options/configurable_test.o: options/configurable_test.cc.o
-.PHONY : options/configurable_test.o
-
-# target to build an object file
-options/configurable_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/configurable_test.dir/build.make CMakeFiles/configurable_test.dir/options/configurable_test.cc.o
-.PHONY : options/configurable_test.cc.o
-
-options/configurable_test.i: options/configurable_test.cc.i
-.PHONY : options/configurable_test.i
-
-# target to preprocess a source file
-options/configurable_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/configurable_test.dir/build.make CMakeFiles/configurable_test.dir/options/configurable_test.cc.i
-.PHONY : options/configurable_test.cc.i
-
-options/configurable_test.s: options/configurable_test.cc.s
-.PHONY : options/configurable_test.s
-
-# target to generate assembly for a file
-options/configurable_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/configurable_test.dir/build.make CMakeFiles/configurable_test.dir/options/configurable_test.cc.s
-.PHONY : options/configurable_test.cc.s
-
 options/customizable.o: options/customizable.cc.o
 .PHONY : options/customizable.o
 
@@ -10732,30 +4861,6 @@ options/customizable.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb.dir/build.make CMakeFiles/rocksdb.dir/options/customizable.cc.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/options/customizable.cc.s
 .PHONY : options/customizable.cc.s
-
-options/customizable_test.o: options/customizable_test.cc.o
-.PHONY : options/customizable_test.o
-
-# target to build an object file
-options/customizable_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/customizable_test.dir/build.make CMakeFiles/customizable_test.dir/options/customizable_test.cc.o
-.PHONY : options/customizable_test.cc.o
-
-options/customizable_test.i: options/customizable_test.cc.i
-.PHONY : options/customizable_test.i
-
-# target to preprocess a source file
-options/customizable_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/customizable_test.dir/build.make CMakeFiles/customizable_test.dir/options/customizable_test.cc.i
-.PHONY : options/customizable_test.cc.i
-
-options/customizable_test.s: options/customizable_test.cc.s
-.PHONY : options/customizable_test.s
-
-# target to generate assembly for a file
-options/customizable_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/customizable_test.dir/build.make CMakeFiles/customizable_test.dir/options/customizable_test.cc.s
-.PHONY : options/customizable_test.cc.s
 
 options/db_options.o: options/db_options.cc.o
 .PHONY : options/db_options.o
@@ -10891,54 +4996,6 @@ options/options_parser.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb.dir/build.make CMakeFiles/rocksdb.dir/options/options_parser.cc.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/options/options_parser.cc.s
 .PHONY : options/options_parser.cc.s
-
-options/options_settable_test.o: options/options_settable_test.cc.o
-.PHONY : options/options_settable_test.o
-
-# target to build an object file
-options/options_settable_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/options_settable_test.dir/build.make CMakeFiles/options_settable_test.dir/options/options_settable_test.cc.o
-.PHONY : options/options_settable_test.cc.o
-
-options/options_settable_test.i: options/options_settable_test.cc.i
-.PHONY : options/options_settable_test.i
-
-# target to preprocess a source file
-options/options_settable_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/options_settable_test.dir/build.make CMakeFiles/options_settable_test.dir/options/options_settable_test.cc.i
-.PHONY : options/options_settable_test.cc.i
-
-options/options_settable_test.s: options/options_settable_test.cc.s
-.PHONY : options/options_settable_test.s
-
-# target to generate assembly for a file
-options/options_settable_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/options_settable_test.dir/build.make CMakeFiles/options_settable_test.dir/options/options_settable_test.cc.s
-.PHONY : options/options_settable_test.cc.s
-
-options/options_test.o: options/options_test.cc.o
-.PHONY : options/options_test.o
-
-# target to build an object file
-options/options_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/options_test.dir/build.make CMakeFiles/options_test.dir/options/options_test.cc.o
-.PHONY : options/options_test.cc.o
-
-options/options_test.i: options/options_test.cc.i
-.PHONY : options/options_test.i
-
-# target to preprocess a source file
-options/options_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/options_test.dir/build.make CMakeFiles/options_test.dir/options/options_test.cc.i
-.PHONY : options/options_test.cc.i
-
-options/options_test.s: options/options_test.cc.s
-.PHONY : options/options_test.s
-
-# target to generate assembly for a file
-options/options_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/options_test.dir/build.make CMakeFiles/options_test.dir/options/options_test.cc.s
-.PHONY : options/options_test.cc.s
 
 port/mmap.o: port/mmap.cc.o
 .PHONY : port/mmap.o
@@ -11210,30 +5267,6 @@ table/block_based/block_based_table_reader.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/table/block_based/block_based_table_reader.cc.s
 .PHONY : table/block_based/block_based_table_reader.cc.s
 
-table/block_based/block_based_table_reader_test.o: table/block_based/block_based_table_reader_test.cc.o
-.PHONY : table/block_based/block_based_table_reader_test.o
-
-# target to build an object file
-table/block_based/block_based_table_reader_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/block_based_table_reader_test.dir/build.make CMakeFiles/block_based_table_reader_test.dir/table/block_based/block_based_table_reader_test.cc.o
-.PHONY : table/block_based/block_based_table_reader_test.cc.o
-
-table/block_based/block_based_table_reader_test.i: table/block_based/block_based_table_reader_test.cc.i
-.PHONY : table/block_based/block_based_table_reader_test.i
-
-# target to preprocess a source file
-table/block_based/block_based_table_reader_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/block_based_table_reader_test.dir/build.make CMakeFiles/block_based_table_reader_test.dir/table/block_based/block_based_table_reader_test.cc.i
-.PHONY : table/block_based/block_based_table_reader_test.cc.i
-
-table/block_based/block_based_table_reader_test.s: table/block_based/block_based_table_reader_test.cc.s
-.PHONY : table/block_based/block_based_table_reader_test.s
-
-# target to generate assembly for a file
-table/block_based/block_based_table_reader_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/block_based_table_reader_test.dir/build.make CMakeFiles/block_based_table_reader_test.dir/table/block_based/block_based_table_reader_test.cc.s
-.PHONY : table/block_based/block_based_table_reader_test.cc.s
-
 table/block_based/block_builder.o: table/block_based/block_builder.cc.o
 .PHONY : table/block_based/block_builder.o
 
@@ -11342,30 +5375,6 @@ table/block_based/block_prefix_index.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/table/block_based/block_prefix_index.cc.s
 .PHONY : table/block_based/block_prefix_index.cc.s
 
-table/block_based/block_test.o: table/block_based/block_test.cc.o
-.PHONY : table/block_based/block_test.o
-
-# target to build an object file
-table/block_based/block_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/block_test.dir/build.make CMakeFiles/block_test.dir/table/block_based/block_test.cc.o
-.PHONY : table/block_based/block_test.cc.o
-
-table/block_based/block_test.i: table/block_based/block_test.cc.i
-.PHONY : table/block_based/block_test.i
-
-# target to preprocess a source file
-table/block_based/block_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/block_test.dir/build.make CMakeFiles/block_test.dir/table/block_based/block_test.cc.i
-.PHONY : table/block_based/block_test.cc.i
-
-table/block_based/block_test.s: table/block_based/block_test.cc.s
-.PHONY : table/block_based/block_test.s
-
-# target to generate assembly for a file
-table/block_based/block_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/block_test.dir/build.make CMakeFiles/block_test.dir/table/block_based/block_test.cc.s
-.PHONY : table/block_based/block_test.cc.s
-
 table/block_based/data_block_footer.o: table/block_based/data_block_footer.cc.o
 .PHONY : table/block_based/data_block_footer.o
 
@@ -11419,30 +5428,6 @@ table/block_based/data_block_hash_index.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb.dir/build.make CMakeFiles/rocksdb.dir/table/block_based/data_block_hash_index.cc.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/table/block_based/data_block_hash_index.cc.s
 .PHONY : table/block_based/data_block_hash_index.cc.s
-
-table/block_based/data_block_hash_index_test.o: table/block_based/data_block_hash_index_test.cc.o
-.PHONY : table/block_based/data_block_hash_index_test.o
-
-# target to build an object file
-table/block_based/data_block_hash_index_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/data_block_hash_index_test.dir/build.make CMakeFiles/data_block_hash_index_test.dir/table/block_based/data_block_hash_index_test.cc.o
-.PHONY : table/block_based/data_block_hash_index_test.cc.o
-
-table/block_based/data_block_hash_index_test.i: table/block_based/data_block_hash_index_test.cc.i
-.PHONY : table/block_based/data_block_hash_index_test.i
-
-# target to preprocess a source file
-table/block_based/data_block_hash_index_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/data_block_hash_index_test.dir/build.make CMakeFiles/data_block_hash_index_test.dir/table/block_based/data_block_hash_index_test.cc.i
-.PHONY : table/block_based/data_block_hash_index_test.cc.i
-
-table/block_based/data_block_hash_index_test.s: table/block_based/data_block_hash_index_test.cc.s
-.PHONY : table/block_based/data_block_hash_index_test.s
-
-# target to generate assembly for a file
-table/block_based/data_block_hash_index_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/data_block_hash_index_test.dir/build.make CMakeFiles/data_block_hash_index_test.dir/table/block_based/data_block_hash_index_test.cc.s
-.PHONY : table/block_based/data_block_hash_index_test.cc.s
 
 table/block_based/filter_block_reader_common.o: table/block_based/filter_block_reader_common.cc.o
 .PHONY : table/block_based/filter_block_reader_common.o
@@ -11551,30 +5536,6 @@ table/block_based/full_filter_block.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb.dir/build.make CMakeFiles/rocksdb.dir/table/block_based/full_filter_block.cc.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/table/block_based/full_filter_block.cc.s
 .PHONY : table/block_based/full_filter_block.cc.s
-
-table/block_based/full_filter_block_test.o: table/block_based/full_filter_block_test.cc.o
-.PHONY : table/block_based/full_filter_block_test.o
-
-# target to build an object file
-table/block_based/full_filter_block_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/full_filter_block_test.dir/build.make CMakeFiles/full_filter_block_test.dir/table/block_based/full_filter_block_test.cc.o
-.PHONY : table/block_based/full_filter_block_test.cc.o
-
-table/block_based/full_filter_block_test.i: table/block_based/full_filter_block_test.cc.i
-.PHONY : table/block_based/full_filter_block_test.i
-
-# target to preprocess a source file
-table/block_based/full_filter_block_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/full_filter_block_test.dir/build.make CMakeFiles/full_filter_block_test.dir/table/block_based/full_filter_block_test.cc.i
-.PHONY : table/block_based/full_filter_block_test.cc.i
-
-table/block_based/full_filter_block_test.s: table/block_based/full_filter_block_test.cc.s
-.PHONY : table/block_based/full_filter_block_test.s
-
-# target to generate assembly for a file
-table/block_based/full_filter_block_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/full_filter_block_test.dir/build.make CMakeFiles/full_filter_block_test.dir/table/block_based/full_filter_block_test.cc.s
-.PHONY : table/block_based/full_filter_block_test.cc.s
 
 table/block_based/hash_index_reader.o: table/block_based/hash_index_reader.cc.o
 .PHONY : table/block_based/hash_index_reader.o
@@ -11711,30 +5672,6 @@ table/block_based/partitioned_filter_block.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/table/block_based/partitioned_filter_block.cc.s
 .PHONY : table/block_based/partitioned_filter_block.cc.s
 
-table/block_based/partitioned_filter_block_test.o: table/block_based/partitioned_filter_block_test.cc.o
-.PHONY : table/block_based/partitioned_filter_block_test.o
-
-# target to build an object file
-table/block_based/partitioned_filter_block_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/partitioned_filter_block_test.dir/build.make CMakeFiles/partitioned_filter_block_test.dir/table/block_based/partitioned_filter_block_test.cc.o
-.PHONY : table/block_based/partitioned_filter_block_test.cc.o
-
-table/block_based/partitioned_filter_block_test.i: table/block_based/partitioned_filter_block_test.cc.i
-.PHONY : table/block_based/partitioned_filter_block_test.i
-
-# target to preprocess a source file
-table/block_based/partitioned_filter_block_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/partitioned_filter_block_test.dir/build.make CMakeFiles/partitioned_filter_block_test.dir/table/block_based/partitioned_filter_block_test.cc.i
-.PHONY : table/block_based/partitioned_filter_block_test.cc.i
-
-table/block_based/partitioned_filter_block_test.s: table/block_based/partitioned_filter_block_test.cc.s
-.PHONY : table/block_based/partitioned_filter_block_test.s
-
-# target to generate assembly for a file
-table/block_based/partitioned_filter_block_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/partitioned_filter_block_test.dir/build.make CMakeFiles/partitioned_filter_block_test.dir/table/block_based/partitioned_filter_block_test.cc.s
-.PHONY : table/block_based/partitioned_filter_block_test.cc.s
-
 table/block_based/partitioned_index_iterator.o: table/block_based/partitioned_index_iterator.cc.o
 .PHONY : table/block_based/partitioned_index_iterator.o
 
@@ -11870,54 +5807,6 @@ table/block_fetcher.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/table/block_fetcher.cc.s
 .PHONY : table/block_fetcher.cc.s
 
-table/block_fetcher_test.o: table/block_fetcher_test.cc.o
-.PHONY : table/block_fetcher_test.o
-
-# target to build an object file
-table/block_fetcher_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/block_fetcher_test.dir/build.make CMakeFiles/block_fetcher_test.dir/table/block_fetcher_test.cc.o
-.PHONY : table/block_fetcher_test.cc.o
-
-table/block_fetcher_test.i: table/block_fetcher_test.cc.i
-.PHONY : table/block_fetcher_test.i
-
-# target to preprocess a source file
-table/block_fetcher_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/block_fetcher_test.dir/build.make CMakeFiles/block_fetcher_test.dir/table/block_fetcher_test.cc.i
-.PHONY : table/block_fetcher_test.cc.i
-
-table/block_fetcher_test.s: table/block_fetcher_test.cc.s
-.PHONY : table/block_fetcher_test.s
-
-# target to generate assembly for a file
-table/block_fetcher_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/block_fetcher_test.dir/build.make CMakeFiles/block_fetcher_test.dir/table/block_fetcher_test.cc.s
-.PHONY : table/block_fetcher_test.cc.s
-
-table/cleanable_test.o: table/cleanable_test.cc.o
-.PHONY : table/cleanable_test.o
-
-# target to build an object file
-table/cleanable_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cleanable_test.dir/build.make CMakeFiles/cleanable_test.dir/table/cleanable_test.cc.o
-.PHONY : table/cleanable_test.cc.o
-
-table/cleanable_test.i: table/cleanable_test.cc.i
-.PHONY : table/cleanable_test.i
-
-# target to preprocess a source file
-table/cleanable_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cleanable_test.dir/build.make CMakeFiles/cleanable_test.dir/table/cleanable_test.cc.i
-.PHONY : table/cleanable_test.cc.i
-
-table/cleanable_test.s: table/cleanable_test.cc.s
-.PHONY : table/cleanable_test.s
-
-# target to generate assembly for a file
-table/cleanable_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cleanable_test.dir/build.make CMakeFiles/cleanable_test.dir/table/cleanable_test.cc.s
-.PHONY : table/cleanable_test.cc.s
-
 table/compaction_merging_iterator.o: table/compaction_merging_iterator.cc.o
 .PHONY : table/compaction_merging_iterator.o
 
@@ -11972,30 +5861,6 @@ table/cuckoo/cuckoo_table_builder.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/table/cuckoo/cuckoo_table_builder.cc.s
 .PHONY : table/cuckoo/cuckoo_table_builder.cc.s
 
-table/cuckoo/cuckoo_table_builder_test.o: table/cuckoo/cuckoo_table_builder_test.cc.o
-.PHONY : table/cuckoo/cuckoo_table_builder_test.o
-
-# target to build an object file
-table/cuckoo/cuckoo_table_builder_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cuckoo_table_builder_test.dir/build.make CMakeFiles/cuckoo_table_builder_test.dir/table/cuckoo/cuckoo_table_builder_test.cc.o
-.PHONY : table/cuckoo/cuckoo_table_builder_test.cc.o
-
-table/cuckoo/cuckoo_table_builder_test.i: table/cuckoo/cuckoo_table_builder_test.cc.i
-.PHONY : table/cuckoo/cuckoo_table_builder_test.i
-
-# target to preprocess a source file
-table/cuckoo/cuckoo_table_builder_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cuckoo_table_builder_test.dir/build.make CMakeFiles/cuckoo_table_builder_test.dir/table/cuckoo/cuckoo_table_builder_test.cc.i
-.PHONY : table/cuckoo/cuckoo_table_builder_test.cc.i
-
-table/cuckoo/cuckoo_table_builder_test.s: table/cuckoo/cuckoo_table_builder_test.cc.s
-.PHONY : table/cuckoo/cuckoo_table_builder_test.s
-
-# target to generate assembly for a file
-table/cuckoo/cuckoo_table_builder_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cuckoo_table_builder_test.dir/build.make CMakeFiles/cuckoo_table_builder_test.dir/table/cuckoo/cuckoo_table_builder_test.cc.s
-.PHONY : table/cuckoo/cuckoo_table_builder_test.cc.s
-
 table/cuckoo/cuckoo_table_factory.o: table/cuckoo/cuckoo_table_factory.cc.o
 .PHONY : table/cuckoo/cuckoo_table_factory.o
 
@@ -12049,30 +5914,6 @@ table/cuckoo/cuckoo_table_reader.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb.dir/build.make CMakeFiles/rocksdb.dir/table/cuckoo/cuckoo_table_reader.cc.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/table/cuckoo/cuckoo_table_reader.cc.s
 .PHONY : table/cuckoo/cuckoo_table_reader.cc.s
-
-table/cuckoo/cuckoo_table_reader_test.o: table/cuckoo/cuckoo_table_reader_test.cc.o
-.PHONY : table/cuckoo/cuckoo_table_reader_test.o
-
-# target to build an object file
-table/cuckoo/cuckoo_table_reader_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cuckoo_table_reader_test.dir/build.make CMakeFiles/cuckoo_table_reader_test.dir/table/cuckoo/cuckoo_table_reader_test.cc.o
-.PHONY : table/cuckoo/cuckoo_table_reader_test.cc.o
-
-table/cuckoo/cuckoo_table_reader_test.i: table/cuckoo/cuckoo_table_reader_test.cc.i
-.PHONY : table/cuckoo/cuckoo_table_reader_test.i
-
-# target to preprocess a source file
-table/cuckoo/cuckoo_table_reader_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cuckoo_table_reader_test.dir/build.make CMakeFiles/cuckoo_table_reader_test.dir/table/cuckoo/cuckoo_table_reader_test.cc.i
-.PHONY : table/cuckoo/cuckoo_table_reader_test.cc.i
-
-table/cuckoo/cuckoo_table_reader_test.s: table/cuckoo/cuckoo_table_reader_test.cc.s
-.PHONY : table/cuckoo/cuckoo_table_reader_test.s
-
-# target to generate assembly for a file
-table/cuckoo/cuckoo_table_reader_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cuckoo_table_reader_test.dir/build.make CMakeFiles/cuckoo_table_reader_test.dir/table/cuckoo/cuckoo_table_reader_test.cc.s
-.PHONY : table/cuckoo/cuckoo_table_reader_test.cc.s
 
 table/format.o: table/format.cc.o
 .PHONY : table/format.o
@@ -12155,30 +5996,6 @@ table/iterator.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/table/iterator.cc.s
 .PHONY : table/iterator.cc.s
 
-table/merger_test.o: table/merger_test.cc.o
-.PHONY : table/merger_test.o
-
-# target to build an object file
-table/merger_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/merger_test.dir/build.make CMakeFiles/merger_test.dir/table/merger_test.cc.o
-.PHONY : table/merger_test.cc.o
-
-table/merger_test.i: table/merger_test.cc.i
-.PHONY : table/merger_test.i
-
-# target to preprocess a source file
-table/merger_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/merger_test.dir/build.make CMakeFiles/merger_test.dir/table/merger_test.cc.i
-.PHONY : table/merger_test.cc.i
-
-table/merger_test.s: table/merger_test.cc.s
-.PHONY : table/merger_test.s
-
-# target to generate assembly for a file
-table/merger_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/merger_test.dir/build.make CMakeFiles/merger_test.dir/table/merger_test.cc.s
-.PHONY : table/merger_test.cc.s
-
 table/merging_iterator.o: table/merging_iterator.cc.o
 .PHONY : table/merging_iterator.o
 
@@ -12232,30 +6049,6 @@ table/meta_blocks.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb.dir/build.make CMakeFiles/rocksdb.dir/table/meta_blocks.cc.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/table/meta_blocks.cc.s
 .PHONY : table/meta_blocks.cc.s
-
-table/mock_table.o: table/mock_table.cc.o
-.PHONY : table/mock_table.o
-
-# target to build an object file
-table/mock_table.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testutillib.dir/build.make CMakeFiles/testutillib.dir/table/mock_table.cc.o
-.PHONY : table/mock_table.cc.o
-
-table/mock_table.i: table/mock_table.cc.i
-.PHONY : table/mock_table.i
-
-# target to preprocess a source file
-table/mock_table.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testutillib.dir/build.make CMakeFiles/testutillib.dir/table/mock_table.cc.i
-.PHONY : table/mock_table.cc.i
-
-table/mock_table.s: table/mock_table.cc.s
-.PHONY : table/mock_table.s
-
-# target to generate assembly for a file
-table/mock_table.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testutillib.dir/build.make CMakeFiles/testutillib.dir/table/mock_table.cc.s
-.PHONY : table/mock_table.cc.s
 
 table/persistent_cache_helper.o: table/persistent_cache_helper.cc.o
 .PHONY : table/persistent_cache_helper.o
@@ -12500,30 +6293,6 @@ table/sst_file_reader.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/table/sst_file_reader.cc.s
 .PHONY : table/sst_file_reader.cc.s
 
-table/sst_file_reader_test.o: table/sst_file_reader_test.cc.o
-.PHONY : table/sst_file_reader_test.o
-
-# target to build an object file
-table/sst_file_reader_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sst_file_reader_test.dir/build.make CMakeFiles/sst_file_reader_test.dir/table/sst_file_reader_test.cc.o
-.PHONY : table/sst_file_reader_test.cc.o
-
-table/sst_file_reader_test.i: table/sst_file_reader_test.cc.i
-.PHONY : table/sst_file_reader_test.i
-
-# target to preprocess a source file
-table/sst_file_reader_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sst_file_reader_test.dir/build.make CMakeFiles/sst_file_reader_test.dir/table/sst_file_reader_test.cc.i
-.PHONY : table/sst_file_reader_test.cc.i
-
-table/sst_file_reader_test.s: table/sst_file_reader_test.cc.s
-.PHONY : table/sst_file_reader_test.s
-
-# target to generate assembly for a file
-table/sst_file_reader_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sst_file_reader_test.dir/build.make CMakeFiles/sst_file_reader_test.dir/table/sst_file_reader_test.cc.s
-.PHONY : table/sst_file_reader_test.cc.s
-
 table/sst_file_writer.o: table/sst_file_writer.cc.o
 .PHONY : table/sst_file_writer.o
 
@@ -12628,30 +6397,6 @@ table/table_reader_bench.s: table/table_reader_bench.cc.s
 table/table_reader_bench.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/table_reader_bench.dir/build.make CMakeFiles/table_reader_bench.dir/table/table_reader_bench.cc.s
 .PHONY : table/table_reader_bench.cc.s
-
-table/table_test.o: table/table_test.cc.o
-.PHONY : table/table_test.o
-
-# target to build an object file
-table/table_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/table_test.dir/build.make CMakeFiles/table_test.dir/table/table_test.cc.o
-.PHONY : table/table_test.cc.o
-
-table/table_test.i: table/table_test.cc.i
-.PHONY : table/table_test.i
-
-# target to preprocess a source file
-table/table_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/table_test.dir/build.make CMakeFiles/table_test.dir/table/table_test.cc.i
-.PHONY : table/table_test.cc.i
-
-table/table_test.s: table/table_test.cc.s
-.PHONY : table/table_test.s
-
-# target to generate assembly for a file
-table/table_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/table_test.dir/build.make CMakeFiles/table_test.dir/table/table_test.cc.s
-.PHONY : table/table_test.cc.s
 
 table/two_level_iterator.o: table/two_level_iterator.cc.o
 .PHONY : table/two_level_iterator.o
@@ -12860,30 +6605,6 @@ test_util/testutil.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/test_util/testutil.cc.s
 .PHONY : test_util/testutil.cc.s
 
-test_util/testutil_test.o: test_util/testutil_test.cc.o
-.PHONY : test_util/testutil_test.o
-
-# target to build an object file
-test_util/testutil_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testutil_test.dir/build.make CMakeFiles/testutil_test.dir/test_util/testutil_test.cc.o
-.PHONY : test_util/testutil_test.cc.o
-
-test_util/testutil_test.i: test_util/testutil_test.cc.i
-.PHONY : test_util/testutil_test.i
-
-# target to preprocess a source file
-test_util/testutil_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testutil_test.dir/build.make CMakeFiles/testutil_test.dir/test_util/testutil_test.cc.i
-.PHONY : test_util/testutil_test.cc.i
-
-test_util/testutil_test.s: test_util/testutil_test.cc.s
-.PHONY : test_util/testutil_test.s
-
-# target to generate assembly for a file
-test_util/testutil_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testutil_test.dir/build.make CMakeFiles/testutil_test.dir/test_util/testutil_test.cc.s
-.PHONY : test_util/testutil_test.cc.s
-
 test_util/transaction_test_util.o: test_util/transaction_test_util.cc.o
 .PHONY : test_util/transaction_test_util.o
 
@@ -12937,30 +6658,6 @@ tools/block_cache_analyzer/block_cache_trace_analyzer.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb.dir/build.make CMakeFiles/rocksdb.dir/tools/block_cache_analyzer/block_cache_trace_analyzer.cc.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/tools/block_cache_analyzer/block_cache_trace_analyzer.cc.s
 .PHONY : tools/block_cache_analyzer/block_cache_trace_analyzer.cc.s
-
-tools/block_cache_analyzer/block_cache_trace_analyzer_test.o: tools/block_cache_analyzer/block_cache_trace_analyzer_test.cc.o
-.PHONY : tools/block_cache_analyzer/block_cache_trace_analyzer_test.o
-
-# target to build an object file
-tools/block_cache_analyzer/block_cache_trace_analyzer_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/block_cache_trace_analyzer_test.dir/build.make CMakeFiles/block_cache_trace_analyzer_test.dir/tools/block_cache_analyzer/block_cache_trace_analyzer_test.cc.o
-.PHONY : tools/block_cache_analyzer/block_cache_trace_analyzer_test.cc.o
-
-tools/block_cache_analyzer/block_cache_trace_analyzer_test.i: tools/block_cache_analyzer/block_cache_trace_analyzer_test.cc.i
-.PHONY : tools/block_cache_analyzer/block_cache_trace_analyzer_test.i
-
-# target to preprocess a source file
-tools/block_cache_analyzer/block_cache_trace_analyzer_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/block_cache_trace_analyzer_test.dir/build.make CMakeFiles/block_cache_trace_analyzer_test.dir/tools/block_cache_analyzer/block_cache_trace_analyzer_test.cc.i
-.PHONY : tools/block_cache_analyzer/block_cache_trace_analyzer_test.cc.i
-
-tools/block_cache_analyzer/block_cache_trace_analyzer_test.s: tools/block_cache_analyzer/block_cache_trace_analyzer_test.cc.s
-.PHONY : tools/block_cache_analyzer/block_cache_trace_analyzer_test.s
-
-# target to generate assembly for a file
-tools/block_cache_analyzer/block_cache_trace_analyzer_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/block_cache_trace_analyzer_test.dir/build.make CMakeFiles/block_cache_trace_analyzer_test.dir/tools/block_cache_analyzer/block_cache_trace_analyzer_test.cc.s
-.PHONY : tools/block_cache_analyzer/block_cache_trace_analyzer_test.cc.s
 
 tools/block_cache_analyzer/block_cache_trace_analyzer_tool.o: tools/block_cache_analyzer/block_cache_trace_analyzer_tool.cc.o
 .PHONY : tools/block_cache_analyzer/block_cache_trace_analyzer_tool.o
@@ -13061,30 +6758,6 @@ tools/dump/db_dump_tool.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/tools/dump/db_dump_tool.cc.s
 .PHONY : tools/dump/db_dump_tool.cc.s
 
-tools/io_tracer_parser_test.o: tools/io_tracer_parser_test.cc.o
-.PHONY : tools/io_tracer_parser_test.o
-
-# target to build an object file
-tools/io_tracer_parser_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/io_tracer_parser_test.dir/build.make CMakeFiles/io_tracer_parser_test.dir/tools/io_tracer_parser_test.cc.o
-.PHONY : tools/io_tracer_parser_test.cc.o
-
-tools/io_tracer_parser_test.i: tools/io_tracer_parser_test.cc.i
-.PHONY : tools/io_tracer_parser_test.i
-
-# target to preprocess a source file
-tools/io_tracer_parser_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/io_tracer_parser_test.dir/build.make CMakeFiles/io_tracer_parser_test.dir/tools/io_tracer_parser_test.cc.i
-.PHONY : tools/io_tracer_parser_test.cc.i
-
-tools/io_tracer_parser_test.s: tools/io_tracer_parser_test.cc.s
-.PHONY : tools/io_tracer_parser_test.s
-
-# target to generate assembly for a file
-tools/io_tracer_parser_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/io_tracer_parser_test.dir/build.make CMakeFiles/io_tracer_parser_test.dir/tools/io_tracer_parser_test.cc.s
-.PHONY : tools/io_tracer_parser_test.cc.s
-
 tools/io_tracer_parser_tool.o: tools/io_tracer_parser_tool.cc.o
 .PHONY : tools/io_tracer_parser_tool.o
 
@@ -13139,30 +6812,6 @@ tools/ldb_cmd.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/tools/ldb_cmd.cc.s
 .PHONY : tools/ldb_cmd.cc.s
 
-tools/ldb_cmd_test.o: tools/ldb_cmd_test.cc.o
-.PHONY : tools/ldb_cmd_test.o
-
-# target to build an object file
-tools/ldb_cmd_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ldb_cmd_test.dir/build.make CMakeFiles/ldb_cmd_test.dir/tools/ldb_cmd_test.cc.o
-.PHONY : tools/ldb_cmd_test.cc.o
-
-tools/ldb_cmd_test.i: tools/ldb_cmd_test.cc.i
-.PHONY : tools/ldb_cmd_test.i
-
-# target to preprocess a source file
-tools/ldb_cmd_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ldb_cmd_test.dir/build.make CMakeFiles/ldb_cmd_test.dir/tools/ldb_cmd_test.cc.i
-.PHONY : tools/ldb_cmd_test.cc.i
-
-tools/ldb_cmd_test.s: tools/ldb_cmd_test.cc.s
-.PHONY : tools/ldb_cmd_test.s
-
-# target to generate assembly for a file
-tools/ldb_cmd_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ldb_cmd_test.dir/build.make CMakeFiles/ldb_cmd_test.dir/tools/ldb_cmd_test.cc.s
-.PHONY : tools/ldb_cmd_test.cc.s
-
 tools/ldb_tool.o: tools/ldb_tool.cc.o
 .PHONY : tools/ldb_tool.o
 
@@ -13190,30 +6839,6 @@ tools/ldb_tool.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/tools/ldb_tool.cc.s
 .PHONY : tools/ldb_tool.cc.s
 
-tools/reduce_levels_test.o: tools/reduce_levels_test.cc.o
-.PHONY : tools/reduce_levels_test.o
-
-# target to build an object file
-tools/reduce_levels_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/reduce_levels_test.dir/build.make CMakeFiles/reduce_levels_test.dir/tools/reduce_levels_test.cc.o
-.PHONY : tools/reduce_levels_test.cc.o
-
-tools/reduce_levels_test.i: tools/reduce_levels_test.cc.i
-.PHONY : tools/reduce_levels_test.i
-
-# target to preprocess a source file
-tools/reduce_levels_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/reduce_levels_test.dir/build.make CMakeFiles/reduce_levels_test.dir/tools/reduce_levels_test.cc.i
-.PHONY : tools/reduce_levels_test.cc.i
-
-tools/reduce_levels_test.s: tools/reduce_levels_test.cc.s
-.PHONY : tools/reduce_levels_test.s
-
-# target to generate assembly for a file
-tools/reduce_levels_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/reduce_levels_test.dir/build.make CMakeFiles/reduce_levels_test.dir/tools/reduce_levels_test.cc.s
-.PHONY : tools/reduce_levels_test.cc.s
-
 tools/simulated_hybrid_file_system.o: tools/simulated_hybrid_file_system.cc.o
 .PHONY : tools/simulated_hybrid_file_system.o
 
@@ -13237,30 +6862,6 @@ tools/simulated_hybrid_file_system.s: tools/simulated_hybrid_file_system.cc.s
 tools/simulated_hybrid_file_system.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/db_bench.dir/build.make CMakeFiles/db_bench.dir/tools/simulated_hybrid_file_system.cc.s
 .PHONY : tools/simulated_hybrid_file_system.cc.s
-
-tools/sst_dump_test.o: tools/sst_dump_test.cc.o
-.PHONY : tools/sst_dump_test.o
-
-# target to build an object file
-tools/sst_dump_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sst_dump_test.dir/build.make CMakeFiles/sst_dump_test.dir/tools/sst_dump_test.cc.o
-.PHONY : tools/sst_dump_test.cc.o
-
-tools/sst_dump_test.i: tools/sst_dump_test.cc.i
-.PHONY : tools/sst_dump_test.i
-
-# target to preprocess a source file
-tools/sst_dump_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sst_dump_test.dir/build.make CMakeFiles/sst_dump_test.dir/tools/sst_dump_test.cc.i
-.PHONY : tools/sst_dump_test.cc.i
-
-tools/sst_dump_test.s: tools/sst_dump_test.cc.s
-.PHONY : tools/sst_dump_test.s
-
-# target to generate assembly for a file
-tools/sst_dump_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sst_dump_test.dir/build.make CMakeFiles/sst_dump_test.dir/tools/sst_dump_test.cc.s
-.PHONY : tools/sst_dump_test.cc.s
 
 tools/sst_dump_tool.o: tools/sst_dump_tool.cc.o
 .PHONY : tools/sst_dump_tool.o
@@ -13312,30 +6913,6 @@ tools/trace_analyzer.s: tools/trace_analyzer.cc.s
 tools/trace_analyzer.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/trace_analyzer.dir/build.make CMakeFiles/trace_analyzer.dir/tools/trace_analyzer.cc.s
 .PHONY : tools/trace_analyzer.cc.s
-
-tools/trace_analyzer_test.o: tools/trace_analyzer_test.cc.o
-.PHONY : tools/trace_analyzer_test.o
-
-# target to build an object file
-tools/trace_analyzer_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/trace_analyzer_test.dir/build.make CMakeFiles/trace_analyzer_test.dir/tools/trace_analyzer_test.cc.o
-.PHONY : tools/trace_analyzer_test.cc.o
-
-tools/trace_analyzer_test.i: tools/trace_analyzer_test.cc.i
-.PHONY : tools/trace_analyzer_test.i
-
-# target to preprocess a source file
-tools/trace_analyzer_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/trace_analyzer_test.dir/build.make CMakeFiles/trace_analyzer_test.dir/tools/trace_analyzer_test.cc.i
-.PHONY : tools/trace_analyzer_test.cc.i
-
-tools/trace_analyzer_test.s: tools/trace_analyzer_test.cc.s
-.PHONY : tools/trace_analyzer_test.s
-
-# target to generate assembly for a file
-tools/trace_analyzer_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/trace_analyzer_test.dir/build.make CMakeFiles/trace_analyzer_test.dir/tools/trace_analyzer_test.cc.s
-.PHONY : tools/trace_analyzer_test.cc.s
 
 tools/trace_analyzer_tool.o: tools/trace_analyzer_tool.cc.o
 .PHONY : tools/trace_analyzer_tool.o
@@ -13391,30 +6968,6 @@ trace_replay/block_cache_tracer.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/trace_replay/block_cache_tracer.cc.s
 .PHONY : trace_replay/block_cache_tracer.cc.s
 
-trace_replay/block_cache_tracer_test.o: trace_replay/block_cache_tracer_test.cc.o
-.PHONY : trace_replay/block_cache_tracer_test.o
-
-# target to build an object file
-trace_replay/block_cache_tracer_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/block_cache_tracer_test.dir/build.make CMakeFiles/block_cache_tracer_test.dir/trace_replay/block_cache_tracer_test.cc.o
-.PHONY : trace_replay/block_cache_tracer_test.cc.o
-
-trace_replay/block_cache_tracer_test.i: trace_replay/block_cache_tracer_test.cc.i
-.PHONY : trace_replay/block_cache_tracer_test.i
-
-# target to preprocess a source file
-trace_replay/block_cache_tracer_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/block_cache_tracer_test.dir/build.make CMakeFiles/block_cache_tracer_test.dir/trace_replay/block_cache_tracer_test.cc.i
-.PHONY : trace_replay/block_cache_tracer_test.cc.i
-
-trace_replay/block_cache_tracer_test.s: trace_replay/block_cache_tracer_test.cc.s
-.PHONY : trace_replay/block_cache_tracer_test.s
-
-# target to generate assembly for a file
-trace_replay/block_cache_tracer_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/block_cache_tracer_test.dir/build.make CMakeFiles/block_cache_tracer_test.dir/trace_replay/block_cache_tracer_test.cc.s
-.PHONY : trace_replay/block_cache_tracer_test.cc.s
-
 trace_replay/io_tracer.o: trace_replay/io_tracer.cc.o
 .PHONY : trace_replay/io_tracer.o
 
@@ -13441,30 +6994,6 @@ trace_replay/io_tracer.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb.dir/build.make CMakeFiles/rocksdb.dir/trace_replay/io_tracer.cc.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/trace_replay/io_tracer.cc.s
 .PHONY : trace_replay/io_tracer.cc.s
-
-trace_replay/io_tracer_test.o: trace_replay/io_tracer_test.cc.o
-.PHONY : trace_replay/io_tracer_test.o
-
-# target to build an object file
-trace_replay/io_tracer_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/io_tracer_test.dir/build.make CMakeFiles/io_tracer_test.dir/trace_replay/io_tracer_test.cc.o
-.PHONY : trace_replay/io_tracer_test.cc.o
-
-trace_replay/io_tracer_test.i: trace_replay/io_tracer_test.cc.i
-.PHONY : trace_replay/io_tracer_test.i
-
-# target to preprocess a source file
-trace_replay/io_tracer_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/io_tracer_test.dir/build.make CMakeFiles/io_tracer_test.dir/trace_replay/io_tracer_test.cc.i
-.PHONY : trace_replay/io_tracer_test.cc.i
-
-trace_replay/io_tracer_test.s: trace_replay/io_tracer_test.cc.s
-.PHONY : trace_replay/io_tracer_test.s
-
-# target to generate assembly for a file
-trace_replay/io_tracer_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/io_tracer_test.dir/build.make CMakeFiles/io_tracer_test.dir/trace_replay/io_tracer_test.cc.s
-.PHONY : trace_replay/io_tracer_test.cc.s
 
 trace_replay/trace_record.o: trace_replay/trace_record.cc.o
 .PHONY : trace_replay/trace_record.o
@@ -13601,54 +7130,6 @@ util/async_file_reader.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/util/async_file_reader.cc.s
 .PHONY : util/async_file_reader.cc.s
 
-util/autovector_test.o: util/autovector_test.cc.o
-.PHONY : util/autovector_test.o
-
-# target to build an object file
-util/autovector_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/autovector_test.dir/build.make CMakeFiles/autovector_test.dir/util/autovector_test.cc.o
-.PHONY : util/autovector_test.cc.o
-
-util/autovector_test.i: util/autovector_test.cc.i
-.PHONY : util/autovector_test.i
-
-# target to preprocess a source file
-util/autovector_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/autovector_test.dir/build.make CMakeFiles/autovector_test.dir/util/autovector_test.cc.i
-.PHONY : util/autovector_test.cc.i
-
-util/autovector_test.s: util/autovector_test.cc.s
-.PHONY : util/autovector_test.s
-
-# target to generate assembly for a file
-util/autovector_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/autovector_test.dir/build.make CMakeFiles/autovector_test.dir/util/autovector_test.cc.s
-.PHONY : util/autovector_test.cc.s
-
-util/bloom_test.o: util/bloom_test.cc.o
-.PHONY : util/bloom_test.o
-
-# target to build an object file
-util/bloom_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bloom_test.dir/build.make CMakeFiles/bloom_test.dir/util/bloom_test.cc.o
-.PHONY : util/bloom_test.cc.o
-
-util/bloom_test.i: util/bloom_test.cc.i
-.PHONY : util/bloom_test.i
-
-# target to preprocess a source file
-util/bloom_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bloom_test.dir/build.make CMakeFiles/bloom_test.dir/util/bloom_test.cc.i
-.PHONY : util/bloom_test.cc.i
-
-util/bloom_test.s: util/bloom_test.cc.s
-.PHONY : util/bloom_test.s
-
-# target to generate assembly for a file
-util/bloom_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bloom_test.dir/build.make CMakeFiles/bloom_test.dir/util/bloom_test.cc.s
-.PHONY : util/bloom_test.cc.s
-
 util/cleanable.o: util/cleanable.cc.o
 .PHONY : util/cleanable.o
 
@@ -13702,30 +7183,6 @@ util/coding.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb.dir/build.make CMakeFiles/rocksdb.dir/util/coding.cc.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/util/coding.cc.s
 .PHONY : util/coding.cc.s
-
-util/coding_test.o: util/coding_test.cc.o
-.PHONY : util/coding_test.o
-
-# target to build an object file
-util/coding_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/coding_test.dir/build.make CMakeFiles/coding_test.dir/util/coding_test.cc.o
-.PHONY : util/coding_test.cc.o
-
-util/coding_test.i: util/coding_test.cc.i
-.PHONY : util/coding_test.i
-
-# target to preprocess a source file
-util/coding_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/coding_test.dir/build.make CMakeFiles/coding_test.dir/util/coding_test.cc.i
-.PHONY : util/coding_test.cc.i
-
-util/coding_test.s: util/coding_test.cc.s
-.PHONY : util/coding_test.s
-
-# target to generate assembly for a file
-util/coding_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/coding_test.dir/build.make CMakeFiles/coding_test.dir/util/coding_test.cc.s
-.PHONY : util/coding_test.cc.s
 
 util/compaction_job_stats_impl.o: util/compaction_job_stats_impl.cc.o
 .PHONY : util/compaction_job_stats_impl.o
@@ -13889,30 +7346,6 @@ util/crc32c.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/util/crc32c.cc.s
 .PHONY : util/crc32c.cc.s
 
-util/crc32c_test.o: util/crc32c_test.cc.o
-.PHONY : util/crc32c_test.o
-
-# target to build an object file
-util/crc32c_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/crc32c_test.dir/build.make CMakeFiles/crc32c_test.dir/util/crc32c_test.cc.o
-.PHONY : util/crc32c_test.cc.o
-
-util/crc32c_test.i: util/crc32c_test.cc.i
-.PHONY : util/crc32c_test.i
-
-# target to preprocess a source file
-util/crc32c_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/crc32c_test.dir/build.make CMakeFiles/crc32c_test.dir/util/crc32c_test.cc.i
-.PHONY : util/crc32c_test.cc.i
-
-util/crc32c_test.s: util/crc32c_test.cc.s
-.PHONY : util/crc32c_test.s
-
-# target to generate assembly for a file
-util/crc32c_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/crc32c_test.dir/build.make CMakeFiles/crc32c_test.dir/util/crc32c_test.cc.s
-.PHONY : util/crc32c_test.cc.s
-
 util/data_structure.o: util/data_structure.cc.o
 .PHONY : util/data_structure.o
 
@@ -13939,30 +7372,6 @@ util/data_structure.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb.dir/build.make CMakeFiles/rocksdb.dir/util/data_structure.cc.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/util/data_structure.cc.s
 .PHONY : util/data_structure.cc.s
-
-util/defer_test.o: util/defer_test.cc.o
-.PHONY : util/defer_test.o
-
-# target to build an object file
-util/defer_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/defer_test.dir/build.make CMakeFiles/defer_test.dir/util/defer_test.cc.o
-.PHONY : util/defer_test.cc.o
-
-util/defer_test.i: util/defer_test.cc.i
-.PHONY : util/defer_test.i
-
-# target to preprocess a source file
-util/defer_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/defer_test.dir/build.make CMakeFiles/defer_test.dir/util/defer_test.cc.i
-.PHONY : util/defer_test.cc.i
-
-util/defer_test.s: util/defer_test.cc.s
-.PHONY : util/defer_test.s
-
-# target to generate assembly for a file
-util/defer_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/defer_test.dir/build.make CMakeFiles/defer_test.dir/util/defer_test.cc.s
-.PHONY : util/defer_test.cc.s
 
 util/dynamic_bloom.o: util/dynamic_bloom.cc.o
 .PHONY : util/dynamic_bloom.o
@@ -13991,30 +7400,6 @@ util/dynamic_bloom.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/util/dynamic_bloom.cc.s
 .PHONY : util/dynamic_bloom.cc.s
 
-util/dynamic_bloom_test.o: util/dynamic_bloom_test.cc.o
-.PHONY : util/dynamic_bloom_test.o
-
-# target to build an object file
-util/dynamic_bloom_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/dynamic_bloom_test.dir/build.make CMakeFiles/dynamic_bloom_test.dir/util/dynamic_bloom_test.cc.o
-.PHONY : util/dynamic_bloom_test.cc.o
-
-util/dynamic_bloom_test.i: util/dynamic_bloom_test.cc.i
-.PHONY : util/dynamic_bloom_test.i
-
-# target to preprocess a source file
-util/dynamic_bloom_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/dynamic_bloom_test.dir/build.make CMakeFiles/dynamic_bloom_test.dir/util/dynamic_bloom_test.cc.i
-.PHONY : util/dynamic_bloom_test.cc.i
-
-util/dynamic_bloom_test.s: util/dynamic_bloom_test.cc.s
-.PHONY : util/dynamic_bloom_test.s
-
-# target to generate assembly for a file
-util/dynamic_bloom_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/dynamic_bloom_test.dir/build.make CMakeFiles/dynamic_bloom_test.dir/util/dynamic_bloom_test.cc.s
-.PHONY : util/dynamic_bloom_test.cc.s
-
 util/file_checksum_helper.o: util/file_checksum_helper.cc.o
 .PHONY : util/file_checksum_helper.o
 
@@ -14041,54 +7426,6 @@ util/file_checksum_helper.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb.dir/build.make CMakeFiles/rocksdb.dir/util/file_checksum_helper.cc.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/util/file_checksum_helper.cc.s
 .PHONY : util/file_checksum_helper.cc.s
-
-util/file_reader_writer_test.o: util/file_reader_writer_test.cc.o
-.PHONY : util/file_reader_writer_test.o
-
-# target to build an object file
-util/file_reader_writer_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/file_reader_writer_test.dir/build.make CMakeFiles/file_reader_writer_test.dir/util/file_reader_writer_test.cc.o
-.PHONY : util/file_reader_writer_test.cc.o
-
-util/file_reader_writer_test.i: util/file_reader_writer_test.cc.i
-.PHONY : util/file_reader_writer_test.i
-
-# target to preprocess a source file
-util/file_reader_writer_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/file_reader_writer_test.dir/build.make CMakeFiles/file_reader_writer_test.dir/util/file_reader_writer_test.cc.i
-.PHONY : util/file_reader_writer_test.cc.i
-
-util/file_reader_writer_test.s: util/file_reader_writer_test.cc.s
-.PHONY : util/file_reader_writer_test.s
-
-# target to generate assembly for a file
-util/file_reader_writer_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/file_reader_writer_test.dir/build.make CMakeFiles/file_reader_writer_test.dir/util/file_reader_writer_test.cc.s
-.PHONY : util/file_reader_writer_test.cc.s
-
-util/filelock_test.o: util/filelock_test.cc.o
-.PHONY : util/filelock_test.o
-
-# target to build an object file
-util/filelock_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/filelock_test.dir/build.make CMakeFiles/filelock_test.dir/util/filelock_test.cc.o
-.PHONY : util/filelock_test.cc.o
-
-util/filelock_test.i: util/filelock_test.cc.i
-.PHONY : util/filelock_test.i
-
-# target to preprocess a source file
-util/filelock_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/filelock_test.dir/build.make CMakeFiles/filelock_test.dir/util/filelock_test.cc.i
-.PHONY : util/filelock_test.cc.i
-
-util/filelock_test.s: util/filelock_test.cc.s
-.PHONY : util/filelock_test.s
-
-# target to generate assembly for a file
-util/filelock_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/filelock_test.dir/build.make CMakeFiles/filelock_test.dir/util/filelock_test.cc.s
-.PHONY : util/filelock_test.cc.s
 
 util/filter_bench.o: util/filter_bench.cc.o
 .PHONY : util/filter_bench.o
@@ -14140,54 +7477,6 @@ util/hash.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb.dir/build.make CMakeFiles/rocksdb.dir/util/hash.cc.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/util/hash.cc.s
 .PHONY : util/hash.cc.s
-
-util/hash_test.o: util/hash_test.cc.o
-.PHONY : util/hash_test.o
-
-# target to build an object file
-util/hash_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hash_test.dir/build.make CMakeFiles/hash_test.dir/util/hash_test.cc.o
-.PHONY : util/hash_test.cc.o
-
-util/hash_test.i: util/hash_test.cc.i
-.PHONY : util/hash_test.i
-
-# target to preprocess a source file
-util/hash_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hash_test.dir/build.make CMakeFiles/hash_test.dir/util/hash_test.cc.i
-.PHONY : util/hash_test.cc.i
-
-util/hash_test.s: util/hash_test.cc.s
-.PHONY : util/hash_test.s
-
-# target to generate assembly for a file
-util/hash_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hash_test.dir/build.make CMakeFiles/hash_test.dir/util/hash_test.cc.s
-.PHONY : util/hash_test.cc.s
-
-util/heap_test.o: util/heap_test.cc.o
-.PHONY : util/heap_test.o
-
-# target to build an object file
-util/heap_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/heap_test.dir/build.make CMakeFiles/heap_test.dir/util/heap_test.cc.o
-.PHONY : util/heap_test.cc.o
-
-util/heap_test.i: util/heap_test.cc.i
-.PHONY : util/heap_test.i
-
-# target to preprocess a source file
-util/heap_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/heap_test.dir/build.make CMakeFiles/heap_test.dir/util/heap_test.cc.i
-.PHONY : util/heap_test.cc.i
-
-util/heap_test.s: util/heap_test.cc.s
-.PHONY : util/heap_test.s
-
-# target to generate assembly for a file
-util/heap_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/heap_test.dir/build.make CMakeFiles/heap_test.dir/util/heap_test.cc.s
-.PHONY : util/heap_test.cc.s
 
 util/murmurhash.o: util/murmurhash.cc.o
 .PHONY : util/murmurhash.o
@@ -14243,30 +7532,6 @@ util/random.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/util/random.cc.s
 .PHONY : util/random.cc.s
 
-util/random_test.o: util/random_test.cc.o
-.PHONY : util/random_test.o
-
-# target to build an object file
-util/random_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/random_test.dir/build.make CMakeFiles/random_test.dir/util/random_test.cc.o
-.PHONY : util/random_test.cc.o
-
-util/random_test.i: util/random_test.cc.i
-.PHONY : util/random_test.i
-
-# target to preprocess a source file
-util/random_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/random_test.dir/build.make CMakeFiles/random_test.dir/util/random_test.cc.i
-.PHONY : util/random_test.cc.i
-
-util/random_test.s: util/random_test.cc.s
-.PHONY : util/random_test.s
-
-# target to generate assembly for a file
-util/random_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/random_test.dir/build.make CMakeFiles/random_test.dir/util/random_test.cc.s
-.PHONY : util/random_test.cc.s
-
 util/rate_limiter.o: util/rate_limiter.cc.o
 .PHONY : util/rate_limiter.o
 
@@ -14293,54 +7558,6 @@ util/rate_limiter.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb.dir/build.make CMakeFiles/rocksdb.dir/util/rate_limiter.cc.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/util/rate_limiter.cc.s
 .PHONY : util/rate_limiter.cc.s
-
-util/rate_limiter_test.o: util/rate_limiter_test.cc.o
-.PHONY : util/rate_limiter_test.o
-
-# target to build an object file
-util/rate_limiter_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rate_limiter_test.dir/build.make CMakeFiles/rate_limiter_test.dir/util/rate_limiter_test.cc.o
-.PHONY : util/rate_limiter_test.cc.o
-
-util/rate_limiter_test.i: util/rate_limiter_test.cc.i
-.PHONY : util/rate_limiter_test.i
-
-# target to preprocess a source file
-util/rate_limiter_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rate_limiter_test.dir/build.make CMakeFiles/rate_limiter_test.dir/util/rate_limiter_test.cc.i
-.PHONY : util/rate_limiter_test.cc.i
-
-util/rate_limiter_test.s: util/rate_limiter_test.cc.s
-.PHONY : util/rate_limiter_test.s
-
-# target to generate assembly for a file
-util/rate_limiter_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rate_limiter_test.dir/build.make CMakeFiles/rate_limiter_test.dir/util/rate_limiter_test.cc.s
-.PHONY : util/rate_limiter_test.cc.s
-
-util/repeatable_thread_test.o: util/repeatable_thread_test.cc.o
-.PHONY : util/repeatable_thread_test.o
-
-# target to build an object file
-util/repeatable_thread_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/repeatable_thread_test.dir/build.make CMakeFiles/repeatable_thread_test.dir/util/repeatable_thread_test.cc.o
-.PHONY : util/repeatable_thread_test.cc.o
-
-util/repeatable_thread_test.i: util/repeatable_thread_test.cc.i
-.PHONY : util/repeatable_thread_test.i
-
-# target to preprocess a source file
-util/repeatable_thread_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/repeatable_thread_test.dir/build.make CMakeFiles/repeatable_thread_test.dir/util/repeatable_thread_test.cc.i
-.PHONY : util/repeatable_thread_test.cc.i
-
-util/repeatable_thread_test.s: util/repeatable_thread_test.cc.s
-.PHONY : util/repeatable_thread_test.s
-
-# target to generate assembly for a file
-util/repeatable_thread_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/repeatable_thread_test.dir/build.make CMakeFiles/repeatable_thread_test.dir/util/repeatable_thread_test.cc.s
-.PHONY : util/repeatable_thread_test.cc.s
 
 util/ribbon_config.o: util/ribbon_config.cc.o
 .PHONY : util/ribbon_config.o
@@ -14369,30 +7586,6 @@ util/ribbon_config.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/util/ribbon_config.cc.s
 .PHONY : util/ribbon_config.cc.s
 
-util/ribbon_test.o: util/ribbon_test.cc.o
-.PHONY : util/ribbon_test.o
-
-# target to build an object file
-util/ribbon_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ribbon_test.dir/build.make CMakeFiles/ribbon_test.dir/util/ribbon_test.cc.o
-.PHONY : util/ribbon_test.cc.o
-
-util/ribbon_test.i: util/ribbon_test.cc.i
-.PHONY : util/ribbon_test.i
-
-# target to preprocess a source file
-util/ribbon_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ribbon_test.dir/build.make CMakeFiles/ribbon_test.dir/util/ribbon_test.cc.i
-.PHONY : util/ribbon_test.cc.i
-
-util/ribbon_test.s: util/ribbon_test.cc.s
-.PHONY : util/ribbon_test.s
-
-# target to generate assembly for a file
-util/ribbon_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ribbon_test.dir/build.make CMakeFiles/ribbon_test.dir/util/ribbon_test.cc.s
-.PHONY : util/ribbon_test.cc.s
-
 util/slice.o: util/slice.cc.o
 .PHONY : util/slice.o
 
@@ -14419,54 +7612,6 @@ util/slice.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb.dir/build.make CMakeFiles/rocksdb.dir/util/slice.cc.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/util/slice.cc.s
 .PHONY : util/slice.cc.s
-
-util/slice_test.o: util/slice_test.cc.o
-.PHONY : util/slice_test.o
-
-# target to build an object file
-util/slice_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/slice_test.dir/build.make CMakeFiles/slice_test.dir/util/slice_test.cc.o
-.PHONY : util/slice_test.cc.o
-
-util/slice_test.i: util/slice_test.cc.i
-.PHONY : util/slice_test.i
-
-# target to preprocess a source file
-util/slice_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/slice_test.dir/build.make CMakeFiles/slice_test.dir/util/slice_test.cc.i
-.PHONY : util/slice_test.cc.i
-
-util/slice_test.s: util/slice_test.cc.s
-.PHONY : util/slice_test.s
-
-# target to generate assembly for a file
-util/slice_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/slice_test.dir/build.make CMakeFiles/slice_test.dir/util/slice_test.cc.s
-.PHONY : util/slice_test.cc.s
-
-util/slice_transform_test.o: util/slice_transform_test.cc.o
-.PHONY : util/slice_transform_test.o
-
-# target to build an object file
-util/slice_transform_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/slice_transform_test.dir/build.make CMakeFiles/slice_transform_test.dir/util/slice_transform_test.cc.o
-.PHONY : util/slice_transform_test.cc.o
-
-util/slice_transform_test.i: util/slice_transform_test.cc.i
-.PHONY : util/slice_transform_test.i
-
-# target to preprocess a source file
-util/slice_transform_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/slice_transform_test.dir/build.make CMakeFiles/slice_transform_test.dir/util/slice_transform_test.cc.i
-.PHONY : util/slice_transform_test.cc.i
-
-util/slice_transform_test.s: util/slice_transform_test.cc.s
-.PHONY : util/slice_transform_test.s
-
-# target to generate assembly for a file
-util/slice_transform_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/slice_transform_test.dir/build.make CMakeFiles/slice_transform_test.dir/util/slice_transform_test.cc.s
-.PHONY : util/slice_transform_test.cc.s
 
 util/status.o: util/status.cc.o
 .PHONY : util/status.o
@@ -14549,54 +7694,6 @@ util/string_util.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/util/string_util.cc.s
 .PHONY : util/string_util.cc.s
 
-util/string_util_test.o: util/string_util_test.cc.o
-.PHONY : util/string_util_test.o
-
-# target to build an object file
-util/string_util_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/string_util_test.dir/build.make CMakeFiles/string_util_test.dir/util/string_util_test.cc.o
-.PHONY : util/string_util_test.cc.o
-
-util/string_util_test.i: util/string_util_test.cc.i
-.PHONY : util/string_util_test.i
-
-# target to preprocess a source file
-util/string_util_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/string_util_test.dir/build.make CMakeFiles/string_util_test.dir/util/string_util_test.cc.i
-.PHONY : util/string_util_test.cc.i
-
-util/string_util_test.s: util/string_util_test.cc.s
-.PHONY : util/string_util_test.s
-
-# target to generate assembly for a file
-util/string_util_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/string_util_test.dir/build.make CMakeFiles/string_util_test.dir/util/string_util_test.cc.s
-.PHONY : util/string_util_test.cc.s
-
-util/thread_list_test.o: util/thread_list_test.cc.o
-.PHONY : util/thread_list_test.o
-
-# target to build an object file
-util/thread_list_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/thread_list_test.dir/build.make CMakeFiles/thread_list_test.dir/util/thread_list_test.cc.o
-.PHONY : util/thread_list_test.cc.o
-
-util/thread_list_test.i: util/thread_list_test.cc.i
-.PHONY : util/thread_list_test.i
-
-# target to preprocess a source file
-util/thread_list_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/thread_list_test.dir/build.make CMakeFiles/thread_list_test.dir/util/thread_list_test.cc.i
-.PHONY : util/thread_list_test.cc.i
-
-util/thread_list_test.s: util/thread_list_test.cc.s
-.PHONY : util/thread_list_test.s
-
-# target to generate assembly for a file
-util/thread_list_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/thread_list_test.dir/build.make CMakeFiles/thread_list_test.dir/util/thread_list_test.cc.s
-.PHONY : util/thread_list_test.cc.s
-
 util/thread_local.o: util/thread_local.cc.o
 .PHONY : util/thread_local.o
 
@@ -14623,30 +7720,6 @@ util/thread_local.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb.dir/build.make CMakeFiles/rocksdb.dir/util/thread_local.cc.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/util/thread_local.cc.s
 .PHONY : util/thread_local.cc.s
-
-util/thread_local_test.o: util/thread_local_test.cc.o
-.PHONY : util/thread_local_test.o
-
-# target to build an object file
-util/thread_local_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/thread_local_test.dir/build.make CMakeFiles/thread_local_test.dir/util/thread_local_test.cc.o
-.PHONY : util/thread_local_test.cc.o
-
-util/thread_local_test.i: util/thread_local_test.cc.i
-.PHONY : util/thread_local_test.i
-
-# target to preprocess a source file
-util/thread_local_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/thread_local_test.dir/build.make CMakeFiles/thread_local_test.dir/util/thread_local_test.cc.i
-.PHONY : util/thread_local_test.cc.i
-
-util/thread_local_test.s: util/thread_local_test.cc.s
-.PHONY : util/thread_local_test.s
-
-# target to generate assembly for a file
-util/thread_local_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/thread_local_test.dir/build.make CMakeFiles/thread_local_test.dir/util/thread_local_test.cc.s
-.PHONY : util/thread_local_test.cc.s
 
 util/threadpool_imp.o: util/threadpool_imp.cc.o
 .PHONY : util/threadpool_imp.o
@@ -14675,54 +7748,6 @@ util/threadpool_imp.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/util/threadpool_imp.cc.s
 .PHONY : util/threadpool_imp.cc.s
 
-util/timer_queue_test.o: util/timer_queue_test.cc.o
-.PHONY : util/timer_queue_test.o
-
-# target to build an object file
-util/timer_queue_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/timer_queue_test.dir/build.make CMakeFiles/timer_queue_test.dir/util/timer_queue_test.cc.o
-.PHONY : util/timer_queue_test.cc.o
-
-util/timer_queue_test.i: util/timer_queue_test.cc.i
-.PHONY : util/timer_queue_test.i
-
-# target to preprocess a source file
-util/timer_queue_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/timer_queue_test.dir/build.make CMakeFiles/timer_queue_test.dir/util/timer_queue_test.cc.i
-.PHONY : util/timer_queue_test.cc.i
-
-util/timer_queue_test.s: util/timer_queue_test.cc.s
-.PHONY : util/timer_queue_test.s
-
-# target to generate assembly for a file
-util/timer_queue_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/timer_queue_test.dir/build.make CMakeFiles/timer_queue_test.dir/util/timer_queue_test.cc.s
-.PHONY : util/timer_queue_test.cc.s
-
-util/timer_test.o: util/timer_test.cc.o
-.PHONY : util/timer_test.o
-
-# target to build an object file
-util/timer_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/timer_test.dir/build.make CMakeFiles/timer_test.dir/util/timer_test.cc.o
-.PHONY : util/timer_test.cc.o
-
-util/timer_test.i: util/timer_test.cc.i
-.PHONY : util/timer_test.i
-
-# target to preprocess a source file
-util/timer_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/timer_test.dir/build.make CMakeFiles/timer_test.dir/util/timer_test.cc.i
-.PHONY : util/timer_test.cc.i
-
-util/timer_test.s: util/timer_test.cc.s
-.PHONY : util/timer_test.s
-
-# target to generate assembly for a file
-util/timer_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/timer_test.dir/build.make CMakeFiles/timer_test.dir/util/timer_test.cc.s
-.PHONY : util/timer_test.cc.s
-
 util/udt_util.o: util/udt_util.cc.o
 .PHONY : util/udt_util.o
 
@@ -14749,54 +7774,6 @@ util/udt_util.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb.dir/build.make CMakeFiles/rocksdb.dir/util/udt_util.cc.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/util/udt_util.cc.s
 .PHONY : util/udt_util.cc.s
-
-util/udt_util_test.o: util/udt_util_test.cc.o
-.PHONY : util/udt_util_test.o
-
-# target to build an object file
-util/udt_util_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/udt_util_test.dir/build.make CMakeFiles/udt_util_test.dir/util/udt_util_test.cc.o
-.PHONY : util/udt_util_test.cc.o
-
-util/udt_util_test.i: util/udt_util_test.cc.i
-.PHONY : util/udt_util_test.i
-
-# target to preprocess a source file
-util/udt_util_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/udt_util_test.dir/build.make CMakeFiles/udt_util_test.dir/util/udt_util_test.cc.i
-.PHONY : util/udt_util_test.cc.i
-
-util/udt_util_test.s: util/udt_util_test.cc.s
-.PHONY : util/udt_util_test.s
-
-# target to generate assembly for a file
-util/udt_util_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/udt_util_test.dir/build.make CMakeFiles/udt_util_test.dir/util/udt_util_test.cc.s
-.PHONY : util/udt_util_test.cc.s
-
-util/work_queue_test.o: util/work_queue_test.cc.o
-.PHONY : util/work_queue_test.o
-
-# target to build an object file
-util/work_queue_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/work_queue_test.dir/build.make CMakeFiles/work_queue_test.dir/util/work_queue_test.cc.o
-.PHONY : util/work_queue_test.cc.o
-
-util/work_queue_test.i: util/work_queue_test.cc.i
-.PHONY : util/work_queue_test.i
-
-# target to preprocess a source file
-util/work_queue_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/work_queue_test.dir/build.make CMakeFiles/work_queue_test.dir/util/work_queue_test.cc.i
-.PHONY : util/work_queue_test.cc.i
-
-util/work_queue_test.s: util/work_queue_test.cc.s
-.PHONY : util/work_queue_test.s
-
-# target to generate assembly for a file
-util/work_queue_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/work_queue_test.dir/build.make CMakeFiles/work_queue_test.dir/util/work_queue_test.cc.s
-.PHONY : util/work_queue_test.cc.s
 
 util/write_batch_util.o: util/write_batch_util.cc.o
 .PHONY : util/write_batch_util.o
@@ -14879,54 +7856,6 @@ utilities/agg_merge/agg_merge.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/utilities/agg_merge/agg_merge.cc.s
 .PHONY : utilities/agg_merge/agg_merge.cc.s
 
-utilities/agg_merge/agg_merge_test.o: utilities/agg_merge/agg_merge_test.cc.o
-.PHONY : utilities/agg_merge/agg_merge_test.o
-
-# target to build an object file
-utilities/agg_merge/agg_merge_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/agg_merge_test.dir/build.make CMakeFiles/agg_merge_test.dir/utilities/agg_merge/agg_merge_test.cc.o
-.PHONY : utilities/agg_merge/agg_merge_test.cc.o
-
-utilities/agg_merge/agg_merge_test.i: utilities/agg_merge/agg_merge_test.cc.i
-.PHONY : utilities/agg_merge/agg_merge_test.i
-
-# target to preprocess a source file
-utilities/agg_merge/agg_merge_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/agg_merge_test.dir/build.make CMakeFiles/agg_merge_test.dir/utilities/agg_merge/agg_merge_test.cc.i
-.PHONY : utilities/agg_merge/agg_merge_test.cc.i
-
-utilities/agg_merge/agg_merge_test.s: utilities/agg_merge/agg_merge_test.cc.s
-.PHONY : utilities/agg_merge/agg_merge_test.s
-
-# target to generate assembly for a file
-utilities/agg_merge/agg_merge_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/agg_merge_test.dir/build.make CMakeFiles/agg_merge_test.dir/utilities/agg_merge/agg_merge_test.cc.s
-.PHONY : utilities/agg_merge/agg_merge_test.cc.s
-
-utilities/agg_merge/test_agg_merge.o: utilities/agg_merge/test_agg_merge.cc.o
-.PHONY : utilities/agg_merge/test_agg_merge.o
-
-# target to build an object file
-utilities/agg_merge/test_agg_merge.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testutillib.dir/build.make CMakeFiles/testutillib.dir/utilities/agg_merge/test_agg_merge.cc.o
-.PHONY : utilities/agg_merge/test_agg_merge.cc.o
-
-utilities/agg_merge/test_agg_merge.i: utilities/agg_merge/test_agg_merge.cc.i
-.PHONY : utilities/agg_merge/test_agg_merge.i
-
-# target to preprocess a source file
-utilities/agg_merge/test_agg_merge.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testutillib.dir/build.make CMakeFiles/testutillib.dir/utilities/agg_merge/test_agg_merge.cc.i
-.PHONY : utilities/agg_merge/test_agg_merge.cc.i
-
-utilities/agg_merge/test_agg_merge.s: utilities/agg_merge/test_agg_merge.cc.s
-.PHONY : utilities/agg_merge/test_agg_merge.s
-
-# target to generate assembly for a file
-utilities/agg_merge/test_agg_merge.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testutillib.dir/build.make CMakeFiles/testutillib.dir/utilities/agg_merge/test_agg_merge.cc.s
-.PHONY : utilities/agg_merge/test_agg_merge.cc.s
-
 utilities/backup/backup_engine.o: utilities/backup/backup_engine.cc.o
 .PHONY : utilities/backup/backup_engine.o
 
@@ -14953,30 +7882,6 @@ utilities/backup/backup_engine.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb.dir/build.make CMakeFiles/rocksdb.dir/utilities/backup/backup_engine.cc.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/utilities/backup/backup_engine.cc.s
 .PHONY : utilities/backup/backup_engine.cc.s
-
-utilities/backup/backup_engine_test.o: utilities/backup/backup_engine_test.cc.o
-.PHONY : utilities/backup/backup_engine_test.o
-
-# target to build an object file
-utilities/backup/backup_engine_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/backup_engine_test.dir/build.make CMakeFiles/backup_engine_test.dir/utilities/backup/backup_engine_test.cc.o
-.PHONY : utilities/backup/backup_engine_test.cc.o
-
-utilities/backup/backup_engine_test.i: utilities/backup/backup_engine_test.cc.i
-.PHONY : utilities/backup/backup_engine_test.i
-
-# target to preprocess a source file
-utilities/backup/backup_engine_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/backup_engine_test.dir/build.make CMakeFiles/backup_engine_test.dir/utilities/backup/backup_engine_test.cc.i
-.PHONY : utilities/backup/backup_engine_test.cc.i
-
-utilities/backup/backup_engine_test.s: utilities/backup/backup_engine_test.cc.s
-.PHONY : utilities/backup/backup_engine_test.s
-
-# target to generate assembly for a file
-utilities/backup/backup_engine_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/backup_engine_test.dir/build.make CMakeFiles/backup_engine_test.dir/utilities/backup/backup_engine_test.cc.s
-.PHONY : utilities/backup/backup_engine_test.cc.s
 
 utilities/blob_db/blob_compaction_filter.o: utilities/blob_db/blob_compaction_filter.cc.o
 .PHONY : utilities/blob_db/blob_compaction_filter.o
@@ -15085,30 +7990,6 @@ utilities/blob_db/blob_db_impl_filesnapshot.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb.dir/build.make CMakeFiles/rocksdb.dir/utilities/blob_db/blob_db_impl_filesnapshot.cc.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/utilities/blob_db/blob_db_impl_filesnapshot.cc.s
 .PHONY : utilities/blob_db/blob_db_impl_filesnapshot.cc.s
-
-utilities/blob_db/blob_db_test.o: utilities/blob_db/blob_db_test.cc.o
-.PHONY : utilities/blob_db/blob_db_test.o
-
-# target to build an object file
-utilities/blob_db/blob_db_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/blob_db_test.dir/build.make CMakeFiles/blob_db_test.dir/utilities/blob_db/blob_db_test.cc.o
-.PHONY : utilities/blob_db/blob_db_test.cc.o
-
-utilities/blob_db/blob_db_test.i: utilities/blob_db/blob_db_test.cc.i
-.PHONY : utilities/blob_db/blob_db_test.i
-
-# target to preprocess a source file
-utilities/blob_db/blob_db_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/blob_db_test.dir/build.make CMakeFiles/blob_db_test.dir/utilities/blob_db/blob_db_test.cc.i
-.PHONY : utilities/blob_db/blob_db_test.cc.i
-
-utilities/blob_db/blob_db_test.s: utilities/blob_db/blob_db_test.cc.s
-.PHONY : utilities/blob_db/blob_db_test.s
-
-# target to generate assembly for a file
-utilities/blob_db/blob_db_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/blob_db_test.dir/build.make CMakeFiles/blob_db_test.dir/utilities/blob_db/blob_db_test.cc.s
-.PHONY : utilities/blob_db/blob_db_test.cc.s
 
 utilities/blob_db/blob_dump_tool.o: utilities/blob_db/blob_dump_tool.cc.o
 .PHONY : utilities/blob_db/blob_dump_tool.o
@@ -15245,102 +8126,6 @@ utilities/cassandra/cassandra_compaction_filter.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/utilities/cassandra/cassandra_compaction_filter.cc.s
 .PHONY : utilities/cassandra/cassandra_compaction_filter.cc.s
 
-utilities/cassandra/cassandra_format_test.o: utilities/cassandra/cassandra_format_test.cc.o
-.PHONY : utilities/cassandra/cassandra_format_test.o
-
-# target to build an object file
-utilities/cassandra/cassandra_format_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cassandra_format_test.dir/build.make CMakeFiles/cassandra_format_test.dir/utilities/cassandra/cassandra_format_test.cc.o
-.PHONY : utilities/cassandra/cassandra_format_test.cc.o
-
-utilities/cassandra/cassandra_format_test.i: utilities/cassandra/cassandra_format_test.cc.i
-.PHONY : utilities/cassandra/cassandra_format_test.i
-
-# target to preprocess a source file
-utilities/cassandra/cassandra_format_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cassandra_format_test.dir/build.make CMakeFiles/cassandra_format_test.dir/utilities/cassandra/cassandra_format_test.cc.i
-.PHONY : utilities/cassandra/cassandra_format_test.cc.i
-
-utilities/cassandra/cassandra_format_test.s: utilities/cassandra/cassandra_format_test.cc.s
-.PHONY : utilities/cassandra/cassandra_format_test.s
-
-# target to generate assembly for a file
-utilities/cassandra/cassandra_format_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cassandra_format_test.dir/build.make CMakeFiles/cassandra_format_test.dir/utilities/cassandra/cassandra_format_test.cc.s
-.PHONY : utilities/cassandra/cassandra_format_test.cc.s
-
-utilities/cassandra/cassandra_functional_test.o: utilities/cassandra/cassandra_functional_test.cc.o
-.PHONY : utilities/cassandra/cassandra_functional_test.o
-
-# target to build an object file
-utilities/cassandra/cassandra_functional_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cassandra_functional_test.dir/build.make CMakeFiles/cassandra_functional_test.dir/utilities/cassandra/cassandra_functional_test.cc.o
-.PHONY : utilities/cassandra/cassandra_functional_test.cc.o
-
-utilities/cassandra/cassandra_functional_test.i: utilities/cassandra/cassandra_functional_test.cc.i
-.PHONY : utilities/cassandra/cassandra_functional_test.i
-
-# target to preprocess a source file
-utilities/cassandra/cassandra_functional_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cassandra_functional_test.dir/build.make CMakeFiles/cassandra_functional_test.dir/utilities/cassandra/cassandra_functional_test.cc.i
-.PHONY : utilities/cassandra/cassandra_functional_test.cc.i
-
-utilities/cassandra/cassandra_functional_test.s: utilities/cassandra/cassandra_functional_test.cc.s
-.PHONY : utilities/cassandra/cassandra_functional_test.s
-
-# target to generate assembly for a file
-utilities/cassandra/cassandra_functional_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cassandra_functional_test.dir/build.make CMakeFiles/cassandra_functional_test.dir/utilities/cassandra/cassandra_functional_test.cc.s
-.PHONY : utilities/cassandra/cassandra_functional_test.cc.s
-
-utilities/cassandra/cassandra_row_merge_test.o: utilities/cassandra/cassandra_row_merge_test.cc.o
-.PHONY : utilities/cassandra/cassandra_row_merge_test.o
-
-# target to build an object file
-utilities/cassandra/cassandra_row_merge_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cassandra_row_merge_test.dir/build.make CMakeFiles/cassandra_row_merge_test.dir/utilities/cassandra/cassandra_row_merge_test.cc.o
-.PHONY : utilities/cassandra/cassandra_row_merge_test.cc.o
-
-utilities/cassandra/cassandra_row_merge_test.i: utilities/cassandra/cassandra_row_merge_test.cc.i
-.PHONY : utilities/cassandra/cassandra_row_merge_test.i
-
-# target to preprocess a source file
-utilities/cassandra/cassandra_row_merge_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cassandra_row_merge_test.dir/build.make CMakeFiles/cassandra_row_merge_test.dir/utilities/cassandra/cassandra_row_merge_test.cc.i
-.PHONY : utilities/cassandra/cassandra_row_merge_test.cc.i
-
-utilities/cassandra/cassandra_row_merge_test.s: utilities/cassandra/cassandra_row_merge_test.cc.s
-.PHONY : utilities/cassandra/cassandra_row_merge_test.s
-
-# target to generate assembly for a file
-utilities/cassandra/cassandra_row_merge_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cassandra_row_merge_test.dir/build.make CMakeFiles/cassandra_row_merge_test.dir/utilities/cassandra/cassandra_row_merge_test.cc.s
-.PHONY : utilities/cassandra/cassandra_row_merge_test.cc.s
-
-utilities/cassandra/cassandra_serialize_test.o: utilities/cassandra/cassandra_serialize_test.cc.o
-.PHONY : utilities/cassandra/cassandra_serialize_test.o
-
-# target to build an object file
-utilities/cassandra/cassandra_serialize_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cassandra_serialize_test.dir/build.make CMakeFiles/cassandra_serialize_test.dir/utilities/cassandra/cassandra_serialize_test.cc.o
-.PHONY : utilities/cassandra/cassandra_serialize_test.cc.o
-
-utilities/cassandra/cassandra_serialize_test.i: utilities/cassandra/cassandra_serialize_test.cc.i
-.PHONY : utilities/cassandra/cassandra_serialize_test.i
-
-# target to preprocess a source file
-utilities/cassandra/cassandra_serialize_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cassandra_serialize_test.dir/build.make CMakeFiles/cassandra_serialize_test.dir/utilities/cassandra/cassandra_serialize_test.cc.i
-.PHONY : utilities/cassandra/cassandra_serialize_test.cc.i
-
-utilities/cassandra/cassandra_serialize_test.s: utilities/cassandra/cassandra_serialize_test.cc.s
-.PHONY : utilities/cassandra/cassandra_serialize_test.s
-
-# target to generate assembly for a file
-utilities/cassandra/cassandra_serialize_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cassandra_serialize_test.dir/build.make CMakeFiles/cassandra_serialize_test.dir/utilities/cassandra/cassandra_serialize_test.cc.s
-.PHONY : utilities/cassandra/cassandra_serialize_test.cc.s
-
 utilities/cassandra/format.o: utilities/cassandra/format.cc.o
 .PHONY : utilities/cassandra/format.o
 
@@ -15395,30 +8180,6 @@ utilities/cassandra/merge_operator.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/utilities/cassandra/merge_operator.cc.s
 .PHONY : utilities/cassandra/merge_operator.cc.s
 
-utilities/cassandra/test_utils.o: utilities/cassandra/test_utils.cc.o
-.PHONY : utilities/cassandra/test_utils.o
-
-# target to build an object file
-utilities/cassandra/test_utils.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testutillib.dir/build.make CMakeFiles/testutillib.dir/utilities/cassandra/test_utils.cc.o
-.PHONY : utilities/cassandra/test_utils.cc.o
-
-utilities/cassandra/test_utils.i: utilities/cassandra/test_utils.cc.i
-.PHONY : utilities/cassandra/test_utils.i
-
-# target to preprocess a source file
-utilities/cassandra/test_utils.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testutillib.dir/build.make CMakeFiles/testutillib.dir/utilities/cassandra/test_utils.cc.i
-.PHONY : utilities/cassandra/test_utils.cc.i
-
-utilities/cassandra/test_utils.s: utilities/cassandra/test_utils.cc.s
-.PHONY : utilities/cassandra/test_utils.s
-
-# target to generate assembly for a file
-utilities/cassandra/test_utils.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testutillib.dir/build.make CMakeFiles/testutillib.dir/utilities/cassandra/test_utils.cc.s
-.PHONY : utilities/cassandra/test_utils.cc.s
-
 utilities/checkpoint/checkpoint_impl.o: utilities/checkpoint/checkpoint_impl.cc.o
 .PHONY : utilities/checkpoint/checkpoint_impl.o
 
@@ -15445,30 +8206,6 @@ utilities/checkpoint/checkpoint_impl.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb.dir/build.make CMakeFiles/rocksdb.dir/utilities/checkpoint/checkpoint_impl.cc.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/utilities/checkpoint/checkpoint_impl.cc.s
 .PHONY : utilities/checkpoint/checkpoint_impl.cc.s
-
-utilities/checkpoint/checkpoint_test.o: utilities/checkpoint/checkpoint_test.cc.o
-.PHONY : utilities/checkpoint/checkpoint_test.o
-
-# target to build an object file
-utilities/checkpoint/checkpoint_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkpoint_test.dir/build.make CMakeFiles/checkpoint_test.dir/utilities/checkpoint/checkpoint_test.cc.o
-.PHONY : utilities/checkpoint/checkpoint_test.cc.o
-
-utilities/checkpoint/checkpoint_test.i: utilities/checkpoint/checkpoint_test.cc.i
-.PHONY : utilities/checkpoint/checkpoint_test.i
-
-# target to preprocess a source file
-utilities/checkpoint/checkpoint_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkpoint_test.dir/build.make CMakeFiles/checkpoint_test.dir/utilities/checkpoint/checkpoint_test.cc.i
-.PHONY : utilities/checkpoint/checkpoint_test.cc.i
-
-utilities/checkpoint/checkpoint_test.s: utilities/checkpoint/checkpoint_test.cc.s
-.PHONY : utilities/checkpoint/checkpoint_test.s
-
-# target to generate assembly for a file
-utilities/checkpoint/checkpoint_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkpoint_test.dir/build.make CMakeFiles/checkpoint_test.dir/utilities/checkpoint/checkpoint_test.cc.s
-.PHONY : utilities/checkpoint/checkpoint_test.cc.s
 
 utilities/compaction_filters.o: utilities/compaction_filters.cc.o
 .PHONY : utilities/compaction_filters.o
@@ -15632,30 +8369,6 @@ utilities/env_timed.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/utilities/env_timed.cc.s
 .PHONY : utilities/env_timed.cc.s
 
-utilities/env_timed_test.o: utilities/env_timed_test.cc.o
-.PHONY : utilities/env_timed_test.o
-
-# target to build an object file
-utilities/env_timed_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/env_timed_test.dir/build.make CMakeFiles/env_timed_test.dir/utilities/env_timed_test.cc.o
-.PHONY : utilities/env_timed_test.cc.o
-
-utilities/env_timed_test.i: utilities/env_timed_test.cc.i
-.PHONY : utilities/env_timed_test.i
-
-# target to preprocess a source file
-utilities/env_timed_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/env_timed_test.dir/build.make CMakeFiles/env_timed_test.dir/utilities/env_timed_test.cc.i
-.PHONY : utilities/env_timed_test.cc.i
-
-utilities/env_timed_test.s: utilities/env_timed_test.cc.s
-.PHONY : utilities/env_timed_test.s
-
-# target to generate assembly for a file
-utilities/env_timed_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/env_timed_test.dir/build.make CMakeFiles/env_timed_test.dir/utilities/env_timed_test.cc.s
-.PHONY : utilities/env_timed_test.cc.s
-
 utilities/fault_injection_env.o: utilities/fault_injection_env.cc.o
 .PHONY : utilities/fault_injection_env.o
 
@@ -15763,30 +8476,6 @@ utilities/leveldb_options/leveldb_options.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb.dir/build.make CMakeFiles/rocksdb.dir/utilities/leveldb_options/leveldb_options.cc.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/utilities/leveldb_options/leveldb_options.cc.s
 .PHONY : utilities/leveldb_options/leveldb_options.cc.s
-
-utilities/memory/memory_test.o: utilities/memory/memory_test.cc.o
-.PHONY : utilities/memory/memory_test.o
-
-# target to build an object file
-utilities/memory/memory_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/memory_test.dir/build.make CMakeFiles/memory_test.dir/utilities/memory/memory_test.cc.o
-.PHONY : utilities/memory/memory_test.cc.o
-
-utilities/memory/memory_test.i: utilities/memory/memory_test.cc.i
-.PHONY : utilities/memory/memory_test.i
-
-# target to preprocess a source file
-utilities/memory/memory_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/memory_test.dir/build.make CMakeFiles/memory_test.dir/utilities/memory/memory_test.cc.i
-.PHONY : utilities/memory/memory_test.cc.i
-
-utilities/memory/memory_test.s: utilities/memory/memory_test.cc.s
-.PHONY : utilities/memory/memory_test.s
-
-# target to generate assembly for a file
-utilities/memory/memory_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/memory_test.dir/build.make CMakeFiles/memory_test.dir/utilities/memory/memory_test.cc.s
-.PHONY : utilities/memory/memory_test.cc.s
 
 utilities/memory/memory_util.o: utilities/memory/memory_util.cc.o
 .PHONY : utilities/memory/memory_util.o
@@ -16004,30 +8693,6 @@ utilities/merge_operators/string_append/stringappend2.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/utilities/merge_operators/string_append/stringappend2.cc.s
 .PHONY : utilities/merge_operators/string_append/stringappend2.cc.s
 
-utilities/merge_operators/string_append/stringappend_test.o: utilities/merge_operators/string_append/stringappend_test.cc.o
-.PHONY : utilities/merge_operators/string_append/stringappend_test.o
-
-# target to build an object file
-utilities/merge_operators/string_append/stringappend_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/stringappend_test.dir/build.make CMakeFiles/stringappend_test.dir/utilities/merge_operators/string_append/stringappend_test.cc.o
-.PHONY : utilities/merge_operators/string_append/stringappend_test.cc.o
-
-utilities/merge_operators/string_append/stringappend_test.i: utilities/merge_operators/string_append/stringappend_test.cc.i
-.PHONY : utilities/merge_operators/string_append/stringappend_test.i
-
-# target to preprocess a source file
-utilities/merge_operators/string_append/stringappend_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/stringappend_test.dir/build.make CMakeFiles/stringappend_test.dir/utilities/merge_operators/string_append/stringappend_test.cc.i
-.PHONY : utilities/merge_operators/string_append/stringappend_test.cc.i
-
-utilities/merge_operators/string_append/stringappend_test.s: utilities/merge_operators/string_append/stringappend_test.cc.s
-.PHONY : utilities/merge_operators/string_append/stringappend_test.s
-
-# target to generate assembly for a file
-utilities/merge_operators/string_append/stringappend_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/stringappend_test.dir/build.make CMakeFiles/stringappend_test.dir/utilities/merge_operators/string_append/stringappend_test.cc.s
-.PHONY : utilities/merge_operators/string_append/stringappend_test.cc.s
-
 utilities/merge_operators/uint64add.o: utilities/merge_operators/uint64add.cc.o
 .PHONY : utilities/merge_operators/uint64add.o
 
@@ -16082,30 +8747,6 @@ utilities/object_registry.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/utilities/object_registry.cc.s
 .PHONY : utilities/object_registry.cc.s
 
-utilities/object_registry_test.o: utilities/object_registry_test.cc.o
-.PHONY : utilities/object_registry_test.o
-
-# target to build an object file
-utilities/object_registry_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/object_registry_test.dir/build.make CMakeFiles/object_registry_test.dir/utilities/object_registry_test.cc.o
-.PHONY : utilities/object_registry_test.cc.o
-
-utilities/object_registry_test.i: utilities/object_registry_test.cc.i
-.PHONY : utilities/object_registry_test.i
-
-# target to preprocess a source file
-utilities/object_registry_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/object_registry_test.dir/build.make CMakeFiles/object_registry_test.dir/utilities/object_registry_test.cc.i
-.PHONY : utilities/object_registry_test.cc.i
-
-utilities/object_registry_test.s: utilities/object_registry_test.cc.s
-.PHONY : utilities/object_registry_test.s
-
-# target to generate assembly for a file
-utilities/object_registry_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/object_registry_test.dir/build.make CMakeFiles/object_registry_test.dir/utilities/object_registry_test.cc.s
-.PHONY : utilities/object_registry_test.cc.s
-
 utilities/option_change_migration/option_change_migration.o: utilities/option_change_migration/option_change_migration.cc.o
 .PHONY : utilities/option_change_migration/option_change_migration.o
 
@@ -16133,30 +8774,6 @@ utilities/option_change_migration/option_change_migration.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/utilities/option_change_migration/option_change_migration.cc.s
 .PHONY : utilities/option_change_migration/option_change_migration.cc.s
 
-utilities/option_change_migration/option_change_migration_test.o: utilities/option_change_migration/option_change_migration_test.cc.o
-.PHONY : utilities/option_change_migration/option_change_migration_test.o
-
-# target to build an object file
-utilities/option_change_migration/option_change_migration_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/option_change_migration_test.dir/build.make CMakeFiles/option_change_migration_test.dir/utilities/option_change_migration/option_change_migration_test.cc.o
-.PHONY : utilities/option_change_migration/option_change_migration_test.cc.o
-
-utilities/option_change_migration/option_change_migration_test.i: utilities/option_change_migration/option_change_migration_test.cc.i
-.PHONY : utilities/option_change_migration/option_change_migration_test.i
-
-# target to preprocess a source file
-utilities/option_change_migration/option_change_migration_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/option_change_migration_test.dir/build.make CMakeFiles/option_change_migration_test.dir/utilities/option_change_migration/option_change_migration_test.cc.i
-.PHONY : utilities/option_change_migration/option_change_migration_test.cc.i
-
-utilities/option_change_migration/option_change_migration_test.s: utilities/option_change_migration/option_change_migration_test.cc.s
-.PHONY : utilities/option_change_migration/option_change_migration_test.s
-
-# target to generate assembly for a file
-utilities/option_change_migration/option_change_migration_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/option_change_migration_test.dir/build.make CMakeFiles/option_change_migration_test.dir/utilities/option_change_migration/option_change_migration_test.cc.s
-.PHONY : utilities/option_change_migration/option_change_migration_test.cc.s
-
 utilities/options/options_util.o: utilities/options/options_util.cc.o
 .PHONY : utilities/options/options_util.o
 
@@ -16183,30 +8800,6 @@ utilities/options/options_util.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb.dir/build.make CMakeFiles/rocksdb.dir/utilities/options/options_util.cc.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/utilities/options/options_util.cc.s
 .PHONY : utilities/options/options_util.cc.s
-
-utilities/options/options_util_test.o: utilities/options/options_util_test.cc.o
-.PHONY : utilities/options/options_util_test.o
-
-# target to build an object file
-utilities/options/options_util_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/options_util_test.dir/build.make CMakeFiles/options_util_test.dir/utilities/options/options_util_test.cc.o
-.PHONY : utilities/options/options_util_test.cc.o
-
-utilities/options/options_util_test.i: utilities/options/options_util_test.cc.i
-.PHONY : utilities/options/options_util_test.i
-
-# target to preprocess a source file
-utilities/options/options_util_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/options_util_test.dir/build.make CMakeFiles/options_util_test.dir/utilities/options/options_util_test.cc.i
-.PHONY : utilities/options/options_util_test.cc.i
-
-utilities/options/options_util_test.s: utilities/options/options_util_test.cc.s
-.PHONY : utilities/options/options_util_test.s
-
-# target to generate assembly for a file
-utilities/options/options_util_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/options_util_test.dir/build.make CMakeFiles/options_util_test.dir/utilities/options/options_util_test.cc.s
-.PHONY : utilities/options/options_util_test.cc.s
 
 utilities/persistent_cache/block_cache_tier.o: utilities/persistent_cache/block_cache_tier.cc.o
 .PHONY : utilities/persistent_cache/block_cache_tier.o
@@ -16313,54 +8906,6 @@ utilities/persistent_cache/hash_table_bench.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hash_table_bench.dir/build.make CMakeFiles/hash_table_bench.dir/utilities/persistent_cache/hash_table_bench.cc.s
 .PHONY : utilities/persistent_cache/hash_table_bench.cc.s
 
-utilities/persistent_cache/hash_table_test.o: utilities/persistent_cache/hash_table_test.cc.o
-.PHONY : utilities/persistent_cache/hash_table_test.o
-
-# target to build an object file
-utilities/persistent_cache/hash_table_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hash_table_test.dir/build.make CMakeFiles/hash_table_test.dir/utilities/persistent_cache/hash_table_test.cc.o
-.PHONY : utilities/persistent_cache/hash_table_test.cc.o
-
-utilities/persistent_cache/hash_table_test.i: utilities/persistent_cache/hash_table_test.cc.i
-.PHONY : utilities/persistent_cache/hash_table_test.i
-
-# target to preprocess a source file
-utilities/persistent_cache/hash_table_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hash_table_test.dir/build.make CMakeFiles/hash_table_test.dir/utilities/persistent_cache/hash_table_test.cc.i
-.PHONY : utilities/persistent_cache/hash_table_test.cc.i
-
-utilities/persistent_cache/hash_table_test.s: utilities/persistent_cache/hash_table_test.cc.s
-.PHONY : utilities/persistent_cache/hash_table_test.s
-
-# target to generate assembly for a file
-utilities/persistent_cache/hash_table_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hash_table_test.dir/build.make CMakeFiles/hash_table_test.dir/utilities/persistent_cache/hash_table_test.cc.s
-.PHONY : utilities/persistent_cache/hash_table_test.cc.s
-
-utilities/persistent_cache/persistent_cache_test.o: utilities/persistent_cache/persistent_cache_test.cc.o
-.PHONY : utilities/persistent_cache/persistent_cache_test.o
-
-# target to build an object file
-utilities/persistent_cache/persistent_cache_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/persistent_cache_test.dir/build.make CMakeFiles/persistent_cache_test.dir/utilities/persistent_cache/persistent_cache_test.cc.o
-.PHONY : utilities/persistent_cache/persistent_cache_test.cc.o
-
-utilities/persistent_cache/persistent_cache_test.i: utilities/persistent_cache/persistent_cache_test.cc.i
-.PHONY : utilities/persistent_cache/persistent_cache_test.i
-
-# target to preprocess a source file
-utilities/persistent_cache/persistent_cache_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/persistent_cache_test.dir/build.make CMakeFiles/persistent_cache_test.dir/utilities/persistent_cache/persistent_cache_test.cc.i
-.PHONY : utilities/persistent_cache/persistent_cache_test.cc.i
-
-utilities/persistent_cache/persistent_cache_test.s: utilities/persistent_cache/persistent_cache_test.cc.s
-.PHONY : utilities/persistent_cache/persistent_cache_test.s
-
-# target to generate assembly for a file
-utilities/persistent_cache/persistent_cache_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/persistent_cache_test.dir/build.make CMakeFiles/persistent_cache_test.dir/utilities/persistent_cache/persistent_cache_test.cc.s
-.PHONY : utilities/persistent_cache/persistent_cache_test.cc.s
-
 utilities/persistent_cache/persistent_cache_tier.o: utilities/persistent_cache/persistent_cache_tier.cc.o
 .PHONY : utilities/persistent_cache/persistent_cache_tier.o
 
@@ -16442,30 +8987,6 @@ utilities/simulator_cache/cache_simulator.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/utilities/simulator_cache/cache_simulator.cc.s
 .PHONY : utilities/simulator_cache/cache_simulator.cc.s
 
-utilities/simulator_cache/cache_simulator_test.o: utilities/simulator_cache/cache_simulator_test.cc.o
-.PHONY : utilities/simulator_cache/cache_simulator_test.o
-
-# target to build an object file
-utilities/simulator_cache/cache_simulator_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cache_simulator_test.dir/build.make CMakeFiles/cache_simulator_test.dir/utilities/simulator_cache/cache_simulator_test.cc.o
-.PHONY : utilities/simulator_cache/cache_simulator_test.cc.o
-
-utilities/simulator_cache/cache_simulator_test.i: utilities/simulator_cache/cache_simulator_test.cc.i
-.PHONY : utilities/simulator_cache/cache_simulator_test.i
-
-# target to preprocess a source file
-utilities/simulator_cache/cache_simulator_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cache_simulator_test.dir/build.make CMakeFiles/cache_simulator_test.dir/utilities/simulator_cache/cache_simulator_test.cc.i
-.PHONY : utilities/simulator_cache/cache_simulator_test.cc.i
-
-utilities/simulator_cache/cache_simulator_test.s: utilities/simulator_cache/cache_simulator_test.cc.s
-.PHONY : utilities/simulator_cache/cache_simulator_test.s
-
-# target to generate assembly for a file
-utilities/simulator_cache/cache_simulator_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cache_simulator_test.dir/build.make CMakeFiles/cache_simulator_test.dir/utilities/simulator_cache/cache_simulator_test.cc.s
-.PHONY : utilities/simulator_cache/cache_simulator_test.cc.s
-
 utilities/simulator_cache/sim_cache.o: utilities/simulator_cache/sim_cache.cc.o
 .PHONY : utilities/simulator_cache/sim_cache.o
 
@@ -16492,30 +9013,6 @@ utilities/simulator_cache/sim_cache.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb.dir/build.make CMakeFiles/rocksdb.dir/utilities/simulator_cache/sim_cache.cc.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/utilities/simulator_cache/sim_cache.cc.s
 .PHONY : utilities/simulator_cache/sim_cache.cc.s
-
-utilities/simulator_cache/sim_cache_test.o: utilities/simulator_cache/sim_cache_test.cc.o
-.PHONY : utilities/simulator_cache/sim_cache_test.o
-
-# target to build an object file
-utilities/simulator_cache/sim_cache_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim_cache_test.dir/build.make CMakeFiles/sim_cache_test.dir/utilities/simulator_cache/sim_cache_test.cc.o
-.PHONY : utilities/simulator_cache/sim_cache_test.cc.o
-
-utilities/simulator_cache/sim_cache_test.i: utilities/simulator_cache/sim_cache_test.cc.i
-.PHONY : utilities/simulator_cache/sim_cache_test.i
-
-# target to preprocess a source file
-utilities/simulator_cache/sim_cache_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim_cache_test.dir/build.make CMakeFiles/sim_cache_test.dir/utilities/simulator_cache/sim_cache_test.cc.i
-.PHONY : utilities/simulator_cache/sim_cache_test.cc.i
-
-utilities/simulator_cache/sim_cache_test.s: utilities/simulator_cache/sim_cache_test.cc.s
-.PHONY : utilities/simulator_cache/sim_cache_test.s
-
-# target to generate assembly for a file
-utilities/simulator_cache/sim_cache_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim_cache_test.dir/build.make CMakeFiles/sim_cache_test.dir/utilities/simulator_cache/sim_cache_test.cc.s
-.PHONY : utilities/simulator_cache/sim_cache_test.cc.s
 
 utilities/table_properties_collectors/compact_for_tiering_collector.o: utilities/table_properties_collectors/compact_for_tiering_collector.cc.o
 .PHONY : utilities/table_properties_collectors/compact_for_tiering_collector.o
@@ -16544,30 +9041,6 @@ utilities/table_properties_collectors/compact_for_tiering_collector.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/utilities/table_properties_collectors/compact_for_tiering_collector.cc.s
 .PHONY : utilities/table_properties_collectors/compact_for_tiering_collector.cc.s
 
-utilities/table_properties_collectors/compact_for_tiering_collector_test.o: utilities/table_properties_collectors/compact_for_tiering_collector_test.cc.o
-.PHONY : utilities/table_properties_collectors/compact_for_tiering_collector_test.o
-
-# target to build an object file
-utilities/table_properties_collectors/compact_for_tiering_collector_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/compact_for_tiering_collector_test.dir/build.make CMakeFiles/compact_for_tiering_collector_test.dir/utilities/table_properties_collectors/compact_for_tiering_collector_test.cc.o
-.PHONY : utilities/table_properties_collectors/compact_for_tiering_collector_test.cc.o
-
-utilities/table_properties_collectors/compact_for_tiering_collector_test.i: utilities/table_properties_collectors/compact_for_tiering_collector_test.cc.i
-.PHONY : utilities/table_properties_collectors/compact_for_tiering_collector_test.i
-
-# target to preprocess a source file
-utilities/table_properties_collectors/compact_for_tiering_collector_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/compact_for_tiering_collector_test.dir/build.make CMakeFiles/compact_for_tiering_collector_test.dir/utilities/table_properties_collectors/compact_for_tiering_collector_test.cc.i
-.PHONY : utilities/table_properties_collectors/compact_for_tiering_collector_test.cc.i
-
-utilities/table_properties_collectors/compact_for_tiering_collector_test.s: utilities/table_properties_collectors/compact_for_tiering_collector_test.cc.s
-.PHONY : utilities/table_properties_collectors/compact_for_tiering_collector_test.s
-
-# target to generate assembly for a file
-utilities/table_properties_collectors/compact_for_tiering_collector_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/compact_for_tiering_collector_test.dir/build.make CMakeFiles/compact_for_tiering_collector_test.dir/utilities/table_properties_collectors/compact_for_tiering_collector_test.cc.s
-.PHONY : utilities/table_properties_collectors/compact_for_tiering_collector_test.cc.s
-
 utilities/table_properties_collectors/compact_on_deletion_collector.o: utilities/table_properties_collectors/compact_on_deletion_collector.cc.o
 .PHONY : utilities/table_properties_collectors/compact_on_deletion_collector.o
 
@@ -16594,30 +9067,6 @@ utilities/table_properties_collectors/compact_on_deletion_collector.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb.dir/build.make CMakeFiles/rocksdb.dir/utilities/table_properties_collectors/compact_on_deletion_collector.cc.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/utilities/table_properties_collectors/compact_on_deletion_collector.cc.s
 .PHONY : utilities/table_properties_collectors/compact_on_deletion_collector.cc.s
-
-utilities/table_properties_collectors/compact_on_deletion_collector_test.o: utilities/table_properties_collectors/compact_on_deletion_collector_test.cc.o
-.PHONY : utilities/table_properties_collectors/compact_on_deletion_collector_test.o
-
-# target to build an object file
-utilities/table_properties_collectors/compact_on_deletion_collector_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/compact_on_deletion_collector_test.dir/build.make CMakeFiles/compact_on_deletion_collector_test.dir/utilities/table_properties_collectors/compact_on_deletion_collector_test.cc.o
-.PHONY : utilities/table_properties_collectors/compact_on_deletion_collector_test.cc.o
-
-utilities/table_properties_collectors/compact_on_deletion_collector_test.i: utilities/table_properties_collectors/compact_on_deletion_collector_test.cc.i
-.PHONY : utilities/table_properties_collectors/compact_on_deletion_collector_test.i
-
-# target to preprocess a source file
-utilities/table_properties_collectors/compact_on_deletion_collector_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/compact_on_deletion_collector_test.dir/build.make CMakeFiles/compact_on_deletion_collector_test.dir/utilities/table_properties_collectors/compact_on_deletion_collector_test.cc.i
-.PHONY : utilities/table_properties_collectors/compact_on_deletion_collector_test.cc.i
-
-utilities/table_properties_collectors/compact_on_deletion_collector_test.s: utilities/table_properties_collectors/compact_on_deletion_collector_test.cc.s
-.PHONY : utilities/table_properties_collectors/compact_on_deletion_collector_test.s
-
-# target to generate assembly for a file
-utilities/table_properties_collectors/compact_on_deletion_collector_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/compact_on_deletion_collector_test.dir/build.make CMakeFiles/compact_on_deletion_collector_test.dir/utilities/table_properties_collectors/compact_on_deletion_collector_test.cc.s
-.PHONY : utilities/table_properties_collectors/compact_on_deletion_collector_test.cc.s
 
 utilities/trace/file_trace_reader_writer.o: utilities/trace/file_trace_reader_writer.cc.o
 .PHONY : utilities/trace/file_trace_reader_writer.o
@@ -16727,30 +9176,6 @@ utilities/transactions/lock/point/point_lock_manager.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/utilities/transactions/lock/point/point_lock_manager.cc.s
 .PHONY : utilities/transactions/lock/point/point_lock_manager.cc.s
 
-utilities/transactions/lock/point/point_lock_manager_test.o: utilities/transactions/lock/point/point_lock_manager_test.cc.o
-.PHONY : utilities/transactions/lock/point/point_lock_manager_test.o
-
-# target to build an object file
-utilities/transactions/lock/point/point_lock_manager_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/point_lock_manager_test.dir/build.make CMakeFiles/point_lock_manager_test.dir/utilities/transactions/lock/point/point_lock_manager_test.cc.o
-.PHONY : utilities/transactions/lock/point/point_lock_manager_test.cc.o
-
-utilities/transactions/lock/point/point_lock_manager_test.i: utilities/transactions/lock/point/point_lock_manager_test.cc.i
-.PHONY : utilities/transactions/lock/point/point_lock_manager_test.i
-
-# target to preprocess a source file
-utilities/transactions/lock/point/point_lock_manager_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/point_lock_manager_test.dir/build.make CMakeFiles/point_lock_manager_test.dir/utilities/transactions/lock/point/point_lock_manager_test.cc.i
-.PHONY : utilities/transactions/lock/point/point_lock_manager_test.cc.i
-
-utilities/transactions/lock/point/point_lock_manager_test.s: utilities/transactions/lock/point/point_lock_manager_test.cc.s
-.PHONY : utilities/transactions/lock/point/point_lock_manager_test.s
-
-# target to generate assembly for a file
-utilities/transactions/lock/point/point_lock_manager_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/point_lock_manager_test.dir/build.make CMakeFiles/point_lock_manager_test.dir/utilities/transactions/lock/point/point_lock_manager_test.cc.s
-.PHONY : utilities/transactions/lock/point/point_lock_manager_test.cc.s
-
 utilities/transactions/lock/point/point_lock_tracker.o: utilities/transactions/lock/point/point_lock_tracker.cc.o
 .PHONY : utilities/transactions/lock/point/point_lock_tracker.o
 
@@ -16777,30 +9202,6 @@ utilities/transactions/lock/point/point_lock_tracker.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb.dir/build.make CMakeFiles/rocksdb.dir/utilities/transactions/lock/point/point_lock_tracker.cc.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/utilities/transactions/lock/point/point_lock_tracker.cc.s
 .PHONY : utilities/transactions/lock/point/point_lock_tracker.cc.s
-
-utilities/transactions/lock/range/range_locking_test.o: utilities/transactions/lock/range/range_locking_test.cc.o
-.PHONY : utilities/transactions/lock/range/range_locking_test.o
-
-# target to build an object file
-utilities/transactions/lock/range/range_locking_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/range_locking_test.dir/build.make CMakeFiles/range_locking_test.dir/utilities/transactions/lock/range/range_locking_test.cc.o
-.PHONY : utilities/transactions/lock/range/range_locking_test.cc.o
-
-utilities/transactions/lock/range/range_locking_test.i: utilities/transactions/lock/range/range_locking_test.cc.i
-.PHONY : utilities/transactions/lock/range/range_locking_test.i
-
-# target to preprocess a source file
-utilities/transactions/lock/range/range_locking_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/range_locking_test.dir/build.make CMakeFiles/range_locking_test.dir/utilities/transactions/lock/range/range_locking_test.cc.i
-.PHONY : utilities/transactions/lock/range/range_locking_test.cc.i
-
-utilities/transactions/lock/range/range_locking_test.s: utilities/transactions/lock/range/range_locking_test.cc.s
-.PHONY : utilities/transactions/lock/range/range_locking_test.s
-
-# target to generate assembly for a file
-utilities/transactions/lock/range/range_locking_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/range_locking_test.dir/build.make CMakeFiles/range_locking_test.dir/utilities/transactions/lock/range/range_locking_test.cc.s
-.PHONY : utilities/transactions/lock/range/range_locking_test.cc.s
 
 utilities/transactions/lock/range/range_tree/lib/locktree/concurrent_tree.o: utilities/transactions/lock/range/range_tree/lib/locktree/concurrent_tree.cc.o
 .PHONY : utilities/transactions/lock/range/range_tree/lib/locktree/concurrent_tree.o
@@ -17234,30 +9635,6 @@ utilities/transactions/optimistic_transaction_db_impl.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/utilities/transactions/optimistic_transaction_db_impl.cc.s
 .PHONY : utilities/transactions/optimistic_transaction_db_impl.cc.s
 
-utilities/transactions/optimistic_transaction_test.o: utilities/transactions/optimistic_transaction_test.cc.o
-.PHONY : utilities/transactions/optimistic_transaction_test.o
-
-# target to build an object file
-utilities/transactions/optimistic_transaction_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/optimistic_transaction_test.dir/build.make CMakeFiles/optimistic_transaction_test.dir/utilities/transactions/optimistic_transaction_test.cc.o
-.PHONY : utilities/transactions/optimistic_transaction_test.cc.o
-
-utilities/transactions/optimistic_transaction_test.i: utilities/transactions/optimistic_transaction_test.cc.i
-.PHONY : utilities/transactions/optimistic_transaction_test.i
-
-# target to preprocess a source file
-utilities/transactions/optimistic_transaction_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/optimistic_transaction_test.dir/build.make CMakeFiles/optimistic_transaction_test.dir/utilities/transactions/optimistic_transaction_test.cc.i
-.PHONY : utilities/transactions/optimistic_transaction_test.cc.i
-
-utilities/transactions/optimistic_transaction_test.s: utilities/transactions/optimistic_transaction_test.cc.s
-.PHONY : utilities/transactions/optimistic_transaction_test.s
-
-# target to generate assembly for a file
-utilities/transactions/optimistic_transaction_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/optimistic_transaction_test.dir/build.make CMakeFiles/optimistic_transaction_test.dir/utilities/transactions/optimistic_transaction_test.cc.s
-.PHONY : utilities/transactions/optimistic_transaction_test.cc.s
-
 utilities/transactions/pessimistic_transaction.o: utilities/transactions/pessimistic_transaction.cc.o
 .PHONY : utilities/transactions/pessimistic_transaction.o
 
@@ -17339,30 +9716,6 @@ utilities/transactions/snapshot_checker.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/utilities/transactions/snapshot_checker.cc.s
 .PHONY : utilities/transactions/snapshot_checker.cc.s
 
-utilities/transactions/timestamped_snapshot_test.o: utilities/transactions/timestamped_snapshot_test.cc.o
-.PHONY : utilities/transactions/timestamped_snapshot_test.o
-
-# target to build an object file
-utilities/transactions/timestamped_snapshot_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/timestamped_snapshot_test.dir/build.make CMakeFiles/timestamped_snapshot_test.dir/utilities/transactions/timestamped_snapshot_test.cc.o
-.PHONY : utilities/transactions/timestamped_snapshot_test.cc.o
-
-utilities/transactions/timestamped_snapshot_test.i: utilities/transactions/timestamped_snapshot_test.cc.i
-.PHONY : utilities/transactions/timestamped_snapshot_test.i
-
-# target to preprocess a source file
-utilities/transactions/timestamped_snapshot_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/timestamped_snapshot_test.dir/build.make CMakeFiles/timestamped_snapshot_test.dir/utilities/transactions/timestamped_snapshot_test.cc.i
-.PHONY : utilities/transactions/timestamped_snapshot_test.cc.i
-
-utilities/transactions/timestamped_snapshot_test.s: utilities/transactions/timestamped_snapshot_test.cc.s
-.PHONY : utilities/transactions/timestamped_snapshot_test.s
-
-# target to generate assembly for a file
-utilities/transactions/timestamped_snapshot_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/timestamped_snapshot_test.dir/build.make CMakeFiles/timestamped_snapshot_test.dir/utilities/transactions/timestamped_snapshot_test.cc.s
-.PHONY : utilities/transactions/timestamped_snapshot_test.cc.s
-
 utilities/transactions/transaction_base.o: utilities/transactions/transaction_base.cc.o
 .PHONY : utilities/transactions/transaction_base.o
 
@@ -17417,30 +9770,6 @@ utilities/transactions/transaction_db_mutex_impl.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/utilities/transactions/transaction_db_mutex_impl.cc.s
 .PHONY : utilities/transactions/transaction_db_mutex_impl.cc.s
 
-utilities/transactions/transaction_test.o: utilities/transactions/transaction_test.cc.o
-.PHONY : utilities/transactions/transaction_test.o
-
-# target to build an object file
-utilities/transactions/transaction_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/transaction_test.dir/build.make CMakeFiles/transaction_test.dir/utilities/transactions/transaction_test.cc.o
-.PHONY : utilities/transactions/transaction_test.cc.o
-
-utilities/transactions/transaction_test.i: utilities/transactions/transaction_test.cc.i
-.PHONY : utilities/transactions/transaction_test.i
-
-# target to preprocess a source file
-utilities/transactions/transaction_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/transaction_test.dir/build.make CMakeFiles/transaction_test.dir/utilities/transactions/transaction_test.cc.i
-.PHONY : utilities/transactions/transaction_test.cc.i
-
-utilities/transactions/transaction_test.s: utilities/transactions/transaction_test.cc.s
-.PHONY : utilities/transactions/transaction_test.s
-
-# target to generate assembly for a file
-utilities/transactions/transaction_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/transaction_test.dir/build.make CMakeFiles/transaction_test.dir/utilities/transactions/transaction_test.cc.s
-.PHONY : utilities/transactions/transaction_test.cc.s
-
 utilities/transactions/transaction_util.o: utilities/transactions/transaction_util.cc.o
 .PHONY : utilities/transactions/transaction_util.o
 
@@ -17467,54 +9796,6 @@ utilities/transactions/transaction_util.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb.dir/build.make CMakeFiles/rocksdb.dir/utilities/transactions/transaction_util.cc.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/utilities/transactions/transaction_util.cc.s
 .PHONY : utilities/transactions/transaction_util.cc.s
-
-utilities/transactions/write_committed_transaction_ts_test.o: utilities/transactions/write_committed_transaction_ts_test.cc.o
-.PHONY : utilities/transactions/write_committed_transaction_ts_test.o
-
-# target to build an object file
-utilities/transactions/write_committed_transaction_ts_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/write_committed_transaction_ts_test.dir/build.make CMakeFiles/write_committed_transaction_ts_test.dir/utilities/transactions/write_committed_transaction_ts_test.cc.o
-.PHONY : utilities/transactions/write_committed_transaction_ts_test.cc.o
-
-utilities/transactions/write_committed_transaction_ts_test.i: utilities/transactions/write_committed_transaction_ts_test.cc.i
-.PHONY : utilities/transactions/write_committed_transaction_ts_test.i
-
-# target to preprocess a source file
-utilities/transactions/write_committed_transaction_ts_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/write_committed_transaction_ts_test.dir/build.make CMakeFiles/write_committed_transaction_ts_test.dir/utilities/transactions/write_committed_transaction_ts_test.cc.i
-.PHONY : utilities/transactions/write_committed_transaction_ts_test.cc.i
-
-utilities/transactions/write_committed_transaction_ts_test.s: utilities/transactions/write_committed_transaction_ts_test.cc.s
-.PHONY : utilities/transactions/write_committed_transaction_ts_test.s
-
-# target to generate assembly for a file
-utilities/transactions/write_committed_transaction_ts_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/write_committed_transaction_ts_test.dir/build.make CMakeFiles/write_committed_transaction_ts_test.dir/utilities/transactions/write_committed_transaction_ts_test.cc.s
-.PHONY : utilities/transactions/write_committed_transaction_ts_test.cc.s
-
-utilities/transactions/write_prepared_transaction_test.o: utilities/transactions/write_prepared_transaction_test.cc.o
-.PHONY : utilities/transactions/write_prepared_transaction_test.o
-
-# target to build an object file
-utilities/transactions/write_prepared_transaction_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/write_prepared_transaction_test.dir/build.make CMakeFiles/write_prepared_transaction_test.dir/utilities/transactions/write_prepared_transaction_test.cc.o
-.PHONY : utilities/transactions/write_prepared_transaction_test.cc.o
-
-utilities/transactions/write_prepared_transaction_test.i: utilities/transactions/write_prepared_transaction_test.cc.i
-.PHONY : utilities/transactions/write_prepared_transaction_test.i
-
-# target to preprocess a source file
-utilities/transactions/write_prepared_transaction_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/write_prepared_transaction_test.dir/build.make CMakeFiles/write_prepared_transaction_test.dir/utilities/transactions/write_prepared_transaction_test.cc.i
-.PHONY : utilities/transactions/write_prepared_transaction_test.cc.i
-
-utilities/transactions/write_prepared_transaction_test.s: utilities/transactions/write_prepared_transaction_test.cc.s
-.PHONY : utilities/transactions/write_prepared_transaction_test.s
-
-# target to generate assembly for a file
-utilities/transactions/write_prepared_transaction_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/write_prepared_transaction_test.dir/build.make CMakeFiles/write_prepared_transaction_test.dir/utilities/transactions/write_prepared_transaction_test.cc.s
-.PHONY : utilities/transactions/write_prepared_transaction_test.cc.s
 
 utilities/transactions/write_prepared_txn.o: utilities/transactions/write_prepared_txn.cc.o
 .PHONY : utilities/transactions/write_prepared_txn.o
@@ -17569,30 +9850,6 @@ utilities/transactions/write_prepared_txn_db.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb.dir/build.make CMakeFiles/rocksdb.dir/utilities/transactions/write_prepared_txn_db.cc.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/utilities/transactions/write_prepared_txn_db.cc.s
 .PHONY : utilities/transactions/write_prepared_txn_db.cc.s
-
-utilities/transactions/write_unprepared_transaction_test.o: utilities/transactions/write_unprepared_transaction_test.cc.o
-.PHONY : utilities/transactions/write_unprepared_transaction_test.o
-
-# target to build an object file
-utilities/transactions/write_unprepared_transaction_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/write_unprepared_transaction_test.dir/build.make CMakeFiles/write_unprepared_transaction_test.dir/utilities/transactions/write_unprepared_transaction_test.cc.o
-.PHONY : utilities/transactions/write_unprepared_transaction_test.cc.o
-
-utilities/transactions/write_unprepared_transaction_test.i: utilities/transactions/write_unprepared_transaction_test.cc.i
-.PHONY : utilities/transactions/write_unprepared_transaction_test.i
-
-# target to preprocess a source file
-utilities/transactions/write_unprepared_transaction_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/write_unprepared_transaction_test.dir/build.make CMakeFiles/write_unprepared_transaction_test.dir/utilities/transactions/write_unprepared_transaction_test.cc.i
-.PHONY : utilities/transactions/write_unprepared_transaction_test.cc.i
-
-utilities/transactions/write_unprepared_transaction_test.s: utilities/transactions/write_unprepared_transaction_test.cc.s
-.PHONY : utilities/transactions/write_unprepared_transaction_test.s
-
-# target to generate assembly for a file
-utilities/transactions/write_unprepared_transaction_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/write_unprepared_transaction_test.dir/build.make CMakeFiles/write_unprepared_transaction_test.dir/utilities/transactions/write_unprepared_transaction_test.cc.s
-.PHONY : utilities/transactions/write_unprepared_transaction_test.cc.s
 
 utilities/transactions/write_unprepared_txn.o: utilities/transactions/write_unprepared_txn.cc.o
 .PHONY : utilities/transactions/write_unprepared_txn.o
@@ -17675,30 +9932,6 @@ utilities/ttl/db_ttl_impl.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/utilities/ttl/db_ttl_impl.cc.s
 .PHONY : utilities/ttl/db_ttl_impl.cc.s
 
-utilities/ttl/ttl_test.o: utilities/ttl/ttl_test.cc.o
-.PHONY : utilities/ttl/ttl_test.o
-
-# target to build an object file
-utilities/ttl/ttl_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ttl_test.dir/build.make CMakeFiles/ttl_test.dir/utilities/ttl/ttl_test.cc.o
-.PHONY : utilities/ttl/ttl_test.cc.o
-
-utilities/ttl/ttl_test.i: utilities/ttl/ttl_test.cc.i
-.PHONY : utilities/ttl/ttl_test.i
-
-# target to preprocess a source file
-utilities/ttl/ttl_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ttl_test.dir/build.make CMakeFiles/ttl_test.dir/utilities/ttl/ttl_test.cc.i
-.PHONY : utilities/ttl/ttl_test.cc.i
-
-utilities/ttl/ttl_test.s: utilities/ttl/ttl_test.cc.s
-.PHONY : utilities/ttl/ttl_test.s
-
-# target to generate assembly for a file
-utilities/ttl/ttl_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ttl_test.dir/build.make CMakeFiles/ttl_test.dir/utilities/ttl/ttl_test.cc.s
-.PHONY : utilities/ttl/ttl_test.cc.s
-
 utilities/types_util.o: utilities/types_util.cc.o
 .PHONY : utilities/types_util.o
 
@@ -17725,54 +9958,6 @@ utilities/types_util.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb.dir/build.make CMakeFiles/rocksdb.dir/utilities/types_util.cc.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/utilities/types_util.cc.s
 .PHONY : utilities/types_util.cc.s
-
-utilities/types_util_test.o: utilities/types_util_test.cc.o
-.PHONY : utilities/types_util_test.o
-
-# target to build an object file
-utilities/types_util_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/types_util_test.dir/build.make CMakeFiles/types_util_test.dir/utilities/types_util_test.cc.o
-.PHONY : utilities/types_util_test.cc.o
-
-utilities/types_util_test.i: utilities/types_util_test.cc.i
-.PHONY : utilities/types_util_test.i
-
-# target to preprocess a source file
-utilities/types_util_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/types_util_test.dir/build.make CMakeFiles/types_util_test.dir/utilities/types_util_test.cc.i
-.PHONY : utilities/types_util_test.cc.i
-
-utilities/types_util_test.s: utilities/types_util_test.cc.s
-.PHONY : utilities/types_util_test.s
-
-# target to generate assembly for a file
-utilities/types_util_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/types_util_test.dir/build.make CMakeFiles/types_util_test.dir/utilities/types_util_test.cc.s
-.PHONY : utilities/types_util_test.cc.s
-
-utilities/util_merge_operators_test.o: utilities/util_merge_operators_test.cc.o
-.PHONY : utilities/util_merge_operators_test.o
-
-# target to build an object file
-utilities/util_merge_operators_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/util_merge_operators_test.dir/build.make CMakeFiles/util_merge_operators_test.dir/utilities/util_merge_operators_test.cc.o
-.PHONY : utilities/util_merge_operators_test.cc.o
-
-utilities/util_merge_operators_test.i: utilities/util_merge_operators_test.cc.i
-.PHONY : utilities/util_merge_operators_test.i
-
-# target to preprocess a source file
-utilities/util_merge_operators_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/util_merge_operators_test.dir/build.make CMakeFiles/util_merge_operators_test.dir/utilities/util_merge_operators_test.cc.i
-.PHONY : utilities/util_merge_operators_test.cc.i
-
-utilities/util_merge_operators_test.s: utilities/util_merge_operators_test.cc.s
-.PHONY : utilities/util_merge_operators_test.s
-
-# target to generate assembly for a file
-utilities/util_merge_operators_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/util_merge_operators_test.dir/build.make CMakeFiles/util_merge_operators_test.dir/utilities/util_merge_operators_test.cc.s
-.PHONY : utilities/util_merge_operators_test.cc.s
 
 utilities/wal_filter.o: utilities/wal_filter.cc.o
 .PHONY : utilities/wal_filter.o
@@ -17855,30 +10040,6 @@ utilities/write_batch_with_index/write_batch_with_index_internal.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rocksdb-shared.dir/build.make CMakeFiles/rocksdb-shared.dir/utilities/write_batch_with_index/write_batch_with_index_internal.cc.s
 .PHONY : utilities/write_batch_with_index/write_batch_with_index_internal.cc.s
 
-utilities/write_batch_with_index/write_batch_with_index_test.o: utilities/write_batch_with_index/write_batch_with_index_test.cc.o
-.PHONY : utilities/write_batch_with_index/write_batch_with_index_test.o
-
-# target to build an object file
-utilities/write_batch_with_index/write_batch_with_index_test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/write_batch_with_index_test.dir/build.make CMakeFiles/write_batch_with_index_test.dir/utilities/write_batch_with_index/write_batch_with_index_test.cc.o
-.PHONY : utilities/write_batch_with_index/write_batch_with_index_test.cc.o
-
-utilities/write_batch_with_index/write_batch_with_index_test.i: utilities/write_batch_with_index/write_batch_with_index_test.cc.i
-.PHONY : utilities/write_batch_with_index/write_batch_with_index_test.i
-
-# target to preprocess a source file
-utilities/write_batch_with_index/write_batch_with_index_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/write_batch_with_index_test.dir/build.make CMakeFiles/write_batch_with_index_test.dir/utilities/write_batch_with_index/write_batch_with_index_test.cc.i
-.PHONY : utilities/write_batch_with_index/write_batch_with_index_test.cc.i
-
-utilities/write_batch_with_index/write_batch_with_index_test.s: utilities/write_batch_with_index/write_batch_with_index_test.cc.s
-.PHONY : utilities/write_batch_with_index/write_batch_with_index_test.s
-
-# target to generate assembly for a file
-utilities/write_batch_with_index/write_batch_with_index_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/write_batch_with_index_test.dir/build.make CMakeFiles/write_batch_with_index_test.dir/utilities/write_batch_with_index/write_batch_with_index_test.cc.s
-.PHONY : utilities/write_batch_with_index/write_batch_with_index_test.cc.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -17891,240 +10052,30 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... test"
 	@echo "... core_tools"
 	@echo "... ldb_tests"
-	@echo "... rocksdb_check"
 	@echo "... tools"
-	@echo "... agg_merge_test"
-	@echo "... arena_test"
-	@echo "... auto_roll_logger_test"
-	@echo "... autovector_test"
-	@echo "... backup_engine_test"
-	@echo "... blob_counting_iterator_test"
-	@echo "... blob_db_test"
-	@echo "... blob_file_addition_test"
-	@echo "... blob_file_builder_test"
-	@echo "... blob_file_cache_test"
-	@echo "... blob_file_garbage_test"
-	@echo "... blob_file_reader_test"
-	@echo "... blob_garbage_meter_test"
-	@echo "... blob_source_test"
-	@echo "... block_based_table_reader_test"
 	@echo "... block_cache_trace_analyzer"
-	@echo "... block_cache_trace_analyzer_test"
-	@echo "... block_cache_tracer_test"
-	@echo "... block_fetcher_test"
-	@echo "... block_test"
-	@echo "... bloom_test"
-	@echo "... c_test"
 	@echo "... cache_bench"
-	@echo "... cache_reservation_manager_test"
-	@echo "... cache_simulator_test"
-	@echo "... cache_test"
-	@echo "... cassandra_format_test"
-	@echo "... cassandra_functional_test"
-	@echo "... cassandra_row_merge_test"
-	@echo "... cassandra_serialize_test"
-	@echo "... checkpoint_test"
-	@echo "... cleanable_test"
-	@echo "... clipping_iterator_test"
-	@echo "... coding_test"
-	@echo "... column_family_test"
-	@echo "... compact_files_test"
-	@echo "... compact_for_tiering_collector_test"
-	@echo "... compact_on_deletion_collector_test"
-	@echo "... compaction_iterator_test"
-	@echo "... compaction_job_stats_test"
-	@echo "... compaction_job_test"
-	@echo "... compaction_picker_test"
-	@echo "... compaction_service_test"
-	@echo "... comparator_db_test"
-	@echo "... compressed_secondary_cache_test"
-	@echo "... configurable_test"
-	@echo "... corruption_test"
-	@echo "... crc32c_test"
-	@echo "... cuckoo_table_builder_test"
-	@echo "... cuckoo_table_db_test"
-	@echo "... cuckoo_table_reader_test"
-	@echo "... customizable_test"
-	@echo "... data_block_hash_index_test"
-	@echo "... db_basic_test"
 	@echo "... db_bench"
-	@echo "... db_blob_basic_test"
-	@echo "... db_blob_compaction_test"
-	@echo "... db_blob_corruption_test"
-	@echo "... db_blob_index_test"
-	@echo "... db_block_cache_test"
-	@echo "... db_bloom_filter_test"
-	@echo "... db_clip_test"
-	@echo "... db_compaction_filter_test"
-	@echo "... db_compaction_test"
-	@echo "... db_dynamic_level_test"
-	@echo "... db_encryption_test"
-	@echo "... db_flush_test"
-	@echo "... db_follower_test"
-	@echo "... db_inplace_update_test"
-	@echo "... db_io_failure_test"
-	@echo "... db_iter_stress_test"
-	@echo "... db_iter_test"
-	@echo "... db_iterator_test"
-	@echo "... db_kv_checksum_test"
-	@echo "... db_log_iter_test"
-	@echo "... db_logical_block_size_cache_test"
-	@echo "... db_memtable_test"
-	@echo "... db_merge_operand_test"
-	@echo "... db_merge_operator_test"
-	@echo "... db_options_test"
-	@echo "... db_properties_test"
-	@echo "... db_range_del_test"
-	@echo "... db_rate_limiter_test"
-	@echo "... db_readonly_with_timestamp_test"
 	@echo "... db_repl_stress"
 	@echo "... db_sanity_test"
-	@echo "... db_secondary_test"
-	@echo "... db_sst_test"
-	@echo "... db_statistics_test"
 	@echo "... db_stress"
-	@echo "... db_table_properties_test"
-	@echo "... db_tailing_iter_test"
-	@echo "... db_test"
-	@echo "... db_test2"
-	@echo "... db_universal_compaction_test"
-	@echo "... db_wal_test"
-	@echo "... db_wide_basic_test"
-	@echo "... db_with_timestamp_basic_test"
-	@echo "... db_with_timestamp_compaction_test"
-	@echo "... db_write_buffer_manager_test"
-	@echo "... db_write_test"
-	@echo "... dbformat_test"
-	@echo "... defer_test"
-	@echo "... delete_scheduler_test"
-	@echo "... deletefile_test"
-	@echo "... dynamic_bloom_test"
-	@echo "... env_basic_test"
-	@echo "... env_logger_test"
-	@echo "... env_test"
-	@echo "... env_timed_test"
-	@echo "... error_handler_fs_test"
-	@echo "... event_logger_test"
-	@echo "... external_sst_file_basic_test"
-	@echo "... external_sst_file_test"
-	@echo "... fault_injection_test"
-	@echo "... file_indexer_test"
-	@echo "... file_reader_writer_test"
-	@echo "... filelock_test"
-	@echo "... filename_test"
 	@echo "... filter_bench"
-	@echo "... flush_job_test"
-	@echo "... full_filter_block_test"
 	@echo "... gtest"
 	@echo "... hash_table_bench"
-	@echo "... hash_table_test"
-	@echo "... hash_test"
-	@echo "... heap_test"
-	@echo "... histogram_test"
-	@echo "... import_column_family_test"
-	@echo "... inlineskiplist_test"
-	@echo "... io_posix_test"
-	@echo "... io_tracer_parser_test"
-	@echo "... io_tracer_test"
-	@echo "... iostats_context_test"
 	@echo "... ldb"
-	@echo "... ldb_cmd_test"
-	@echo "... listener_test"
-	@echo "... log_test"
-	@echo "... lru_cache_test"
-	@echo "... manual_compaction_test"
-	@echo "... memory_allocator_test"
-	@echo "... memory_test"
-	@echo "... memtable_list_test"
 	@echo "... memtablerep_bench"
-	@echo "... merge_helper_test"
-	@echo "... merge_test"
-	@echo "... merger_test"
-	@echo "... mock_env_test"
-	@echo "... multi_cf_iterator_test"
-	@echo "... object_registry_test"
-	@echo "... obsolete_files_test"
-	@echo "... optimistic_transaction_test"
-	@echo "... option_change_migration_test"
-	@echo "... options_file_test"
-	@echo "... options_settable_test"
-	@echo "... options_test"
-	@echo "... options_util_test"
-	@echo "... partitioned_filter_block_test"
-	@echo "... perf_context_test"
-	@echo "... periodic_task_scheduler_test"
-	@echo "... persistent_cache_test"
-	@echo "... plain_table_db_test"
-	@echo "... point_lock_manager_test"
-	@echo "... prefetch_test"
-	@echo "... prefix_test"
-	@echo "... random_access_file_reader_test"
-	@echo "... random_test"
 	@echo "... range_del_aggregator_bench"
-	@echo "... range_del_aggregator_test"
-	@echo "... range_locking_test"
-	@echo "... range_tombstone_fragmenter_test"
-	@echo "... rate_limiter_test"
-	@echo "... reduce_levels_test"
-	@echo "... repair_test"
-	@echo "... repeatable_thread_test"
-	@echo "... ribbon_test"
 	@echo "... rocksdb"
 	@echo "... rocksdb-shared"
 	@echo "... rocksdb_dump"
 	@echo "... rocksdb_undump"
-	@echo "... seqno_time_test"
-	@echo "... sim_cache_test"
-	@echo "... skiplist_test"
-	@echo "... slice_test"
-	@echo "... slice_transform_test"
 	@echo "... sst_dump"
-	@echo "... sst_dump_test"
-	@echo "... sst_file_reader_test"
-	@echo "... statistics_test"
-	@echo "... stats_history_test"
-	@echo "... string_util_test"
-	@echo "... stringappend_test"
-	@echo "... table_properties_collector_test"
 	@echo "... table_reader_bench"
-	@echo "... table_test"
 	@echo "... testharness"
-	@echo "... testutil_test"
-	@echo "... testutillib"
-	@echo "... thread_list_test"
-	@echo "... thread_local_test"
-	@echo "... tiered_compaction_test"
-	@echo "... tiered_secondary_cache_test"
-	@echo "... timer_queue_test"
-	@echo "... timer_test"
-	@echo "... timestamped_snapshot_test"
 	@echo "... trace_analyzer"
-	@echo "... trace_analyzer_test"
-	@echo "... transaction_test"
-	@echo "... ttl_test"
-	@echo "... types_util_test"
-	@echo "... udt_util_test"
-	@echo "... util_merge_operators_test"
-	@echo "... version_builder_test"
-	@echo "... version_edit_test"
-	@echo "... version_set_test"
-	@echo "... wal_edit_test"
-	@echo "... wal_manager_test"
-	@echo "... wide_column_serialization_test"
-	@echo "... wide_columns_helper_test"
-	@echo "... work_queue_test"
-	@echo "... write_batch_test"
-	@echo "... write_batch_with_index_test"
-	@echo "... write_buffer_manager_test"
-	@echo "... write_callback_test"
-	@echo "... write_committed_transaction_ts_test"
-	@echo "... write_controller_test"
-	@echo "... write_prepared_transaction_test"
 	@echo "... write_stress"
-	@echo "... write_unprepared_transaction_test"
 	@echo "... build_version.o"
 	@echo "... build_version.i"
 	@echo "... build_version.s"
@@ -18149,12 +10100,6 @@ help:
 	@echo "... cache/cache_reservation_manager.o"
 	@echo "... cache/cache_reservation_manager.i"
 	@echo "... cache/cache_reservation_manager.s"
-	@echo "... cache/cache_reservation_manager_test.o"
-	@echo "... cache/cache_reservation_manager_test.i"
-	@echo "... cache/cache_reservation_manager_test.s"
-	@echo "... cache/cache_test.o"
-	@echo "... cache/cache_test.i"
-	@echo "... cache/cache_test.s"
 	@echo "... cache/charged_cache.o"
 	@echo "... cache/charged_cache.i"
 	@echo "... cache/charged_cache.s"
@@ -18164,15 +10109,9 @@ help:
 	@echo "... cache/compressed_secondary_cache.o"
 	@echo "... cache/compressed_secondary_cache.i"
 	@echo "... cache/compressed_secondary_cache.s"
-	@echo "... cache/compressed_secondary_cache_test.o"
-	@echo "... cache/compressed_secondary_cache_test.i"
-	@echo "... cache/compressed_secondary_cache_test.s"
 	@echo "... cache/lru_cache.o"
 	@echo "... cache/lru_cache.i"
 	@echo "... cache/lru_cache.s"
-	@echo "... cache/lru_cache_test.o"
-	@echo "... cache/lru_cache_test.i"
-	@echo "... cache/lru_cache_test.s"
 	@echo "... cache/secondary_cache.o"
 	@echo "... cache/secondary_cache.i"
 	@echo "... cache/secondary_cache.s"
@@ -18185,9 +10124,6 @@ help:
 	@echo "... cache/tiered_secondary_cache.o"
 	@echo "... cache/tiered_secondary_cache.i"
 	@echo "... cache/tiered_secondary_cache.s"
-	@echo "... cache/tiered_secondary_cache_test.o"
-	@echo "... cache/tiered_secondary_cache_test.i"
-	@echo "... cache/tiered_secondary_cache_test.s"
 	@echo "... db/arena_wrapped_db_iter.o"
 	@echo "... db/arena_wrapped_db_iter.i"
 	@echo "... db/arena_wrapped_db_iter.s"
@@ -18197,51 +10133,30 @@ help:
 	@echo "... db/blob/blob_contents.o"
 	@echo "... db/blob/blob_contents.i"
 	@echo "... db/blob/blob_contents.s"
-	@echo "... db/blob/blob_counting_iterator_test.o"
-	@echo "... db/blob/blob_counting_iterator_test.i"
-	@echo "... db/blob/blob_counting_iterator_test.s"
 	@echo "... db/blob/blob_fetcher.o"
 	@echo "... db/blob/blob_fetcher.i"
 	@echo "... db/blob/blob_fetcher.s"
 	@echo "... db/blob/blob_file_addition.o"
 	@echo "... db/blob/blob_file_addition.i"
 	@echo "... db/blob/blob_file_addition.s"
-	@echo "... db/blob/blob_file_addition_test.o"
-	@echo "... db/blob/blob_file_addition_test.i"
-	@echo "... db/blob/blob_file_addition_test.s"
 	@echo "... db/blob/blob_file_builder.o"
 	@echo "... db/blob/blob_file_builder.i"
 	@echo "... db/blob/blob_file_builder.s"
-	@echo "... db/blob/blob_file_builder_test.o"
-	@echo "... db/blob/blob_file_builder_test.i"
-	@echo "... db/blob/blob_file_builder_test.s"
 	@echo "... db/blob/blob_file_cache.o"
 	@echo "... db/blob/blob_file_cache.i"
 	@echo "... db/blob/blob_file_cache.s"
-	@echo "... db/blob/blob_file_cache_test.o"
-	@echo "... db/blob/blob_file_cache_test.i"
-	@echo "... db/blob/blob_file_cache_test.s"
 	@echo "... db/blob/blob_file_garbage.o"
 	@echo "... db/blob/blob_file_garbage.i"
 	@echo "... db/blob/blob_file_garbage.s"
-	@echo "... db/blob/blob_file_garbage_test.o"
-	@echo "... db/blob/blob_file_garbage_test.i"
-	@echo "... db/blob/blob_file_garbage_test.s"
 	@echo "... db/blob/blob_file_meta.o"
 	@echo "... db/blob/blob_file_meta.i"
 	@echo "... db/blob/blob_file_meta.s"
 	@echo "... db/blob/blob_file_reader.o"
 	@echo "... db/blob/blob_file_reader.i"
 	@echo "... db/blob/blob_file_reader.s"
-	@echo "... db/blob/blob_file_reader_test.o"
-	@echo "... db/blob/blob_file_reader_test.i"
-	@echo "... db/blob/blob_file_reader_test.s"
 	@echo "... db/blob/blob_garbage_meter.o"
 	@echo "... db/blob/blob_garbage_meter.i"
 	@echo "... db/blob/blob_garbage_meter.s"
-	@echo "... db/blob/blob_garbage_meter_test.o"
-	@echo "... db/blob/blob_garbage_meter_test.i"
-	@echo "... db/blob/blob_garbage_meter_test.s"
 	@echo "... db/blob/blob_log_format.o"
 	@echo "... db/blob/blob_log_format.i"
 	@echo "... db/blob/blob_log_format.s"
@@ -18254,21 +10169,6 @@ help:
 	@echo "... db/blob/blob_source.o"
 	@echo "... db/blob/blob_source.i"
 	@echo "... db/blob/blob_source.s"
-	@echo "... db/blob/blob_source_test.o"
-	@echo "... db/blob/blob_source_test.i"
-	@echo "... db/blob/blob_source_test.s"
-	@echo "... db/blob/db_blob_basic_test.o"
-	@echo "... db/blob/db_blob_basic_test.i"
-	@echo "... db/blob/db_blob_basic_test.s"
-	@echo "... db/blob/db_blob_compaction_test.o"
-	@echo "... db/blob/db_blob_compaction_test.i"
-	@echo "... db/blob/db_blob_compaction_test.s"
-	@echo "... db/blob/db_blob_corruption_test.o"
-	@echo "... db/blob/db_blob_corruption_test.i"
-	@echo "... db/blob/db_blob_corruption_test.s"
-	@echo "... db/blob/db_blob_index_test.o"
-	@echo "... db/blob/db_blob_index_test.i"
-	@echo "... db/blob/db_blob_index_test.s"
 	@echo "... db/blob/prefetch_buffer_collection.o"
 	@echo "... db/blob/prefetch_buffer_collection.i"
 	@echo "... db/blob/prefetch_buffer_collection.s"
@@ -18278,42 +10178,21 @@ help:
 	@echo "... db/c.o"
 	@echo "... db/c.i"
 	@echo "... db/c.s"
-	@echo "... db/c_test.o"
-	@echo "... db/c_test.i"
-	@echo "... db/c_test.s"
 	@echo "... db/coalescing_iterator.o"
 	@echo "... db/coalescing_iterator.i"
 	@echo "... db/coalescing_iterator.s"
 	@echo "... db/column_family.o"
 	@echo "... db/column_family.i"
 	@echo "... db/column_family.s"
-	@echo "... db/column_family_test.o"
-	@echo "... db/column_family_test.i"
-	@echo "... db/column_family_test.s"
-	@echo "... db/compact_files_test.o"
-	@echo "... db/compact_files_test.i"
-	@echo "... db/compact_files_test.s"
-	@echo "... db/compaction/clipping_iterator_test.o"
-	@echo "... db/compaction/clipping_iterator_test.i"
-	@echo "... db/compaction/clipping_iterator_test.s"
 	@echo "... db/compaction/compaction.o"
 	@echo "... db/compaction/compaction.i"
 	@echo "... db/compaction/compaction.s"
 	@echo "... db/compaction/compaction_iterator.o"
 	@echo "... db/compaction/compaction_iterator.i"
 	@echo "... db/compaction/compaction_iterator.s"
-	@echo "... db/compaction/compaction_iterator_test.o"
-	@echo "... db/compaction/compaction_iterator_test.i"
-	@echo "... db/compaction/compaction_iterator_test.s"
 	@echo "... db/compaction/compaction_job.o"
 	@echo "... db/compaction/compaction_job.i"
 	@echo "... db/compaction/compaction_job.s"
-	@echo "... db/compaction/compaction_job_stats_test.o"
-	@echo "... db/compaction/compaction_job_stats_test.i"
-	@echo "... db/compaction/compaction_job_stats_test.s"
-	@echo "... db/compaction/compaction_job_test.o"
-	@echo "... db/compaction/compaction_job_test.i"
-	@echo "... db/compaction/compaction_job_test.s"
 	@echo "... db/compaction/compaction_outputs.o"
 	@echo "... db/compaction/compaction_outputs.i"
 	@echo "... db/compaction/compaction_outputs.s"
@@ -18326,18 +10205,12 @@ help:
 	@echo "... db/compaction/compaction_picker_level.o"
 	@echo "... db/compaction/compaction_picker_level.i"
 	@echo "... db/compaction/compaction_picker_level.s"
-	@echo "... db/compaction/compaction_picker_test.o"
-	@echo "... db/compaction/compaction_picker_test.i"
-	@echo "... db/compaction/compaction_picker_test.s"
 	@echo "... db/compaction/compaction_picker_universal.o"
 	@echo "... db/compaction/compaction_picker_universal.i"
 	@echo "... db/compaction/compaction_picker_universal.s"
 	@echo "... db/compaction/compaction_service_job.o"
 	@echo "... db/compaction/compaction_service_job.i"
 	@echo "... db/compaction/compaction_service_job.s"
-	@echo "... db/compaction/compaction_service_test.o"
-	@echo "... db/compaction/compaction_service_test.i"
-	@echo "... db/compaction/compaction_service_test.s"
 	@echo "... db/compaction/compaction_state.o"
 	@echo "... db/compaction/compaction_state.i"
 	@echo "... db/compaction/compaction_state.s"
@@ -18347,54 +10220,12 @@ help:
 	@echo "... db/compaction/subcompaction_state.o"
 	@echo "... db/compaction/subcompaction_state.i"
 	@echo "... db/compaction/subcompaction_state.s"
-	@echo "... db/compaction/tiered_compaction_test.o"
-	@echo "... db/compaction/tiered_compaction_test.i"
-	@echo "... db/compaction/tiered_compaction_test.s"
-	@echo "... db/comparator_db_test.o"
-	@echo "... db/comparator_db_test.i"
-	@echo "... db/comparator_db_test.s"
 	@echo "... db/convenience.o"
 	@echo "... db/convenience.i"
 	@echo "... db/convenience.s"
-	@echo "... db/corruption_test.o"
-	@echo "... db/corruption_test.i"
-	@echo "... db/corruption_test.s"
-	@echo "... db/cuckoo_table_db_test.o"
-	@echo "... db/cuckoo_table_db_test.i"
-	@echo "... db/cuckoo_table_db_test.s"
-	@echo "... db/db_basic_test.o"
-	@echo "... db/db_basic_test.i"
-	@echo "... db/db_basic_test.s"
-	@echo "... db/db_block_cache_test.o"
-	@echo "... db/db_block_cache_test.i"
-	@echo "... db/db_block_cache_test.s"
-	@echo "... db/db_bloom_filter_test.o"
-	@echo "... db/db_bloom_filter_test.i"
-	@echo "... db/db_bloom_filter_test.s"
-	@echo "... db/db_clip_test.o"
-	@echo "... db/db_clip_test.i"
-	@echo "... db/db_clip_test.s"
-	@echo "... db/db_compaction_filter_test.o"
-	@echo "... db/db_compaction_filter_test.i"
-	@echo "... db/db_compaction_filter_test.s"
-	@echo "... db/db_compaction_test.o"
-	@echo "... db/db_compaction_test.i"
-	@echo "... db/db_compaction_test.s"
-	@echo "... db/db_dynamic_level_test.o"
-	@echo "... db/db_dynamic_level_test.i"
-	@echo "... db/db_dynamic_level_test.s"
-	@echo "... db/db_encryption_test.o"
-	@echo "... db/db_encryption_test.i"
-	@echo "... db/db_encryption_test.s"
 	@echo "... db/db_filesnapshot.o"
 	@echo "... db/db_filesnapshot.i"
 	@echo "... db/db_filesnapshot.s"
-	@echo "... db/db_flush_test.o"
-	@echo "... db/db_flush_test.i"
-	@echo "... db/db_flush_test.s"
-	@echo "... db/db_follower_test.o"
-	@echo "... db/db_follower_test.i"
-	@echo "... db/db_follower_test.s"
 	@echo "... db/db_impl/compacted_db_impl.o"
 	@echo "... db/db_impl/compacted_db_impl.i"
 	@echo "... db/db_impl/compacted_db_impl.s"
@@ -18431,150 +10262,30 @@ help:
 	@echo "... db/db_info_dumper.o"
 	@echo "... db/db_info_dumper.i"
 	@echo "... db/db_info_dumper.s"
-	@echo "... db/db_inplace_update_test.o"
-	@echo "... db/db_inplace_update_test.i"
-	@echo "... db/db_inplace_update_test.s"
-	@echo "... db/db_io_failure_test.o"
-	@echo "... db/db_io_failure_test.i"
-	@echo "... db/db_io_failure_test.s"
 	@echo "... db/db_iter.o"
 	@echo "... db/db_iter.i"
 	@echo "... db/db_iter.s"
-	@echo "... db/db_iter_stress_test.o"
-	@echo "... db/db_iter_stress_test.i"
-	@echo "... db/db_iter_stress_test.s"
-	@echo "... db/db_iter_test.o"
-	@echo "... db/db_iter_test.i"
-	@echo "... db/db_iter_test.s"
-	@echo "... db/db_iterator_test.o"
-	@echo "... db/db_iterator_test.i"
-	@echo "... db/db_iterator_test.s"
-	@echo "... db/db_kv_checksum_test.o"
-	@echo "... db/db_kv_checksum_test.i"
-	@echo "... db/db_kv_checksum_test.s"
-	@echo "... db/db_log_iter_test.o"
-	@echo "... db/db_log_iter_test.i"
-	@echo "... db/db_log_iter_test.s"
-	@echo "... db/db_logical_block_size_cache_test.o"
-	@echo "... db/db_logical_block_size_cache_test.i"
-	@echo "... db/db_logical_block_size_cache_test.s"
-	@echo "... db/db_memtable_test.o"
-	@echo "... db/db_memtable_test.i"
-	@echo "... db/db_memtable_test.s"
-	@echo "... db/db_merge_operand_test.o"
-	@echo "... db/db_merge_operand_test.i"
-	@echo "... db/db_merge_operand_test.s"
-	@echo "... db/db_merge_operator_test.o"
-	@echo "... db/db_merge_operator_test.i"
-	@echo "... db/db_merge_operator_test.s"
-	@echo "... db/db_options_test.o"
-	@echo "... db/db_options_test.i"
-	@echo "... db/db_options_test.s"
-	@echo "... db/db_properties_test.o"
-	@echo "... db/db_properties_test.i"
-	@echo "... db/db_properties_test.s"
-	@echo "... db/db_range_del_test.o"
-	@echo "... db/db_range_del_test.i"
-	@echo "... db/db_range_del_test.s"
-	@echo "... db/db_rate_limiter_test.o"
-	@echo "... db/db_rate_limiter_test.i"
-	@echo "... db/db_rate_limiter_test.s"
-	@echo "... db/db_readonly_with_timestamp_test.o"
-	@echo "... db/db_readonly_with_timestamp_test.i"
-	@echo "... db/db_readonly_with_timestamp_test.s"
-	@echo "... db/db_secondary_test.o"
-	@echo "... db/db_secondary_test.i"
-	@echo "... db/db_secondary_test.s"
-	@echo "... db/db_sst_test.o"
-	@echo "... db/db_sst_test.i"
-	@echo "... db/db_sst_test.s"
-	@echo "... db/db_statistics_test.o"
-	@echo "... db/db_statistics_test.i"
-	@echo "... db/db_statistics_test.s"
-	@echo "... db/db_table_properties_test.o"
-	@echo "... db/db_table_properties_test.i"
-	@echo "... db/db_table_properties_test.s"
-	@echo "... db/db_tailing_iter_test.o"
-	@echo "... db/db_tailing_iter_test.i"
-	@echo "... db/db_tailing_iter_test.s"
-	@echo "... db/db_test.o"
-	@echo "... db/db_test.i"
-	@echo "... db/db_test.s"
-	@echo "... db/db_test2.o"
-	@echo "... db/db_test2.i"
-	@echo "... db/db_test2.s"
-	@echo "... db/db_test_util.o"
-	@echo "... db/db_test_util.i"
-	@echo "... db/db_test_util.s"
-	@echo "... db/db_universal_compaction_test.o"
-	@echo "... db/db_universal_compaction_test.i"
-	@echo "... db/db_universal_compaction_test.s"
-	@echo "... db/db_wal_test.o"
-	@echo "... db/db_wal_test.i"
-	@echo "... db/db_wal_test.s"
-	@echo "... db/db_with_timestamp_basic_test.o"
-	@echo "... db/db_with_timestamp_basic_test.i"
-	@echo "... db/db_with_timestamp_basic_test.s"
-	@echo "... db/db_with_timestamp_compaction_test.o"
-	@echo "... db/db_with_timestamp_compaction_test.i"
-	@echo "... db/db_with_timestamp_compaction_test.s"
-	@echo "... db/db_with_timestamp_test_util.o"
-	@echo "... db/db_with_timestamp_test_util.i"
-	@echo "... db/db_with_timestamp_test_util.s"
-	@echo "... db/db_write_buffer_manager_test.o"
-	@echo "... db/db_write_buffer_manager_test.i"
-	@echo "... db/db_write_buffer_manager_test.s"
-	@echo "... db/db_write_test.o"
-	@echo "... db/db_write_test.i"
-	@echo "... db/db_write_test.s"
 	@echo "... db/dbformat.o"
 	@echo "... db/dbformat.i"
 	@echo "... db/dbformat.s"
-	@echo "... db/dbformat_test.o"
-	@echo "... db/dbformat_test.i"
-	@echo "... db/dbformat_test.s"
-	@echo "... db/deletefile_test.o"
-	@echo "... db/deletefile_test.i"
-	@echo "... db/deletefile_test.s"
 	@echo "... db/error_handler.o"
 	@echo "... db/error_handler.i"
 	@echo "... db/error_handler.s"
-	@echo "... db/error_handler_fs_test.o"
-	@echo "... db/error_handler_fs_test.i"
-	@echo "... db/error_handler_fs_test.s"
 	@echo "... db/event_helpers.o"
 	@echo "... db/event_helpers.i"
 	@echo "... db/event_helpers.s"
 	@echo "... db/experimental.o"
 	@echo "... db/experimental.i"
 	@echo "... db/experimental.s"
-	@echo "... db/external_sst_file_basic_test.o"
-	@echo "... db/external_sst_file_basic_test.i"
-	@echo "... db/external_sst_file_basic_test.s"
 	@echo "... db/external_sst_file_ingestion_job.o"
 	@echo "... db/external_sst_file_ingestion_job.i"
 	@echo "... db/external_sst_file_ingestion_job.s"
-	@echo "... db/external_sst_file_test.o"
-	@echo "... db/external_sst_file_test.i"
-	@echo "... db/external_sst_file_test.s"
-	@echo "... db/fault_injection_test.o"
-	@echo "... db/fault_injection_test.i"
-	@echo "... db/fault_injection_test.s"
 	@echo "... db/file_indexer.o"
 	@echo "... db/file_indexer.i"
 	@echo "... db/file_indexer.s"
-	@echo "... db/file_indexer_test.o"
-	@echo "... db/file_indexer_test.i"
-	@echo "... db/file_indexer_test.s"
-	@echo "... db/filename_test.o"
-	@echo "... db/filename_test.i"
-	@echo "... db/filename_test.s"
 	@echo "... db/flush_job.o"
 	@echo "... db/flush_job.i"
 	@echo "... db/flush_job.s"
-	@echo "... db/flush_job_test.o"
-	@echo "... db/flush_job_test.i"
-	@echo "... db/flush_job_test.s"
 	@echo "... db/flush_scheduler.o"
 	@echo "... db/flush_scheduler.i"
 	@echo "... db/flush_scheduler.s"
@@ -18584,21 +10295,12 @@ help:
 	@echo "... db/import_column_family_job.o"
 	@echo "... db/import_column_family_job.i"
 	@echo "... db/import_column_family_job.s"
-	@echo "... db/import_column_family_test.o"
-	@echo "... db/import_column_family_test.i"
-	@echo "... db/import_column_family_test.s"
 	@echo "... db/internal_stats.o"
 	@echo "... db/internal_stats.i"
 	@echo "... db/internal_stats.s"
-	@echo "... db/listener_test.o"
-	@echo "... db/listener_test.i"
-	@echo "... db/listener_test.s"
 	@echo "... db/log_reader.o"
 	@echo "... db/log_reader.i"
 	@echo "... db/log_reader.s"
-	@echo "... db/log_test.o"
-	@echo "... db/log_test.i"
-	@echo "... db/log_test.s"
 	@echo "... db/log_writer.o"
 	@echo "... db/log_writer.i"
 	@echo "... db/log_writer.s"
@@ -18608,81 +10310,36 @@ help:
 	@echo "... db/malloc_stats.o"
 	@echo "... db/malloc_stats.i"
 	@echo "... db/malloc_stats.s"
-	@echo "... db/manual_compaction_test.o"
-	@echo "... db/manual_compaction_test.i"
-	@echo "... db/manual_compaction_test.s"
 	@echo "... db/memtable.o"
 	@echo "... db/memtable.i"
 	@echo "... db/memtable.s"
 	@echo "... db/memtable_list.o"
 	@echo "... db/memtable_list.i"
 	@echo "... db/memtable_list.s"
-	@echo "... db/memtable_list_test.o"
-	@echo "... db/memtable_list_test.i"
-	@echo "... db/memtable_list_test.s"
 	@echo "... db/merge_helper.o"
 	@echo "... db/merge_helper.i"
 	@echo "... db/merge_helper.s"
-	@echo "... db/merge_helper_test.o"
-	@echo "... db/merge_helper_test.i"
-	@echo "... db/merge_helper_test.s"
 	@echo "... db/merge_operator.o"
 	@echo "... db/merge_operator.i"
 	@echo "... db/merge_operator.s"
-	@echo "... db/merge_test.o"
-	@echo "... db/merge_test.i"
-	@echo "... db/merge_test.s"
-	@echo "... db/multi_cf_iterator_test.o"
-	@echo "... db/multi_cf_iterator_test.i"
-	@echo "... db/multi_cf_iterator_test.s"
-	@echo "... db/obsolete_files_test.o"
-	@echo "... db/obsolete_files_test.i"
-	@echo "... db/obsolete_files_test.s"
-	@echo "... db/options_file_test.o"
-	@echo "... db/options_file_test.i"
-	@echo "... db/options_file_test.s"
 	@echo "... db/output_validator.o"
 	@echo "... db/output_validator.i"
 	@echo "... db/output_validator.s"
-	@echo "... db/perf_context_test.o"
-	@echo "... db/perf_context_test.i"
-	@echo "... db/perf_context_test.s"
 	@echo "... db/periodic_task_scheduler.o"
 	@echo "... db/periodic_task_scheduler.i"
 	@echo "... db/periodic_task_scheduler.s"
-	@echo "... db/periodic_task_scheduler_test.o"
-	@echo "... db/periodic_task_scheduler_test.i"
-	@echo "... db/periodic_task_scheduler_test.s"
-	@echo "... db/plain_table_db_test.o"
-	@echo "... db/plain_table_db_test.i"
-	@echo "... db/plain_table_db_test.s"
-	@echo "... db/prefix_test.o"
-	@echo "... db/prefix_test.i"
-	@echo "... db/prefix_test.s"
 	@echo "... db/range_del_aggregator.o"
 	@echo "... db/range_del_aggregator.i"
 	@echo "... db/range_del_aggregator.s"
 	@echo "... db/range_del_aggregator_bench.o"
 	@echo "... db/range_del_aggregator_bench.i"
 	@echo "... db/range_del_aggregator_bench.s"
-	@echo "... db/range_del_aggregator_test.o"
-	@echo "... db/range_del_aggregator_test.i"
-	@echo "... db/range_del_aggregator_test.s"
 	@echo "... db/range_tombstone_fragmenter.o"
 	@echo "... db/range_tombstone_fragmenter.i"
 	@echo "... db/range_tombstone_fragmenter.s"
-	@echo "... db/range_tombstone_fragmenter_test.o"
-	@echo "... db/range_tombstone_fragmenter_test.i"
-	@echo "... db/range_tombstone_fragmenter_test.s"
 	@echo "... db/repair.o"
 	@echo "... db/repair.i"
 	@echo "... db/repair.s"
-	@echo "... db/repair_test.o"
-	@echo "... db/repair_test.i"
-	@echo "... db/repair_test.s"
-	@echo "... db/seqno_time_test.o"
-	@echo "... db/seqno_time_test.i"
-	@echo "... db/seqno_time_test.s"
 	@echo "... db/seqno_to_time_mapping.o"
 	@echo "... db/seqno_to_time_mapping.i"
 	@echo "... db/seqno_to_time_mapping.s"
@@ -18695,9 +10352,6 @@ help:
 	@echo "... db/table_properties_collector.o"
 	@echo "... db/table_properties_collector.i"
 	@echo "... db/table_properties_collector.s"
-	@echo "... db/table_properties_collector_test.o"
-	@echo "... db/table_properties_collector_test.i"
-	@echo "... db/table_properties_collector_test.s"
 	@echo "... db/transaction_log_impl.o"
 	@echo "... db/transaction_log_impl.i"
 	@echo "... db/transaction_log_impl.s"
@@ -18707,72 +10361,39 @@ help:
 	@echo "... db/version_builder.o"
 	@echo "... db/version_builder.i"
 	@echo "... db/version_builder.s"
-	@echo "... db/version_builder_test.o"
-	@echo "... db/version_builder_test.i"
-	@echo "... db/version_builder_test.s"
 	@echo "... db/version_edit.o"
 	@echo "... db/version_edit.i"
 	@echo "... db/version_edit.s"
 	@echo "... db/version_edit_handler.o"
 	@echo "... db/version_edit_handler.i"
 	@echo "... db/version_edit_handler.s"
-	@echo "... db/version_edit_test.o"
-	@echo "... db/version_edit_test.i"
-	@echo "... db/version_edit_test.s"
 	@echo "... db/version_set.o"
 	@echo "... db/version_set.i"
 	@echo "... db/version_set.s"
-	@echo "... db/version_set_test.o"
-	@echo "... db/version_set_test.i"
-	@echo "... db/version_set_test.s"
 	@echo "... db/wal_edit.o"
 	@echo "... db/wal_edit.i"
 	@echo "... db/wal_edit.s"
-	@echo "... db/wal_edit_test.o"
-	@echo "... db/wal_edit_test.i"
-	@echo "... db/wal_edit_test.s"
 	@echo "... db/wal_manager.o"
 	@echo "... db/wal_manager.i"
 	@echo "... db/wal_manager.s"
-	@echo "... db/wal_manager_test.o"
-	@echo "... db/wal_manager_test.i"
-	@echo "... db/wal_manager_test.s"
-	@echo "... db/wide/db_wide_basic_test.o"
-	@echo "... db/wide/db_wide_basic_test.i"
-	@echo "... db/wide/db_wide_basic_test.s"
 	@echo "... db/wide/wide_column_serialization.o"
 	@echo "... db/wide/wide_column_serialization.i"
 	@echo "... db/wide/wide_column_serialization.s"
-	@echo "... db/wide/wide_column_serialization_test.o"
-	@echo "... db/wide/wide_column_serialization_test.i"
-	@echo "... db/wide/wide_column_serialization_test.s"
 	@echo "... db/wide/wide_columns.o"
 	@echo "... db/wide/wide_columns.i"
 	@echo "... db/wide/wide_columns.s"
 	@echo "... db/wide/wide_columns_helper.o"
 	@echo "... db/wide/wide_columns_helper.i"
 	@echo "... db/wide/wide_columns_helper.s"
-	@echo "... db/wide/wide_columns_helper_test.o"
-	@echo "... db/wide/wide_columns_helper_test.i"
-	@echo "... db/wide/wide_columns_helper_test.s"
 	@echo "... db/write_batch.o"
 	@echo "... db/write_batch.i"
 	@echo "... db/write_batch.s"
 	@echo "... db/write_batch_base.o"
 	@echo "... db/write_batch_base.i"
 	@echo "... db/write_batch_base.s"
-	@echo "... db/write_batch_test.o"
-	@echo "... db/write_batch_test.i"
-	@echo "... db/write_batch_test.s"
-	@echo "... db/write_callback_test.o"
-	@echo "... db/write_callback_test.i"
-	@echo "... db/write_callback_test.s"
 	@echo "... db/write_controller.o"
 	@echo "... db/write_controller.i"
 	@echo "... db/write_controller.s"
-	@echo "... db/write_controller_test.o"
-	@echo "... db/write_controller_test.i"
-	@echo "... db/write_controller_test.s"
 	@echo "... db/write_stall_stats.o"
 	@echo "... db/write_stall_stats.i"
 	@echo "... db/write_stall_stats.s"
@@ -18785,9 +10406,6 @@ help:
 	@echo "... env/env.o"
 	@echo "... env/env.i"
 	@echo "... env/env.s"
-	@echo "... env/env_basic_test.o"
-	@echo "... env/env_basic_test.i"
-	@echo "... env/env_basic_test.s"
 	@echo "... env/env_chroot.o"
 	@echo "... env/env_chroot.i"
 	@echo "... env/env_chroot.s"
@@ -18797,9 +10415,6 @@ help:
 	@echo "... env/env_posix.o"
 	@echo "... env/env_posix.i"
 	@echo "... env/env_posix.s"
-	@echo "... env/env_test.o"
-	@echo "... env/env_test.i"
-	@echo "... env/env_test.s"
 	@echo "... env/file_system.o"
 	@echo "... env/file_system.i"
 	@echo "... env/file_system.s"
@@ -18818,24 +10433,15 @@ help:
 	@echo "... env/io_posix.o"
 	@echo "... env/io_posix.i"
 	@echo "... env/io_posix.s"
-	@echo "... env/io_posix_test.o"
-	@echo "... env/io_posix_test.i"
-	@echo "... env/io_posix_test.s"
 	@echo "... env/mock_env.o"
 	@echo "... env/mock_env.i"
 	@echo "... env/mock_env.s"
-	@echo "... env/mock_env_test.o"
-	@echo "... env/mock_env_test.i"
-	@echo "... env/mock_env_test.s"
 	@echo "... env/unique_id_gen.o"
 	@echo "... env/unique_id_gen.i"
 	@echo "... env/unique_id_gen.s"
 	@echo "... file/delete_scheduler.o"
 	@echo "... file/delete_scheduler.i"
 	@echo "... file/delete_scheduler.s"
-	@echo "... file/delete_scheduler_test.o"
-	@echo "... file/delete_scheduler_test.i"
-	@echo "... file/delete_scheduler_test.s"
 	@echo "... file/file_prefetch_buffer.o"
 	@echo "... file/file_prefetch_buffer.i"
 	@echo "... file/file_prefetch_buffer.s"
@@ -18848,15 +10454,9 @@ help:
 	@echo "... file/line_file_reader.o"
 	@echo "... file/line_file_reader.i"
 	@echo "... file/line_file_reader.s"
-	@echo "... file/prefetch_test.o"
-	@echo "... file/prefetch_test.i"
-	@echo "... file/prefetch_test.s"
 	@echo "... file/random_access_file_reader.o"
 	@echo "... file/random_access_file_reader.i"
 	@echo "... file/random_access_file_reader.s"
-	@echo "... file/random_access_file_reader_test.o"
-	@echo "... file/random_access_file_reader_test.i"
-	@echo "... file/random_access_file_reader_test.s"
 	@echo "... file/read_write_util.o"
 	@echo "... file/read_write_util.i"
 	@echo "... file/read_write_util.s"
@@ -18875,27 +10475,15 @@ help:
 	@echo "... logging/auto_roll_logger.o"
 	@echo "... logging/auto_roll_logger.i"
 	@echo "... logging/auto_roll_logger.s"
-	@echo "... logging/auto_roll_logger_test.o"
-	@echo "... logging/auto_roll_logger_test.i"
-	@echo "... logging/auto_roll_logger_test.s"
-	@echo "... logging/env_logger_test.o"
-	@echo "... logging/env_logger_test.i"
-	@echo "... logging/env_logger_test.s"
 	@echo "... logging/event_logger.o"
 	@echo "... logging/event_logger.i"
 	@echo "... logging/event_logger.s"
-	@echo "... logging/event_logger_test.o"
-	@echo "... logging/event_logger_test.i"
-	@echo "... logging/event_logger_test.s"
 	@echo "... logging/log_buffer.o"
 	@echo "... logging/log_buffer.i"
 	@echo "... logging/log_buffer.s"
 	@echo "... memory/arena.o"
 	@echo "... memory/arena.i"
 	@echo "... memory/arena.s"
-	@echo "... memory/arena_test.o"
-	@echo "... memory/arena_test.i"
-	@echo "... memory/arena_test.s"
 	@echo "... memory/concurrent_arena.o"
 	@echo "... memory/concurrent_arena.i"
 	@echo "... memory/concurrent_arena.s"
@@ -18908,9 +10496,6 @@ help:
 	@echo "... memory/memory_allocator.o"
 	@echo "... memory/memory_allocator.i"
 	@echo "... memory/memory_allocator.s"
-	@echo "... memory/memory_allocator_test.o"
-	@echo "... memory/memory_allocator_test.i"
-	@echo "... memory/memory_allocator_test.s"
 	@echo "... memtable/alloc_tracker.o"
 	@echo "... memtable/alloc_tracker.i"
 	@echo "... memtable/alloc_tracker.s"
@@ -18920,15 +10505,9 @@ help:
 	@echo "... memtable/hash_skiplist_rep.o"
 	@echo "... memtable/hash_skiplist_rep.i"
 	@echo "... memtable/hash_skiplist_rep.s"
-	@echo "... memtable/inlineskiplist_test.o"
-	@echo "... memtable/inlineskiplist_test.i"
-	@echo "... memtable/inlineskiplist_test.s"
 	@echo "... memtable/memtablerep_bench.o"
 	@echo "... memtable/memtablerep_bench.i"
 	@echo "... memtable/memtablerep_bench.s"
-	@echo "... memtable/skiplist_test.o"
-	@echo "... memtable/skiplist_test.i"
-	@echo "... memtable/skiplist_test.s"
 	@echo "... memtable/skiplistrep.o"
 	@echo "... memtable/skiplistrep.i"
 	@echo "... memtable/skiplistrep.s"
@@ -18938,15 +10517,9 @@ help:
 	@echo "... memtable/write_buffer_manager.o"
 	@echo "... memtable/write_buffer_manager.i"
 	@echo "... memtable/write_buffer_manager.s"
-	@echo "... memtable/write_buffer_manager_test.o"
-	@echo "... memtable/write_buffer_manager_test.i"
-	@echo "... memtable/write_buffer_manager_test.s"
 	@echo "... monitoring/histogram.o"
 	@echo "... monitoring/histogram.i"
 	@echo "... monitoring/histogram.s"
-	@echo "... monitoring/histogram_test.o"
-	@echo "... monitoring/histogram_test.i"
-	@echo "... monitoring/histogram_test.s"
 	@echo "... monitoring/histogram_windowing.o"
 	@echo "... monitoring/histogram_windowing.i"
 	@echo "... monitoring/histogram_windowing.s"
@@ -18959,9 +10532,6 @@ help:
 	@echo "... monitoring/iostats_context.o"
 	@echo "... monitoring/iostats_context.i"
 	@echo "... monitoring/iostats_context.s"
-	@echo "... monitoring/iostats_context_test.o"
-	@echo "... monitoring/iostats_context_test.i"
-	@echo "... monitoring/iostats_context_test.s"
 	@echo "... monitoring/perf_context.o"
 	@echo "... monitoring/perf_context.i"
 	@echo "... monitoring/perf_context.s"
@@ -18974,21 +10544,12 @@ help:
 	@echo "... monitoring/statistics.o"
 	@echo "... monitoring/statistics.i"
 	@echo "... monitoring/statistics.s"
-	@echo "... monitoring/statistics_test.o"
-	@echo "... monitoring/statistics_test.i"
-	@echo "... monitoring/statistics_test.s"
-	@echo "... monitoring/stats_history_test.o"
-	@echo "... monitoring/stats_history_test.i"
-	@echo "... monitoring/stats_history_test.s"
 	@echo "... monitoring/thread_status_impl.o"
 	@echo "... monitoring/thread_status_impl.i"
 	@echo "... monitoring/thread_status_impl.s"
 	@echo "... monitoring/thread_status_updater.o"
 	@echo "... monitoring/thread_status_updater.i"
 	@echo "... monitoring/thread_status_updater.s"
-	@echo "... monitoring/thread_status_updater_debug.o"
-	@echo "... monitoring/thread_status_updater_debug.i"
-	@echo "... monitoring/thread_status_updater_debug.s"
 	@echo "... monitoring/thread_status_util.o"
 	@echo "... monitoring/thread_status_util.i"
 	@echo "... monitoring/thread_status_util.s"
@@ -19001,15 +10562,9 @@ help:
 	@echo "... options/configurable.o"
 	@echo "... options/configurable.i"
 	@echo "... options/configurable.s"
-	@echo "... options/configurable_test.o"
-	@echo "... options/configurable_test.i"
-	@echo "... options/configurable_test.s"
 	@echo "... options/customizable.o"
 	@echo "... options/customizable.i"
 	@echo "... options/customizable.s"
-	@echo "... options/customizable_test.o"
-	@echo "... options/customizable_test.i"
-	@echo "... options/customizable_test.s"
 	@echo "... options/db_options.o"
 	@echo "... options/db_options.i"
 	@echo "... options/db_options.s"
@@ -19025,12 +10580,6 @@ help:
 	@echo "... options/options_parser.o"
 	@echo "... options/options_parser.i"
 	@echo "... options/options_parser.s"
-	@echo "... options/options_settable_test.o"
-	@echo "... options/options_settable_test.i"
-	@echo "... options/options_settable_test.s"
-	@echo "... options/options_test.o"
-	@echo "... options/options_test.i"
-	@echo "... options/options_test.s"
 	@echo "... port/mmap.o"
 	@echo "... port/mmap.i"
 	@echo "... port/mmap.s"
@@ -19061,9 +10610,6 @@ help:
 	@echo "... table/block_based/block_based_table_reader.o"
 	@echo "... table/block_based/block_based_table_reader.i"
 	@echo "... table/block_based/block_based_table_reader.s"
-	@echo "... table/block_based/block_based_table_reader_test.o"
-	@echo "... table/block_based/block_based_table_reader_test.i"
-	@echo "... table/block_based/block_based_table_reader_test.s"
 	@echo "... table/block_based/block_builder.o"
 	@echo "... table/block_based/block_builder.i"
 	@echo "... table/block_based/block_builder.s"
@@ -19076,18 +10622,12 @@ help:
 	@echo "... table/block_based/block_prefix_index.o"
 	@echo "... table/block_based/block_prefix_index.i"
 	@echo "... table/block_based/block_prefix_index.s"
-	@echo "... table/block_based/block_test.o"
-	@echo "... table/block_based/block_test.i"
-	@echo "... table/block_based/block_test.s"
 	@echo "... table/block_based/data_block_footer.o"
 	@echo "... table/block_based/data_block_footer.i"
 	@echo "... table/block_based/data_block_footer.s"
 	@echo "... table/block_based/data_block_hash_index.o"
 	@echo "... table/block_based/data_block_hash_index.i"
 	@echo "... table/block_based/data_block_hash_index.s"
-	@echo "... table/block_based/data_block_hash_index_test.o"
-	@echo "... table/block_based/data_block_hash_index_test.i"
-	@echo "... table/block_based/data_block_hash_index_test.s"
 	@echo "... table/block_based/filter_block_reader_common.o"
 	@echo "... table/block_based/filter_block_reader_common.i"
 	@echo "... table/block_based/filter_block_reader_common.s"
@@ -19100,9 +10640,6 @@ help:
 	@echo "... table/block_based/full_filter_block.o"
 	@echo "... table/block_based/full_filter_block.i"
 	@echo "... table/block_based/full_filter_block.s"
-	@echo "... table/block_based/full_filter_block_test.o"
-	@echo "... table/block_based/full_filter_block_test.i"
-	@echo "... table/block_based/full_filter_block_test.s"
 	@echo "... table/block_based/hash_index_reader.o"
 	@echo "... table/block_based/hash_index_reader.i"
 	@echo "... table/block_based/hash_index_reader.s"
@@ -19118,9 +10655,6 @@ help:
 	@echo "... table/block_based/partitioned_filter_block.o"
 	@echo "... table/block_based/partitioned_filter_block.i"
 	@echo "... table/block_based/partitioned_filter_block.s"
-	@echo "... table/block_based/partitioned_filter_block_test.o"
-	@echo "... table/block_based/partitioned_filter_block_test.i"
-	@echo "... table/block_based/partitioned_filter_block_test.s"
 	@echo "... table/block_based/partitioned_index_iterator.o"
 	@echo "... table/block_based/partitioned_index_iterator.i"
 	@echo "... table/block_based/partitioned_index_iterator.s"
@@ -19136,30 +10670,18 @@ help:
 	@echo "... table/block_fetcher.o"
 	@echo "... table/block_fetcher.i"
 	@echo "... table/block_fetcher.s"
-	@echo "... table/block_fetcher_test.o"
-	@echo "... table/block_fetcher_test.i"
-	@echo "... table/block_fetcher_test.s"
-	@echo "... table/cleanable_test.o"
-	@echo "... table/cleanable_test.i"
-	@echo "... table/cleanable_test.s"
 	@echo "... table/compaction_merging_iterator.o"
 	@echo "... table/compaction_merging_iterator.i"
 	@echo "... table/compaction_merging_iterator.s"
 	@echo "... table/cuckoo/cuckoo_table_builder.o"
 	@echo "... table/cuckoo/cuckoo_table_builder.i"
 	@echo "... table/cuckoo/cuckoo_table_builder.s"
-	@echo "... table/cuckoo/cuckoo_table_builder_test.o"
-	@echo "... table/cuckoo/cuckoo_table_builder_test.i"
-	@echo "... table/cuckoo/cuckoo_table_builder_test.s"
 	@echo "... table/cuckoo/cuckoo_table_factory.o"
 	@echo "... table/cuckoo/cuckoo_table_factory.i"
 	@echo "... table/cuckoo/cuckoo_table_factory.s"
 	@echo "... table/cuckoo/cuckoo_table_reader.o"
 	@echo "... table/cuckoo/cuckoo_table_reader.i"
 	@echo "... table/cuckoo/cuckoo_table_reader.s"
-	@echo "... table/cuckoo/cuckoo_table_reader_test.o"
-	@echo "... table/cuckoo/cuckoo_table_reader_test.i"
-	@echo "... table/cuckoo/cuckoo_table_reader_test.s"
 	@echo "... table/format.o"
 	@echo "... table/format.i"
 	@echo "... table/format.s"
@@ -19169,18 +10691,12 @@ help:
 	@echo "... table/iterator.o"
 	@echo "... table/iterator.i"
 	@echo "... table/iterator.s"
-	@echo "... table/merger_test.o"
-	@echo "... table/merger_test.i"
-	@echo "... table/merger_test.s"
 	@echo "... table/merging_iterator.o"
 	@echo "... table/merging_iterator.i"
 	@echo "... table/merging_iterator.s"
 	@echo "... table/meta_blocks.o"
 	@echo "... table/meta_blocks.i"
 	@echo "... table/meta_blocks.s"
-	@echo "... table/mock_table.o"
-	@echo "... table/mock_table.i"
-	@echo "... table/mock_table.s"
 	@echo "... table/persistent_cache_helper.o"
 	@echo "... table/persistent_cache_helper.i"
 	@echo "... table/persistent_cache_helper.s"
@@ -19208,9 +10724,6 @@ help:
 	@echo "... table/sst_file_reader.o"
 	@echo "... table/sst_file_reader.i"
 	@echo "... table/sst_file_reader.s"
-	@echo "... table/sst_file_reader_test.o"
-	@echo "... table/sst_file_reader_test.i"
-	@echo "... table/sst_file_reader_test.s"
 	@echo "... table/sst_file_writer.o"
 	@echo "... table/sst_file_writer.i"
 	@echo "... table/sst_file_writer.s"
@@ -19223,9 +10736,6 @@ help:
 	@echo "... table/table_reader_bench.o"
 	@echo "... table/table_reader_bench.i"
 	@echo "... table/table_reader_bench.s"
-	@echo "... table/table_test.o"
-	@echo "... table/table_test.i"
-	@echo "... table/table_test.s"
 	@echo "... table/two_level_iterator.o"
 	@echo "... table/two_level_iterator.i"
 	@echo "... table/two_level_iterator.s"
@@ -19250,18 +10760,12 @@ help:
 	@echo "... test_util/testutil.o"
 	@echo "... test_util/testutil.i"
 	@echo "... test_util/testutil.s"
-	@echo "... test_util/testutil_test.o"
-	@echo "... test_util/testutil_test.i"
-	@echo "... test_util/testutil_test.s"
 	@echo "... test_util/transaction_test_util.o"
 	@echo "... test_util/transaction_test_util.i"
 	@echo "... test_util/transaction_test_util.s"
 	@echo "... tools/block_cache_analyzer/block_cache_trace_analyzer.o"
 	@echo "... tools/block_cache_analyzer/block_cache_trace_analyzer.i"
 	@echo "... tools/block_cache_analyzer/block_cache_trace_analyzer.s"
-	@echo "... tools/block_cache_analyzer/block_cache_trace_analyzer_test.o"
-	@echo "... tools/block_cache_analyzer/block_cache_trace_analyzer_test.i"
-	@echo "... tools/block_cache_analyzer/block_cache_trace_analyzer_test.s"
 	@echo "... tools/block_cache_analyzer/block_cache_trace_analyzer_tool.o"
 	@echo "... tools/block_cache_analyzer/block_cache_trace_analyzer_tool.i"
 	@echo "... tools/block_cache_analyzer/block_cache_trace_analyzer_tool.s"
@@ -19274,54 +10778,33 @@ help:
 	@echo "... tools/dump/db_dump_tool.o"
 	@echo "... tools/dump/db_dump_tool.i"
 	@echo "... tools/dump/db_dump_tool.s"
-	@echo "... tools/io_tracer_parser_test.o"
-	@echo "... tools/io_tracer_parser_test.i"
-	@echo "... tools/io_tracer_parser_test.s"
 	@echo "... tools/io_tracer_parser_tool.o"
 	@echo "... tools/io_tracer_parser_tool.i"
 	@echo "... tools/io_tracer_parser_tool.s"
 	@echo "... tools/ldb_cmd.o"
 	@echo "... tools/ldb_cmd.i"
 	@echo "... tools/ldb_cmd.s"
-	@echo "... tools/ldb_cmd_test.o"
-	@echo "... tools/ldb_cmd_test.i"
-	@echo "... tools/ldb_cmd_test.s"
 	@echo "... tools/ldb_tool.o"
 	@echo "... tools/ldb_tool.i"
 	@echo "... tools/ldb_tool.s"
-	@echo "... tools/reduce_levels_test.o"
-	@echo "... tools/reduce_levels_test.i"
-	@echo "... tools/reduce_levels_test.s"
 	@echo "... tools/simulated_hybrid_file_system.o"
 	@echo "... tools/simulated_hybrid_file_system.i"
 	@echo "... tools/simulated_hybrid_file_system.s"
-	@echo "... tools/sst_dump_test.o"
-	@echo "... tools/sst_dump_test.i"
-	@echo "... tools/sst_dump_test.s"
 	@echo "... tools/sst_dump_tool.o"
 	@echo "... tools/sst_dump_tool.i"
 	@echo "... tools/sst_dump_tool.s"
 	@echo "... tools/trace_analyzer.o"
 	@echo "... tools/trace_analyzer.i"
 	@echo "... tools/trace_analyzer.s"
-	@echo "... tools/trace_analyzer_test.o"
-	@echo "... tools/trace_analyzer_test.i"
-	@echo "... tools/trace_analyzer_test.s"
 	@echo "... tools/trace_analyzer_tool.o"
 	@echo "... tools/trace_analyzer_tool.i"
 	@echo "... tools/trace_analyzer_tool.s"
 	@echo "... trace_replay/block_cache_tracer.o"
 	@echo "... trace_replay/block_cache_tracer.i"
 	@echo "... trace_replay/block_cache_tracer.s"
-	@echo "... trace_replay/block_cache_tracer_test.o"
-	@echo "... trace_replay/block_cache_tracer_test.i"
-	@echo "... trace_replay/block_cache_tracer_test.s"
 	@echo "... trace_replay/io_tracer.o"
 	@echo "... trace_replay/io_tracer.i"
 	@echo "... trace_replay/io_tracer.s"
-	@echo "... trace_replay/io_tracer_test.o"
-	@echo "... trace_replay/io_tracer_test.i"
-	@echo "... trace_replay/io_tracer_test.s"
 	@echo "... trace_replay/trace_record.o"
 	@echo "... trace_replay/trace_record.i"
 	@echo "... trace_replay/trace_record.s"
@@ -19337,21 +10820,12 @@ help:
 	@echo "... util/async_file_reader.o"
 	@echo "... util/async_file_reader.i"
 	@echo "... util/async_file_reader.s"
-	@echo "... util/autovector_test.o"
-	@echo "... util/autovector_test.i"
-	@echo "... util/autovector_test.s"
-	@echo "... util/bloom_test.o"
-	@echo "... util/bloom_test.i"
-	@echo "... util/bloom_test.s"
 	@echo "... util/cleanable.o"
 	@echo "... util/cleanable.i"
 	@echo "... util/cleanable.s"
 	@echo "... util/coding.o"
 	@echo "... util/coding.i"
 	@echo "... util/coding.s"
-	@echo "... util/coding_test.o"
-	@echo "... util/coding_test.i"
-	@echo "... util/coding_test.s"
 	@echo "... util/compaction_job_stats_impl.o"
 	@echo "... util/compaction_job_stats_impl.i"
 	@echo "... util/compaction_job_stats_impl.s"
@@ -19370,75 +10844,36 @@ help:
 	@echo "... util/crc32c.o"
 	@echo "... util/crc32c.i"
 	@echo "... util/crc32c.s"
-	@echo "... util/crc32c_test.o"
-	@echo "... util/crc32c_test.i"
-	@echo "... util/crc32c_test.s"
 	@echo "... util/data_structure.o"
 	@echo "... util/data_structure.i"
 	@echo "... util/data_structure.s"
-	@echo "... util/defer_test.o"
-	@echo "... util/defer_test.i"
-	@echo "... util/defer_test.s"
 	@echo "... util/dynamic_bloom.o"
 	@echo "... util/dynamic_bloom.i"
 	@echo "... util/dynamic_bloom.s"
-	@echo "... util/dynamic_bloom_test.o"
-	@echo "... util/dynamic_bloom_test.i"
-	@echo "... util/dynamic_bloom_test.s"
 	@echo "... util/file_checksum_helper.o"
 	@echo "... util/file_checksum_helper.i"
 	@echo "... util/file_checksum_helper.s"
-	@echo "... util/file_reader_writer_test.o"
-	@echo "... util/file_reader_writer_test.i"
-	@echo "... util/file_reader_writer_test.s"
-	@echo "... util/filelock_test.o"
-	@echo "... util/filelock_test.i"
-	@echo "... util/filelock_test.s"
 	@echo "... util/filter_bench.o"
 	@echo "... util/filter_bench.i"
 	@echo "... util/filter_bench.s"
 	@echo "... util/hash.o"
 	@echo "... util/hash.i"
 	@echo "... util/hash.s"
-	@echo "... util/hash_test.o"
-	@echo "... util/hash_test.i"
-	@echo "... util/hash_test.s"
-	@echo "... util/heap_test.o"
-	@echo "... util/heap_test.i"
-	@echo "... util/heap_test.s"
 	@echo "... util/murmurhash.o"
 	@echo "... util/murmurhash.i"
 	@echo "... util/murmurhash.s"
 	@echo "... util/random.o"
 	@echo "... util/random.i"
 	@echo "... util/random.s"
-	@echo "... util/random_test.o"
-	@echo "... util/random_test.i"
-	@echo "... util/random_test.s"
 	@echo "... util/rate_limiter.o"
 	@echo "... util/rate_limiter.i"
 	@echo "... util/rate_limiter.s"
-	@echo "... util/rate_limiter_test.o"
-	@echo "... util/rate_limiter_test.i"
-	@echo "... util/rate_limiter_test.s"
-	@echo "... util/repeatable_thread_test.o"
-	@echo "... util/repeatable_thread_test.i"
-	@echo "... util/repeatable_thread_test.s"
 	@echo "... util/ribbon_config.o"
 	@echo "... util/ribbon_config.i"
 	@echo "... util/ribbon_config.s"
-	@echo "... util/ribbon_test.o"
-	@echo "... util/ribbon_test.i"
-	@echo "... util/ribbon_test.s"
 	@echo "... util/slice.o"
 	@echo "... util/slice.i"
 	@echo "... util/slice.s"
-	@echo "... util/slice_test.o"
-	@echo "... util/slice_test.i"
-	@echo "... util/slice_test.s"
-	@echo "... util/slice_transform_test.o"
-	@echo "... util/slice_transform_test.i"
-	@echo "... util/slice_transform_test.s"
 	@echo "... util/status.o"
 	@echo "... util/status.i"
 	@echo "... util/status.s"
@@ -19448,36 +10883,15 @@ help:
 	@echo "... util/string_util.o"
 	@echo "... util/string_util.i"
 	@echo "... util/string_util.s"
-	@echo "... util/string_util_test.o"
-	@echo "... util/string_util_test.i"
-	@echo "... util/string_util_test.s"
-	@echo "... util/thread_list_test.o"
-	@echo "... util/thread_list_test.i"
-	@echo "... util/thread_list_test.s"
 	@echo "... util/thread_local.o"
 	@echo "... util/thread_local.i"
 	@echo "... util/thread_local.s"
-	@echo "... util/thread_local_test.o"
-	@echo "... util/thread_local_test.i"
-	@echo "... util/thread_local_test.s"
 	@echo "... util/threadpool_imp.o"
 	@echo "... util/threadpool_imp.i"
 	@echo "... util/threadpool_imp.s"
-	@echo "... util/timer_queue_test.o"
-	@echo "... util/timer_queue_test.i"
-	@echo "... util/timer_queue_test.s"
-	@echo "... util/timer_test.o"
-	@echo "... util/timer_test.i"
-	@echo "... util/timer_test.s"
 	@echo "... util/udt_util.o"
 	@echo "... util/udt_util.i"
 	@echo "... util/udt_util.s"
-	@echo "... util/udt_util_test.o"
-	@echo "... util/udt_util_test.i"
-	@echo "... util/udt_util_test.s"
-	@echo "... util/work_queue_test.o"
-	@echo "... util/work_queue_test.i"
-	@echo "... util/work_queue_test.s"
 	@echo "... util/write_batch_util.o"
 	@echo "... util/write_batch_util.i"
 	@echo "... util/write_batch_util.s"
@@ -19487,18 +10901,9 @@ help:
 	@echo "... utilities/agg_merge/agg_merge.o"
 	@echo "... utilities/agg_merge/agg_merge.i"
 	@echo "... utilities/agg_merge/agg_merge.s"
-	@echo "... utilities/agg_merge/agg_merge_test.o"
-	@echo "... utilities/agg_merge/agg_merge_test.i"
-	@echo "... utilities/agg_merge/agg_merge_test.s"
-	@echo "... utilities/agg_merge/test_agg_merge.o"
-	@echo "... utilities/agg_merge/test_agg_merge.i"
-	@echo "... utilities/agg_merge/test_agg_merge.s"
 	@echo "... utilities/backup/backup_engine.o"
 	@echo "... utilities/backup/backup_engine.i"
 	@echo "... utilities/backup/backup_engine.s"
-	@echo "... utilities/backup/backup_engine_test.o"
-	@echo "... utilities/backup/backup_engine_test.i"
-	@echo "... utilities/backup/backup_engine_test.s"
 	@echo "... utilities/blob_db/blob_compaction_filter.o"
 	@echo "... utilities/blob_db/blob_compaction_filter.i"
 	@echo "... utilities/blob_db/blob_compaction_filter.s"
@@ -19511,9 +10916,6 @@ help:
 	@echo "... utilities/blob_db/blob_db_impl_filesnapshot.o"
 	@echo "... utilities/blob_db/blob_db_impl_filesnapshot.i"
 	@echo "... utilities/blob_db/blob_db_impl_filesnapshot.s"
-	@echo "... utilities/blob_db/blob_db_test.o"
-	@echo "... utilities/blob_db/blob_db_test.i"
-	@echo "... utilities/blob_db/blob_db_test.s"
 	@echo "... utilities/blob_db/blob_dump_tool.o"
 	@echo "... utilities/blob_db/blob_dump_tool.i"
 	@echo "... utilities/blob_db/blob_dump_tool.s"
@@ -19529,33 +10931,15 @@ help:
 	@echo "... utilities/cassandra/cassandra_compaction_filter.o"
 	@echo "... utilities/cassandra/cassandra_compaction_filter.i"
 	@echo "... utilities/cassandra/cassandra_compaction_filter.s"
-	@echo "... utilities/cassandra/cassandra_format_test.o"
-	@echo "... utilities/cassandra/cassandra_format_test.i"
-	@echo "... utilities/cassandra/cassandra_format_test.s"
-	@echo "... utilities/cassandra/cassandra_functional_test.o"
-	@echo "... utilities/cassandra/cassandra_functional_test.i"
-	@echo "... utilities/cassandra/cassandra_functional_test.s"
-	@echo "... utilities/cassandra/cassandra_row_merge_test.o"
-	@echo "... utilities/cassandra/cassandra_row_merge_test.i"
-	@echo "... utilities/cassandra/cassandra_row_merge_test.s"
-	@echo "... utilities/cassandra/cassandra_serialize_test.o"
-	@echo "... utilities/cassandra/cassandra_serialize_test.i"
-	@echo "... utilities/cassandra/cassandra_serialize_test.s"
 	@echo "... utilities/cassandra/format.o"
 	@echo "... utilities/cassandra/format.i"
 	@echo "... utilities/cassandra/format.s"
 	@echo "... utilities/cassandra/merge_operator.o"
 	@echo "... utilities/cassandra/merge_operator.i"
 	@echo "... utilities/cassandra/merge_operator.s"
-	@echo "... utilities/cassandra/test_utils.o"
-	@echo "... utilities/cassandra/test_utils.i"
-	@echo "... utilities/cassandra/test_utils.s"
 	@echo "... utilities/checkpoint/checkpoint_impl.o"
 	@echo "... utilities/checkpoint/checkpoint_impl.i"
 	@echo "... utilities/checkpoint/checkpoint_impl.s"
-	@echo "... utilities/checkpoint/checkpoint_test.o"
-	@echo "... utilities/checkpoint/checkpoint_test.i"
-	@echo "... utilities/checkpoint/checkpoint_test.s"
 	@echo "... utilities/compaction_filters.o"
 	@echo "... utilities/compaction_filters.i"
 	@echo "... utilities/compaction_filters.s"
@@ -19574,9 +10958,6 @@ help:
 	@echo "... utilities/env_timed.o"
 	@echo "... utilities/env_timed.i"
 	@echo "... utilities/env_timed.s"
-	@echo "... utilities/env_timed_test.o"
-	@echo "... utilities/env_timed_test.i"
-	@echo "... utilities/env_timed_test.s"
 	@echo "... utilities/fault_injection_env.o"
 	@echo "... utilities/fault_injection_env.i"
 	@echo "... utilities/fault_injection_env.s"
@@ -19589,9 +10970,6 @@ help:
 	@echo "... utilities/leveldb_options/leveldb_options.o"
 	@echo "... utilities/leveldb_options/leveldb_options.i"
 	@echo "... utilities/leveldb_options/leveldb_options.s"
-	@echo "... utilities/memory/memory_test.o"
-	@echo "... utilities/memory/memory_test.i"
-	@echo "... utilities/memory/memory_test.s"
 	@echo "... utilities/memory/memory_util.o"
 	@echo "... utilities/memory/memory_util.i"
 	@echo "... utilities/memory/memory_util.s"
@@ -19616,30 +10994,18 @@ help:
 	@echo "... utilities/merge_operators/string_append/stringappend2.o"
 	@echo "... utilities/merge_operators/string_append/stringappend2.i"
 	@echo "... utilities/merge_operators/string_append/stringappend2.s"
-	@echo "... utilities/merge_operators/string_append/stringappend_test.o"
-	@echo "... utilities/merge_operators/string_append/stringappend_test.i"
-	@echo "... utilities/merge_operators/string_append/stringappend_test.s"
 	@echo "... utilities/merge_operators/uint64add.o"
 	@echo "... utilities/merge_operators/uint64add.i"
 	@echo "... utilities/merge_operators/uint64add.s"
 	@echo "... utilities/object_registry.o"
 	@echo "... utilities/object_registry.i"
 	@echo "... utilities/object_registry.s"
-	@echo "... utilities/object_registry_test.o"
-	@echo "... utilities/object_registry_test.i"
-	@echo "... utilities/object_registry_test.s"
 	@echo "... utilities/option_change_migration/option_change_migration.o"
 	@echo "... utilities/option_change_migration/option_change_migration.i"
 	@echo "... utilities/option_change_migration/option_change_migration.s"
-	@echo "... utilities/option_change_migration/option_change_migration_test.o"
-	@echo "... utilities/option_change_migration/option_change_migration_test.i"
-	@echo "... utilities/option_change_migration/option_change_migration_test.s"
 	@echo "... utilities/options/options_util.o"
 	@echo "... utilities/options/options_util.i"
 	@echo "... utilities/options/options_util.s"
-	@echo "... utilities/options/options_util_test.o"
-	@echo "... utilities/options/options_util_test.i"
-	@echo "... utilities/options/options_util_test.s"
 	@echo "... utilities/persistent_cache/block_cache_tier.o"
 	@echo "... utilities/persistent_cache/block_cache_tier.i"
 	@echo "... utilities/persistent_cache/block_cache_tier.s"
@@ -19652,12 +11018,6 @@ help:
 	@echo "... utilities/persistent_cache/hash_table_bench.o"
 	@echo "... utilities/persistent_cache/hash_table_bench.i"
 	@echo "... utilities/persistent_cache/hash_table_bench.s"
-	@echo "... utilities/persistent_cache/hash_table_test.o"
-	@echo "... utilities/persistent_cache/hash_table_test.i"
-	@echo "... utilities/persistent_cache/hash_table_test.s"
-	@echo "... utilities/persistent_cache/persistent_cache_test.o"
-	@echo "... utilities/persistent_cache/persistent_cache_test.i"
-	@echo "... utilities/persistent_cache/persistent_cache_test.s"
 	@echo "... utilities/persistent_cache/persistent_cache_tier.o"
 	@echo "... utilities/persistent_cache/persistent_cache_tier.i"
 	@echo "... utilities/persistent_cache/persistent_cache_tier.s"
@@ -19667,27 +11027,15 @@ help:
 	@echo "... utilities/simulator_cache/cache_simulator.o"
 	@echo "... utilities/simulator_cache/cache_simulator.i"
 	@echo "... utilities/simulator_cache/cache_simulator.s"
-	@echo "... utilities/simulator_cache/cache_simulator_test.o"
-	@echo "... utilities/simulator_cache/cache_simulator_test.i"
-	@echo "... utilities/simulator_cache/cache_simulator_test.s"
 	@echo "... utilities/simulator_cache/sim_cache.o"
 	@echo "... utilities/simulator_cache/sim_cache.i"
 	@echo "... utilities/simulator_cache/sim_cache.s"
-	@echo "... utilities/simulator_cache/sim_cache_test.o"
-	@echo "... utilities/simulator_cache/sim_cache_test.i"
-	@echo "... utilities/simulator_cache/sim_cache_test.s"
 	@echo "... utilities/table_properties_collectors/compact_for_tiering_collector.o"
 	@echo "... utilities/table_properties_collectors/compact_for_tiering_collector.i"
 	@echo "... utilities/table_properties_collectors/compact_for_tiering_collector.s"
-	@echo "... utilities/table_properties_collectors/compact_for_tiering_collector_test.o"
-	@echo "... utilities/table_properties_collectors/compact_for_tiering_collector_test.i"
-	@echo "... utilities/table_properties_collectors/compact_for_tiering_collector_test.s"
 	@echo "... utilities/table_properties_collectors/compact_on_deletion_collector.o"
 	@echo "... utilities/table_properties_collectors/compact_on_deletion_collector.i"
 	@echo "... utilities/table_properties_collectors/compact_on_deletion_collector.s"
-	@echo "... utilities/table_properties_collectors/compact_on_deletion_collector_test.o"
-	@echo "... utilities/table_properties_collectors/compact_on_deletion_collector_test.i"
-	@echo "... utilities/table_properties_collectors/compact_on_deletion_collector_test.s"
 	@echo "... utilities/trace/file_trace_reader_writer.o"
 	@echo "... utilities/trace/file_trace_reader_writer.i"
 	@echo "... utilities/trace/file_trace_reader_writer.s"
@@ -19700,15 +11048,9 @@ help:
 	@echo "... utilities/transactions/lock/point/point_lock_manager.o"
 	@echo "... utilities/transactions/lock/point/point_lock_manager.i"
 	@echo "... utilities/transactions/lock/point/point_lock_manager.s"
-	@echo "... utilities/transactions/lock/point/point_lock_manager_test.o"
-	@echo "... utilities/transactions/lock/point/point_lock_manager_test.i"
-	@echo "... utilities/transactions/lock/point/point_lock_manager_test.s"
 	@echo "... utilities/transactions/lock/point/point_lock_tracker.o"
 	@echo "... utilities/transactions/lock/point/point_lock_tracker.i"
 	@echo "... utilities/transactions/lock/point/point_lock_tracker.s"
-	@echo "... utilities/transactions/lock/range/range_locking_test.o"
-	@echo "... utilities/transactions/lock/range/range_locking_test.i"
-	@echo "... utilities/transactions/lock/range/range_locking_test.s"
 	@echo "... utilities/transactions/lock/range/range_tree/lib/locktree/concurrent_tree.o"
 	@echo "... utilities/transactions/lock/range/range_tree/lib/locktree/concurrent_tree.i"
 	@echo "... utilities/transactions/lock/range/range_tree/lib/locktree/concurrent_tree.s"
@@ -19757,9 +11099,6 @@ help:
 	@echo "... utilities/transactions/optimistic_transaction_db_impl.o"
 	@echo "... utilities/transactions/optimistic_transaction_db_impl.i"
 	@echo "... utilities/transactions/optimistic_transaction_db_impl.s"
-	@echo "... utilities/transactions/optimistic_transaction_test.o"
-	@echo "... utilities/transactions/optimistic_transaction_test.i"
-	@echo "... utilities/transactions/optimistic_transaction_test.s"
 	@echo "... utilities/transactions/pessimistic_transaction.o"
 	@echo "... utilities/transactions/pessimistic_transaction.i"
 	@echo "... utilities/transactions/pessimistic_transaction.s"
@@ -19769,36 +11108,21 @@ help:
 	@echo "... utilities/transactions/snapshot_checker.o"
 	@echo "... utilities/transactions/snapshot_checker.i"
 	@echo "... utilities/transactions/snapshot_checker.s"
-	@echo "... utilities/transactions/timestamped_snapshot_test.o"
-	@echo "... utilities/transactions/timestamped_snapshot_test.i"
-	@echo "... utilities/transactions/timestamped_snapshot_test.s"
 	@echo "... utilities/transactions/transaction_base.o"
 	@echo "... utilities/transactions/transaction_base.i"
 	@echo "... utilities/transactions/transaction_base.s"
 	@echo "... utilities/transactions/transaction_db_mutex_impl.o"
 	@echo "... utilities/transactions/transaction_db_mutex_impl.i"
 	@echo "... utilities/transactions/transaction_db_mutex_impl.s"
-	@echo "... utilities/transactions/transaction_test.o"
-	@echo "... utilities/transactions/transaction_test.i"
-	@echo "... utilities/transactions/transaction_test.s"
 	@echo "... utilities/transactions/transaction_util.o"
 	@echo "... utilities/transactions/transaction_util.i"
 	@echo "... utilities/transactions/transaction_util.s"
-	@echo "... utilities/transactions/write_committed_transaction_ts_test.o"
-	@echo "... utilities/transactions/write_committed_transaction_ts_test.i"
-	@echo "... utilities/transactions/write_committed_transaction_ts_test.s"
-	@echo "... utilities/transactions/write_prepared_transaction_test.o"
-	@echo "... utilities/transactions/write_prepared_transaction_test.i"
-	@echo "... utilities/transactions/write_prepared_transaction_test.s"
 	@echo "... utilities/transactions/write_prepared_txn.o"
 	@echo "... utilities/transactions/write_prepared_txn.i"
 	@echo "... utilities/transactions/write_prepared_txn.s"
 	@echo "... utilities/transactions/write_prepared_txn_db.o"
 	@echo "... utilities/transactions/write_prepared_txn_db.i"
 	@echo "... utilities/transactions/write_prepared_txn_db.s"
-	@echo "... utilities/transactions/write_unprepared_transaction_test.o"
-	@echo "... utilities/transactions/write_unprepared_transaction_test.i"
-	@echo "... utilities/transactions/write_unprepared_transaction_test.s"
 	@echo "... utilities/transactions/write_unprepared_txn.o"
 	@echo "... utilities/transactions/write_unprepared_txn.i"
 	@echo "... utilities/transactions/write_unprepared_txn.s"
@@ -19808,18 +11132,9 @@ help:
 	@echo "... utilities/ttl/db_ttl_impl.o"
 	@echo "... utilities/ttl/db_ttl_impl.i"
 	@echo "... utilities/ttl/db_ttl_impl.s"
-	@echo "... utilities/ttl/ttl_test.o"
-	@echo "... utilities/ttl/ttl_test.i"
-	@echo "... utilities/ttl/ttl_test.s"
 	@echo "... utilities/types_util.o"
 	@echo "... utilities/types_util.i"
 	@echo "... utilities/types_util.s"
-	@echo "... utilities/types_util_test.o"
-	@echo "... utilities/types_util_test.i"
-	@echo "... utilities/types_util_test.s"
-	@echo "... utilities/util_merge_operators_test.o"
-	@echo "... utilities/util_merge_operators_test.i"
-	@echo "... utilities/util_merge_operators_test.s"
 	@echo "... utilities/wal_filter.o"
 	@echo "... utilities/wal_filter.i"
 	@echo "... utilities/wal_filter.s"
@@ -19829,9 +11144,6 @@ help:
 	@echo "... utilities/write_batch_with_index/write_batch_with_index_internal.o"
 	@echo "... utilities/write_batch_with_index/write_batch_with_index_internal.i"
 	@echo "... utilities/write_batch_with_index/write_batch_with_index_internal.s"
-	@echo "... utilities/write_batch_with_index/write_batch_with_index_test.o"
-	@echo "... utilities/write_batch_with_index/write_batch_with_index_test.i"
-	@echo "... utilities/write_batch_with_index/write_batch_with_index_test.s"
 .PHONY : help
 
 
