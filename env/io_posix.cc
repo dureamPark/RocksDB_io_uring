@@ -1749,8 +1749,13 @@ IOStatus PosixRandomRWFile::Read(uint64_t offset, size_t n,
   size_t left = n;
   char* ptr = scratch;
   while (left > 0) {
-    ssize_t done = pread(fd_, ptr, left, offset);
-    if (done < 0) {
+#ifdef ROCKSDB_IOURING_PRESENT
+	  printf("1753333333333333333333333333\n");
+	  ssize_t done=io_uring_pread(fd_,ptr,left,offset);
+#else
+	  ssize_t done = pread(fd_, ptr, left, offset);
+#endif
+	  if (done < 0) {
       // error while reading from file
       if (errno == EINTR) {
         // read was interrupted, try again.
