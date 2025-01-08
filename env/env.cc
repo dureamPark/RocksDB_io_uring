@@ -1067,7 +1067,9 @@ void Log(const std::shared_ptr<Logger>& info_log, const char* format, ...) {
 
 Status WriteStringToFile(Env* env, const Slice& data, const std::string& fname,
                          bool should_sync, const IOOptions* io_options) {
-  const auto& fs = env->GetFileSystem();
+  printf("ttt1\n");
+	const auto& fs = env->GetFileSystem();
+	printf("ttt2\n");
   return WriteStringToFile(fs.get(), data, fname, should_sync,
                            io_options ? *io_options : IOOptions());
 }
@@ -1171,7 +1173,8 @@ Status NewEnvLogger(const std::string& fname, Env* env,
 }
 
 const std::shared_ptr<FileSystem>& Env::GetFileSystem() const {
-  return file_system_;
+  	printf("ttt3, thread%lu\n", pthread_self());
+	return file_system_;
 }
 
 const std::shared_ptr<SystemClock>& Env::GetSystemClock() const {

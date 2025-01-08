@@ -20,6 +20,7 @@
 #include "test_util/sync_point.h"
 #include "util/stop_watch.h"
 #include "util/string_util.h"
+#include "unistd.h"
 
 namespace ROCKSDB_NAMESPACE {
 
@@ -429,12 +430,14 @@ IOStatus SetCurrentFile(const WriteOptions& write_options, FileSystem* fs,
 Status SetIdentityFile(const WriteOptions& write_options, Env* env,
                        const std::string& dbname, Temperature temp,
                        const std::string& db_id) {
-  std::string id;
+  printf("te0\n");
+	std::string id;
   if (db_id.empty()) {
     id = env->GenerateUniqueId();
   } else {
     id = db_id;
   }
+  printf("te1\n");
   assert(!id.empty());
   // Reserve the filename dbname/000000.dbtmp for the temporary identity file
   std::string tmp = TempFileName(dbname, 0);
@@ -444,18 +447,26 @@ Status SetIdentityFile(const WriteOptions& write_options, Env* env,
   s = PrepareIOFromWriteOptions(write_options, opts);
   FileOptions file_opts;
   file_opts.temperature = temp;
+  printf("te2\n");
   if (s.ok()) {
+	  printf("te3\n");
+	  //WriteStringToFile point!!!
     s = WriteStringToFile(env->GetFileSystem().get(), id, tmp,
                           /*should_sync=*/true, opts, file_opts);
+  sleep(3);
+	printf("te4\n");
   }
   if (s.ok()) {
+	  printf("te5\n");
     s = env->RenameFile(tmp, identify_file_name);
   }
   std::unique_ptr<FSDirectory> dir_obj;
   if (s.ok()) {
+	  printf("te6\n");
     s = env->GetFileSystem()->NewDirectory(dbname, opts, &dir_obj, nullptr);
   }
   if (s.ok()) {
+	  printf("te7\n");
     s = dir_obj->FsyncWithDirOptions(opts, nullptr,
                                      DirFsyncOptions(identify_file_name));
   }
@@ -463,6 +474,7 @@ Status SetIdentityFile(const WriteOptions& write_options, Env* env,
   // The default Close() could return "NotSupported" and we bypass it
   // if it is not impelmented. Detailed explanations can be found in
   // db/db_impl/db_impl.h
+  printf("te8\n");
   if (s.ok()) {
     Status temp_s = dir_obj->Close(opts, nullptr);
     if (!temp_s.ok()) {
@@ -476,6 +488,7 @@ Status SetIdentityFile(const WriteOptions& write_options, Env* env,
   if (!s.ok()) {
     env->DeleteFile(tmp).PermitUncheckedError();
   }
+	printf("te9\n");
   return s;
 }
 

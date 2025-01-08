@@ -91,6 +91,7 @@
 #include "utilities/merge_operators/bytesxor.h"
 #include "utilities/merge_operators/sortlist.h"
 #include "utilities/persistent_cache/block_cache_tier.h"
+#include "stdio.h"
 
 #ifdef MEMKIND
 #include "memory/memkind_kmem_allocator.h"
@@ -2972,7 +2973,7 @@ class Benchmark {
         Slice val = TrimSpace(Slice(sep + 1));
         if (key == "model name") {
           ++num_cpus;
-          cpu_type = val.ToString();
+          cpu_type = val.ToString(); std::string build_info;
         } else if (key == "cache size") {
           cache_size = val.ToString();
         }
@@ -3025,7 +3026,8 @@ class Benchmark {
 
   static bool KeyExpired(const TimestampEmulator* timestamp_emulator,
                          const Slice& key) {
-    const char* pos = key.data();
+    printf("z7\n");
+	  const char* pos = key.data();
     pos += 8;
     uint64_t timestamp = 0;
     if (port::kLittleEndian) {
@@ -3406,7 +3408,8 @@ class Benchmark {
 
   void VerifyDBFromDB(std::string& truth_db_name) {
     DBWithColumnFamilies truth_db;
-    auto s = DB::OpenForReadOnly(open_options_, truth_db_name, &truth_db.db);
+    printf("verifydb\n");
+	auto s = DB::OpenForReadOnly(open_options_, truth_db_name, &truth_db.db);
     if (!s.ok()) {
       fprintf(stderr, "open error: %s\n", s.ToString().c_str());
       exit(1);
@@ -3420,6 +3423,7 @@ class Benchmark {
     fprintf(stderr, "Verifying db >= truth_db with ::Get...\n");
     for (truth_iter->SeekToFirst(); truth_iter->Valid(); truth_iter->Next()) {
       std::string value;
+	  printf("db->get\n");
       s = db_.db->Get(ro, truth_iter->key(), &value);
       assert(s.ok());
       // TODO(myabandeh): provide debugging hints
@@ -3443,16 +3447,23 @@ class Benchmark {
   }
 
   void Run() {
-    if (!SanityCheck()) {
+    printf("run start, thread: %lu\n", pthread_self());
+	  if (!SanityCheck()) {
       ErrorExit();
     }
+	  printf("open before\n");
     Open(&open_options_);
+	printf("open after\n");
     PrintHeader(open_options_);
+	printf("PrintHeader\n");
     std::stringstream benchmark_stream(FLAGS_benchmarks);
-    std::string name;
+    printf("benchmark_stream\n");
+	std::string name;
     std::unique_ptr<ExpiredTimeFilter> filter;
+	printf("while start\n");
     while (std::getline(benchmark_stream, name, ',')) {
       // Sanitize parameters
+		printf("!!!!!!!!!!while in\n");
       num_ = FLAGS_num;
       reads_ = (FLAGS_reads < 0 ? FLAGS_num : FLAGS_reads);
       writes_ = (FLAGS_writes < 0 ? FLAGS_num : FLAGS_writes);
@@ -3504,8 +3515,10 @@ class Benchmark {
 
         std::string bench_arg;
         std::stringstream args_stream(args);
-        while (std::getline(args_stream, bench_arg, '-')) {
-          if (bench_arg.empty()) {
+        
+		while (std::getline(args_stream, bench_arg, '-')) {
+          printf("bench while\n");
+			if (bench_arg.empty()) {
             continue;
           }
           if (bench_arg[0] == 'X') {
@@ -3544,7 +3557,8 @@ class Benchmark {
           method = &Benchmark::WriteUniqueRandomDeterministic;
         }
       } else if (name == "fillseq") {
-        fresh_db = true;
+        printf("fillseq!!!!!!!!!!!!!!!\n");
+		  fresh_db = true;
         method = &Benchmark::WriteSeq;
       } else if (name == "fillbatch") {
         fresh_db = true;
@@ -4212,12 +4226,13 @@ class Benchmark {
 
   void InitializeOptionsFromFlags(Options* opts) {
     printf("Initializing RocksDB Options from command-line flags\n");
-    Options& options = *opts;
+    
+	Options& options = *opts;
     ConfigOptions config_options(options);
     config_options.ignore_unsupported_options = false;
 
     assert(db_.db == nullptr);
-
+	
     options.env = FLAGS_env;
     options.wal_dir = FLAGS_wal_dir;
     options.dump_malloc_stats = FLAGS_dump_malloc_stats;
@@ -4229,6 +4244,7 @@ class Benchmark {
     options.stats_history_buffer_size =
         static_cast<size_t>(FLAGS_stats_history_buffer_size);
     options.avoid_flush_during_recovery = FLAGS_avoid_flush_during_recovery;
+	
 
     options.compression_opts.level = FLAGS_compression_level;
     options.compression_opts.max_dict_bytes = FLAGS_compression_max_dict_bytes;
@@ -4240,6 +4256,7 @@ class Benchmark {
         FLAGS_compression_max_dict_buffer_bytes;
     options.compression_opts.use_zstd_dict_trainer =
         FLAGS_compression_use_zstd_dict_trainer;
+	
 
     options.max_open_files = FLAGS_open_files;
     if (FLAGS_cost_write_buffer_to_cache || FLAGS_db_write_buffer_size != 0) {
@@ -4578,7 +4595,8 @@ class Benchmark {
         fprintf(stdout, ", blob cache prepopulated: %d\n",
                 FLAGS_prepopulate_blob_cache);
       } else {
-        fprintf(stdout, "Integrated BlobDB: blob cache disabled\n");
+        fprintf(stdout, "Integrated BlobDB: blob cache disabled\n");//print out
+																	//here
       }
 
       options.table_factory.reset(
@@ -4612,7 +4630,6 @@ class Benchmark {
     options.WAL_ttl_seconds = FLAGS_wal_ttl_seconds;
     options.WAL_size_limit_MB = FLAGS_wal_size_limit_MB;
     options.max_total_wal_size = FLAGS_max_total_wal_size;
-
     if (FLAGS_min_level_to_compress >= 0) {
       assert(FLAGS_min_level_to_compress <= FLAGS_num_levels);
       options.compression_per_level.resize(FLAGS_num_levels);
@@ -4712,7 +4729,6 @@ class Benchmark {
     options.allow_data_in_errors = FLAGS_allow_data_in_errors;
     options.track_and_verify_wals_in_manifest =
         FLAGS_track_and_verify_wals_in_manifest;
-
     // Integrated BlobDB
     options.enable_blob_files = FLAGS_enable_blob_files;
     options.min_blob_size = FLAGS_min_blob_size;
@@ -4752,7 +4768,6 @@ class Benchmark {
     // were not configured already, settings that require dynamically invoking
     // APIs, and settings for the benchmark itself.
     Options& options = *opts;
-
     // Always set these since they are harmless when not needed and prevent
     // a guaranteed failure when they are needed.
     options.create_missing_column_families = true;
@@ -4761,7 +4776,6 @@ class Benchmark {
     if (options.statistics == nullptr) {
       options.statistics = dbstats;
     }
-
     auto table_options =
         options.table_factory->GetOptions<BlockBasedTableOptions>();
     if (table_options != nullptr) {
@@ -4796,7 +4810,6 @@ class Benchmark {
         }
       }
     }
-
     if (options.env == Env::Default()) {
       options.env = FLAGS_env;
     }
@@ -4815,7 +4828,7 @@ class Benchmark {
 
     if (options.rate_limiter == nullptr) {
       if (FLAGS_rate_limiter_bytes_per_sec > 0) {
-        options.rate_limiter.reset(NewGenericRateLimiter(
+			options.rate_limiter.reset(NewGenericRateLimiter(
             FLAGS_rate_limiter_bytes_per_sec,
             FLAGS_rate_limiter_refill_period_us, 10 /* fairness */,
             // TODO: replace this with a more general FLAG for deciding
@@ -4836,7 +4849,6 @@ class Benchmark {
             new FileChecksumGenCrc32cFactory());
       }
     }
-
     if (FLAGS_num_multi_db <= 1) {
       OpenDb(options, FLAGS_db, &db_);
     } else {
@@ -4859,7 +4871,6 @@ class Benchmark {
         fprintf(stdout, "A noop compaction filter is used\n");
       }
     }
-
     if (FLAGS_use_existing_keys) {
       // Only work on single database
       assert(db_.db != nullptr);
@@ -4876,9 +4887,10 @@ class Benchmark {
 
   void Open(Options* opts) {
     if (!InitializeOptionsFromFile(opts)) {
-      InitializeOptionsFromFlags(opts);
+      printf("fromflags start\n");
+		InitializeOptionsFromFlags(opts);
     }
-
+	printf("general start\n");
     InitializeOptionsGeneral(opts);
   }
 
@@ -4887,16 +4899,18 @@ class Benchmark {
     uint64_t open_start = FLAGS_report_open_timing ? FLAGS_env->NowNanos() : 0;
     Status s;
     // Open with column families if necessary.
-    if (FLAGS_num_column_families > 1) {
-      size_t num_hot = FLAGS_num_column_families;
+	if (FLAGS_num_column_families > 1) {
+		size_t num_hot = FLAGS_num_column_families;
       if (FLAGS_num_hot_column_families > 0 &&
           FLAGS_num_hot_column_families < FLAGS_num_column_families) {
-        num_hot = FLAGS_num_hot_column_families;
+        printf("><\n");
+		  num_hot = FLAGS_num_hot_column_families;
       } else {
         FLAGS_num_hot_column_families = FLAGS_num_column_families;
       }
       std::vector<ColumnFamilyDescriptor> column_families;
       for (size_t i = 0; i < num_hot; i++) {
+		  printf("~~~~~~~~~~~~~\n");
         column_families.emplace_back(ColumnFamilyName(i),
                                      ColumnFamilyOptions(options));
       }
@@ -4906,7 +4920,7 @@ class Benchmark {
         std::string cf_prob;
         int sum = 0;
         while (std::getline(cf_prob_stream, cf_prob, ',')) {
-          cfh_idx_to_prob.push_back(std::stoi(cf_prob));
+			cfh_idx_to_prob.push_back(std::stoi(cf_prob));
           sum += cfh_idx_to_prob.back();
         }
         if (sum != 100) {
@@ -4997,6 +5011,7 @@ class Benchmark {
         default_secondary_path += "/dbbench_secondary";
         FLAGS_secondary_path = default_secondary_path;
       }
+
       s = DB::OpenAsSecondary(options, db_name, FLAGS_secondary_path, &db->db);
       if (s.ok() && FLAGS_secondary_update_interval > 0) {
         secondary_update_thread_.reset(new port::Thread(
@@ -5023,8 +5038,8 @@ class Benchmark {
         db->db = dbptr.release();
       }
     } else {
-      s = DB::Open(options, db_name, &db->db);
-    }
+    	s = DB::Open(options, db_name, &db->db);
+	}
     if (FLAGS_report_open_timing) {
       std::cout << "OpenDb:     "
                 << (FLAGS_env->NowNanos() - open_start) / 1000000.0
@@ -5122,7 +5137,7 @@ class Benchmark {
   }
 
   void DoWrite(ThreadState* thread, WriteMode write_mode) {
-    const int test_duration = write_mode == RANDOM ? FLAGS_duration : 0;
+	  const int test_duration = write_mode == RANDOM ? FLAGS_duration : 0;
     const int64_t num_ops = writes_ == 0 ? num_ : writes_;
 
     size_t num_key_gens = 1;
@@ -5655,7 +5670,7 @@ class Benchmark {
       auto ratio = open_options_.compaction_options_universal.size_ratio;
       bool should_stop = false;
       while (!should_stop) {
-        if (sorted_runs[0].empty()) {
+		  if (sorted_runs[0].empty()) {
           DoWrite(thread, write_mode);
         } else {
           DoWrite(thread, UNIQUE_RANDOM);
@@ -5875,7 +5890,7 @@ class Benchmark {
   }
 
   void ReadSequential(ThreadState* thread, DB* db) {
-    ReadOptions options = read_options_;
+	  ReadOptions options = read_options_;
     std::unique_ptr<char[]> ts_guard;
     Slice ts;
     if (user_timestamp_size_ > 0) {
@@ -5972,6 +5987,7 @@ class Benchmark {
   }
 
   void ReadReverse(ThreadState* thread, DB* db) {
+	  printf("readreverse\n");
     Iterator* iter = db->NewIterator(read_options_);
     int64_t i = 0;
     int64_t bytes = 0;
@@ -7056,7 +7072,7 @@ class Benchmark {
       }
       if (write_merge == kWrite) {
         if (user_timestamp_size_ == 0) {
-          s = db->Put(write_options_, key, val);
+			s = db->Put(write_options_, key, val);
         } else {
           s = db->Put(write_options_, key, ts, val);
         }
@@ -8589,7 +8605,8 @@ class Benchmark {
 };
 
 int db_bench_tool(int argc, char** argv) {
-  ROCKSDB_NAMESPACE::port::InstallStackTraceHandler();
+  printf("db_bench_tool start\n");
+	ROCKSDB_NAMESPACE::port::InstallStackTraceHandler();
   ConfigOptions config_options;
   static bool initialized = false;
   if (!initialized) {
@@ -8678,7 +8695,7 @@ int db_bench_tool(int argc, char** argv) {
   FLAGS_use_existing_db |= FLAGS_readonly;
 
   if (FLAGS_build_info) {
-    std::string build_info;
+  	std::string build_info;
     std::cout << GetRocksBuildInfoAsString(build_info, true) << std::endl;
     // Similar to --version, nothing else will be done when this flag is set
     exit(0);
@@ -8711,7 +8728,7 @@ int db_bench_tool(int argc, char** argv) {
                                   ROCKSDB_NAMESPACE::Env::Priority::BOTTOM);
   FLAGS_env->SetBackgroundThreads(FLAGS_num_low_pri_threads,
                                   ROCKSDB_NAMESPACE::Env::Priority::LOW);
-
+	printf("middle check\n");
   // Choose a location for the test database if none given with --db=<path>
   if (FLAGS_db.empty()) {
     std::string default_db_path;
@@ -8738,10 +8755,12 @@ int db_bench_tool(int argc, char** argv) {
     fprintf(stderr, "prefix_size > 8 required by --seek_missing_prefix\n");
     exit(1);
   }
-
+	printf("benchmark.run start, thread: %lu\n", pthread_self());
+	//constructor start posixwrite maybe?
   ROCKSDB_NAMESPACE::Benchmark benchmark;
-  benchmark.Run();
 
+  benchmark.Run(); //benchmark.run() iterator
+	printf("benchmark.run end\n");
   if (FLAGS_print_malloc_stats) {
     std::string stats_string;
     ROCKSDB_NAMESPACE::DumpMallocStats(&stats_string);

@@ -414,6 +414,7 @@ class Benchmark {
 
   virtual ~Benchmark() {}
   virtual void Run() {
+	  printf("memtable\n");
     std::cout << "Number of threads: " << num_threads_ << std::endl;
     std::vector<port::Thread> threads;
     uint64_t bytes_written = 0;
