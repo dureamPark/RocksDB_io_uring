@@ -515,3 +515,4 @@ class PosixDirectory : public FSDirectory {
 };
 
 }  // namespace ROCKSDB_NAMESPACE
+

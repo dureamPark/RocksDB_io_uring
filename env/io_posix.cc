@@ -863,6 +863,10 @@ IOStatus PosixRandomAccessFile::Read(uint64_t offset, size_t n,
   return s;
 }
 
+//
+//
+//
+//MultiRead Find
 IOStatus PosixRandomAccessFile::MultiRead(FSReadRequest* reqs, size_t num_reqs,
                                           const IOOptions& options,
                                           IODebugContext* dbg) {
@@ -1093,7 +1097,7 @@ void PosixRandomAccessFile::Hint(AccessPattern pattern) {
       break;
   }
 }
-
+//io_uring using
 IOStatus PosixRandomAccessFile::InvalidateCache(size_t offset, size_t length) {
   if (use_direct_io()) {
     return IOStatus::OK();
@@ -1832,7 +1836,6 @@ IOStatus PosixRandomRWFile::Read(uint64_t offset, size_t n,
   char* ptr = scratch;
   while (left > 0) {
 #ifdef ROCKSDB_IOURING_PRESENT
-	  printf("1753333333333333333333333333\n");
 	  ssize_t done=io_uring_pread(fd_,ptr,left,offset);
 #else
 	  ssize_t done = pread(fd_, ptr, left, offset);

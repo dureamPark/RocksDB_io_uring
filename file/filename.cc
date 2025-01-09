@@ -453,7 +453,6 @@ Status SetIdentityFile(const WriteOptions& write_options, Env* env,
 	  //WriteStringToFile point!!!
     s = WriteStringToFile(env->GetFileSystem().get(), id, tmp,
                           /*should_sync=*/true, opts, file_opts);
-  sleep(3);
 	printf("te4\n");
   }
   if (s.ok()) {
@@ -471,6 +470,7 @@ Status SetIdentityFile(const WriteOptions& write_options, Env* env,
                                      DirFsyncOptions(identify_file_name));
   }
 
+  //
   // The default Close() could return "NotSupported" and we bypass it
   // if it is not impelmented. Detailed explanations can be found in
   // db/db_impl/db_impl.h
