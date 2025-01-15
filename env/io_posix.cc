@@ -49,6 +49,7 @@
 #include <string>
 #include <iostream>
 #include <pthread.h>
+#include <unistd.h>
 
 #if defined(OS_LINUX) && !defined(F_SET_RW_HINT)
 #define F_LINUX_SPECIFIC_BASE 1024
@@ -145,16 +146,6 @@ ssize_t write_io_uring(int fd, const void* buf, size_t bytes_to_written){
 
 ssize_t io_uring_pread(int __fd, char *__buf, size_t __nbytes, off_t __offset){
 	printf("test_io_uring_pread using\n");
-	io_uring_pread_cnt++;
-	printf("%d : bool result\n",isStart);
-	printf("isStart->false\n");
-	//io_uring_queue_init(64, &ring, 0);
-	if(!isStart){
-		io_uring_queue_init(64, &ring, 0);
-		isStart=true;
-		printf("isStart->true\n");
-	}
-
 
 	struct io_uring_sqe *sqe=io_uring_get_sqe(&ring);
 	if(!sqe){//
@@ -189,41 +180,16 @@ ssize_t io_uring_pread(int __fd, char *__buf, size_t __nbytes, off_t __offset){
 	ssize_t bytes_read=cqe->res;
 	io_uring_cqe_seen(&ring, cqe);
 
-	//io_uring_prep_read(sqe, __fd, __buf, __nbytes, __offset);
-	printf("io_uring_pread_cnt before\n");
-	if(io_uring_pread_cnt==100){
-		io_uring_cqe_seen(&ring, cqe);
-		//io_uring_submit(&ring);
-		io_uring_queue_exit(&ring);
-		isStart=false;
-	}
-	
-	//io_uring_cqe_seen(&ring, cqe);
-	//io_uring_submit(&ring);
-	//printf("submit ring\n");
-	io_uring_queue_exit(&ring);
-	printf("io_uring_queue_exit\n");
-	isStart=false;
 	return bytes_read;
 }
 
 ssize_t io_uring_pwrite(int fd, const void* buf, size_t count,off_t pos){
 	printf("io uring pwrite using\n");
 	//io_uring_queue_init(64, &ring, 0);
-	io_uring_pwrite_cnt++;
-	if(!isStart){
-		io_uring_queue_init(64, &ring, 0);
-		isStart=true;
-	}
-	//if( fd < 0 || buf == NULL || count == 0 ){
-	//	errno=EINVAL;
-	//	return -1;
-	//}
-
-
-	//if(io_uring_queue_init(4096, &ring, 0)<0){
-	//	perror("io_uring_queue_init_error");
-	//	return -1;
+	//io_uring_pwrite_cnt++;
+	//if(!isStart){
+	//	io_uring_queue_init(64, &ring, 0);
+	//	isStart=true;
 	//}
 
 	struct io_uring_sqe *sqe=io_uring_get_sqe(&ring);
@@ -256,12 +222,12 @@ ssize_t io_uring_pwrite(int fd, const void* buf, size_t count,off_t pos){
 
 	//io_uring_cqe_seen(&ring, cqe);
 	
-	if(io_uring_pwrite_cnt==100){
-		io_uring_cqe_seen(&ring, cqe);
-		io_uring_queue_exit(&ring);
+	//if(io_uring_pwrite_cnt==100){
+	//	io_uring_cqe_seen(&ring, cqe);
+	//	io_uring_queue_exit(&ring);
 	//	io_uring_submit(&ring);
-		isStart=false;
-	}
+	//	isStart=false;
+	//}
 	//if(write_bytes < 0){
 	//	errno=-write_bytes;
 	//	return -1;
@@ -269,8 +235,8 @@ ssize_t io_uring_pwrite(int fd, const void* buf, size_t count,off_t pos){
 
 	io_uring_cqe_seen(&ring, cqe);
 	//io_uring_submit(&ring);
-	io_uring_queue_exit(&ring);
-	isStart = false;
+	//io_uring_queue_exit(&ring);
+	//isStart = false;
 	return write_bytes;
 }
 #endif
@@ -470,7 +436,102 @@ IOStatus PosixSequentialFile::Read(size_t n, const IOOptions& /*opts*/,
   //sequential
 	printf("Sequential Read!\n");
 	assert(result != nullptr && !use_direct_io());
-  IOStatus s;
+  
+#if defined(ROCKSDB_IOURING_PRESENT)
+	printf("rocksdb using~~~~\n");
+	thread_local struct io_uring* iu=nullptr;
+	
+	if(iu == nullptr){
+		iu = CreateIOUring();
+		printf("createiouring\n");
+		//usleep(3000000);
+		if(iu == nullptr){
+			printf("iu = nullptr\n");
+			return IOError("Failed to initialize io_uring", filename_, errno);
+		}
+	}
+	//else{
+	//	iu=CreateIOUring();
+	//	printf("else createiouring\n");
+	//}
+
+	//if(iu){
+	//	iu = static_cast<struct io_uring*>(thread_local_io_urings_->Get());
+	//	if(iu == nullptr){
+	//		iu=CreateIOUring();
+	//		if(iu!=nullptr){
+	//			thread_local_io_urings_->Reset(iu);
+	//		}
+	//	}
+	//}
+	
+	//if(iu == nullptr){
+	//	IOStatus s;
+	//	size_t r = 0;
+	//	do{
+	//		clearerr(file_);
+	//		r = fread_unlocked(scratch, 1, n, file_);
+	//	}while(r == 0 && ferror(file_) && errno == EINTR);
+	//	*result = Slice(scratch, r);
+	//	if(r<n){
+	//		if(feof(file_)){
+	//			clearerr(file_);
+	//		}else{
+	//			s = IOError("While reading file sequentially", filename_, errno);
+	//		}
+	//	}
+	//	return s;
+	//}
+
+	IOStatus s;
+	printf("1.s.ok(): %s\n", s.ok() ? "true" : "false");
+	struct iovec iov={
+		.iov_base = scratch,
+		.iov_len=n,
+	};
+
+	struct io_uring_sqe* sqe = io_uring_get_sqe(iu);
+	if(!sqe){
+		printf("!sqe\n");
+		s = IOError("Failed go get submission queue entry", filename_, errno);
+	}
+
+	io_uring_prep_readv(sqe, fileno(file_), &iov, 1, 0);
+
+	if(io_uring_submit(iu) < 0){
+		printf("submit error\n");
+		s = IOError("Failed to submit io_uring requeset", filename_, errno);
+	}
+
+	struct io_uring_cqe* cqe = nullptr;
+	if(io_uring_wait_cqe(iu, &cqe) < 0){
+		printf("cqe error\n");
+		s = IOError("Failed to wait for io_uring completion", filename_, errno);
+	}
+
+	ssize_t bytes_read = cqe->res;
+	if(bytes_read < 0){
+		printf("bytes_read < 0\n");
+		io_uring_cqe_seen(iu, cqe);
+		printf("cqe_seen next\n");
+		s = IOError("Error in io_uring completion", filename_, -bytes_read);
+	}
+
+	//io_uring_cqe_seen(iu, cqe);
+
+	*result = Slice(scratch, bytes_read);
+	
+	io_uring_cqe_seen(iu, cqe);
+
+	printf("return point\n");
+	printf("s.ok(): %s\n", s.ok() ? "true" : "false");
+	DeleteIOUring(iu);
+	printf("Delete\n");
+	return s;
+
+#else
+	printf("elselse\n");
+	IOStatus s;
   size_t r = 0;
   do {
     clearerr(file_);
@@ -489,35 +550,82 @@ IOStatus PosixSequentialFile::Read(size_t n, const IOOptions& /*opts*/,
     }
   }
   return s;
+
+#endif
 }
 
 IOStatus PosixSequentialFile::PositionedRead(uint64_t offset, size_t n,
                                              const IOOptions& /*opts*/,
                                              Slice* result, char* scratch,
                                              IODebugContext* /*dbg*/) {
-  
+	printf("positionedRead!!!!!!!!!\n");
 	//printf("randomread Start!\n");
 	assert(use_direct_io());
   assert(IsSectorAligned(offset, GetRequiredBufferAlignment()));
   assert(IsSectorAligned(n, GetRequiredBufferAlignment()));
   assert(IsSectorAligned(scratch, GetRequiredBufferAlignment()));
 
+#ifdef ROCKSDB_IOURING_PRESENT
+  thread_local struct io_uring* io_uring_instance=nullptr;
+
+  if(io_uring_instance == nullptr){
+	  io_uring_instance = CreateIOUring();
+	  if(io_uring_instance == nullptr){
+		  return IOError("Failed to initialize io_uring", filename_, errno);
+	  }
+  }
+
+  IOStatus s;
+  struct iovec iov={
+	  .iov_base = scratch,
+	  .iov_len=n,
+  };
+
+  struct io_uring_sqe* sqe = io_uring_get_sqe(io_uring_instance);
+  if(!sqe){
+	  return IOError("Failed to get submission queue entry", filename_, errno);
+  }
+
+  io_uring_prep_readv(sqe, fd_, &iov, 1, offset);
+
+  if(io_uring_submit(io_uring_instance) < 1){
+	  return IOError("Failed to submit io_uring request", filename_, errno);
+  }
+
+  struct io_uring_cqe* cqe=nullptr;
+  if(io_uring_wait_cqe(io_uring_instance, &cqe) < 0){
+	  return IOError("Failed to wait for io_uring completions",filename_,errno);
+  }
+
+  ssize_t bytes_read=cqe->res;
+  if(bytes_read < 0){
+	  io_uring_cqe_seen(io_uring_instance, cqe);
+	  return IOError("Error in io_uring read operation", filename_, -bytes_read);
+  }
+
+  io_uring_cqe_seen(io_uring_instance, cqe);
+
+  *result=Slice(scratch, bytes_read);
+
+  return IOStatus::OK();
+
+#else
   IOStatus s;
   ssize_t r = -1;
-  size_t left = n;//??Àº ????Æ® ???
+  size_t left = n;
   char* ptr = scratch;
   while (left > 0) {
 	  //if(isStart){
 		//	io_uring_queue_init(4096, &ring, 0);
 		//	isStart=true;
 	  //}
-#ifdef ROCKSDB_IOURING_PRESENT
-	  printf("io_uring_sequentialfile_positionedread!\n");
-	r = io_uring_pread(fd_, ptr, left, static_cast<off_t>(offset));
-#else
+//#ifdef ROCKSDB_IOURING_PRESENT
+//	  printf("io_uring_sequentialfile_positionedread!\n");
+//	r = io_uring_pread(fd_, ptr, left, static_cast<off_t>(offset));
+//#else
 	printf("pread_sequentialfile_positionedread\n");
 	r = pread(fd_, ptr, left, static_cast<off_t>(offset));
-#endif
+//#endif
 
 	if (r <= 0) {
       if (r == -1 && errno == EINTR) {
@@ -542,6 +650,7 @@ IOStatus PosixSequentialFile::PositionedRead(uint64_t offset, size_t n,
   }
   *result = Slice(scratch, (r < 0) ? 0 : n - left);
   return s;
+#endif
 }
 
 IOStatus PosixSequentialFile::Skip(uint64_t n) {
@@ -830,12 +939,12 @@ IOStatus PosixRandomAccessFile::Read(uint64_t offset, size_t n,
   size_t left = n;
   char* ptr = scratch;
   while (left > 0) {
-#ifdef ROCKSDB_IOURING_PRESENT
-	  printf("io_uring randomread!!!!!!!!\n");
-	  r=io_uring_pread(fd_, ptr, left, static_cast<off_t>(offset));
-#else
+//#ifdef ROCKSDB_IOURING_PRESENT
+//	  printf("io_uring randomread!!!!!!!!\n");
+//	  r=io_uring_pread(fd_, ptr, left, static_cast<off_t>(offset));
+//#else
 	  r = pread(fd_, ptr, left, static_cast<off_t>(offset));
-#endif
+//#endif
 
 	  if (r <= 0) {
       if (r == -1 && errno == EINTR) {
@@ -1572,6 +1681,7 @@ IOStatus PosixWritableFile::Append(const Slice& data, const IOOptions& /*opts*/,
   size_t nbytes = data.size();
 
   if (!PosixWrite(fd_, src, nbytes)) {
+	  printf("hereherehere~~~~~\n");
     return IOError("While appending to file", filename_, errno);
   }
 
@@ -1835,11 +1945,11 @@ IOStatus PosixRandomRWFile::Read(uint64_t offset, size_t n,
   size_t left = n;
   char* ptr = scratch;
   while (left > 0) {
-#ifdef ROCKSDB_IOURING_PRESENT
-	  ssize_t done=io_uring_pread(fd_,ptr,left,offset);
-#else
+//#ifdef ROCKSDB_IOURING_PRESENT
+//	  ssize_t done=io_uring_pread(fd_,ptr,left,offset);
+//#else
 	  ssize_t done = pread(fd_, ptr, left, offset);
-#endif
+//#endif
 	  if (done < 0) {
       // error while reading from file
       if (errno == EINTR) {

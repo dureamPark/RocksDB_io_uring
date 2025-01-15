@@ -370,6 +370,7 @@ IOStatus WritableFileWriter::Flush(const IOOptions& opts) {
         s = WriteBufferedWithChecksum(io_options, buf_.BufferStart(),
                                       buf_.CurrentSize());
       } else {
+		  printf("WriteBuffered!!!!!!!!!!!!!\n");
         s = WriteBuffered(io_options, buf_.BufferStart(), buf_.CurrentSize());
       }
     }
@@ -568,7 +569,8 @@ IOStatus WritableFileWriter::RangeSync(const IOOptions& opts, uint64_t offset,
 // limiter if available
 IOStatus WritableFileWriter::WriteBuffered(const IOOptions& opts,
                                            const char* data, size_t size) {
-  if (seen_error()) {
+  printf("WriteBuffered in!!!!!!!!!!!\n");
+	if (seen_error()) {
     return GetWriterHasPreviousErrorStatus();
   }
 
