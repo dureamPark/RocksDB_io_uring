@@ -211,6 +211,7 @@ IOStatus ReadFileToString(FileSystem* fs, const std::string& fname,
   static const int kBufferSize = 8192;
   char* space = new char[kBufferSize];
   while (true) {
+	  printf("ReadFileToString test\n");
     Slice fragment;
     s = file->Read(kBufferSize, IOOptions(), &fragment, space, nullptr);
     if (!s.ok()) {

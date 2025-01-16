@@ -483,44 +483,51 @@ IOStatus PosixSequentialFile::Read(size_t n, const IOOptions& /*opts*/,
 	//	return s;
 	//}
 
-	IOStatus s;
-	printf("1.s.ok(): %s\n", s.ok() ? "true" : "false");
-	struct iovec iov={
-		.iov_base = scratch,
-		.iov_len=n,
-	};
+	while(){	
+		IOStatus s;
+		printf("1.s.ok(): %s\n", s.ok() ? "true" : "false");
+	
+		struct iovec iov={
+			.iov_base = scratch,
+			.iov_len=n,
+		};
+	
+		struct io_uring_sqe* sqe = io_uring_get_sqe(iu);
+	
+		if(!sqe){
+			printf("!sqe\n");
+			s = IOError("Failed go get submission queue entry", filename_, errno);	
+		}
 
-	struct io_uring_sqe* sqe = io_uring_get_sqe(iu);
-	if(!sqe){
-		printf("!sqe\n");
-		s = IOError("Failed go get submission queue entry", filename_, errno);
-	}
+		io_uring_prep_readv(sqe, fileno(file_), &iov, 1, 0);
+	
+		if(io_uring_submit(iu) < 0){
+			printf("submit error\n");
+			s = IOError("Failed to submit io_uring requeset", filename_, errno);	
+		}
 
-	io_uring_prep_readv(sqe, fileno(file_), &iov, 1, 0);
+		struct io_uring_cqe* cqe = nullptr;
+	
+		if(io_uring_wait_cqe(iu, &cqe) < 0){
+			printf("cqe error\n");
+			s = IOError("Failed to wait for io_uring completion", filename_, errno);	
+		}
 
-	if(io_uring_submit(iu) < 0){
-		printf("submit error\n");
-		s = IOError("Failed to submit io_uring requeset", filename_, errno);
-	}
-
-	struct io_uring_cqe* cqe = nullptr;
-	if(io_uring_wait_cqe(iu, &cqe) < 0){
-		printf("cqe error\n");
-		s = IOError("Failed to wait for io_uring completion", filename_, errno);
-	}
-
-	ssize_t bytes_read = cqe->res;
-	if(bytes_read < 0){
-		printf("bytes_read < 0\n");
-		io_uring_cqe_seen(iu, cqe);
-		printf("cqe_seen next\n");
-		s = IOError("Error in io_uring completion", filename_, -bytes_read);
-	}
+		ssize_t bytes_read = cqe->res;
+	
+		if(bytes_read < 0){
+			printf("bytes_read < 0\n");
+			io_uring_cqe_seen(iu, cqe);
+			printf("cqe_seen next\n");
+			s = IOError("Error in io_uring completion", filename_, -bytes_read);
+		}
 
 	//io_uring_cqe_seen(iu, cqe);
 
-	*result = Slice(scratch, bytes_read);
 	
+		*result = Slice(scratch, bytes_read);
+	}
+
 	io_uring_cqe_seen(iu, cqe);
 
 	printf("return point\n");
