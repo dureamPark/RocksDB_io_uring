@@ -455,7 +455,7 @@ IOStatus PosixSequentialFile::Read(size_t n, const IOOptions& /*opts*/,
 		}
 	}
 
-	while(){	
+	while(n > 0){	
 		IOStatus s;
 		printf("1.s.ok(): %s\n", s.ok() ? "true" : "false");
 	
@@ -495,17 +495,24 @@ IOStatus PosixSequentialFile::Read(size_t n, const IOOptions& /*opts*/,
 		}
 
 	//io_uring_cqe_seen(iu, cqe);
-
+		if(bytes_read == 0 || n == 0){
+			printf("EOF Reached\n");
+			usleep(3000000);
+			break;
+		}
 	
 		*result = Slice(scratch, bytes_read);
+		n -= bytes_read;
+		scratch += bytes_read;
+		io_uring_cqe_seen(iu, cqe);
 	}
 
-	io_uring_cqe_seen(iu, cqe);
+	//io_uring_cqe_seen(iu, cqe);
 
 	printf("return point\n");
-	printf("s.ok(): %s\n", s.ok() ? "true" : "false");
-	DeleteIOUring(iu);
-	printf("Delete\n");
+	//printf("s.ok(): %s\n", s.ok() ? "true" : "false");
+	//DeleteIOUring(iu);
+	//printf("Delete\n");
 	return IOStatus::OK();
 
 #else
