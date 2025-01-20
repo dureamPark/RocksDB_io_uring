@@ -439,8 +439,11 @@ IOStatus PosixSequentialFile::Read(size_t n, const IOOptions& /*opts*/,
 	//io_uring exit
 
 	printf("Sequential Read!\n");
+	IOStatus s;
 	assert(result != nullptr && !use_direct_io());
   
+
+
 #if defined(ROCKSDB_IOURING_PRESENT)
 	printf("rocksdb using~~~~\n");
 	thread_local struct io_uring* iu=nullptr;
@@ -456,7 +459,7 @@ IOStatus PosixSequentialFile::Read(size_t n, const IOOptions& /*opts*/,
 	}
 
 	while(n > 0){	
-		IOStatus s;
+		//IOStatus s;
 		printf("1.s.ok(): %s\n", s.ok() ? "true" : "false");
 	
 		struct iovec iov={
@@ -468,52 +471,80 @@ IOStatus PosixSequentialFile::Read(size_t n, const IOOptions& /*opts*/,
 	
 		if(!sqe){
 			printf("!sqe\n");
-			return IOError("Failed go get submission queue entry", filename_, errno);	
+			s = IOError("Failed go get submission queue entry", filename_, errno);	
 		}
 
-		io_uring_prep_readv(sqe, fileno(file_), &iov, 1, 0);
+		io_uring_prep_readv(sqe, fileno(file_), &iov, 1, n - iov.iov_len);
 	
 		if(io_uring_submit(iu) < 0){
 			printf("submit error\n");
-			return IOError("Failed to submit io_uring requeset", filename_, errno);	
+			s = IOError("Failed to submit io_uring requeset", filename_, errno);	
 		}
 
 		struct io_uring_cqe* cqe = nullptr;
 	
 		if(io_uring_wait_cqe(iu, &cqe) < 0){
 			printf("cqe error\n");
-			return IOError("Failed to wait for io_uring completion", filename_, errno);	
+			s = IOError("Failed to wait for io_uring completion", filename_, errno);	
 		}
 
 		ssize_t bytes_read = cqe->res;
-	
+
+		printf("bytes_read: %ld\n", bytes_read);
 		if(bytes_read < 0){
 			printf("bytes_read < 0\n");
 			io_uring_cqe_seen(iu, cqe);
 			printf("cqe_seen next\n");
-			return IOError("Error in io_uring completion", filename_, -bytes_read);
+			s = IOError("Error in io_uring completion", filename_, -bytes_read);
 		}
 
 	//io_uring_cqe_seen(iu, cqe);
-		if(bytes_read == 0 || n == 0){
+		if(bytes_read == 0){
 			printf("EOF Reached\n");
-			usleep(3000000);
+			s = IOStatus::OK();
+			//usleep(3000000);
 			break;
 		}
 	
 		*result = Slice(scratch, bytes_read);
 		n -= bytes_read;
 		scratch += bytes_read;
+		printf("nnnnnnnn: %zu\n", n);
 		io_uring_cqe_seen(iu, cqe);
+
+		if(n == 0){
+			printf("n == 0\n");
+			s = IOStatus::OK();
+			printf("s: %s\n", s.ok() ? "true" : "false");
+			break;
+		}
+
+		if(static_cast<size_t>(bytes_read) < n){
+			if(feof(file_)){
+				printf("EOF detected\n");
+				break;
+			}
+			else{
+				s = IOError("while reading file sequentially", filename_, errno);
+				printf("Error during read: %s\n", strerror(errno));
+				return s;
+			}
+		}
 	}
 
+	if(n == 0){
+		printf("%s\n", s.ok() ? "true" : "false");
+		printf("n == 0 222222\n");
+	}
 	//io_uring_cqe_seen(iu, cqe);
 
 	printf("return point\n");
 	//printf("s.ok(): %s\n", s.ok() ? "true" : "false");
 	//DeleteIOUring(iu);
 	//printf("Delete\n");
-	return IOStatus::OK();
+	//return IOStatus::OK();
+
+	return s;
 
 #else
 	printf("elselse\n");
