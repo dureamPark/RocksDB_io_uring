@@ -434,6 +434,10 @@ IOStatus PosixSequentialFile::Read(size_t n, const IOOptions& /*opts*/,
                                    Slice* result, char* scratch,
                                    IODebugContext* /*dbg*/) {
   //sequential
+	//io_uring init 
+	//io_uring use
+	//io_uring exit
+
 	printf("Sequential Read!\n");
 	assert(result != nullptr && !use_direct_io());
   
@@ -450,38 +454,6 @@ IOStatus PosixSequentialFile::Read(size_t n, const IOOptions& /*opts*/,
 			return IOError("Failed to initialize io_uring", filename_, errno);
 		}
 	}
-	//else{
-	//	iu=CreateIOUring();
-	//	printf("else createiouring\n");
-	//}
-
-	//if(iu){
-	//	iu = static_cast<struct io_uring*>(thread_local_io_urings_->Get());
-	//	if(iu == nullptr){
-	//		iu=CreateIOUring();
-	//		if(iu!=nullptr){
-	//			thread_local_io_urings_->Reset(iu);
-	//		}
-	//	}
-	//}
-	
-	//if(iu == nullptr){
-	//	IOStatus s;
-	//	size_t r = 0;
-	//	do{
-	//		clearerr(file_);
-	//		r = fread_unlocked(scratch, 1, n, file_);
-	//	}while(r == 0 && ferror(file_) && errno == EINTR);
-	//	*result = Slice(scratch, r);
-	//	if(r<n){
-	//		if(feof(file_)){
-	//			clearerr(file_);
-	//		}else{
-	//			s = IOError("While reading file sequentially", filename_, errno);
-	//		}
-	//	}
-	//	return s;
-	//}
 
 	while(){	
 		IOStatus s;
@@ -496,21 +468,21 @@ IOStatus PosixSequentialFile::Read(size_t n, const IOOptions& /*opts*/,
 	
 		if(!sqe){
 			printf("!sqe\n");
-			s = IOError("Failed go get submission queue entry", filename_, errno);	
+			return IOError("Failed go get submission queue entry", filename_, errno);	
 		}
 
 		io_uring_prep_readv(sqe, fileno(file_), &iov, 1, 0);
 	
 		if(io_uring_submit(iu) < 0){
 			printf("submit error\n");
-			s = IOError("Failed to submit io_uring requeset", filename_, errno);	
+			return IOError("Failed to submit io_uring requeset", filename_, errno);	
 		}
 
 		struct io_uring_cqe* cqe = nullptr;
 	
 		if(io_uring_wait_cqe(iu, &cqe) < 0){
 			printf("cqe error\n");
-			s = IOError("Failed to wait for io_uring completion", filename_, errno);	
+			return IOError("Failed to wait for io_uring completion", filename_, errno);	
 		}
 
 		ssize_t bytes_read = cqe->res;
@@ -519,7 +491,7 @@ IOStatus PosixSequentialFile::Read(size_t n, const IOOptions& /*opts*/,
 			printf("bytes_read < 0\n");
 			io_uring_cqe_seen(iu, cqe);
 			printf("cqe_seen next\n");
-			s = IOError("Error in io_uring completion", filename_, -bytes_read);
+			return IOError("Error in io_uring completion", filename_, -bytes_read);
 		}
 
 	//io_uring_cqe_seen(iu, cqe);
@@ -534,7 +506,7 @@ IOStatus PosixSequentialFile::Read(size_t n, const IOOptions& /*opts*/,
 	printf("s.ok(): %s\n", s.ok() ? "true" : "false");
 	DeleteIOUring(iu);
 	printf("Delete\n");
-	return s;
+	return IOStatus::OK();
 
 #else
 	printf("elselse\n");
