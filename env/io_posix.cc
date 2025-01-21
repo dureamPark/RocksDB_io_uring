@@ -458,6 +458,8 @@ IOStatus PosixSequentialFile::Read(size_t n, const IOOptions& /*opts*/,
 		}
 	}
 
+	//s=IOStatus::OK();
+	//size_t current_offset = 0;
 	while(n > 0){	
 		//IOStatus s;
 		printf("1.s.ok(): %s\n", s.ok() ? "true" : "false");
@@ -475,7 +477,8 @@ IOStatus PosixSequentialFile::Read(size_t n, const IOOptions& /*opts*/,
 		}
 
 		io_uring_prep_readv(sqe, fileno(file_), &iov, 1, n - iov.iov_len);
-	
+		//io_uring_prep_readv(sqe, fileno(file_), &iov, 1, current_offset);
+
 		if(io_uring_submit(iu) < 0){
 			printf("submit error\n");
 			s = IOError("Failed to submit io_uring requeset", filename_, errno);	
@@ -509,6 +512,7 @@ IOStatus PosixSequentialFile::Read(size_t n, const IOOptions& /*opts*/,
 		*result = Slice(scratch, bytes_read);
 		n -= bytes_read;
 		scratch += bytes_read;
+		//current_offset += bytes_read;
 		printf("nnnnnnnn: %zu\n", n);
 		io_uring_cqe_seen(iu, cqe);
 
@@ -519,17 +523,18 @@ IOStatus PosixSequentialFile::Read(size_t n, const IOOptions& /*opts*/,
 			break;
 		}
 
-		if(static_cast<size_t>(bytes_read) < n){
-			if(feof(file_)){
-				printf("EOF detected\n");
-				break;
-			}
-			else{
-				s = IOError("while reading file sequentially", filename_, errno);
-				printf("Error during read: %s\n", strerror(errno));
-				return s;
-			}
-		}
+		//if(static_cast<size_t>(bytes_read) < n){
+		//	if(feof(file_)){
+		//		printf("EOF detected\n");
+		//		break;
+		//	}
+		//	else{
+		//		s = IOError("while reading file sequentially", filename_, errno);
+		//		printf("Error during read: %s\n", strerror(errno));
+		//		return s;
+		//	}
+		//}
+
 	}
 
 	if(n == 0){
@@ -543,7 +548,8 @@ IOStatus PosixSequentialFile::Read(size_t n, const IOOptions& /*opts*/,
 	//DeleteIOUring(iu);
 	//printf("Delete\n");
 	//return IOStatus::OK();
-
+	printf("exit111111111111\n");
+	io_uring_queue_exit(iu);
 	return s;
 
 #else
