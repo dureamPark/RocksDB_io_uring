@@ -215,12 +215,17 @@ IOStatus ReadFileToString(FileSystem* fs, const std::string& fname,
     Slice fragment;
     s = file->Read(kBufferSize, IOOptions(), &fragment, space, nullptr);
     if (!s.ok()) {
+		printf("you know???\n");
       break;
     }
+	//data->append problem?
     data->append(fragment.data(), fragment.size());
+	printf("after data->append()\n");
     if (fragment.empty()) {
+		printf("data->append fragment.empty()\n");
       break;
     }
+	printf("while end point~~~~~~~~~~\n");
   }
   delete[] space;
   return s;

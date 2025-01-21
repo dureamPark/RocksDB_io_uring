@@ -6040,12 +6040,15 @@ Status VersionSet::GetCurrentManifestPath(const std::string& dbname,
 
   std::string fname;
   Status s = ReadFileToString(fs, CurrentFileName(dbname), &fname);
+  printf("readfiletostring afterafter\n");
   if (!s.ok()) {
-    return s;
+    printf("ssssssssss\n");
+	  return s;
   }
   if (fname.empty() || fname.back() != '\n') {
     return Status::Corruption("CURRENT file does not end with newline");
   }
+  printf("if next\n");
   // remove the trailing '\n'
   fname.resize(fname.size() - 1);
   FileType type;

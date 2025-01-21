@@ -502,7 +502,7 @@ IOStatus PosixSequentialFile::Read(size_t n, const IOOptions& /*opts*/,
 		}
 
 	//io_uring_cqe_seen(iu, cqe);
-		if(bytes_read == 0){
+		if(feof(file_)){
 			printf("EOF Reached\n");
 			s = IOError("Error no bytes_read", filename_, errno);
 			//usleep(3000000);
@@ -518,7 +518,7 @@ IOStatus PosixSequentialFile::Read(size_t n, const IOOptions& /*opts*/,
 
 		if(n == 0){
 			printf("n == 0\n");
-			s = IOError("Error no n", filename_, errno);
+			//s = IOError("Error no n", filename_, errno);
 			printf("s: %s\n", s.ok() ? "true" : "false");
 			//s = ;
 			//printf("s: %s\n", s.ok() ? "true" : "false");
