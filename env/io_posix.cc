@@ -454,7 +454,7 @@ IOStatus PosixSequentialFile::Read(size_t n, const IOOptions& /*opts*/,
 		//usleep(3000000);
 		if(iu == nullptr){
 			printf("iu = nullptr\n");
-			return IOError("Failed to initialize io_uring", filename_, errno);
+			s = IOError("Failed to initialize io_uring", filename_, errno);
 		}
 	}
 
@@ -504,7 +504,7 @@ IOStatus PosixSequentialFile::Read(size_t n, const IOOptions& /*opts*/,
 	//io_uring_cqe_seen(iu, cqe);
 		if(bytes_read == 0){
 			printf("EOF Reached\n");
-			s = IOStatus::OK();
+			s = IOError("Error no bytes_read", filename_, errno);
 			//usleep(3000000);
 			break;
 		}
@@ -518,8 +518,10 @@ IOStatus PosixSequentialFile::Read(size_t n, const IOOptions& /*opts*/,
 
 		if(n == 0){
 			printf("n == 0\n");
-			s = IOStatus::OK();
+			s = IOError("Error no n", filename_, errno);
 			printf("s: %s\n", s.ok() ? "true" : "false");
+			//s = ;
+			//printf("s: %s\n", s.ok() ? "true" : "false");
 			break;
 		}
 
@@ -537,10 +539,10 @@ IOStatus PosixSequentialFile::Read(size_t n, const IOOptions& /*opts*/,
 
 	}
 
-	if(n == 0){
-		printf("%s\n", s.ok() ? "true" : "false");
-		printf("n == 0 222222\n");
-	}
+	//if(n == 0){
+	//	printf("%s\n", s.ok() ? "true" : "false");
+	//	printf("n == 0 222222\n");
+	//}
 	//io_uring_cqe_seen(iu, cqe);
 
 	printf("return point\n");
@@ -550,6 +552,8 @@ IOStatus PosixSequentialFile::Read(size_t n, const IOOptions& /*opts*/,
 	//return IOStatus::OK();
 	printf("exit111111111111\n");
 	io_uring_queue_exit(iu);
+	delete iu;
+	iu = nullptr;
 	return s;
 
 #else
